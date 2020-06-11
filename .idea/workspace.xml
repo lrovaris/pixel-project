@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90258cf2-ebcb-44d1-a8b6-659a1216df15" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.module.ts" afterDir="false" />
-    </list>
+    <list default="true" id="90258cf2-ebcb-44d1-a8b6-659a1216df15" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -57,45 +53,6 @@
               <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="design-system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -142,12 +99,12 @@
       <option name="presentableId" value="Default" />
       <updated>1591797902691</updated>
       <workItem from="1591797907387" duration="322000" />
-      <workItem from="1591893949836" duration="1311000" />
+      <workItem from="1591893949836" duration="1625000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1633000" />
+    <option name="totallyTimeSpent" value="1947000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
