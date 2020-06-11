@@ -10,7 +10,7 @@ export class ImagesService {
   constructor(private http: HttpClient, private url: UrlService) { }
 
   uploadPhoto(photo) {
-    return this.http.post(`${this.url.getUrl()}//images/upload`, photo);
+    return this.http.post(`${this.url.getUrl()}/images/upload`, photo);
   }
 
 
