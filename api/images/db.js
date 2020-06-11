@@ -25,4 +25,14 @@ async function register_metadata(new_entries) {
   return new_entry.ops[0];
 }
 
-module.exports = { get_metadata, register_metadata };
+async function delete_metadata(meta_id) {
+  db_conn = await db_utils.get_db();
+
+  let delete_action = await db_conn.collection("images").deleteOne( { _id: new ObjectId(meta_id) })
+
+  await get_metadata();
+
+  return delete_action.ops[0];
+}
+
+module.exports = { get_metadata, register_metadata, delete_metadata  };

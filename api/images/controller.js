@@ -17,6 +17,7 @@ async function get_metadata_by_id(meta_id) {
 }
 
 async function delete_metadata(meta_id) {
+  console.log("finding");
   const this_metadata = await get_metadata_by_id(meta_id)
 
   if(this_metadata === undefined){
@@ -26,20 +27,18 @@ async function delete_metadata(meta_id) {
     }
   }
 
+  console.log("exists");
+
   const images_dir = './uploads/images/'
 
-  return {
-    valid: true,
-    message: "Metadados deletados com sucesso"
-  };
-
-
   if(fs.existsSync(images_dir+this_metadata.path)){
+    console.log("path exists");
     try {
+
+      await db.delete_metadata(this_metadata._id)
+
       fs.unlinkSync(images_dir+this_metadata.path)
 
-      // dps de excluir, colocar a nova foto no perfil e fazer update no banco de dados
-      // responder com a resposta do banco de dados
       return {
         valid: true,
         message: "Metadados deletados com sucesso"
@@ -50,9 +49,18 @@ async function delete_metadata(meta_id) {
       console.error(err)
       return{
           valid: false,
-          message: "Ocorreu um erro ao atualizar sua foto"
+          message: "Ocorreu um erro ao deletar o arquivo"
         }
     }
+  }else {
+    console.log("this_metadata", this_metadata);
+
+    console.log(images_dir+this_metadata.path + " does not exist");
+
+    return{
+        valid: false,
+        message: "Ocorreu um erro ao deletar o arquivo, imagem inválida"
+      }
   }
 
 }

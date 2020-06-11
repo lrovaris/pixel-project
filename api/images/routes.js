@@ -38,6 +38,10 @@ router.post ('/new', async(req,res) => {
 router.delete("/:id", async(req,res) =>{
   const metadata_id = req.params.id
 
+  if(metadata_id === undefined){
+    return res.status(400).json({ message: "Metadados inválidos"})
+  }
+
   let delete_action =  await controller.delete_metadata(metadata_id);
 
   if (!delete_action.valid){
