@@ -1,7 +1,7 @@
 {
   "name": "front-end",
   "version": "0.0.0",
-  "main": "app.js",
+  "main": "src/main/app.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:electron": "ng build --base-href ./ && electron ."
+    "start:electron": "ng build --base-href ./ && electron .",
+    "electron": "electron ."
   },
   "private": true,
   "dependencies": {
