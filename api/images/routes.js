@@ -7,16 +7,16 @@ const db = require('./db');
 
 router.get ('/', (req,res) => {
   return res.status(200).json({"message":"Imagens funcionando"});
-});
+})
 
 router.get ('/all', async(req,res) => {
 
-  const img_metadata = await db.get_metadata();
+  const img_metadata = await controller.get_metadata();
 
   return res.status(200).json(img_metadata);
-});
+})
 
-router.post('/new', async(req,res) => {
+router.post ('/new', async(req,res) => {
 
   const metadata = req.body.metadata;
   const img_path = req.body.path;
@@ -33,7 +33,19 @@ router.post('/new', async(req,res) => {
 
   return res.status(200).json({message: "Registro de imagem bem-sucedido", metadados: db_metadata })
 
-});
+})
+
+router.delete("/:id", async(req,res) =>{
+  const metadata_id = req.params.id
+
+  let delete_action =  await controller.delete_metadata(metadata_id);
+
+  if (!delete_action.valid){
+      return res.status(400).json({message: delete_action.message})
+  }else {
+    return res.status(200).json({message: delete_action.message})
+  }
+})
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -44,11 +56,11 @@ const storage = multer.diskStorage({
 
         cb(null , uniqueSuffix+file.originalname);
     }
-});
+})
 
 const upload = multer({ storage: storage })
 
-router.post('/upload', upload.array('docs'), async(req,res) =>{
+router.post ('/upload', upload.array('docs'), async(req,res) =>{
   if(!req.files){
     res.stats(400).json({ message: "Arquivos inválidos" })
   }
@@ -65,7 +77,5 @@ router.post('/upload', upload.array('docs'), async(req,res) =>{
     info_files: this_files
   })
 })
-
-
 
 module.exports = router;

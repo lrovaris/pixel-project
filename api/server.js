@@ -28,6 +28,10 @@ app.use(router);
 async function initialize_database() {
   console.log("Inicializando banco de dados...");
   var _db = await db.init_db()
+
+  console.log("Inicializando cache");
+
+  await require('./images/db').get_metadata();
 }
 
 app.listen(3000, async () => {
