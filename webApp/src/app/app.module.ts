@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { TooltipModule} from 'ngx-bootstrap/tooltip';
 import { ModalModule} from 'ngx-bootstrap/modal';
+import { UploadComponent } from './pages/upload/upload.component';
+import { ListComponent } from './pages/list/list.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UploadComponent,
+    ListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+.custom-file-label {
+  cursor: pointer;
+  border: 1px solid #000;
+  &::after {
+    background-color: #000;
+    color: white;
+    content: 'Pesquisar' !important;
+  }
+}
