@@ -19,7 +19,7 @@ function initWindow() {
   // Electron Build Path
   appWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, `/dist/index.html`),
+      pathname: path.join(__dirname, `../../dist/index.html`),
       protocol: "file:",
       slashes: true
     })
