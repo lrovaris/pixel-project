@@ -3,11 +3,13 @@
     <thead>
     <tr>
       <th scope="col">Name</th>
+      <th scope="col">Deletar</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let image of imagesList">
       <td>{{image.metadata.name}}</td>
+      <td><i class="icon-waste"></i></td>
     </tr>
     </tbody>
   </table>
