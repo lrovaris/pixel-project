@@ -13,6 +13,10 @@ export class ImagesService {
     return this.http.post(`${this.url.getUrl()}/images/upload`, photo);
   }
 
+  createImage(metadata, path) {
+    return this.http.post(`${this.url.getUrl()}/images/new`, {metadata, path});
+  }
+
   getAllImages() {
 
     return this.http.get(`${this.url.getUrl()}/images/all`);

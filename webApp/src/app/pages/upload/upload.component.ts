@@ -40,12 +40,14 @@ export class UploadComponent implements OnInit {
       this.formData.append('docs', this.fileToUpload[i]);
     }
     this.imageService.uploadPhoto(this.formData).subscribe((data: any) => {
-      console.log(data);
+      console.log(data.info_files[0]);
       alert(data.message);
+      const metadata = {name: data.info_files[0].nome};
       this.formData = new FormData();
- /*     this.userService.updateUser(user, thisUser._id).subscribe((data2: any) => {
+
+      this.imageService.createImage(metadata, data.info_files[0].path).subscribe((data2: any) => {
         console.log(data2);
-        this.imgPath = `http://34.95.248.144:3000/files/profile/${data2.user.picture}`;
+        alert(data2.message);
         setTimeout(() => {
           this.buttomState = 'Concluído';
           this.styleConcluido = true;
@@ -54,7 +56,7 @@ export class UploadComponent implements OnInit {
             this.styleConcluido = false;
           }, 2000);
         }, 100);
-      });*/
+      });
     });
   }
 
