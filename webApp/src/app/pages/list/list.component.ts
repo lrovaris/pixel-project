@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ImagesService} from '../../services/images.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  imagesList = [];
+
+  constructor(private images: ImagesService) { }
 
   ngOnInit() {
+
+    this.images.getAllImages().subscribe((data: any) => {
+      this.imagesList = data;
+      console.log(data);
+    });
+
   }
 
 }

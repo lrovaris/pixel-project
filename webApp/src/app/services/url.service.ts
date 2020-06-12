@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class UrlService {
 
-  url = 'http://localhost:3000';
+  url = 'http://161.35.10.72:3000';
 
   constructor() { }
 
