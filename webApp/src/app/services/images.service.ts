@@ -15,7 +15,7 @@ export class ImagesService {
 
   getAllImages() {
     console.log(this.url.getUrl());
-    return this.http.get(`/images/all`);
+    return this.http.get(`${this.url.getUrl()}/images/all`);
   }
 
 

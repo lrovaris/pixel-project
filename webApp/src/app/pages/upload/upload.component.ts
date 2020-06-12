@@ -41,7 +41,7 @@ export class UploadComponent implements OnInit {
     }
     this.imageService.uploadPhoto(this.formData).subscribe((data: any) => {
       console.log(data);
-
+      alert(data.message);
       this.formData = new FormData();
  /*     this.userService.updateUser(user, thisUser._id).subscribe((data2: any) => {
         console.log(data2);

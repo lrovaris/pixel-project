@@ -2,16 +2,12 @@
   <table class="table">
     <thead>
     <tr>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Name</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <tr *ngFor="let image of imagesList">
+      <td>{{image.metadata.name}}</td>
     </tr>
     </tbody>
   </table>
