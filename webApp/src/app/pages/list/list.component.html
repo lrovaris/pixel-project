@@ -9,7 +9,7 @@
     <tbody>
     <tr *ngFor="let image of imagesList">
       <td>{{image.metadata.name}}</td>
-      <td><i class="icon-waste"></i></td>
+      <td><i (click)="deleteImage(image._id)" class="icon-waste"></i></td>
     </tr>
     </tbody>
   </table>

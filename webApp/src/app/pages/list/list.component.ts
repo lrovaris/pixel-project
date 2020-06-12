@@ -21,4 +21,11 @@ export class ListComponent implements OnInit {
 
   }
 
+  deleteImage(id) {
+    this.images.deleteImages(id).subscribe((data: any) => {
+      console.log(data);
+      alert(data.message);
+    })
+  }
+
 }

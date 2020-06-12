@@ -14,9 +14,12 @@ export class ImagesService {
   }
 
   getAllImages() {
-    console.log(this.url.getUrl());
+
     return this.http.get(`${this.url.getUrl()}/images/all`);
   }
 
+  deleteImages(id) {
+    return this.http.delete(`${this.url.getUrl()}/images/${id}`);
+  }
 
 }
