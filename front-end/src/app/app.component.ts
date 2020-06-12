@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {IpcService} from "./services/ipc.service";
+import { Component, OnInit} from '@angular/core';
+import { IpcService} from './services/ipc.service';
+import { MetadataService} from './services/metadata.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,15 @@ import {IpcService} from "./services/ipc.service";
 export class AppComponent implements OnInit{
   title = 'front-end';
 
-  constructor(private ipc: IpcService) {
+  constructor(private ipc: IpcService, private metadataService: MetadataService) {
 
   }
 
   ngOnInit() {
     this.ipc.send('load-metadata');
+    this.ipc.on('load-metadata-reply', (e: any, a: any) => {
+    this.metadataService.setMetadata(a);
+    });
   }
 
 }
