@@ -5,21 +5,13 @@ const {
 } = require('electron')
 const url = require("url");
 const path = require("path");
-
 const got = require('got');
+
+const download_metadata = require('./download-metadata');
 
 let appWindow
 
-function openModal(){
-      const { BrowserWindow } = require('electron');
-      let modal = new BrowserWindow({ parent: mainWindow, modal: true, show: false })
-      modal.loadURL('http://161.35.10.72:3000/images/all')
-      modal.once('ready-to-show', () => {
-        modal.show()
-      })
-    }
-
-async function initApp() {
+function initApp() {
   appWindow = new BrowserWindow({
     width: 1000,
     height: 800,
@@ -37,23 +29,18 @@ async function initApp() {
     })
   );
 
-  // Initialize the DevTools.
-  appWindow.webContents.openDevTools()
-
-  // const metadata = await got('http://161.35.10.72:3000/images/all');
-
-  openModal()
-
-  console.log(metadata.body);
-
-
-
-  appWindow.on('closed', function () {
+appWindow.on('closed', function () {
     appWindow = null
   })
 }
 
 app.on('ready', initApp)
+
+app.on('activate', function () {
+  if (win === null) {
+    initApp()
+  }
+})
 
 // Close when all windows are closed.
 app.on('window-all-closed', function () {
@@ -64,8 +51,16 @@ app.on('window-all-closed', function () {
   }
 })
 
-app.on('activate', function () {
-  if (win === null) {
-    initApp()
-  }
+// ipcMain things
+
+ipcMain.on("load-metadata", async(event, arg) =>{
+
+  const metadata = await download_metadata.fetch_metadata_info();
+
+  console.log(metadata);
+
+  event.sender.send('load-metadata-reply', metadata)
+
+  let save_action = await download_metadata.save_metadata_json(metadata)
+
 })
