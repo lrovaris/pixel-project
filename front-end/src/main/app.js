@@ -1,13 +1,17 @@
 const {
   app,
-  BrowserWindow
+  BrowserWindow,
+  ipcMain
 } = require('electron')
 const url = require("url");
 const path = require("path");
+const got = require('got');
+
+const download_metadata = require('./download-metadata');
 
 let appWindow
 
-function initWindow() {
+function initApp() {
   appWindow = new BrowserWindow({
     width: 1000,
     height: 800,
@@ -25,15 +29,18 @@ function initWindow() {
     })
   );
 
-  // Initialize the DevTools.
-  appWindow.webContents.openDevTools()
-
-  appWindow.on('closed', function () {
+appWindow.on('closed', function () {
     appWindow = null
   })
 }
 
-app.on('ready', initWindow)
+app.on('ready', initApp)
+
+app.on('activate', function () {
+  if (win === null) {
+    initApp()
+  }
+})
 
 // Close when all windows are closed.
 app.on('window-all-closed', function () {
@@ -44,8 +51,16 @@ app.on('window-all-closed', function () {
   }
 })
 
-app.on('activate', function () {
-  if (win === null) {
-    initWindow()
-  }
+// ipcMain things
+
+ipcMain.on("load-metadata", async(event, arg) =>{
+
+  const metadata = await download_metadata.fetch_metadata_info();
+
+  console.log(metadata);
+
+  event.sender.send('load-metadata-reply', metadata)
+
+  let save_action = await download_metadata.save_metadata_json(metadata)
+
 })
