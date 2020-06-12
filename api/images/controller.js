@@ -17,7 +17,6 @@ async function get_metadata_by_id(meta_id) {
 }
 
 async function delete_metadata(meta_id) {
-  console.log("finding");
   const this_metadata = await get_metadata_by_id(meta_id)
 
   if(this_metadata === undefined){
@@ -27,12 +26,10 @@ async function delete_metadata(meta_id) {
     }
   }
 
-  console.log("exists");
 
   const images_dir = './uploads/images/'
 
   if(fs.existsSync(images_dir+this_metadata.path)){
-    console.log("path exists");
     try {
 
       await db.delete_metadata(this_metadata._id)
@@ -53,9 +50,6 @@ async function delete_metadata(meta_id) {
         }
     }
   }else {
-    console.log("this_metadata", this_metadata);
-
-    console.log(images_dir+this_metadata.path + " does not exist");
 
     return{
         valid: false,

@@ -32,7 +32,7 @@ async function delete_metadata(meta_id) {
 
   await get_metadata();
 
-  return delete_action.ops[0];
+  return delete_action.ops;
 }
 
 module.exports = { get_metadata, register_metadata, delete_metadata  };
