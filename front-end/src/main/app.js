@@ -5,7 +5,6 @@ const {
 } = require('electron')
 const url = require("url");
 const path = require("path");
-const got = require('got');
 
 const download_metadata = require('./download-metadata');
 
@@ -62,5 +61,7 @@ ipcMain.on("load-metadata", async(event, arg) =>{
   event.sender.send('load-metadata-reply', metadata)
 
   let save_action = await download_metadata.save_metadata_json(metadata)
+
+  let download_action = await download_metadata.download_images(metadata)
 
 })

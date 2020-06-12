@@ -17,13 +17,17 @@ async function save_metadata_json(metadata_json) {
   {
     console.log(e);
     return false
-    // alert('Failed to save the file !');
   }
+}
+
+async function download_images(metadata) {
+  
 }
 
 
 
 module.exports = {
   fetch_metadata_info,
-  save_metadata_json
+  save_metadata_json,
+  download_images
 }
