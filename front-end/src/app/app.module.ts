@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DesignSystemModule } from '../../design-system/design-system.module';
 import { LoadingPageComponent } from './pages/loading-page/loading-page.component';
+import { CreateCharacterPageComponent } from './pages/create-character-page/create-character-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoadingPageComponent
+    LoadingPageComponent,
+    CreateCharacterPageComponent
   ],
   imports: [
     BrowserModule,
