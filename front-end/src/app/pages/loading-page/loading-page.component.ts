@@ -25,4 +25,8 @@ export class LoadingPageComponent implements OnInit {
     }, 100);
   }
 
+  log(x) {
+    console.log(x);
+  }
+
 }

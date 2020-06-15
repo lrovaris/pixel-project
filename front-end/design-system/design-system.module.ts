@@ -1,13 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SimpleButtonComponent } from './components/simple-button/simple-button.component';
+import { BottonLeftMenuComponent } from './components/botton-left-menu/botton-left-menu.component';
+import { LeftImageListComponent } from './components/left-image-list/left-image-list.component';
+import { ImageDisplayComponent } from './components/image-display/image-display.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [],
+  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule
   ],
   exports: [
-
+    SimpleButtonComponent,
+    BottonLeftMenuComponent,
+    LeftImageListComponent,
+    ImageDisplayComponent
   ]
 })
 export class DesignSystemModule { }
