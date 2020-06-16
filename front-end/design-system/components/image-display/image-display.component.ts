@@ -34,14 +34,12 @@ export class ImageDisplayComponent implements OnInit {
   @Input() height;
   @Input() spriteWidth;
   @Input() imgPath;
+  @Input() name;
 
    animationInterval;
    spriteSheet = document.getElementById('image');
-   widthOfSpriteSheet = 500;
-   widthOfEachSprite = 50;
-
-  newWidth: any;
-  newHeight: any;
+   widthOfSpriteSheet: any;
+   widthOfEachSprite: any;
 
   position = 256;
   interval = 100;
@@ -53,47 +51,39 @@ export class ImageDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.spriteSheet = document.getElementById('image');
-    console.log(document.getElementById('image'));
-
+    console.log(this.width);
     this.startAnimation();
-
   }
 
-  animate(frameWidth) {
 
-    const turns = (frameWidth);
-
-    document.getElementById('image').style.backgroundPosition = `-${frameWidth}px 0px`;
-
-  }
 
   stopAnimation() {
     clearInterval(this.animationInterval);
   }
 
   startAnimation() {
-    console.log(this.spriteSheet);
-    let position = 50; // start position for the image
+
+    this.widthOfSpriteSheet = this.spriteWidth;
+
+    let position = this.width; // start position for the image
     const speed = 100; // in millisecond(ms)
-    const diff = 50; // difference between two sprites
+    const diff = this.width; // difference between two sprites
 
     this.animationInterval = setInterval(() => {
-      console.log('asd');
+
+      console.log(this.name, position);
+
       this.spriteSheet.style.backgroundPosition = `${-position}px 0px`;
-
-      console.log(this.spriteSheet.style.backgroundPosition);
-
       if (position < this.widthOfSpriteSheet) {
         position = position + diff;
       } else {
-        position = this.widthOfEachSprite;
+        position = this.width;
       }
     }, speed);
   }
 
   shouldIAnimate() {
     this.shouldAnimate = !this.shouldAnimate;
-    console.log(this.shouldAnimate);
   }
 
 

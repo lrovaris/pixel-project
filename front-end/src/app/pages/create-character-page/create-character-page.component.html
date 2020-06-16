@@ -8,6 +8,16 @@
    </div>
   </div>
   <div class="col-sm-8">
-    <pixel-image-display [frames]="10" [height]="'72px'" [width]="'50px'" [spriteWidth]="500" [imgPath]="'http://s.cdpn.io/79/sprite-steps.png'"></pixel-image-display>
+    <div style="position: fixed; width: 70%; right: 0; top: 0; height: 100%; background-color: #727272">
+      <div class="col-sm-12">
+        <div class="row">
+          <div style="display: flex; justify-content: center; margin: 50% auto;" class="col-sm-10">
+            <div class="row">
+             <pixel-image-display  *ngFor="let image of imagesArray; let i = index" [frames]="image.frames" [height]="image.height" [width]="image.width" [spriteWidth]="image.spriteWidth" [imgPath]="image.path" [name]="image.name"></pixel-image-display>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
