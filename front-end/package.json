@@ -1,7 +1,7 @@
 {
   "name": "front-end",
   "version": "0.0.0",
-  "main": "src/main/index.js",
+  "main": "./src/main/index.js",
   "scripts": {
     "ng": "ng",
     "clean": "rimraf dist",
@@ -13,8 +13,9 @@
     "electron": "wait-on http://localhost:4200 && electron .",
     "prestart": "npm run clean",
     "start": "concurrently -k \"ng serve\" \"npm run electron\"",
-    "prerelease": "npm run build -- --prod",
-    "release": "electron-builder"
+    "prerelease": "ng build --prod --base-href ./",
+    "release": "electron-builder",
+    "electron-build": "electron-builder"
   },
   "private": true,
   "dependencies": {
@@ -63,8 +64,8 @@
     "appId": "com.electron.pixel-project",
     "productName": "pixel-project",
     "files": [
-      "scr/main/index.js",
-      "dist/"
+      "./scr/main/*",
+      "./dist"
     ]
   }
 }
