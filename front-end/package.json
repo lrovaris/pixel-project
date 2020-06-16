@@ -1,16 +1,20 @@
 {
   "name": "front-end",
   "version": "0.0.0",
-  "main": "src/main/app.js",
+  "main": "src/main/index.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "clean": "rimraf dist",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:electron": "ng build --base-href ./ && electron .",
-    "electron": "electron ."
+    "electron": "wait-on http://localhost:4200 && electron .",
+    "prestart": "npm run clean",
+    "start": "concurrently -k \"ng serve\" \"npm run electron\"",
+    "prerelease": "npm run build -- --prod",
+    "release": "electron-builder"
   },
   "private": true,
   "dependencies": {
@@ -38,7 +42,9 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "concurrently": "^5.2.0",
     "electron": "^9.0.3",
+    "electron-builder": "^22.7.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -47,8 +53,18 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
     "protractor": "~5.4.0",
+    "rimraf": "^3.0.2",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "wait-on": "^5.0.1"
+  },
+  "build": {
+    "appId": "com.electron.pixel-project",
+    "productName": "pixel-project",
+    "files": [
+      "scr/main/index.js",
+      "dist/"
+    ]
   }
 }
