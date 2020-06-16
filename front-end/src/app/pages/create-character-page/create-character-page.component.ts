@@ -9,21 +9,50 @@ export class CreateCharacterPageComponent implements OnInit {
 
   imagesArray = [
     {
-      path: 'http://161.35.10.72:3000/files/1592225226982-242047489Char%20Base.png',
-      frames: 3,
+      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471037656367204/Char_Base.png',
+      frames: 10,
       width: 16,
       height: 16,
-      spriteWidth: 48,
+      spriteWidth: 160,
+      id: 'idunicodoboneco',
+      name: 'boneco'
+    },/*
+    {
+      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471015937999232/hood.png',
+      frames: 10,
+      width: 16,
+      height: 16,
+      spriteWidth: 160,
+      id: 'idunicocapuz',
+      name: 'boneco'
+    },*/
+    {
+      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471032237064202/hair.png',
+      frames: 10,
+      width: 16,
+      height: 16,
+      spriteWidth: 160,
+      id: 'idunicocabelo',
       name: 'boneco'
     },
     {
-      path: 'http://161.35.10.72:3000/files/1592225234791-816771456cloak.png',
-      frames: 3,
+      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471034955104427/cloak.png',
+      frames: 10,
       width: 16,
       height: 16,
-      spriteWidth: 48,
-      name: 'capa'
-    }
+      spriteWidth: 160,
+      id: 'idunicocapa',
+      name: 'boneco'
+    },
+    {
+      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471045612699699/leg.png',
+      frames: 10,
+      width: 16,
+      height: 16,
+      spriteWidth: 160,
+      id: 'idunicoperna',
+      name: 'boneco'
+    },
   ];
 
   constructor() { }

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, ElementRef, ViewChild} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
+
 @Component({
   selector: 'pixel-image-display',
   templateUrl: './image-display.component.html',
@@ -28,6 +29,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 export class ImageDisplayComponent implements OnInit {
 
   @ViewChild('image', { static: false }) public image: ElementRef;
+  @ViewChild('myCanvas', {static: false}) myCanvas: ElementRef;
 
   @Input() frames;
   @Input() width;
@@ -35,9 +37,10 @@ export class ImageDisplayComponent implements OnInit {
   @Input() spriteWidth;
   @Input() imgPath;
   @Input() name;
+  @Input() id;
 
    animationInterval;
-   spriteSheet = document.getElementById('image');
+   spriteSheet = document.getElementById(this.id);
    widthOfSpriteSheet: any;
    widthOfEachSprite: any;
 
@@ -50,9 +53,13 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.spriteSheet = document.getElementById('image');
-    console.log(this.width);
-    this.startAnimation();
+
+    setTimeout(() => {
+      this.spriteSheet = document.getElementById(this.id);
+      setTimeout(() => {
+       this.startAnimation();
+     });
+    });
   }
 
 
@@ -63,21 +70,23 @@ export class ImageDisplayComponent implements OnInit {
 
   startAnimation() {
 
+
     this.widthOfSpriteSheet = this.spriteWidth;
 
     let position = this.width; // start position for the image
+   // let positionY = this.width;
     const speed = 100; // in millisecond(ms)
     const diff = this.width; // difference between two sprites
 
-    this.animationInterval = setInterval(() => {
 
-      console.log(this.name, position);
+    this.animationInterval = setInterval(() => {
 
       this.spriteSheet.style.backgroundPosition = `${-position}px 0px`;
       if (position < this.widthOfSpriteSheet) {
         position = position + diff;
       } else {
         position = this.width;
+       // if (positionY < this.height) {}
       }
     }, speed);
   }
