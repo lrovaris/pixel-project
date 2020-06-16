@@ -7,22 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateCharacterPageComponent implements OnInit {
 
-  imagesArray = [
-    {
-      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471037656367204/Char_Base.png',
-      frames: 10,
-      width: 16,
-      height: 16,
-      spriteWidth: 160,
-      id: 'idunicodoboneco',
-      name: 'boneco'
-    },/*
+  imagesArray = [/*
     {
       path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471015937999232/hood.png',
       frames: 10,
       width: 16,
       height: 16,
       spriteWidth: 160,
+      z: 2,
+      animation: [
+        {
+          name: 'iddle',
+          frames: 4
+        },
+        {
+          name: 'run',
+          frames: 6
+        }
+      ],
       id: 'idunicocapuz',
       name: 'boneco'
     },*/
@@ -32,6 +34,17 @@ export class CreateCharacterPageComponent implements OnInit {
       width: 16,
       height: 16,
       spriteWidth: 160,
+      z: 2,
+      animation: [
+        {
+          name: 'iddle',
+          frames: 4
+        },
+        {
+          name: 'run',
+          frames: 6
+        }
+      ],
       id: 'idunicocabelo',
       name: 'boneco'
     },
@@ -41,6 +54,17 @@ export class CreateCharacterPageComponent implements OnInit {
       width: 16,
       height: 16,
       spriteWidth: 160,
+      z: 2,
+      animation: [
+        {
+          name: 'iddle',
+          frames: 4
+        },
+        {
+          name: 'run',
+          frames: 6
+        }
+      ],
       id: 'idunicocapa',
       name: 'boneco'
     },
@@ -50,14 +74,56 @@ export class CreateCharacterPageComponent implements OnInit {
       width: 16,
       height: 16,
       spriteWidth: 160,
+      z: 2,
+      animation: [
+        {
+          name: 'iddle',
+          frames: 4
+        },
+        {
+          name: 'run',
+          frames: 6
+        }
+      ],
       id: 'idunicoperna',
+      name: 'boneco'
+    },
+    {
+      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471037656367204/Char_Base.png',
+      frames: 10,
+      width: 16,
+      height: 16,
+      spriteWidth: 160,
+      z: 1,
+      animation: [
+        {
+          name: 'iddle',
+          frames: 4
+        },
+        {
+          name: 'run',
+          frames: 6
+        }
+      ],
+      id: 'idunicodoboneco',
       name: 'boneco'
     },
   ];
 
+  selectAnimation: any;
+
   constructor() { }
 
   ngOnInit() {
+    this.selectAnimation = 0;
+  }
+
+  changeAniamtion() {
+    if (this.selectAnimation === 0 ) {
+      this.selectAnimation = 1;
+    } else {
+      this.selectAnimation = 0;
+    }
   }
 
 }
