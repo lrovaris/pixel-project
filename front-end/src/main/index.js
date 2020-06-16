@@ -7,6 +7,7 @@ const url = require("url");
 const path = require("path");
 
 const download_metadata = require('./download-metadata');
+const get_image = require('./get-image');
 
 let appWindow
 
@@ -66,4 +67,13 @@ ipcMain.on("load-metadata", async(event, arg) =>{
 
   let download_action = await download_metadata.download_images(metadata)
 
+})
+
+ipcMain.on("get-image", async(event, arg) =>{
+
+  let image = await get_image.get_local_image(arg);
+
+  console.log("image", image);
+
+  event.sender.send('get-image-reply', image)
 })
