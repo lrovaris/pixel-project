@@ -21,11 +21,13 @@ function initApp() {
 
   // Electron Build Path
   appWindow.loadURL(
-    url.format({
-      pathname: path.join(__dirname, `../../dist/index.html`),
-      protocol: "file:",
-      slashes: true
-    })
+    'http://localhost:4200'
+
+    // url.format({
+    //   pathname: path.join(__dirname, `../../dist/index.html`),
+    //   protocol: "file:",
+    //   slashes: true
+    // })
   );
 
 appWindow.on('closed', function () {

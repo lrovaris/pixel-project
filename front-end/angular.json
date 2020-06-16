@@ -30,7 +30,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              { "input": "src/main/index.js", "inject": false }
+            ]
           },
           "configurations": {
             "production": {
@@ -38,6 +40,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "index.js",
+                  "with": "index.prod.js"
                 }
               ],
               "optimization": true,
@@ -95,7 +101,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              { "input": "src/main/index.js", "inject": false }
+            ]
           }
         },
         "lint": {

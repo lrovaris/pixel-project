@@ -44,3 +44,11 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+metadata.json
+
+# exclude everything
+metadata/*
+
+# exception to the rule
+!metadata/.gitkeep
