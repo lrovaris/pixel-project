@@ -23,7 +23,6 @@ async function save_metadata_json(metadata_json) {
 }
 
 async function download_images(metadata) {
-  metadata = JSON.parse(metadata)
 
   for (var i = 0; i < metadata.length; i++) {
     let file = fs.createWriteStream(`./metadata/${metadata[i].path}`);

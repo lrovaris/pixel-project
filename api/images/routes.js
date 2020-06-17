@@ -69,12 +69,9 @@ router.post ('/upload', upload.array('docs'), async(req,res) =>{
     res.stats(400).json({ message: "Arquivos inválidos" })
   }
 
-
   let this_files = []
 
   let file_obj = req.files[0];
-
-  let colors
 
   await controller.get_metadata_from_image(file_obj.filename, (metadata) =>{
 
