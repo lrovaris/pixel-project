@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ImagesService} from '../../services/images.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-upload',
@@ -19,10 +20,25 @@ export class UploadComponent implements OnInit {
   imgName = 'Escolha uma foto';
   checkEnviou = false;
   animationArray = [];
+  uploaded: boolean;
+  path: any;
+  height: any;
+  width: any;
+  animationSelect: any;
+  frameWidth: any;
+  id: any;
 
-  constructor(private imageService: ImagesService) { }
+  form: FormGroup;
+
+  constructor(private imageService: ImagesService, private formBuild: FormBuilder) {
+   this.form = this.formBuild.group({
+      name: [null],
+      frames: [null]
+    });
+  }
 
   ngOnInit() {
+    this.uploaded = false;
   }
 
   addPicutre(event) {
@@ -41,27 +57,42 @@ export class UploadComponent implements OnInit {
       this.formData.append('docs', this.fileToUpload[i]);
     }
     this.imageService.uploadPhoto(this.formData).subscribe((data: any) => {
-      console.log(data.info_files[0]);
-      alert(data.message);
-      const metadata = {name: data.info_files[0].nome};
-      this.formData = new FormData();
 
-      this.imageService.createImage(metadata, data.info_files[0].path).subscribe((data2: any) => {
-        console.log(data2);
-        alert(data2.message);
-        setTimeout(() => {
-          this.buttomState = 'Concluído';
-          this.styleConcluido = true;
-          setTimeout(() => {
-            this.buttomState = 'Enviar';
-            this.styleConcluido = false;
-          }, 2000);
-        }, 100);
-      });
+      this.path = data.info_files[0].path;
+      this.width = data.info_files[0].metadata.width;
+      this.height = data.info_files[0].metadata.height;
+      this.formData = new FormData();
+      this.uploaded = true;
+
+      console.log(data);
+
+    });
+  }
+
+  insercaoMetadados(name, framesQuantity) {
+
+    const metadata = {
+      name,
+      height: this.height,
+      width: this.frameWidth,
+      spriteWidth: this.width,
+      framesQuantity,
+      animations: this.animationArray
+    };
+
+    console.log(metadata);
+    this.imageService.createImage(metadata, this.path).subscribe((data2: any) => {
+      console.log(data2);
+      alert(data2.message);
+      this.uploaded = false;
     });
   }
 
   adicionarAnimation( name, frames ) {
+   if (!this.frameWidth) {
+     this.frameWidth =  this.width / this.form.value.frames ;
+     this.animationSelect = 0;
+   }
    if (name === '' || frames === '') {
      return;
    } else {

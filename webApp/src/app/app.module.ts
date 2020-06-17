@@ -10,13 +10,16 @@ import { UploadComponent } from './pages/upload/upload.component';
 import { ListComponent } from './pages/list/list.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ImageDisplayComponent} from './pages/upload/components/image-display/image-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UploadComponent,
     ListComponent,
-    HeaderComponent
+    HeaderComponent,
+    ImageDisplayComponent
   ],
   imports: [
     HttpClientModule,
@@ -24,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
