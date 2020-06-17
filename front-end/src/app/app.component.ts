@@ -18,7 +18,6 @@ export class AppComponent implements OnInit{
     this.ipc.send('load-metadata');
     this.ipc.on('load-metadata-reply', (e: any, a: any) => {
       console.log(a);
-      console.log('aaa');
       this.metadataService.setMetadata(a);
     });
   }
