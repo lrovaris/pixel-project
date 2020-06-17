@@ -2,8 +2,32 @@
   cursor: pointer;
   border: 1px solid #000;
   &::after {
-    background-color: #000;
-    color: white;
+    background-color: #ffc107;
+    color: #000000;
     content: 'Pesquisar' !important;
   }
 }
+
+.input-text {
+  cursor: pointer;
+  border: 1px solid black;box-shadow: none !important;
+  background-color: #ffc107;
+  color: black
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+::-webkit-scrollbar {
+  width: 0;
+}
+

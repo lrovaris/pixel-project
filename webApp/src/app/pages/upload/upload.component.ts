@@ -16,8 +16,9 @@ export class UploadComponent implements OnInit {
   user: any;
   imgPath = '';
   styleConcluido = false;
-  imgName = 'Escolha uma Foto';
+  imgName = 'Escolha uma foto';
   checkEnviou = false;
+  animationArray = [];
 
   constructor(private imageService: ImagesService) { }
 
@@ -58,6 +59,19 @@ export class UploadComponent implements OnInit {
         }, 100);
       });
     });
+  }
+
+  adicionarAnimation( name, frames ) {
+   if (name === '' || frames === '') {
+     return;
+   } else {
+     this.animationArray.push({name, frames});
+   }
+  }
+
+  removeFile(nome) {
+    const index = this.animationArray.indexOf(nome);
+    if (index !== -1) {this.animationArray.splice(index, 1); }
   }
 
 }

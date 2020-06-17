@@ -4,8 +4,9 @@
     <list default="true" id="90258cf2-ebcb-44d1-a8b6-659a1216df15" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,95 +19,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="89" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="89" />
+            <state relative-caret-position="484">
+              <caret line="97" column="29" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#fieldset#1;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#fieldset#1;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#fieldset#2;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.scss">
+        <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1495">
+              <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="736">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/list/list.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
-              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="116" column="10" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#pixel-image-display#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="122" column="31" lean-forward="true" selection-start-line="122" selection-start-column="31" selection-end-line="122" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/app.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/styles.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/design-system.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-124">
-              <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+              <caret line="1" selection-start-line="1" selection-end-line="14" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -139,7 +110,6 @@
         <option value="$PROJECT_DIR$/webApp/src/app/header/header.component.scss" />
         <option value="$PROJECT_DIR$/webApp/src/app/header/header.component.html" />
         <option value="$PROJECT_DIR$/webApp/src/app/header/header.component.ts" />
-        <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.scss" />
         <option value="$PROJECT_DIR$/webApp/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/webApp/src/app/services/upload.service.ts" />
         <option value="$PROJECT_DIR$/webApp/src/app/services/url.service.ts" />
@@ -147,7 +117,6 @@
         <option value="$PROJECT_DIR$/webApp/src/app/pages/list/list.component.html" />
         <option value="$PROJECT_DIR$/webApp/src/app/services/images.service.ts" />
         <option value="$PROJECT_DIR$/webApp/src/app/pages/list/list.component.ts" />
-        <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/services/ipc.service.ts" />
         <option value="$PROJECT_DIR$/front-end/src/typings.d.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/services/metadata.service.ts" />
@@ -162,7 +131,6 @@
         <option value="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.ts" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/botton-left-menu/botton-left-menu.component.html" />
-        <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.scss" />
         <option value="$PROJECT_DIR$/front-end/design-system/design-system.module.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.scss" />
@@ -171,6 +139,9 @@
         <option value="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.ts" />
+        <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.scss" />
+        <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts" />
+        <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.html" />
       </list>
     </option>
   </component>
@@ -193,18 +164,18 @@
             <path>
               <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="webApp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="webApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="webApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -212,6 +183,27 @@
               <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
               <item name="webApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
+              <item name="webApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
+              <item name="webApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="upload" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -262,18 +254,19 @@
       <workItem from="1591893949836" duration="6826000" />
       <workItem from="1591979092112" duration="2719000" />
       <workItem from="1591986094205" duration="3747000" />
-      <workItem from="1592223887935" duration="28674000" />
+      <workItem from="1592223887935" duration="28804000" />
+      <workItem from="1592397005764" duration="4444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42288000" />
+    <option name="totallyTimeSpent" value="46862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -286,7 +279,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32923833" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32923833" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -317,14 +310,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/front-end/tslint.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="79" column="24" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/app.js" />
     <entry file="file://$PROJECT_DIR$/webApp/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -413,13 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/list/list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/list/list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
@@ -434,13 +412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -475,13 +446,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/main/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/main/app.js" />
     <entry file="file://$PROJECT_DIR$/front-end/metadata.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -571,31 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/botton-left-menu/botton-left-menu.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -620,13 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-124">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -634,17 +567,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/design-system.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -662,42 +598,129 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.html">
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/design-system.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="6" column="89" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="89" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html">
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        <state relative-caret-position="23">
+          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webApp/node_modules/bootstrap/dist/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6675">
+          <caret line="5" column="40921" selection-start-line="5" selection-start-column="40921" selection-end-line="5" selection-end-column="40921" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#pixel-image-display#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#28573#28828#2" expanded="true" />
+            <element signature="e#29425#29599#1" expanded="true" />
+            <element signature="e#29639#29894#1" expanded="true" />
+            <element signature="e#32212#32526#2" expanded="true" />
+            <element signature="e#33135#33309#1" expanded="true" />
+            <element signature="e#33349#33663#1" expanded="true" />
+            <element signature="e#62668#62876#2" expanded="true" />
+            <element signature="e#63105#63262#2" expanded="true" />
+            <element signature="e#63665#63821#2" expanded="true" />
+            <element signature="e#65308#65482#1" expanded="true" />
+            <element signature="e#79298#79555#2" expanded="true" />
+            <element signature="e#80422#80685#2" expanded="true" />
+            <element signature="e#110844#111040#2" expanded="true" />
+            <element signature="e#111086#111283#2" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="122" column="31" lean-forward="true" selection-start-line="122" selection-start-column="31" selection-end-line="122" selection-end-column="31" />
+        <state relative-caret-position="18">
+          <caret line="103" column="22" lean-forward="true" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/image-display/image-display.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="116" column="10" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
+        <state relative-caret-position="625">
+          <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
           <folding>
             <element signature="e#0#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webApp/node_modules/bootstrap/dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="2742" column="27" selection-start-line="2742" selection-start-column="21" selection-end-line="2742" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/list/list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-start-line="1" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1495">
+          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="97" column="29" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#fieldset#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#fieldset#1;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#fieldset#1;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#fieldset#2;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#fieldset#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

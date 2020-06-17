@@ -114,7 +114,7 @@ export class ImageDisplayComponent implements OnInit {
           for (let i = 0; i <= this.selectedAnimation; i++) {
             finalPosition = finalPosition + (this.animation[i].frames * this.width);
           }
-          
+
 
         }
 
