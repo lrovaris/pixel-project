@@ -11,7 +11,12 @@
     <div style="position: fixed; width: 70%; right: 0; top: 0; height: 100%; background-color: #727272">
       <div class="col-sm-12">
         <div class="row">
-          <button class="btn btn-warning" (click)="changeAniamtion()">change</button>
+          <fieldset class="form-group">
+            <label for="seguradora" style="font-size: 28px">Animation Select</label>
+            <select [(ngModel)]="selectAnimation"  class="form-control input-text" id="seguradora" [ngModelOptions]="{standalone: true}">
+              <option [value]="i" *ngFor="let animation of imagesArray[0].metadata.animations; let i = index">{{animation.name}}</option>
+            </select>
+          </fieldset>
         </div>
         <div class="row">
           <div style="display: flex; justify-content: center; margin: 50% auto;" class="col-sm-10">

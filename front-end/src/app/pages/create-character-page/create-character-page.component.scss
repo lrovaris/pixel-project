@@ -1,3 +1,36 @@
 .thisImage {
   image-rendering: pixelated;
 }
+
+.custom-file-label {
+  cursor: pointer;
+  border: 1px solid #000;
+  &::after {
+    background-color: #000;
+    color: #fff;
+    content: 'Pesquisar' !important;
+  }
+}
+
+.input-text {
+  cursor: pointer;
+  border: 1px solid black;box-shadow: none !important;
+  background-color: #fff;
+  color: #000
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+::-webkit-scrollbar {
+  width: 0;
+}
