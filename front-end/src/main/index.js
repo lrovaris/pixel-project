@@ -59,8 +59,8 @@ ipcMain.on("load-metadata", async(event, arg) =>{
 
   const metadata = await download_metadata.fetch_metadata_info();
 
-  console.log(metadata);
-
+  metadata = JSON.parse(metadata)
+  
   event.sender.send('load-metadata-reply', metadata)
 
   let save_action = await download_metadata.save_metadata_json(metadata)
