@@ -1,7 +1,7 @@
 <div class="row" style="margin: 0; padding: 1rem">
   <div class="col-sm-4">
    <div class="row">
-     <pixel-botton-left-menu></pixel-botton-left-menu>
+     <pixel-botton-left-menu ></pixel-botton-left-menu>
    </div>
    <div class="row">
      <pixel-left-image-list></pixel-left-image-list>
@@ -17,7 +17,16 @@
           <div style="display: flex; justify-content: center; margin: 50% auto;" class="col-sm-10">
             <div class="row">
 
-             <pixel-image-display  style="transform: scale(15);" *ngFor="let image of imagesArray; let i = index" [frames]="image.frames" [height]="image.height" [width]="image.width" [spriteWidth]="image.spriteWidth" [imgPath]="image.path" [name]="image.name" [id]="image.id" [animation]="image.animation" [style.z-index]="image.z" [selectedAnimation]="selectAnimation" ></pixel-image-display>
+             <pixel-image-display  style="transform: scale(15);" *ngFor="let image of imagesArray; let i = index" [frames]="image.frames"
+                                   [height]="image.height"
+                                   [width]="image.width"
+                                   [spriteWidth]="image.spriteWidth"
+                                   [imgPath]="image.path"
+                                   [name]="image.name"
+                                   [id]="image.id"
+                                   [animation]="image.animation"
+                                   [style.z-index]="image.z"
+                                   [selectedAnimation]="selectAnimation" ></pixel-image-display>
 
             </div>
           </div>

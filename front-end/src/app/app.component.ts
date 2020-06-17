@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.ipc.send('load-metadata');
     this.ipc.on('load-metadata-reply', (e: any, a: any) => {
+      console.log(a);
       this.metadataService.setMetadata(a);
     });
   }

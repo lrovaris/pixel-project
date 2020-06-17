@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'pixel-botton-left-menu',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./botton-left-menu.component.scss']
 })
 export class BottonLeftMenuComponent implements OnInit {
+
 
   constructor() { }
 

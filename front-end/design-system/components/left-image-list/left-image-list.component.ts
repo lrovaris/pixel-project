@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'pixel-left-image-list',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-image-list.component.scss']
 })
 export class LeftImageListComponent implements OnInit {
+
+  @Input() arrayMetadata;
 
   constructor() { }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MetadataService} from '../../services/metadata.service';
 
 @Component({
   selector: 'pixel-create-character-page',
@@ -7,114 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateCharacterPageComponent implements OnInit {
 
-  imagesArray = [/*
-    {
-      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471015937999232/hood.png',
-      frames: 10,
-      width: 16,
-      height: 16,
-      spriteWidth: 160,
-      z: 2,
-      animation: [
-        {
-          name: 'iddle',
-          frames: 4
-        },
-        {
-          name: 'run',
-          frames: 6
-        }
-      ],
-      id: 'idunicocapuz',
-      name: 'boneco'
-    },*/
-    {
-      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471032237064202/hair.png',
-      frames: 10,
-      width: 16,
-      height: 16,
-      spriteWidth: 160,
-      z: 2,
-      animation: [
-        {
-          name: 'iddle',
-          frames: 4
-        },
-        {
-          name: 'run',
-          frames: 6
-        }
-      ],
-      id: 'idunicocabelo',
-      name: 'boneco'
-    },
-    {
-      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471034955104427/cloak.png',
-      frames: 10,
-      width: 16,
-      height: 16,
-      spriteWidth: 160,
-      z: 2,
-      animation: [
-        {
-          name: 'iddle',
-          frames: 4
-        },
-        {
-          name: 'run',
-          frames: 6
-        }
-      ],
-      id: 'idunicocapa',
-      name: 'boneco'
-    },
-    {
-      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471045612699699/leg.png',
-      frames: 10,
-      width: 16,
-      height: 16,
-      spriteWidth: 160,
-      z: 2,
-      animation: [
-        {
-          name: 'iddle',
-          frames: 4
-        },
-        {
-          name: 'run',
-          frames: 6
-        }
-      ],
-      id: 'idunicoperna',
-      name: 'boneco'
-    },
-    {
-      path: 'https://cdn.discordapp.com/attachments/280427487161221121/722471037656367204/Char_Base.png',
-      frames: 10,
-      width: 16,
-      height: 16,
-      spriteWidth: 160,
-      z: 1,
-      animation: [
-        {
-          name: 'iddle',
-          frames: 4
-        },
-        {
-          name: 'run',
-          frames: 6
-        }
-      ],
-      id: 'idunicodoboneco',
-      name: 'boneco'
-    },
-  ];
+  imagesArray = [];
+
 
   selectAnimation: any;
 
-  constructor() { }
+  constructor(private metadataService: MetadataService) { }
 
   ngOnInit() {
+    setTimeout( () => {
+      setTimeout( () => {
+        this.imagesArray = this.metadataService.getMetadata();
+        console.log(this.imagesArray);
+      });
+    }, 1000);
+
     this.selectAnimation = 0;
   }
 
