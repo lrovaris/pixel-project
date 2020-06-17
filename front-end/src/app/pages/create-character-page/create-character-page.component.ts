@@ -10,6 +10,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
   imagesArray = [];
 
+  metadataArray = [];
 
   selectAnimation: any;
 
@@ -18,9 +19,8 @@ export class CreateCharacterPageComponent implements OnInit {
   ngOnInit() {
     setTimeout( () => {
       setTimeout( () => {
-        this.imagesArray = this.metadataService.getMetadata();
-        console.log(this.imagesArray);
-        console.log('a');
+        this.metadataArray = this.metadataService.getMetadata();
+        this.imagesArray.push(this.metadataArray[0]);
       });
     }, 1000);
 
@@ -33,6 +33,10 @@ export class CreateCharacterPageComponent implements OnInit {
     } else {
       this.selectAnimation = 0;
     }
+  }
+
+  pushImage(image) {
+    this.imagesArray.push(image);
   }
 
 }

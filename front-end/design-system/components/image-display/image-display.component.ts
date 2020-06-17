@@ -51,7 +51,7 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    console.log(this.frames,this.width,this.height,this.spriteWidth,this.imgPath,this.name,this.id,this.animation,this.selectedAnimation);
     setTimeout(() => {
       this.spriteSheet = document.getElementById(this.id);
       setTimeout(() => {

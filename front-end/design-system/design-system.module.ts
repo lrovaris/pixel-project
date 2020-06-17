@@ -5,9 +5,10 @@ import { BottonLeftMenuComponent } from './components/botton-left-menu/botton-le
 import { LeftImageListComponent } from './components/left-image-list/left-image-list.component';
 import { ImageDisplayComponent } from './components/image-display/image-display.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ImageInListComponent } from './components/left-image-list/image-in-list/image-in-list.component';
 
 @NgModule({
-  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent],
+  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule

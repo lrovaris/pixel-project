@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'pixel-left-image-list',
@@ -9,9 +9,26 @@ export class LeftImageListComponent implements OnInit {
 
   @Input() arrayMetadata;
 
+  toggleImages: boolean;
+
+  @Output() image = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+    this.toggleImages = false;
+    setTimeout(() => {
+      setTimeout(() => {
+        console.log(this.arrayMetadata);
+        setTimeout(() => {
+          this.toggleImages = true;
+        }, 1);
+      }, 1000);
+    }, 1000);
+  }
+
+  log(x) {
+    this.image.emit(x);
   }
 
 }
