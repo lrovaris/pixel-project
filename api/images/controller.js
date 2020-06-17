@@ -3,6 +3,8 @@ let cache = require('../memoryCache');
 
 const fs = require('fs');
 
+const { get_metadata_from_image } = require("./controllers/uploadController")
+
 async function get_metadata() {
   return cache.get('images') || await db.get_metadata();
 }
@@ -60,4 +62,4 @@ async function delete_metadata(meta_id) {
 }
 
 
-module.exports = {  get_metadata, delete_metadata };
+module.exports = {  get_metadata, delete_metadata, get_metadata_from_image };
