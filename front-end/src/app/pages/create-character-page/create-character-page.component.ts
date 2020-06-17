@@ -20,6 +20,7 @@ export class CreateCharacterPageComponent implements OnInit {
       setTimeout( () => {
         this.imagesArray = this.metadataService.getMetadata();
         console.log(this.imagesArray);
+        console.log('a');
       });
     }, 1000);
 
