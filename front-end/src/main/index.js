@@ -8,6 +8,7 @@ const path = require("path");
 
 const download_metadata = require('./download-metadata');
 const get_image = require('./get-image');
+const change_image_color = require('./change-image-color')
 
 let appWindow
 
@@ -71,9 +72,16 @@ ipcMain.on("load-metadata", async(event, arg) =>{
 
 ipcMain.on("get-image", async(event, arg) =>{
 
-  let image = await get_image.get_local_image(arg);
+  await get_image.get_local_image(arg, (image) => {
+    event.sender.send('get-image-reply', image)
+  });
 
-  console.log("image", image);
+})
 
-  event.sender.send('get-image-reply', image)
+ipcMain.on("change-color", async(event, arg) => {
+
+  change_image_color(arg.path, arg.old_color, arg.new_color, (image) => {
+    event.sender.send('change-color-reply', image)
+  })
+
 })

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-async function get_local_image(path) {
+async function get_local_image(path, callback) {
 
   let img = fs.readFileSync(`./metadata/${path}`)
 
@@ -8,7 +8,7 @@ async function get_local_image(path) {
 
   let imgSrcString = `data:image/png;base64,${base64Image}`;
 
-  return imgSrcString;
+  callback(imgSrcString);
 }
 
 module.exports = {
