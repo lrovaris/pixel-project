@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { IpcService} from './services/ipc.service';
 import { MetadataService} from './services/metadata.service';
+import { PaletteService} from './services/palette.service';
 
 @Component({
   selector: 'app-root',
@@ -10,16 +11,21 @@ import { MetadataService} from './services/metadata.service';
 export class AppComponent implements OnInit{
   title = 'front-end';
 
-  constructor(private ipc: IpcService, private metadataService: MetadataService) {
+  constructor(private ipc: IpcService, private metadataService: MetadataService, private paletteService: PaletteService) {
 
   }
 
   ngOnInit() {
-    this.ipc.send('load-metadata');
     this.ipc.on('load-metadata-reply', (e: any, a: any) => {
-      console.log(a);
-      this.metadataService.setMetadata(a);
+      this.metadataService.setMetadata(a);      
     });
+
+    this.ipc.on('load-palettes-reply', (e: any, a: any) => {
+      this.paletteService.setPalettes(a);
+    });
+
+    this.ipc.send('load-metadata');
+    this.ipc.send('load-palettes');
   }
 
 }
