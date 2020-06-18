@@ -27,6 +27,7 @@ export class UploadComponent implements OnInit {
   animationSelect: any;
   frameWidth: any;
   id: any;
+  colors = [];
 
   form: FormGroup;
 
@@ -64,6 +65,7 @@ export class UploadComponent implements OnInit {
       this.formData = new FormData();
       this.uploaded = true;
 
+      this.colors = data.info_files[0].metadata.colors;
       console.log(data);
 
     });
@@ -72,6 +74,7 @@ export class UploadComponent implements OnInit {
   insercaoMetadados(name, framesQuantity) {
 
     const metadata = {
+      colors: this.colors,
       name,
       height: this.height,
       width: this.frameWidth,

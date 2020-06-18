@@ -1,4 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~design-system/variables.scss";
 
-
+* {
+  outline: solid 1px green
+}
