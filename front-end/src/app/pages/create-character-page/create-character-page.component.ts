@@ -36,6 +36,7 @@ export class CreateCharacterPageComponent implements OnInit {
   }
 
   pushImage(image) {
+    this.imagesArray = [];
     this.imagesArray.push(image);
   }
 
