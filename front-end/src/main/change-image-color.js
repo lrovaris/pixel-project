@@ -2,7 +2,9 @@ const PNG = require('png-js');
 const fs = require("fs");
 const SPNG = require("pngjs").PNG;
 
-function change_image_color(path, old_color, new_color) {
+const { get_local_image } = require("./get-image")
+
+function change_image_color(path, old_color, new_color, callback) {
 
   const base_img = `./metadata/${path}`;
 
@@ -38,6 +40,13 @@ function change_image_color(path, old_color, new_color) {
         }
       }
 
-      this.pack().pipe(fs.createWriteStream("temp.png"));
+      this
+      .pack()
+      .pipe(fs.createWriteStream("./metadata/temp.png"))
+      .on("end", () => {
+        get_local_image("temp.png", (image) => {
+          callback(image)
+        })
+      })
     });
 }

@@ -11,7 +11,7 @@ async function fetch_metadata_info() {
 
 async function save_metadata_json(metadata_json) {
   try {
-    fs.writeFileSync('metadata.json', metadata_json, 'utf-8');
+    fs.writeFileSync('metadata.json', JSON.stringify(metadata_json), 'utf-8');
 
     return true
   }
