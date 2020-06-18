@@ -6,9 +6,10 @@ import { LeftImageListComponent } from './components/left-image-list/left-image-
 import { ImageDisplayComponent } from './components/image-display/image-display.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ImageInListComponent } from './components/left-image-list/image-in-list/image-in-list.component';
+import { RightMenuComponent } from './components/right-menu/right-menu.component';
 
 @NgModule({
-  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent],
+  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule
@@ -17,7 +18,8 @@ import { ImageInListComponent } from './components/left-image-list/image-in-list
     SimpleButtonComponent,
     BottonLeftMenuComponent,
     LeftImageListComponent,
-    ImageDisplayComponent
+    ImageDisplayComponent,
+    RightMenuComponent
   ]
 })
 export class DesignSystemModule { }
