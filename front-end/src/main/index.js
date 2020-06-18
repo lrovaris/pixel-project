@@ -7,6 +7,7 @@ const url = require("url");
 const path = require("path");
 
 const download_metadata = require('./download-metadata');
+const download_palette = require('./download-palettes')
 const get_image = require('./get-image');
 const change_image_color = require('./change-image-color')
 
@@ -68,6 +69,17 @@ ipcMain.on("load-metadata", async(event, arg) =>{
 
   let download_action = await download_metadata.download_images(metadata)
 
+})
+
+ipcMain.on("load-palettes", async(event, arg) => {
+
+  let palettes = await download_palette.fetch_palette_info()
+
+  palettes = JSON.parse(palettes);
+
+  event.sender.send('load-palettes-reply', palettes)
+
+  let save_action = await download_palette.save_palette_json(palettes)
 })
 
 ipcMain.on("get-image", async(event, arg) =>{

@@ -32,6 +32,7 @@ async function initialize_database() {
   console.log("Inicializando cache");
 
   await require('./images/db').get_metadata();
+  await require('./colors/db').get_color_palletes();
 }
 
 app.listen(3000, async () => {
