@@ -51,7 +51,7 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.frames,this.width,this.height,this.spriteWidth,this.imgPath,this.name,this.id,this.animation,this.selectedAnimation);
+    // console.log(this.frames,this.width,this.height,this.spriteWidth,this.imgPath,this.name,this.id,this.animation,this.selectedAnimation);
     setTimeout(() => {
       this.spriteSheet = document.getElementById(this.id);
       setTimeout(() => {
@@ -59,8 +59,6 @@ export class ImageDisplayComponent implements OnInit {
      });
     });
   }
-
-
 
   stopAnimation() {
     clearInterval(this.animationInterval);
@@ -87,8 +85,6 @@ export class ImageDisplayComponent implements OnInit {
       }
     }
 
-
-
     const speed = 98; // in millisecond(ms)
     const diff = this.width; // difference between two sprites
     this.spriteSheet.style.backgroundPosition = `${-position}px 0px`;
@@ -107,19 +103,14 @@ export class ImageDisplayComponent implements OnInit {
           position = this.width;
           finalPosition = this.width * this.animation[0].frames;
         } else {
-
           for (let i = 0; i <= this.selectedAnimation - 1; i++) {
             position = position + (this.animation[i].frames * this.width);
           }
           for (let i = 0; i <= this.selectedAnimation; i++) {
             finalPosition = finalPosition + (this.animation[i].frames * this.width);
           }
-
-
         }
-
         this.spriteSheet.style.backgroundPosition = `${-position}px 0px`;
-       // if (positionY < this.height) {}
       }
     }, speed);
   }

@@ -61,10 +61,18 @@ export class CreateCharacterPageComponent implements OnInit {
   }
 
   setBase(image){
+    this.imageService.ChangeImageColor(image.path, image.metadata.colors[0], {r:255, g:255, b:255,a: 255}, (base64) =>{
+      this.imagesArray = [];
 
-    this.imagesArray = [];
+      image.display = base64
 
-    this.imagesArray.push(image);
+      console.log(image);
+
+      this.imagesArray.push(image);
+    })
+
   }
+
+
 
 }
