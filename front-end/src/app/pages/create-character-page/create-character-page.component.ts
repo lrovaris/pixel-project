@@ -63,7 +63,10 @@ export class CreateCharacterPageComponent implements OnInit {
 
   setBase(image) {
 
-    this.imageService.ChangeImageColor(image.path, image.metadata.colors[0], {r: 0, g: 0, b:0, a: 255}, (base64) => {
+    this.imageService.ChangeImageColor(image.path, [
+      { old_color: image.metadata.colors[0], new_color: {r: 0, g: 0, b:0, a: 255} },
+      { old_color: image.metadata.colors[1], new_color: {r: 50, g: 50, b:50, a: 255} }
+    ], (base64) => {
 
       this.imagesArray = [];
 
