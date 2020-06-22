@@ -8,7 +8,10 @@ async function get_local_image(path, callback) {
 
   let imgSrcString = `data:image/png;base64,${base64Image}`;
 
-  callback(imgSrcString);
+  callback({
+    name: path,
+    newImg: imgSrcString
+  });
 }
 
 module.exports = {
