@@ -9,7 +9,7 @@ const path = require("path");
 const download_metadata = require('./download-metadata');
 const download_palette = require('./download-palettes')
 const get_image = require('./get-image');
-const change_image_color = require('./change-image-color')
+const { change_image_color } = require('./change-image-color')
 
 let appWindow
 
