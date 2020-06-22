@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MetadataService} from '../../services/metadata.service';
 
+import {ImageService} from '../../services/image.service';
+
 @Component({
   selector: 'pixel-create-character-page',
   templateUrl: './create-character-page.component.html',
@@ -14,13 +16,16 @@ export class CreateCharacterPageComponent implements OnInit {
 
   selectAnimation: any;
 
-  constructor(private metadataService: MetadataService) { }
+  constructor(private metadataService: MetadataService, private imageService: ImageService) { }
 
   ngOnInit() {
     setTimeout( () => {
       setTimeout( () => {
         this.metadataArray = this.metadataService.getMetadata();
-        this.imagesArray.push(this.metadataArray[0]);
+
+        const defaultImage = this.metadataArray[0];
+
+        this.setBase(defaultImage);
       });
     }, 1000);
 
@@ -36,8 +41,20 @@ export class CreateCharacterPageComponent implements OnInit {
   }
 
   pushImage(image) {
-    this.imagesArray = [];
-    this.imagesArray.push(image);
+    this.setBase(image);
+  }
+
+  setBase(image){
+
+    this.imageService.GetImage(image.path, (newPath) => {
+
+      this.imagesArray = [];
+
+      image.path = newPath;
+
+      this.imagesArray.push(image);
+    })
+
   }
 
 }
