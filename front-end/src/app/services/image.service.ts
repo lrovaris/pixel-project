@@ -25,7 +25,6 @@ export class ImageService {
   public ChangeImageColor(imagePath: string, old_color: any, new_color: any, callback: any) {
 
     this.ipc.on('change-color-reply', (e: any, a: any) => {
-      console.log("recebe a resposta?");
 
       if(a.name === imagePath){
         callback(a.newImg);
