@@ -7,12 +7,14 @@ import { DesignSystemModule } from '../../design-system/design-system.module';
 import { LoadingPageComponent } from './pages/loading-page/loading-page.component';
 import { CreateCharacterPageComponent } from './pages/create-character-page/create-character-page.component';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './pages/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoadingPageComponent,
-    CreateCharacterPageComponent
+    CreateCharacterPageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
