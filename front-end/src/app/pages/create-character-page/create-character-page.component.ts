@@ -30,6 +30,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
           this.imageService.GetImage(metadataObj.path, (base64) => {
 
+            metadataObj.defaultDisplay = base64;
             metadataObj.display = base64;
             iterator++;
 
@@ -62,9 +63,17 @@ export class CreateCharacterPageComponent implements OnInit {
 
   setBase(image) {
 
-    this.imagesArray = [];
+    this.imageService.ChangeImageColor(image.path, image.metadata.colors[0], {r: 0, g: 0, b:0, a: 255}, (base64) => {
 
-    this.imagesArray.push(image);
+      this.imagesArray = [];
+
+      image.display = base64
+
+      this.imagesArray.push(image);
+
+    })
+
+
   }
 
 }

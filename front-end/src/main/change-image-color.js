@@ -43,10 +43,12 @@ function change_image_color(path, old_color, new_color, callback) {
       this
       .pack()
       .pipe(fs.createWriteStream(`./metadata/temp/${path}`))
-      .on("end", () => {
+      .on("finish", () => {
+
         get_local_image(`temp/${path}`, (image) => {
           callback({name: path,  newImg: image.newImg})
         })
+
       })
     });
 }
