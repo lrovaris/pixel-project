@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'pixel-color-card',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorCardComponent implements OnInit {
 
+  @Input() color;
+
+  oldColor: any;
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.color);
+    this.oldColor = this.color;
+    this.color = `rgba(${this.color.r},${this.color.g},${this.color.b},${this.color.a})`;
   }
 
 }

@@ -22,7 +22,8 @@ import { ColorCardComponent } from './components/color-card/color-card.component
     BottonLeftMenuComponent,
     LeftImageListComponent,
     ImageDisplayComponent,
-    RightMenuComponent
+    RightMenuComponent,
+    ColorListComponent
   ]
 })
 export class DesignSystemModule { }

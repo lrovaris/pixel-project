@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MetadataService} from '../../services/metadata.service';
 
 import {ImageService} from '../../services/image.service';
+import {PaletteService} from '../../services/palette.service';
 
 @Component({
   selector: 'pixel-create-character-page',
@@ -16,7 +17,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
   selectAnimation = 1;
 
-  constructor(private metadataService: MetadataService, private imageService: ImageService) { }
+  constructor(private metadataService: MetadataService, private imageService: ImageService, public palletService: PaletteService) { }
 
   ngOnInit() {
     setTimeout( () => {
@@ -65,6 +66,10 @@ export class CreateCharacterPageComponent implements OnInit {
     this.imagesArray = [];
 
     this.imagesArray.push(image);
+  }
+
+  receivColor(color) {
+    console.log(color);
   }
 
 }

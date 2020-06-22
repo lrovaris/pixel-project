@@ -1,1 +1,12 @@
-<p>color-list works!</p>
+
+<div style="position: fixed; background-color: #000; height: 3rem; width: 77%; top: 62%; right: 1%; overflow: scroll">
+  <div class="row flex-nowrap" style="margin: 8px;">
+
+
+    <div class="col-1" *ngFor="let color of colorsArray">
+     <pixel-color-card (click)="emitColor(color)" [color]="color"></pixel-color-card>
+    </div>
+
+
+  </div>
+</div>
