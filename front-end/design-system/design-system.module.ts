@@ -8,9 +8,11 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ImageInListComponent } from './components/left-image-list/image-in-list/image-in-list.component';
 import { RightMenuComponent } from './components/right-menu/right-menu.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ColorListComponent } from './components/color-list/color-list.component';
+import { ColorCardComponent } from './components/color-card/color-card.component';
 
 @NgModule({
-  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent, HeaderComponent],
+  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent, HeaderComponent, ColorListComponent, ColorCardComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule
