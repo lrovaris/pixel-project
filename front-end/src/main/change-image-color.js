@@ -4,7 +4,7 @@ const SPNG = require("pngjs").PNG;
 
 const { get_local_image } = require("./get-image")
 
-function change_image_color(path, old_color, new_color, callback) {
+function change_image_color(path, changes, callback) {
 
   const base_img = `./metadata/${path}`;
 
@@ -26,27 +26,35 @@ function change_image_color(path, old_color, new_color, callback) {
           a: this.data[idx + 3]
         }
 
-        if(old_color.r === this_rgba.r
-          && old_color.g === this_rgba.g
-          && old_color.b === this_rgba.b
-          && old_color.a === this_rgba.a){
+        for (var i = 0; i < changes.length; i++) {
+          let old_color = changes[i].old_color;
+          let new_color = changes[i].new_color
+          
+          if(old_color.r === this_rgba.r
+            && old_color.g === this_rgba.g
+            && old_color.b === this_rgba.b
+            && old_color.a === this_rgba.a){
 
-            this.data[idx] = new_color.r
-            this.data[idx + 1] = new_color.g
-            this.data[idx + 2] = new_color.b
-            this.data[idx + 3] = new_color.a
+              this.data[idx] = new_color.r
+              this.data[idx + 1] = new_color.g
+              this.data[idx + 2] = new_color.b
+              this.data[idx + 3] = new_color.a
 
-          }
+            }
+        }
+
         }
       }
 
       this
       .pack()
       .pipe(fs.createWriteStream(`./metadata/temp/${path}`))
-      .on("end", () => {
+      .on("finish", () => {
+
         get_local_image(`temp/${path}`, (image) => {
           callback({name: path,  newImg: image.newImg})
         })
+
       })
     });
 }

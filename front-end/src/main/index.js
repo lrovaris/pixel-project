@@ -92,7 +92,7 @@ ipcMain.on("get-image", async(event, arg) =>{
 
 ipcMain.on("change-color", async(event, arg) => {
 
-  change_image_color(arg.path, arg.old_color, arg.new_color, (image) => {
+  change_image_color(arg.path, arg.changes, (image) => {
     event.sender.send('change-color-reply', image)
   })
 
