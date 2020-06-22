@@ -23,11 +23,25 @@ export class CreateCharacterPageComponent implements OnInit {
       setTimeout( () => {
         this.metadataArray = this.metadataService.getMetadata();
 
+        //Setup displays ou algo assim
+        let iterator = 0;
 
+        this.metadataArray.forEach(metadataObj => {
 
-        const defaultImage = this.metadataArray[0];
+          this.imageService.GetImage(metadataObj.path, (base64) => {
 
-        this.setBase(defaultImage);
+            metadataObj.display = base64;
+            iterator++;
+
+            if(iterator === this.metadataArray.length){
+              const defaultImage = this.metadataArray[0];
+
+              this.setBase(defaultImage);
+            }
+          })
+
+        })
+
       });
     }, 1000);
 
@@ -48,15 +62,9 @@ export class CreateCharacterPageComponent implements OnInit {
 
   setBase(image){
 
-    this.imageService.GetImage(image.path, (base64) => {
+    this.imagesArray = [];
 
-      this.imagesArray = [];
-
-      image.display = base64;
-
-      this.imagesArray.push(image);
-    })
-
+    this.imagesArray.push(image);
   }
 
 }
