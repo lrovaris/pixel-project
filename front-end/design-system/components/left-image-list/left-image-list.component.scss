@@ -1,0 +1,25 @@
+.left-list {
+  -ms-scrollbar-track-color: black;
+  -ms-scrollbar-base-color: black;
+  -ms-scrollbar-face-color: black;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000;
+  width: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #323c39;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
