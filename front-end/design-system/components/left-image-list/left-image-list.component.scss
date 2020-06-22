@@ -1,7 +1,18 @@
 .left-list {
+  border: 4px solid black;
+}
 
-  border: 2px solid black;
+.form-list {
+  background-color: #323c39;
+  border: none;
+  width: 100%;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+}
 
+.form-list {
+  box-shadow: none !important;
 }
 
 ::-webkit-scrollbar {

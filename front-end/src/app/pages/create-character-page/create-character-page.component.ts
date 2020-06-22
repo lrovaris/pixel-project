@@ -60,7 +60,7 @@ export class CreateCharacterPageComponent implements OnInit {
     this.setBase(image);
   }
 
-  setBase(image){
+  setBase(image) {
 
     this.imagesArray = [];
 
