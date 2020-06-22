@@ -27,8 +27,8 @@ export class LeftImageListComponent implements OnInit {
     }, 1000);
   }
 
-  log(x) {
-    this.image.emit(x);
+  emitImage(image) {
+    this.image.emit(image);
   }
 
 }

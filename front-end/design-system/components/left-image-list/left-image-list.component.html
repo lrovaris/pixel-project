@@ -1,10 +1,10 @@
-<div style="left: 0; position: fixed; min-height: 80%; top: 0; background-color: #727272; width: 20%" class="col">
-  <div class="row" *ngIf="toggleImages" style="margin-top: 5rem; background-color: #727272;" >
+<div style="left: 0; position: fixed; min-height: 80%; top: 0; width: 20%" class="col">
+  <div class="row" *ngIf="toggleImages" style="margin-top: 5rem;" >
     <div class="col-sm-12" >
-      <div class="card"  *ngFor="let image of arrayMetadata" style="background-color: #727272; transform: scale(5); margin-top: 35%; border-top: none; border-bottom: 1px solid black">
-        <div class="card-content" style="background-color: #727272">
+      <div class="card"  *ngFor="let image of arrayMetadata" style="background-color: rgba(0,0,0,0); margin-top: 35%; border-top: none; border-bottom: 1px solid black">
+        <div class="card-content">
           <div class="row" style="display: flex; justify-content: center" ><pixel-image-in-list
-            (click)="log(image)"
+            (click)="emitImage(image)"
                                                                                     [width]="image.metadata.width"
                                                                                     [height]="image.metadata.height"
                                                                                     [imgPath]="'http://161.35.10.72:3000/files/'+image.path"

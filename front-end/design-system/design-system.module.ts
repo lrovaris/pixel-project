@@ -7,9 +7,10 @@ import { ImageDisplayComponent } from './components/image-display/image-display.
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ImageInListComponent } from './components/left-image-list/image-in-list/image-in-list.component';
 import { RightMenuComponent } from './components/right-menu/right-menu.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent],
+  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent, HeaderComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule
