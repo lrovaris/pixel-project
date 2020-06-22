@@ -8,7 +8,7 @@
              (click)="emitImage(image)" style="transform: scale(4);"
              [width]="image.metadata.width"
              [height]="image.metadata.height"
-             [imgPath]="'http://161.35.10.72:3000/files/'+image.path"
+             [imgPath]="image.display"
            ></pixel-image-in-list></div>
          </div>
         </div>
