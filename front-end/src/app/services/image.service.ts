@@ -22,7 +22,7 @@ export class ImageService {
 
   }
 
-  public ChangeImageColor(imagePath: string, changes:any, callback: any) {
+  public ChangeImageColor(imagePath: string, changes: any, callback: any) {
 
     this.ipc.on('change-color-reply', (e: any, a: any) => {
 

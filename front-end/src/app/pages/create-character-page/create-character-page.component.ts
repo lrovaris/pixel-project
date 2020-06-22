@@ -71,17 +71,31 @@ export class CreateCharacterPageComponent implements OnInit {
 
       this.imagesArray = [];
 
-      image.display = base64
+      image.display = base64;
 
       this.imagesArray.push(image);
 
-    })
+    });
 
 
   }
 
   receivColor(color) {
-    console.log(color);
+
+    const image = this.imagesArray[0];
+
+    this.imageService.ChangeImageColor(image.path, [
+      { old_color: image.metadata.colors[0], new_color: color }
+    ], (base64) => {
+
+      this.imagesArray = [];
+
+      image.display = base64;
+
+      this.imagesArray.push(image);
+
+    });
+
   }
 
 }
