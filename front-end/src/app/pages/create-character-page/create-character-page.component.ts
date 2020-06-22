@@ -14,7 +14,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
   metadataArray = [];
 
-  selectAnimation: any;
+  selectAnimation = 1;
 
   constructor(private metadataService: MetadataService, private imageService: ImageService) { }
 
