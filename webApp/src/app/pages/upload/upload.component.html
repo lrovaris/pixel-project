@@ -55,10 +55,22 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-sm-1">
-
+                <div class="col-sm-12">
+                  <fieldset class="form-group">
+                    <label style="color: #000; font-size: 24px; font-weight: 400" for="upload">Cores:</label>
+                  </fieldset>
+                  <div *ngFor="let color of colors; let i = index" class="row" style="margin-top: 4px">
+                   <div class="col-sm-2">
+                     <app-color-card [color]="color"></app-color-card>
+                   </div>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control input-text" (change)="alteraCoresData($event.target.value, i)" >
+                    </div>
+                  </div>
                 </div>
-                <div class="col-sm-11">
+              </div>
+              <div class="row" style="margin-top: 1rem">
+                <div class="col-sm-12">
                   <fieldset class="form-group">
                     <label style="color: #000; font-size: 24px; font-weight: 400" for="upload">Animations:</label>
                   </fieldset>

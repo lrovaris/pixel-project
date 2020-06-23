@@ -12,6 +12,8 @@ import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ImageDisplayComponent} from './pages/upload/components/image-display/image-display.component';
+import { ColorCardComponent } from './pages/upload/components/color-card/color-card.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ImageDisplayComponent} from './pages/upload/components/image-display/im
     UploadComponent,
     ListComponent,
     HeaderComponent,
-    ImageDisplayComponent
+    ImageDisplayComponent,
+    ColorCardComponent
   ],
   imports: [
     HttpClientModule,

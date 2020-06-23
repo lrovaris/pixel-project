@@ -51,6 +51,7 @@ export class UploadComponent implements OnInit {
   }
 
   uploadPhoto() {
+
     this.checkEnviou = false;
     this.imgName = 'Escolha uma foto';
     this.buttomState = 'Enviando';
@@ -66,6 +67,7 @@ export class UploadComponent implements OnInit {
       this.uploaded = true;
 
       this.colors = data.info_files[0].metadata.colors;
+
       console.log(data);
 
     });
@@ -101,6 +103,11 @@ export class UploadComponent implements OnInit {
    } else {
      this.animationArray.push({name, frames});
    }
+  }
+
+  alteraCoresData(value, index) {
+   this.colors[index]['name'] = value;
+   console.log(this.colors[index]);
   }
 
   removeFile(nome) {

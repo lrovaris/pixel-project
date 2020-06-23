@@ -24,7 +24,7 @@ export class CreateCharacterPageComponent implements OnInit {
       setTimeout( () => {
         this.metadataArray = this.metadataService.getMetadata();
 
-        //Setup displays ou algo assim
+        // Setup displays ou algo assim
         let iterator = 0;
 
         this.metadataArray.forEach(metadataObj => {
@@ -35,7 +35,7 @@ export class CreateCharacterPageComponent implements OnInit {
             metadataObj.display = base64;
             iterator++;
 
-            if(iterator === this.metadataArray.length){
+            if(iterator === this.metadataArray.length) {
               const defaultImage = this.metadataArray[0];
 
               this.setBase(defaultImage);
