@@ -21,7 +21,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
   colors = [];
 
-  constructor(private metadataService: MetadataService, private imageService: ImageService, public palletService: PaletteService) { }
+  constructor(private metadataService: MetadataService, private imageService: ImageService, public palletService: PaletteService ) { }
 
   ngOnInit() {
     this.selectedColorIndex = 0;
@@ -69,8 +69,12 @@ export class CreateCharacterPageComponent implements OnInit {
 
   setBase(image) {
 
+      image.originalColors = image.metadata.colors;
+      image.currentColors = [];
+
       this.imagesArray = [];
       this.imagesArray.push(image);
+
 
   }
 
@@ -78,9 +82,32 @@ export class CreateCharacterPageComponent implements OnInit {
 
     const image = this.imagesArray[0];
 
-    this.imageService.ChangeImageColor(image.path, [
-      { old_color: image.metadata.colors[index], new_color: color }
-    ], (base64) => {
+    let thisColor = image.currentColors.find(color => color.index === index);
+
+    if(thisColor !== undefined){
+      thisColor.color = color
+      thisColor.index = index
+    }
+
+    else{
+      image.currentColors.push({
+        color: color,
+        index: index
+      })
+    }
+
+    let changes = [];
+
+    for (let i = 0; i < image.currentColors.length; i++) {
+
+      changes.push({
+        old_color: image.originalColors[image.currentColors[i].index],
+        new_color: image.currentColors[i].color
+      })
+
+    }
+
+    this.imageService.ChangeImageColor(image.path, changes, (base64) => {
 
       this.imagesArray = [];
 
@@ -88,7 +115,26 @@ export class CreateCharacterPageComponent implements OnInit {
 
       this.imagesArray.push(image);
 
-      this.colors = this.imagesArray[0].metadata.colors;
+      this.colors = []
+
+      for (let i = 0; i < image.originalColors.length; i++) {
+
+        let currentColorForIndex = image.currentColors.find(currCol => {
+          return currCol.index === i
+        })
+
+        if (currentColorForIndex === undefined){
+          this.colors.push(image.originalColors[i])
+        }else{
+          this.colors.push({
+            r: currentColorForIndex.color.r,
+            g: currentColorForIndex.color.g,
+            b: currentColorForIndex.color.b,
+            a: currentColorForIndex.color.a,
+            name: image.originalColors[i].name
+          })
+        }
+      }
 
 
     });
