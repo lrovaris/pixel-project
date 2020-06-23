@@ -17,9 +17,14 @@ export class CreateCharacterPageComponent implements OnInit {
 
   selectAnimation = 1;
 
+  selectedColorIndex: any;
+
+  colors = [];
+
   constructor(private metadataService: MetadataService, private imageService: ImageService, public palletService: PaletteService) { }
 
   ngOnInit() {
+    this.selectedColorIndex = 0;
     setTimeout( () => {
       setTimeout( () => {
         this.metadataArray = this.metadataService.getMetadata();
@@ -64,28 +69,17 @@ export class CreateCharacterPageComponent implements OnInit {
 
   setBase(image) {
 
-    this.imageService.ChangeImageColor(image.path, [
-      { old_color: image.metadata.colors[0], new_color: {r: 0, g: 0, b:0, a: 255} },
-      { old_color: image.metadata.colors[1], new_color: {r: 50, g: 50, b:50, a: 255} }
-    ], (base64) => {
-
       this.imagesArray = [];
-
-      image.display = base64;
-
       this.imagesArray.push(image);
-
-    });
-
 
   }
 
-  receivColor(color) {
+  receivColor(color, index) {
 
     const image = this.imagesArray[0];
 
     this.imageService.ChangeImageColor(image.path, [
-      { old_color: image.metadata.colors[0], new_color: color }
+      { old_color: image.metadata.colors[index], new_color: color }
     ], (base64) => {
 
       this.imagesArray = [];
@@ -94,8 +88,15 @@ export class CreateCharacterPageComponent implements OnInit {
 
       this.imagesArray.push(image);
 
+      this.colors = this.imagesArray[0].metadata.colors;
+
+
     });
 
+  }
+
+  receivIndex(index) {
+    this.selectedColorIndex = index;
   }
 
 }

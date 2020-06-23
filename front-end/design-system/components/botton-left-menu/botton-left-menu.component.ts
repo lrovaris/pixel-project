@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'pixel-botton-left-menu',
@@ -7,10 +7,18 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class BottonLeftMenuComponent implements OnInit {
 
+  @Input() colorsArray;
+
+ @Output() index = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  emitIndex(index) {
+    this.index.emit(index);
   }
 
 }

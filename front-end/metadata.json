@@ -1,1 +1,1 @@
-[]
+[{"_id":"5ef244115d878823e77d628e","metadata":{"colors":[{"r":180,"g":32,"b":42,"a":255,"num":245,"name":"main"},{"r":115,"g":23,"b":45,"a":255,"num":129,"name":"shadow"},{"r":223,"g":62,"b":35,"a":255,"num":88,"name":"light"}],"name":"boneco-base","height":16,"width":16,"spriteWidth":160,"framesQuantity":10,"animations":[{"name":"idle","frames":"4"},{"name":"run","frames":"6"}]},"path":"1592935406568-340180154CharBase.png"}]
