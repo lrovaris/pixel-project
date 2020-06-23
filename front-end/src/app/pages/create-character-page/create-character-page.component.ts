@@ -91,7 +91,12 @@ export class CreateCharacterPageComponent implements OnInit {
 
     else{
       image.currentColors.push({
-        color: color,
+        color: {
+          r: color.r,
+          g: color.g,
+          b: color.b,
+          a: color.a
+        },
         index: index
       })
     }
