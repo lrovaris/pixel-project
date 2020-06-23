@@ -85,7 +85,12 @@ export class CreateCharacterPageComponent implements OnInit {
     let thisColor = image.currentColors.find(color => color.index === index);
 
     if(thisColor !== undefined){
-      thisColor.color = color
+      thisColor.color = {
+        r: color.r,
+        g: color.g,
+        b: color.b,
+        a: color.a
+      }
       thisColor.index = index
     }
 
