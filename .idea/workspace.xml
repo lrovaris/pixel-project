@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90258cf2-ebcb-44d1-a8b6-659a1216df15" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/src/assets/fonts/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/assets/fonts/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/assets/fonts/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/assets/fonts/icomoon.woff" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/botton-left-menu/botton-left-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/botton-left-menu/botton-left-menu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/right-menu/right-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/right-menu/right-menu.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/right-menu/right-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/right-menu/right-menu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/design-system.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/design-system.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -71,15 +61,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+            <state relative-caret-position="92">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#pixel-image-display#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -95,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="383">
@@ -196,8 +185,8 @@
         <option value="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.ts" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/right-menu/right-menu.component.html" />
-        <option value="$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.html" />
         <option value="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts" />
+        <option value="$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.html" />
       </list>
     </option>
   </component>
@@ -350,12 +339,12 @@
       <workItem from="1592663446808" duration="170000" />
       <workItem from="1592716356511" duration="326000" />
       <workItem from="1592847726619" duration="9816000" />
-      <workItem from="1592917064241" duration="19080000" />
+      <workItem from="1592917064241" duration="19279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88439000" />
+    <option name="totallyTimeSpent" value="88638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -798,19 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#pixel-image-display#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/color-card/color-card.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -832,6 +808,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="77" column="56" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/botton-left-menu/botton-left-menu.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -839,12 +825,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="77" column="56" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
+        <state relative-caret-position="92">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#pixel-image-display#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
