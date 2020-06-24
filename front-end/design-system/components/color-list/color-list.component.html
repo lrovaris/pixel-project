@@ -1,7 +1,7 @@
 
-<div style="position: fixed; background-color: #000; height: 5%; width: 77%; top: 62%; right: 1%; overflow-x: scroll; overflow-y: hidden">
+<div style="position: fixed; background-color: #000; height: 7%; width: 77%; top: 62%; right: 1%; overflow-x: scroll; overflow-y: hidden">
   <div class="row flex-nowrap" style="margin: 4px; height: 100%">
-    <div class="col-1" *ngFor="let color of colorsArray" style="margin-right: 4px !important;">
+    <div class="col-1" *ngFor="let color of colorsArray" style="margin-right: 8px !important;">
      <pixel-color-card (click)="emitColor(color)" [secondColor]="'#000000'" [color]="color" style=""></pixel-color-card>
     </div>
   </div>

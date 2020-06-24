@@ -18,7 +18,7 @@ export class ColorListComponent implements OnInit {
   ngOnInit() {
     console.log(this.pallete);
     setTimeout(() => {
-      this.colorsArray = this.pallete[0].colors;
+      this.colorsArray = this.pallete[1].colors;
       console.log(this.colorsArray);
     }, 3000);
   }
