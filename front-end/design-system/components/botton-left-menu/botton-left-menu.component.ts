@@ -9,7 +9,7 @@ export class BottonLeftMenuComponent implements OnInit {
 
   @Input() colorsArray;
 
- @Output() index = new EventEmitter();
+  @Output() index = new EventEmitter();
 
   constructor() { }
 

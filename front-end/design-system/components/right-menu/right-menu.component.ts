@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'pixel-right-menu',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RightMenuComponent implements OnInit {
 
+  @Input() AnimationArray;
+  @Input() Image;
+
+  @Output() selectedAnimation = new EventEmitter()
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  emitSelectedAnimation(value) {
+    this.selectedAnimation.emit(value);
   }
 
 }

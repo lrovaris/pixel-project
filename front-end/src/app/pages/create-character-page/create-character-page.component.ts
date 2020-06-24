@@ -44,6 +44,7 @@ export class CreateCharacterPageComponent implements OnInit {
               const defaultImage = this.metadataArray[0];
 
               this.setBase(defaultImage);
+
             }
           })
 
@@ -74,7 +75,8 @@ export class CreateCharacterPageComponent implements OnInit {
 
       this.imagesArray = [];
       this.imagesArray.push(image);
-
+      this.colors = this.imagesArray[0].metadata.colors;
+      console.log(this.imagesArray);
 
   }
 
@@ -153,6 +155,10 @@ export class CreateCharacterPageComponent implements OnInit {
 
   receivIndex(index) {
     this.selectedColorIndex = index;
+  }
+
+  receivAnimation(index) {
+    this.selectAnimation = index;
   }
 
 }

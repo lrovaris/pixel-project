@@ -10,9 +10,10 @@ import { RightMenuComponent } from './components/right-menu/right-menu.component
 import { HeaderComponent } from './components/header/header.component';
 import { ColorListComponent } from './components/color-list/color-list.component';
 import { ColorCardComponent } from './components/color-card/color-card.component';
+import { CardAnimationComponent } from './components/card-animation/card-animation.component';
 
 @NgModule({
-  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent, HeaderComponent, ColorListComponent, ColorCardComponent],
+  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent, HeaderComponent, ColorListComponent, ColorCardComponent, CardAnimationComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule
