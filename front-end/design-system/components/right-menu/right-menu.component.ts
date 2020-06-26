@@ -17,7 +17,7 @@ export class RightMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.ImageArray);
+
   }
 
   emitSelectedAnimation(value) {

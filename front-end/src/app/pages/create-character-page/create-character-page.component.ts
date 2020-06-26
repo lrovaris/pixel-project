@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {MetadataService} from '../../services/metadata.service';
 
+import {MetadataService} from '../../services/metadata.service';
 import {ImageService} from '../../services/image.service';
 import {PaletteService} from '../../services/palette.service';
+import {FileService} from '../../services/file.service';
 
 @Component({
   selector: 'pixel-create-character-page',
@@ -13,6 +14,8 @@ export class CreateCharacterPageComponent implements OnInit {
 
   imagesArray = [];
 
+  lastSelection;
+
   metadataArray = [];
 
   selectAnimation = 1;
@@ -21,7 +24,12 @@ export class CreateCharacterPageComponent implements OnInit {
 
   colors = [];
 
-  constructor(private metadataService: MetadataService, private imageService: ImageService, public palletService: PaletteService ) { }
+  constructor(
+    private metadataService: MetadataService,
+    private imageService: ImageService,
+    public palletService: PaletteService,
+    private fileService: FileService
+  ) { }
 
   ngOnInit() {
     this.selectedColorIndex = 0;
@@ -56,10 +64,18 @@ export class CreateCharacterPageComponent implements OnInit {
     this.selectAnimation = 0;
   }
 
+  Save(){
+    console.log(this.imagesArray);
+
+  }
+
 
   pushImage(image) {
 
-    if(this.imagesArray.find(img => img._id.toString() === image._id.toString()) !== undefined){
+    let currentImage = this.imagesArray.find(img => img._id.toString() === image._id.toString())
+
+    if(currentImage !== undefined){
+      this.lastSelection = currentImage
       return;
     }
 
@@ -68,7 +84,10 @@ export class CreateCharacterPageComponent implements OnInit {
 
     this.imagesArray.push(image);
 
+
     this.colors = this.imagesArray[this.imagesArray.length-1].metadata.colors;
+    this.lastSelection = this.imagesArray[this.imagesArray.length-1]
+
   }
 
   setBase(image) {
@@ -79,11 +98,15 @@ export class CreateCharacterPageComponent implements OnInit {
       this.imagesArray = [];
       this.imagesArray.push(image);
       this.colors = this.imagesArray[0].metadata.colors;
+      this.lastSelection = this.imagesArray[0]
   }
 
   receivColor(color, index) {
 
-    const image = this.imagesArray[0];
+    console.log(color, index);
+
+
+    const image = this.lastSelection
 
     let thisColor = image.currentColors.find(color => color.index === index);
 
@@ -122,11 +145,9 @@ export class CreateCharacterPageComponent implements OnInit {
 
     this.imageService.ChangeImageColor(image.path, changes, (base64) => {
 
-      this.imagesArray = [];
-
       image.display = base64;
 
-      this.imagesArray.push(image);
+      this.pushImage(image)
 
       this.colors = []
 

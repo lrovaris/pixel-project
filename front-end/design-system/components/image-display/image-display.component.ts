@@ -58,10 +58,8 @@ export class ImageDisplayComponent implements OnInit {
   finalPosition = 0;
 
   ngOnInit() {
-
     this.id = this.id + Math.round(Math.random() * 1E9);
 
-    console.log(this.id);
     setTimeout(() => {
       this.spriteSheet = document.getElementById(this.id);
     });
