@@ -1,13 +1,11 @@
 <div style="top: 70%; position: fixed; width: 40%; height: 29%; background-color: #847e87; right: 2%; border: 4px solid black" class="row flex-nowrap">
- <pixel-card-animation (click)="emitSelectedAnimation(i)" *ngFor="let animation of AnimationArray; let i = index" style="margin: 1rem 3rem 1rem 1rem"
-   [height]="Image.metadata.height"
-   [width]="Image.metadata.width"
-   [frames]="Image.metadata.frames"
-   [spriteWidth]="Image.metadata.spriteWidth"
-   [id]="i"
+ <pixel-card-animation (click)="emitSelectedAnimation(i)" *ngFor="let animation of AnimationArray; let i = index" style="margin: 1rem 5rem 1rem 1rem"
+   [id]="i + stringkkk"
+   [style.z-index]="i + 5"
    [selectedAnimation]="i"
    [animation]="AnimationArray"
    [Animation]="AnimationArray[i]"
-   [imgPath]="Image.display"
+   [imagesArray]="ImageArray"
  ></pixel-card-animation>
+
 </div>

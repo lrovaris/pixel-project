@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, ElementRef, ViewChild} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {randomBytes} from "crypto";
 
 
 @Component({
@@ -57,6 +58,10 @@ export class ImageDisplayComponent implements OnInit {
   finalPosition = 0;
 
   ngOnInit() {
+
+    this.id = this.id + Math.round(Math.random() * 1E9);
+
+    console.log(this.id);
     setTimeout(() => {
       this.spriteSheet = document.getElementById(this.id);
     });

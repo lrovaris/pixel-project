@@ -16,13 +16,22 @@ export class CardAnimationComponent implements OnInit {
    @Input() animation;
    @Input() imgPath;
    @Input() Animation;
+   @Input() imagesArray;
+
 
    scale: any;
 
   constructor() { }
 
   ngOnInit() {
+    this.id = this.id + 'kkk';
     this.scale = 5;
+
+    console.log(this.id);
+
+    console.log(this.imagesArray);
+    console.log(this.selectedAnimation);
+
     // console.log(this.animation);
   }
 

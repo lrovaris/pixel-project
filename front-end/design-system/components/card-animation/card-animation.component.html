@@ -5,20 +5,10 @@
       <p style="font-weight: 500; font-size: 1.5rem; color: white">{{Animation.name}}</p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="row">
-        <pixel-image-display style="transform: scale(5) !important; margin-top: -6px; margin-left: 1rem" [height]="height"
-                             [width]="width"
-                             [frames]="frames"
-                             [spriteWidth]="spriteWidth"
-                             [id]="id"
-                             [selectedAnimation]="selectedAnimation"
-                             [animation]="animation"
-                             [imgPath]="imgPath"
-        ></pixel-image-display>
-      </div>
-    </div>
-  </div>
+
+    <pixel-animator  [selectedAnimation]="selectedAnimation" [imagesArray]="imagesArray">
+
+    </pixel-animator>
+
 </div>
 </div>

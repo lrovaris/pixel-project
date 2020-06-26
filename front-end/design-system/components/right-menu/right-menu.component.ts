@@ -8,13 +8,16 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class RightMenuComponent implements OnInit {
 
   @Input() AnimationArray;
-  @Input() Image;
+  @Input() ImageArray;
+
+  stringkkk = 'kkk';
 
   @Output() selectedAnimation = new EventEmitter()
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.ImageArray);
   }
 
   emitSelectedAnimation(value) {

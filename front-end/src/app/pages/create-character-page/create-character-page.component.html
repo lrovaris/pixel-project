@@ -28,7 +28,7 @@
 
   <pixel-botton-left-menu></pixel-botton-left-menu>
 
-  <pixel-right-menu *ngIf="imagesArray.length > 0" (selectedAnimation)="receivAnimation($event)" [AnimationArray]="imagesArray[0].metadata.animations" [Image]="imagesArray[0]"></pixel-right-menu>
+  <pixel-right-menu *ngIf="imagesArray.length > 0" (selectedAnimation)="receivAnimation($event)" [AnimationArray]="imagesArray[0].metadata.animations" [ImageArray]="imagesArray"></pixel-right-menu>
 
   <pixel-botton-left-menu (index)="receivIndex($event)" [colorsArray]="colors"></pixel-botton-left-menu>
 
