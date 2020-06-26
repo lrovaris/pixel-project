@@ -103,9 +103,6 @@ export class CreateCharacterPageComponent implements OnInit {
 
   receivColor(color, index) {
 
-    console.log(color, index);
-
-
     const image = this.lastSelection
 
     let thisColor = image.currentColors.find(color => color.index === index);
