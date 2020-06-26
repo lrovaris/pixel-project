@@ -64,11 +64,6 @@ export class CreateCharacterPageComponent implements OnInit {
     this.selectAnimation = 0;
   }
 
-  Save(){
-    console.log(this.imagesArray);
-
-  }
-
 
   pushImage(image) {
 
@@ -76,6 +71,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
     if(currentImage !== undefined){
       this.lastSelection = currentImage
+      this.colors = currentImage.metadata.colors;
       return;
     }
 
@@ -87,7 +83,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
     this.colors = this.imagesArray[this.imagesArray.length-1].metadata.colors;
     this.lastSelection = this.imagesArray[this.imagesArray.length-1]
-
+    this.fileService.SetImageArray(this.imagesArray)
   }
 
   setBase(image) {
@@ -99,6 +95,7 @@ export class CreateCharacterPageComponent implements OnInit {
       this.imagesArray.push(image);
       this.colors = this.imagesArray[0].metadata.colors;
       this.lastSelection = this.imagesArray[0]
+      this.fileService.SetImageArray(this.imagesArray)
   }
 
   receivColor(color, index) {

@@ -13,6 +13,7 @@ async function save_metadata_json(metadata_json) {
   try {
     fs.writeFileSync('metadata.json', JSON.stringify(metadata_json), 'utf-8');
 
+
     return true
   }
   catch(e)

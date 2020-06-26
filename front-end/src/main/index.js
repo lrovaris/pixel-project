@@ -1,7 +1,9 @@
 const {
   app,
   BrowserWindow,
-  ipcMain
+  ipcMain,
+  Menu,
+  MenuItem
 } = require('electron')
 const url = require("url");
 const path = require("path");
@@ -10,6 +12,7 @@ const download_metadata = require('./download-metadata');
 const download_palette = require('./download-palettes')
 const get_image = require('./get-image');
 const { change_image_color } = require('./change-image-color')
+const { save_file } = require('./save-sprite')
 
 let appWindow
 
@@ -25,18 +28,59 @@ function initApp() {
   // Electron Build Path
   appWindow.loadURL(
     'http://localhost:4200'
-
-    // url.format({
-    //   pathname: path.join(__dirname, `../../dist/index.html`),
-    //   protocol: "file:",
-    //   slashes: true
-    // })
   );
 
 appWindow.on('closed', function () {
     appWindow = null
   })
 }
+
+const template = [
+   {
+      label: 'File',
+      submenu: [
+         {
+            label: 'Save',
+            click() {
+                    appWindow.webContents.send('save-sprite-command');
+                }
+         }
+      ]
+   },
+
+   {
+      label: "View",
+      submenu: [
+        {
+          label: "Reload",
+          accelerator: "F5",
+          click: (item, focusedWindow) => {
+            if (focusedWindow) {
+              // on reload, start fresh and close any old
+              // open secondary windows
+              if (focusedWindow.id === 1) {
+                BrowserWindow.getAllWindows().forEach(win => {
+                  if (appWindow.id > 1) appWindow.close();
+                });
+              }
+              focusedWindow.reload();
+            }
+          }
+        },
+        {
+          label: "Toggle Dev Tools",
+          accelerator: "F12",
+          click: () => {
+            appWindow.webContents.toggleDevTools();
+          }
+        }
+      ]
+    }
+
+]
+
+const menu = Menu.buildFromTemplate(template)
+Menu.setApplicationMenu(menu)
 
 app.on('ready', initApp)
 
@@ -68,6 +112,17 @@ ipcMain.on("load-metadata", async(event, arg) =>{
   let save_action = await download_metadata.save_metadata_json(metadata)
 
   let download_action = await download_metadata.download_images(metadata)
+
+})
+
+ipcMain.on("save-sprite", async(event, arg) =>{
+
+  let save_action = await save_file(arg.name, arg.data)
+
+  event.sender.send('save-sprite-reply', {
+    message: save_action.message,
+    name: arg.name
+  })
 
 })
 
