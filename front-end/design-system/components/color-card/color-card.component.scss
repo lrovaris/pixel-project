@@ -23,37 +23,43 @@
 }
 
 .card-block {
-  height: 82%;
+  height: 30px;
+  width:  30px;
   border: none;
 }
 
 .top-left {
+ /* outline: 1px solid green;*/
   position: absolute;
-  height: 15%;
-  width: 15%;
+  height: 5px;
+  width: 5px;
   top: 0;
-  left: - 5%;
+  left: 0;
 }
 
 .top-right {
+ /* outline: 1px solid green;*/
+
   position: absolute;
-  height: 15%;
-  width: 15%;
+  height: 5px;
+  width: 5px;
   top: 0;
-  right: 25%;
+  right: 34%;
 }
 .bottom-left {
+ /* outline: 1px solid green;*/
   position: absolute;
-  height: 15%;
-  width: 15%;
+  height: 5px;
+  width: 5px;
   bottom: 0;
-  left: - 5%;
+  left: 0;
 }
 
 .bottom-right {
+ /* outline: 1px solid green;*/
   position: absolute;
-  height: 15%;
-  width: 15%;
+  height: 5px;
+  width: 5px;
   bottom: 0;
-  right: 25%;
+  right: 34%;
 }
