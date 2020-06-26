@@ -56,16 +56,19 @@ export class CreateCharacterPageComponent implements OnInit {
     this.selectAnimation = 0;
   }
 
-  changeAniamtion() {
-    if (this.selectAnimation === 0 ) {
-      this.selectAnimation = 1;
-    } else {
-      this.selectAnimation = 0;
-    }
-  }
 
   pushImage(image) {
-    this.setBase(image);
+
+    if(this.imagesArray.find(img => img._id.toString() === image._id.toString()) !== undefined){
+      return;
+    }
+
+    image.originalColors = image.metadata.colors;
+    image.currentColors = [];
+
+    this.imagesArray.push(image);
+
+    this.colors = this.imagesArray[this.imagesArray.length-1].metadata.colors;
   }
 
   setBase(image) {
@@ -76,8 +79,6 @@ export class CreateCharacterPageComponent implements OnInit {
       this.imagesArray = [];
       this.imagesArray.push(image);
       this.colors = this.imagesArray[0].metadata.colors;
-      console.log(this.imagesArray);
-
   }
 
   receivColor(color, index) {

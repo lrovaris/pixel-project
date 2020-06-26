@@ -10,8 +10,6 @@ export class PaletteService {
   palettes: any;
 
   setPalettes(palettes) {
-    console.log(palettes);
-
     this.palettes = palettes;
   }
 

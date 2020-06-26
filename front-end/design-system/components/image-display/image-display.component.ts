@@ -25,8 +25,10 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   ],
 })
 
-
 export class ImageDisplayComponent implements OnInit {
+
+  constructor() {
+  }
 
   @ViewChild('image', { static: false }) public image: ElementRef;
   @ViewChild('myCanvas', {static: false}) myCanvas: ElementRef;
@@ -39,85 +41,51 @@ export class ImageDisplayComponent implements OnInit {
   @Input() name;
   @Input() id;
   @Input() animation;
-  @Input() selectedAnimation;
 
- animationInterval;
+  @Input() set selectedAnimation(anim){
+    if(anim === undefined){ return; }
 
- spriteSheet = document.getElementById(this.id);
-
-  shouldAnimate = false;
-
-  constructor() {
+    this.currentAnimation = anim;
   }
 
+  currentAnimation;
+
+  spriteSheet = document.getElementById(this.id);
+
+  initialPosition = 0;
+  position = 0;
+  finalPosition = 0;
+
   ngOnInit() {
-    // console.log(this.frames,this.width,this.height,this.spriteWidth,this.imgPath,this.name,this.id,this.animation,this.selectedAnimation);
     setTimeout(() => {
       this.spriteSheet = document.getElementById(this.id);
-      setTimeout(() => {
-       this.startAnimation();
-     });
     });
   }
 
-  stopAnimation() {
-    clearInterval(this.animationInterval);
-  }
+  startAnim(){
 
-  startAnimation() {
+    this.initialPosition = 0;
+    this.finalPosition = this.width * this.animation[0].frames
 
-    let position = 0;
-    let finalPosition = 0;
+    for (let index = 0; index < this.currentAnimation; index++) {
 
+      this.initialPosition = this.finalPosition
 
-    if (this.selectedAnimation > this.animation.length) {
-      alert('selected animation doesn`t exist');
+      this.finalPosition +=  this.width * this.animation[index+1].frames
     }
 
-    if (this.selectedAnimation === 0 ) {
-      position = this.width;
-      finalPosition = this.width * this.animation[0].frames;
-    } else {
-      for (let i = 0; i < this.selectedAnimation; i++) {
-
-        position = position + (this.animation[i].frames * this.width);
-
-      }
-    }
-
-    const speed = 98; // in millisecond(ms)
-    const diff = this.width; // difference between two sprites
-    this.spriteSheet.style.backgroundPosition = `${-position}px 0px`;
-    this.animationInterval = setInterval(() => {
-
-
-      if (position < finalPosition) {
-        this.spriteSheet.style.backgroundPosition = `${-position}px 0px`;
-        position = position + diff;
-      } else {
-
-        position = 0;
-        finalPosition = 0;
-
-        if (this.selectedAnimation === 0 ) {
-          position = this.width;
-          finalPosition = this.width * this.animation[0].frames;
-        } else {
-          for (let i = 0; i <= this.selectedAnimation - 1; i++) {
-            position = position + (this.animation[i].frames * this.width);
-          }
-          for (let i = 0; i <= this.selectedAnimation; i++) {
-            finalPosition = finalPosition + (this.animation[i].frames * this.width);
-          }
-        }
-        this.spriteSheet.style.backgroundPosition = `${-position}px 0px`;
-      }
-    }, speed);
+    this.position = this.initialPosition;
   }
 
-  shouldIAnimate() {
-    this.shouldAnimate = !this.shouldAnimate;
+  resetAnim(){
+    this.position = this.initialPosition;
   }
 
+  stepAnim(){
+    this.position += this.width;
+  }
 
+  renderSprite(){
+    this.spriteSheet.style.backgroundPosition = `${-this.position}px 0px`;
+  }
 }

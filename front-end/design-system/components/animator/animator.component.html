@@ -1,0 +1,18 @@
+<div style="display: flex; justify-content: center; margin-top: 20%" class="col-sm-10">
+  <div class="row">
+
+    <pixel-image-display  style="transform: scale(10);" *ngFor="let image of images; let i = index"
+
+    [frames]="image.metadata.framesQuantity"
+    [height]="image.metadata.height"
+    [width]="image.metadata.width"
+    [spriteWidth]="image.metadata.spriteWidth"
+    [imgPath]="image.display"
+    [name]="image.metadata.name"
+    [id]="image._id"
+    [animation]="image.metadata.animations"
+    [style.z-index]="i + 1"
+    [selectedAnimation]="anim" ></pixel-image-display>
+
+  </div>
+</div>

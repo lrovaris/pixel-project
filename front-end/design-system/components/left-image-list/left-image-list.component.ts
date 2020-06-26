@@ -7,8 +7,20 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class LeftImageListComponent implements OnInit {
 
-  @Input() arrayMetadata;
+  @Input() set metadata(_metadata){
 
+    if(_metadata === undefined){
+      return
+    }
+
+    if(_metadata.length > 0){
+      this.arrayMetadata = _metadata
+      this.toggleImages = true;
+    }
+  }
+
+
+  arrayMetadata = [];
   toggleImages: boolean;
 
   @Output() image = new EventEmitter();
@@ -17,14 +29,6 @@ export class LeftImageListComponent implements OnInit {
 
   ngOnInit() {
     this.toggleImages = false;
-    setTimeout(() => {
-      setTimeout(() => {
-        console.log(this.arrayMetadata);
-        setTimeout(() => {
-          this.toggleImages = true;
-        }, 1);
-      }, 1000);
-    }, 1000);
   }
 
   emitImage(image) {

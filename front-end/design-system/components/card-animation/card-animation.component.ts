@@ -23,7 +23,7 @@ export class CardAnimationComponent implements OnInit {
 
   ngOnInit() {
     this.scale = 5;
-    console.log(this.animation);
+    // console.log(this.animation);
   }
 
 }
