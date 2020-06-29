@@ -10,7 +10,7 @@ export class RightMenuComponent implements OnInit {
   @Input() AnimationArray;
   @Input() ImageArray;
 
-  stringkkk = 'kkk';
+  stringkkk = 'kk';
 
   @Output() selectedAnimation = new EventEmitter()
 

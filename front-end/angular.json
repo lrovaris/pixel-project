@@ -28,10 +28,14 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [
-              { "input": "src/main/index.js", "inject": false }
+              {
+                "input": "src/main/index.js",
+                "inject": false
+              }
             ]
           },
           "configurations": {
@@ -95,10 +99,14 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [
-              { "input": "src/main/index.js", "inject": false }
+              {
+                "input": "src/main/index.js",
+                "inject": false
+              }
             ]
           }
         },
@@ -128,6 +136,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "front-end"
 }

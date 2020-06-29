@@ -12,12 +12,14 @@ import { ColorListComponent } from './components/color-list/color-list.component
 import { ColorCardComponent } from './components/color-card/color-card.component';
 import { CardAnimationComponent } from './components/card-animation/card-animation.component';
 import { AnimatorComponent } from './components/animator/animator.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent, HeaderComponent, ColorListComponent, ColorCardComponent, CardAnimationComponent, AnimatorComponent],
   imports: [
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CarouselModule.forRoot()
   ],
   exports: [
     SimpleButtonComponent,

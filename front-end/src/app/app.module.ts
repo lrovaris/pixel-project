@@ -8,6 +8,7 @@ import { LoadingPageComponent } from './pages/loading-page/loading-page.componen
 import { CreateCharacterPageComponent } from './pages/create-character-page/create-character-page.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './pages/header/header.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderComponent } from './pages/header/header.component';
     BrowserModule,
     AppRoutingModule,
     DesignSystemModule,
-    FormsModule
+    FormsModule,
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

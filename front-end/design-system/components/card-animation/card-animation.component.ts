@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
+
 @Component({
   selector: 'pixel-card-animation',
   templateUrl: './card-animation.component.html',
@@ -17,7 +18,6 @@ export class CardAnimationComponent implements OnInit {
    @Input() imgPath;
    @Input() Animation;
    @Input() imagesArray;
-
 
    scale: any;
 
