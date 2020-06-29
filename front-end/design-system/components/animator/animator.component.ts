@@ -9,8 +9,10 @@ import { ImageDisplayComponent } from "../image-display/image-display.component"
 export class AnimatorComponent implements DoCheck {
 
   constructor(private iterableDiffers: IterableDiffers) {
-    this.iterableDiffer = iterableDiffers.find([]).create(null);
+    this.iterableDiffer = this.iterableDiffers.find([]).create(null);
   }
+
+  private iterableDiffer: any;
 
   @ViewChildren(ImageDisplayComponent) components:QueryList<ImageDisplayComponent>;
 
@@ -39,7 +41,6 @@ export class AnimatorComponent implements DoCheck {
     }
   }
 
-  private iterableDiffer: IterableDiffers;
 
   images = [];
   anim = 0;

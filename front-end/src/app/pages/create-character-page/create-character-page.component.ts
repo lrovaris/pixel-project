@@ -102,26 +102,18 @@ export class CreateCharacterPageComponent implements OnInit {
 
     const image = this.lastSelection
 
+    color.a = image.originalColors[index].a
+
     let thisColor = image.currentColors.find(color => color.index === index);
 
     if(thisColor !== undefined){
-      thisColor.color = {
-        r: color.r,
-        g: color.g,
-        b: color.b,
-        a: color.a
-      }
+      thisColor.color = color
       thisColor.index = index
     }
 
     else{
       image.currentColors.push({
-        color: {
-          r: color.r,
-          g: color.g,
-          b: color.b,
-          a: color.a
-        },
+        color: color,
         index: index
       })
     }
