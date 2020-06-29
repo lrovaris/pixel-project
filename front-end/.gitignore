@@ -52,3 +52,5 @@ metadata/*
 
 # exception to the rule
 !metadata/.gitkeep
+
+projects/**/*.pxl
