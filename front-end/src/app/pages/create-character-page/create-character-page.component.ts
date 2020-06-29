@@ -4,6 +4,7 @@ import {MetadataService} from '../../services/metadata.service';
 import {ImageService} from '../../services/image.service';
 import {PaletteService} from '../../services/palette.service';
 import {FileService} from '../../services/file.service';
+import {SpriteService} from '../../services/sprite.service';
 
 @Component({
   selector: 'pixel-create-character-page',
@@ -12,7 +13,9 @@ import {FileService} from '../../services/file.service';
 })
 export class CreateCharacterPageComponent implements OnInit {
 
-  imagesArray = [];
+  imagesArray(){
+    return this.spriteService.GetSprite()
+  };
 
   lastSelection;
 
@@ -28,7 +31,8 @@ export class CreateCharacterPageComponent implements OnInit {
     private metadataService: MetadataService,
     private imageService: ImageService,
     public palletService: PaletteService,
-    private fileService: FileService
+    private fileService: FileService,
+    private spriteService: SpriteService
   ) { }
 
   ngOnInit() {
@@ -67,7 +71,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
   pushImage(image) {
 
-    let currentImage = this.imagesArray.find(img => img._id.toString() === image._id.toString())
+    let currentImage = this.imagesArray().find(img => img._id.toString() === image._id.toString())
 
     if(currentImage !== undefined){
       this.lastSelection = currentImage
@@ -78,12 +82,11 @@ export class CreateCharacterPageComponent implements OnInit {
     image.originalColors = image.metadata.colors;
     image.currentColors = [];
 
-    this.imagesArray.push(image);
+    this.spriteService.push(image);
 
 
-    this.colors = this.imagesArray[this.imagesArray.length-1].metadata.colors;
-    this.lastSelection = this.imagesArray[this.imagesArray.length-1]
-    this.fileService.SetImageArray(this.imagesArray)
+    this.lastSelection = this.imagesArray()[this.imagesArray().length-1]
+    this.colors = this.lastSelection.metadata.colors;
   }
 
   setBase(image) {
@@ -91,11 +94,10 @@ export class CreateCharacterPageComponent implements OnInit {
       image.originalColors = image.metadata.colors;
       image.currentColors = [];
 
-      this.imagesArray = [];
-      this.imagesArray.push(image);
-      this.colors = this.imagesArray[0].metadata.colors;
-      this.lastSelection = this.imagesArray[0]
-      this.fileService.SetImageArray(this.imagesArray)
+      this.spriteService.SetSprite([ image ]);
+
+      this.colors = this.imagesArray()[0].metadata.colors;
+      this.lastSelection = this.imagesArray()[0]
   }
 
   receivColor(color, index) {

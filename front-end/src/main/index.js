@@ -3,7 +3,8 @@ const {
   BrowserWindow,
   ipcMain,
   Menu,
-  MenuItem
+  MenuItem,
+  dialog
 } = require('electron')
 const url = require("url");
 const path = require("path");
@@ -13,6 +14,7 @@ const download_palette = require('./download-palettes')
 const get_image = require('./get-image');
 const { change_image_color } = require('./change-image-color')
 const { save_file } = require('./save-sprite')
+const { load_sprite } = require('./load-sprite')
 
 let appWindow
 
@@ -39,6 +41,18 @@ const template = [
    {
       label: 'File',
       submenu: [
+        {
+          label: 'Load',
+          click() {
+
+            load_sprite(dialog, (a) => {
+              if(a.valid){
+                appWindow.webContents.send('load-sprite-command', a.sprite);
+              }
+            })
+
+          }
+        },
          {
             label: 'Save',
             click() {
@@ -117,7 +131,20 @@ ipcMain.on("load-metadata", async(event, arg) =>{
 
 ipcMain.on("save-sprite", async(event, arg) =>{
 
-  let save_action = await save_file(arg.name, arg.data)
+  let this_dialog = await dialog.showSaveDialog({
+    defaultPath: "./projects/"
+  });
+
+  if(this_dialog.canceled){
+    return event.sender.send('save-sprite-reply', {
+      message: "Ocorreu um erro ao salvar",
+      name: arg.name
+    })
+  }
+
+  let path = this_dialog.filePath;
+
+  let save_action = await save_file(path, arg.data)
 
   event.sender.send('save-sprite-reply', {
     message: save_action.message,

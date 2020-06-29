@@ -17,7 +17,7 @@
 
         <div class="row" style="transform: scale(10); position: absolute; margin-top: 7%; top: 0">
 
-          <pixel-animator [imagesArray]="imagesArray" [selectedAnimation]="selectAnimation"></pixel-animator>
+          <pixel-animator [imagesArray]="imagesArray()" [selectedAnimation]="selectAnimation"></pixel-animator>
 
         </div>
 
@@ -29,7 +29,7 @@
 
   <pixel-botton-left-menu></pixel-botton-left-menu>
 
-  <pixel-right-menu *ngIf="imagesArray.length > 0" (selectedAnimation)="receivAnimation($event)" [AnimationArray]="imagesArray[0].metadata.animations" [ImageArray]="imagesArray"></pixel-right-menu>
+  <pixel-right-menu *ngIf="imagesArray().length > 0" (selectedAnimation)="receivAnimation($event)" [AnimationArray]="imagesArray()[0].metadata.animations" [ImageArray]="imagesArray()"></pixel-right-menu>
 
   <pixel-botton-left-menu (index)="receivIndex($event)" [colorsArray]="colors"></pixel-botton-left-menu>
 

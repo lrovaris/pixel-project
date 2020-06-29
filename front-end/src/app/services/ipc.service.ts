@@ -33,7 +33,15 @@ export class IpcService {
       console.log(this.ipc);
       return;
     }
+
     this.ipc.send(channel, ...args);
+  }
+
+  public once(channel: string, listener): void {
+    if (!this.ipc) {
+      return;
+    }
+    this.ipc.once(channel, listener);
   }
 
 
