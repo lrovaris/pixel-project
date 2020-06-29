@@ -58,7 +58,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
         })
 
-      });
+      }, 1000);
     }, 1000);
 
     this.selectAnimation = 0;
