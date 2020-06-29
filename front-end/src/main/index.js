@@ -45,9 +45,9 @@ const template = [
           label: 'Load',
           click() {
 
-            load_sprite(dialog, (a) => {
-              if(a.valid){
-                appWindow.webContents.send('load-sprite-command', a.sprite);
+            load_sprite( dialog, (response) => {
+              if(response.valid){
+                appWindow.webContents.send('load-sprite-command', response.sprite);
               }
             })
 

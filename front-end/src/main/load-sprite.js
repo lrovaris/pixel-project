@@ -9,8 +9,6 @@ async function load_sprite(dialog, callback) {
 
     let filePath = this_dialog.filePaths[0];
 
-    console.log(filePath);
-
     if (fs.existsSync(filePath)) {
 
       let sprite = fs.readFileSync(filePath)
