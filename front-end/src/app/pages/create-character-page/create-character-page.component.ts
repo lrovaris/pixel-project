@@ -14,7 +14,7 @@ import {SpriteService} from '../../services/sprite.service';
 export class CreateCharacterPageComponent implements OnInit {
 
   imagesArray(){
-    return this.spriteService.GetSprite()
+    return this.spriteService.GetSprite();
   };
 
   lastSelection;
@@ -53,7 +53,7 @@ export class CreateCharacterPageComponent implements OnInit {
             iterator++;
 
             if(iterator === this.metadataArray.length) {
-              const defaultImage = this.metadataArray[0];
+              const defaultImage = this.metadataArray[6];
 
               this.setBase(defaultImage);
 

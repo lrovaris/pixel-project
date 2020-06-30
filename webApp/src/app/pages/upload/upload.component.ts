@@ -28,18 +28,23 @@ export class UploadComponent implements OnInit {
   frameWidth: any;
   id: any;
   colors = [];
+  baseSelect: any;
+
+  checkBase: boolean;
 
   form: FormGroup;
 
   constructor(private imageService: ImagesService, private formBuild: FormBuilder) {
    this.form = this.formBuild.group({
       name: [null],
-      frames: [null]
+      frames: [null],
+      category: [null]
     });
   }
 
   ngOnInit() {
     this.uploaded = false;
+    this.baseSelect = true;
   }
 
   addPicutre(event) {
@@ -48,6 +53,10 @@ export class UploadComponent implements OnInit {
     this.imgName = event.target.files[0].name;
     this.checkEnviou = true;
     this.fileToUpload = [newFile];
+  }
+
+  log() {
+    this.checkBase = this.baseSelect === 'base';
   }
 
   uploadPhoto() {
@@ -82,7 +91,9 @@ export class UploadComponent implements OnInit {
       width: this.frameWidth,
       spriteWidth: this.width,
       framesQuantity,
-      animations: this.animationArray
+      animations: this.animationArray,
+      imgBase: this.baseSelect,
+      category: this.form.value.category
     };
 
     console.log(metadata);
