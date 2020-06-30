@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="90258cf2-ebcb-44d1-a8b6-659a1216df15" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/right-menu/right-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/right-menu/right-menu.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -62,12 +59,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="109" selection-start-line="6" selection-start-column="109" selection-end-line="6" selection-end-column="109" />
+            <state relative-caret-position="23">
+              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -177,9 +174,9 @@
         <option value="$PROJECT_DIR$/front-end/src/styles.scss" />
         <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts" />
         <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.html" />
-        <option value="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/card-animation/card-animation.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/right-menu/right-menu.component.html" />
+        <option value="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html" />
       </list>
     </option>
@@ -329,12 +326,12 @@
       <workItem from="1592847726619" duration="9816000" />
       <workItem from="1592917064241" duration="21038000" />
       <workItem from="1593173874322" duration="16312000" />
-      <workItem from="1593534520080" duration="1236000" />
+      <workItem from="1593534520080" duration="1400000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107945000" />
+    <option name="totallyTimeSpent" value="108109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -750,30 +747,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/services/sprite.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -803,6 +780,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="708">
+          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/right-menu/right-menu.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -816,12 +813,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="109" selection-start-line="6" selection-start-column="109" selection-end-line="6" selection-end-column="109" />
+        <state relative-caret-position="23">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />

@@ -53,7 +53,7 @@ export class CreateCharacterPageComponent implements OnInit {
             iterator++;
 
             if(iterator === this.metadataArray.length) {
-              const defaultImage = this.metadataArray[7];
+              const defaultImage = this.metadataArray[6];
 
               this.setBase(defaultImage);
 
