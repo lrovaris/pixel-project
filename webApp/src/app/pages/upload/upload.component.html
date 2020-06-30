@@ -1,5 +1,5 @@
 <form [formGroup]="form">
-  <div class="row" *ngIf="!uploaded">
+  <div class="row" *ngIf="!uploaded ">
     <div class="col-sm-10" style="margin: auto">
       <fieldset class="form-group">
         <label style="color: #000; font-size: 28px" for="upload" >Enviar nova foto</label>
@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div *ngIf="!uploaded" class="row">
+  <div *ngIf="!uploaded " class="row">
     <div class="col-sm-10" style="margin: auto">
       <button style="border: 1px solid black; font-weight: 600" (click)="uploadPhoto()" class="btn btn-warning">
         {{buttomState}}
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div *ngIf="uploaded" class="row">
+  <div *ngIf="uploaded " class="row">
     <div class="col-sm-10" style="margin: auto">
       <button (click)="insercaoMetadados(form.value.name, form.value.frames)" style="border: 1px solid black; font-weight: 600" class="btn btn-warning">
         Salvar
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div *ngIf="uploaded" style="margin-top: 2rem" class="row">
+  <div *ngIf="uploaded " style="margin-top: 2rem" class="row">
     <div class="col-sm-10" style="margin: auto">
       <div class="row">
         <div class="col-sm-6">
@@ -52,6 +52,22 @@
                     <label style="color: #000" for="upload">Quantidade de frames</label>
                     <input #spriteFrames formControlName="frames" name="quantity" style="" type="number" class="form-control input-text">
                   </fieldset>
+                </div>
+              </div>
+              <div class="row">
+               <div class="col-sm-12">
+                 <label for="seguradora" style="font-size: 28px">Selecione base ou acessório</label>
+               </div>
+                <div class="col-sm-6">
+                  <fieldset class="form-group">
+                    <select (change)="log()" [(ngModel)]="baseSelect"  class="form-control input-text" id="selectbase" [ngModelOptions]="{standalone: true}">
+                     <option value="base">Base</option>
+                      <option value="acessorio">Acessório</option>
+                    </select>
+                  </fieldset>
+                </div>
+                <div *ngIf="checkBase === false" class="col-sm-6">
+                  <input formControlName="category" name="quantity" style="" type="number" class="form-control input-text">
                 </div>
               </div>
               <div class="row">

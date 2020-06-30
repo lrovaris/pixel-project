@@ -41,3 +41,17 @@ body {
 }
 
 
+* {
+  font-family: 'silkscreen', serif !important;
+}
+
+@font-face {
+  font-family: 'silkscreen';
+  src:
+  url('assets/fonts/Silkscreen.ttf.eot') format('truetype'),
+  url('assets/fonts/Silkscreen.ttf.woff') format('woff'),
+  url('assets/fonts/Silkscreen.ttf.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
