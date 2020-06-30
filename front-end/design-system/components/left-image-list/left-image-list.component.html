@@ -1,12 +1,12 @@
-<div style="left: 1%; position: fixed; min-height: 98%; top: 1%; width: 20%; overflow: scroll; background-color: #847e87" class="col left-list" >
-  <div class="row">
+<div style="left: 1%; position: fixed; min-height: 98%; top: 1%; width: 20%; background-color: #847e87" class="col left-list" >
+  <div class="row" style="outline: 1px solid red">
     <div class="form-group" style="width: 76%; margin-left: 25%; margin-top: 1rem; margin-right: 1rem">
       <input type="text" class="form-control form-list" >
     </div>
   </div>
-  <div class="row" *ngIf="toggleImages" style="margin-top: 5rem;" >
+  <div class="row" *ngIf="toggleImages" style="overflow: scroll; outline: 1px solid green; padding-bottom: 80%" >
     <div class="col-sm-12" >
-      <div class="card" [style.margin-top]="i === 0 ? '-4rem' : '8px'" *ngFor="let image of arrayMetadata; let i = index" style="background-color: rgba(0,0,0,0); max-width: 110%; min-height: 20%; border: none; margin-left: 2px">
+      <div class="card" [style.margin-top]="i === 0 ? '0' : '-12px'" *ngFor="let image of arrayMetadata; let i = index" style="background-color: rgba(0,0,0,0); max-width: 110%; min-height: 20%; border: none; margin-left: 2px">
         <div class="card-content" (click)="emitImage(image)" style="background-color: #9badb7; height: 80px; border: 4px solid black">
          <div class="div" style="border: 4px solid #c1d0f0; height: 100%">
            <div class="row" style="display: flex; justify-content: center; align-content: center; margin-top: 1.5rem" ><pixel-image-in-list
