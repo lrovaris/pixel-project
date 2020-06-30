@@ -25,6 +25,18 @@ async function register_metadata(new_entries) {
   return new_entry.ops[0];
 }
 
+async function update_metadata(metadata) {
+  let db_conn = await db_utils.get_db();
+
+  let updated_metadata = await db_conn.collection("images").replaceOne({_id: new ObjectId(metadata._id) }, metadata,{w: "majority", upsert: false});
+
+  console.log(`Modificados ${updated_metadata.result.nModified} elementos`);
+
+  await get_metadata();
+
+  return updated_metadata.ops[0];
+}
+
 async function delete_metadata(meta_id) {
   db_conn = await db_utils.get_db();
 
@@ -35,4 +47,8 @@ async function delete_metadata(meta_id) {
   return delete_action.ops;
 }
 
-module.exports = { get_metadata, register_metadata, delete_metadata  };
+module.exports = {
+  get_metadata,
+  register_metadata,
+  update_metadata, 
+  delete_metadata  };

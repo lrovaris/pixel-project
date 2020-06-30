@@ -11,7 +11,7 @@ async function get_metadata_from_image(path, callback) {
     for (var i = 0; i < pixels.length; i+=4) {
       let this_rgba = {
         r: pixels[i],
-        g:pixels[i+1],
+        g: pixels[i+1],
         b: pixels[i+2],
         a: pixels[i+3]
       }

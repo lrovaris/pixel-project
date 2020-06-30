@@ -35,6 +35,37 @@ router.post ('/new', async(req,res) => {
 
 })
 
+router.get("/:id", async(req,res) =>{
+  const metadata_id = req.params.id
+
+  if(metadata_id === undefined){
+    return res.status(400).json({ message: "Metadados inválidos"})
+  }
+
+  const img_metadata = await controller.get_metadata_by_id(metadata_id);
+
+  return res.status(200).json(img_metadata)
+})
+
+router.post("/:id", async(req,res) =>{
+  const metadata_id = req.params.id
+
+  if(metadata_id === undefined){
+    return res.status(400).json({ message: "Metadados inválidos"})
+  }
+
+  const modifications = req.body
+
+  if(modifications === undefined || modifications === null){
+    return res.status(400).json({ message: "Modificações em branco" })
+  }
+
+  let edited_metadata =  await controller.edit_metadata(metadata_id, modifications);
+
+
+  return res.status(200).json({ message: "Metadados editados com sucesso", metadata: edited_metadata })
+})
+
 router.delete("/:id", async(req,res) =>{
   const metadata_id = req.params.id
 
