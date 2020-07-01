@@ -90,9 +90,12 @@ function export_sprite(path, sprite_data, callback) {
 
           this.data = pixels
 
+          path = path.replace('.png', '')
+          path = path.replace('.pxl', '')
+
           this
           .pack()
-          .pipe(fs.createWriteStream(`${path}`))
+          .pipe(fs.createWriteStream(`${path}.png`))
           .on("finish", () => {
 
             callback({ message: "Finalizado" })
