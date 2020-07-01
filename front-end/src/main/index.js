@@ -15,6 +15,7 @@ const get_image = require('./get-image');
 const { change_image_color } = require('./change-image-color')
 const { save_file } = require('./save-sprite')
 const { load_sprite } = require('./load-sprite')
+const { export_sprite } = require('./export-sprite')
 
 let appWindow
 
@@ -57,6 +58,12 @@ const template = [
             label: 'Save',
             click() {
                     appWindow.webContents.send('save-sprite-command');
+                }
+         },
+         {
+            label: 'Export',
+            click() {
+                    appWindow.webContents.send('export-sprite-command');
                 }
          }
       ]
@@ -151,6 +158,32 @@ ipcMain.on("save-sprite", async(event, arg) =>{
     name: arg.name
   })
 
+})
+
+
+ipcMain.on("export-sprite", async(event, arg) =>{
+
+  const this_dialog = await dialog.showSaveDialog({
+    defaultPath: "./projects/"
+  });
+
+  if(this_dialog.canceled){
+    return event.sender.send('export-sprite-reply', {
+      message: "Ocorreu um erro ao salvar"
+    })
+  }
+
+  const path = this_dialog.filePath;
+
+  const sprite = arg.sprite
+
+  const export_action = await export_sprite(path, sprite, (response) => {
+
+    event.sender.send('export-sprite-reply', {
+      message: response.message
+    })
+
+  })
 })
 
 ipcMain.on("load-palettes", async(event, arg) => {

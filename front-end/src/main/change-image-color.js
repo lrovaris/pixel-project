@@ -29,7 +29,7 @@ function change_image_color(path, changes, callback) {
         for (var i = 0; i < changes.length; i++) {
           let old_color = changes[i].old_color;
           let new_color = changes[i].new_color
-          
+
           if(old_color.r === this_rgba.r
             && old_color.g === this_rgba.g
             && old_color.b === this_rgba.b

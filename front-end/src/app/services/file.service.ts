@@ -25,6 +25,12 @@ export class FileService {
 
     })
 
+    this.ipc.on('export-sprite-command', (e, a) => {
+
+      this.ExportSprite();
+
+    })
+
   }
 
   public SaveSprite(fileName: string, imagesArray: any, callback: any) {
@@ -50,5 +56,24 @@ export class FileService {
     });
 
   }
+
+  ExportSprite() {
+
+    const sprite = this.spriteService.GetSprite()
+
+    if(sprite === undefined){
+      return
+    }
+
+    this.ipc.once('export-sprite-reply', (e: any, a: any) => {
+      console.log(a);
+    });
+
+    this.ipc.send('export-sprite', {
+      sprite: sprite
+    });
+  }
+
+
 
 }
