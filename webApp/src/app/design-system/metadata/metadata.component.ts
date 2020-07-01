@@ -28,7 +28,6 @@ export class MetadataComponent implements OnInit {
   @Input() imgBase;
   @Input() baseId;
   @Input() animationArray: Array<any>;
-  @Input() path;
 
   @Output() saveMetadata = new EventEmitter();
 
