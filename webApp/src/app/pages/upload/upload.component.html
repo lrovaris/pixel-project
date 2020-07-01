@@ -1,5 +1,6 @@
 <form [formGroup]="form">
-  <div class="row" *ngIf="!uploaded || true">
+
+  <div class="row" *ngIf="!uploaded">
     <div class="col-sm-10" style="margin: auto">
       <fieldset class="form-group">
         <label style="color: #000; font-size: 28px" for="upload" >Enviar nova foto</label>
@@ -11,7 +12,7 @@
     </div>
   </div>
 
-  <div *ngIf="!uploaded || true" class="row">
+  <div *ngIf="!uploaded" class="row">
     <div class="col-sm-10" style="margin: auto">
       <button style="border: 1px solid black; font-weight: 600" (click)="uploadPhoto()" class="btn btn-warning">
         {{buttomState}}
@@ -20,10 +21,9 @@
   </div>
 
 
-
-  <div *ngIf="uploaded || true" style="margin-top: 2rem" class="row">
+  <div *ngIf="uploaded" style="margin-top: 2rem" class="row">
    <div class="col-sm-12">
-     <app-metadata [animationArray]="[]" [name]="''" [frames]="" [category]="[]" [baseId]="''" [imgBase]=""></app-metadata>
+     <app-metadata [animationArray]="[]" [name]="''" [frames]="" [category]="[]" [baseId]="''" [imgBase]="" (saveMetadata)="saveMetadata($event)"></app-metadata>
    </div>
   </div>
 

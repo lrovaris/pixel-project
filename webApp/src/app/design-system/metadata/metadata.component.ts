@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ImagesService} from "../../services/images.service";
 
@@ -21,8 +21,6 @@ export class MetadataComponent implements OnInit {
   colors = [];
   baseSelect: any;
 
-
-
   // INPUTS
   @Input() name;
   @Input() frames;
@@ -30,6 +28,9 @@ export class MetadataComponent implements OnInit {
   @Input() imgBase;
   @Input() baseId;
   @Input() animationArray: Array<any>;
+  @Input() path;
+
+  @Output() saveMetadata = new EventEmitter();
 
   checkBase: boolean;
   allImages = [];
@@ -46,10 +47,8 @@ export class MetadataComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.uploaded = false;
     this.baseSelect = true;
     this.imageService.getAllImages().subscribe((data: any) => {
-      console.log(data);
       this.allImages = data;
     });
   }
@@ -79,9 +78,9 @@ export class MetadataComponent implements OnInit {
       category: this.category
     };
 
-    console.log(metadata);
+    return this.saveMetadata.emit(metadata)
+
     this.imageService.createImage(metadata, this.path).subscribe((data2: any) => {
-      console.log(data2);
       alert(data2.message);
       this.uploaded = false;
     });
@@ -101,7 +100,6 @@ export class MetadataComponent implements OnInit {
 
   alteraCoresData(value, index) {
     this.colors[index]['name'] = value;
-    console.log(this.colors[index]);
   }
 
   removeFile(nome) {

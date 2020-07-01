@@ -47,7 +47,6 @@ export class UploadComponent implements OnInit {
     this.uploaded = false;
     this.baseSelect = true;
     this.imageService.getAllImages().subscribe((data: any) => {
-      console.log(data);
       this.allImages = data;
     });
   }
@@ -60,10 +59,6 @@ export class UploadComponent implements OnInit {
     this.fileToUpload = [newFile];
   }
 
-  log() {
-    this.checkBase = this.baseSelect === 'base';
-  }
-
   uploadPhoto() {
 
     this.checkEnviou = false;
@@ -74,6 +69,8 @@ export class UploadComponent implements OnInit {
     }
     this.imageService.uploadPhoto(this.formData).subscribe((data: any) => {
 
+      this.buttomState = 'Finalizado';
+
       this.path = data.info_files[0].path;
       this.width = data.info_files[0].metadata.width;
       this.height = data.info_files[0].metadata.height;
@@ -81,84 +78,15 @@ export class UploadComponent implements OnInit {
       this.uploaded = true;
 
       this.colors = data.info_files[0].metadata.colors;
-
-      console.log(data);
-
     });
   }
 
-  insercaoMetadados(name, framesQuantity) {
-
-    if (!this.checkBase) {
-      this.baseSelect = this.baseId;
-    } else {
-      this.baseSelect = true;
-      this.category = this.categoryArray;
-    }
-
-    const metadata = {
-      colors: this.colors,
-      name,
-      height: this.height,
-      width: this.frameWidth,
-      spriteWidth: this.width,
-      framesQuantity,
-      animations: this.animationArray,
-      imgBase: this.baseSelect,
-      category: this.category
-    };
+  saveMetadata(metadata){
 
     console.log(metadata);
-    this.imageService.createImage(metadata, this.path).subscribe((data2: any) => {
-      console.log(data2);
-      alert(data2.message);
-      this.uploaded = false;
-    });
-  }
+    console.log(this.path);
 
-  adicionarAnimation( name, frames ) {
-   if (!this.frameWidth) {
-     this.frameWidth =  this.width / this.form.value.frames ;
-     this.animationSelect = 0;
-   }
-   if (name === '' || frames === '') {
-     return;
-   } else {
-     this.animationArray.push({name, frames});
-   }
-  }
 
-  alteraCoresData(value, index) {
-   this.colors[index]['name'] = value;
-   console.log(this.colors[index]);
-  }
-
-  removeFile(nome) {
-    const index = this.animationArray.indexOf(nome);
-    if (index !== -1) {this.animationArray.splice(index, 1); }
-  }
-
-  adicionarCategoria(category) {
-    if (category === '') {
-      alert('nao adicione categorias vazias');
-      return;
-    }
-    this.categoryArray.push(category);
-  }
-
-  removeCategoria(nome) {
-    const index = this.categoryArray.indexOf(nome);
-    if (index !== -1) {this.categoryArray.splice(index, 1); }
-  }
-
-  selectBase(id) {
-    this.baseId = id;
-    this.imgBase = this.allImages.find(img => img._id === id);
-    this.categoryArray = this.imgBase.metadata.category;
-  }
-
-  selectCategory(category) {
-    this.category = category;
   }
 
 }

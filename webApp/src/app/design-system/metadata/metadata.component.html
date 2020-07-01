@@ -4,13 +4,8 @@
 
           <div class="card" style="padding: 1rem; border: 1px solid black;">
             <div class="card-content">
-              <div *ngIf="ed || true" class="row">
-                <div class="col-sm-10">
-                  <button (click)="insercaoMetadados(form.value.name, form.value.frames)" style="border: 1px solid black; font-weight: 600" class="btn btn-warning">
-                    Salvar
-                  </button>
-                </div>
-              </div>
+
+
               <div class="row" style="margin-top: 1rem">
                 <div class="col-sm-12">
                   <h4>Inserção de Metadados:</h4>
@@ -132,6 +127,7 @@
                 </div>
               </div>
               <div class="row" *ngIf="animationArray?.length > 0">
+
                 <div class="col-sm-10" style="margin: auto">
                   <table class="table" style="margin-top: 2rem">
                     <thead>
@@ -151,9 +147,22 @@
                   </table>
                 </div>
               </div>
+
+              <hr>
+
+
+              <div *ngIf="ed || true" class="row">
+                <div class="col-sm-10">
+                  <button (click)="insercaoMetadados(form.value.name, form.value.frames)" style="border: 1px solid black; font-weight: 600" class="btn btn-warning">
+                    Salvar
+                  </button>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
+
         <div class="col-sm-6">
           <div class="row" *ngIf="animationArray.length > 0">
             <div class="col-sm-6">
@@ -171,4 +180,6 @@
             </div>
           </div>
         </div>
+
+
 </form>
