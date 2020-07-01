@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ImageDisplayComponent} from './pages/upload/components/image-display/image-display.component';
 import { ColorCardComponent } from './pages/upload/components/color-card/color-card.component';
+import { UpdateComponent } from './pages/update/update.component';
+import { MetadataComponent } from './design-system/metadata/metadata.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { ColorCardComponent } from './pages/upload/components/color-card/color-c
     ListComponent,
     HeaderComponent,
     ImageDisplayComponent,
-    ColorCardComponent
+    ColorCardComponent,
+    UpdateComponent,
+    MetadataComponent
   ],
   imports: [
     HttpClientModule,

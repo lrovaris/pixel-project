@@ -1,21 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {ImagesService} from '../../services/images.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {Component, Input, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {ImagesService} from "../../services/images.service";
 
 @Component({
-  selector: 'app-upload',
-  templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.scss']
+  selector: 'app-metadata',
+  templateUrl: './metadata.component.html',
+  styleUrls: ['./metadata.component.scss']
 })
-export class UploadComponent implements OnInit {
+export class MetadataComponent implements OnInit {
 
-  buttomState = 'Enviar';
-  fileToUpload: Array<File> = [];
-  formData: FormData = new FormData();
+
   imgPath = '';
-  imgName = 'Escolha uma foto';
-  checkEnviou = false;
-  animationArray = [];
   uploaded: boolean;
   path: any;
   height: any;
@@ -25,9 +20,16 @@ export class UploadComponent implements OnInit {
   id: any;
   colors = [];
   baseSelect: any;
-  category: any;
-  imgBase: any;
-  baseId: any;
+
+
+
+  // INPUTS
+  @Input() name;
+  @Input() frames;
+  @Input() category;
+  @Input() imgBase;
+  @Input() baseId;
+  @Input() animationArray: Array<any>;
 
   checkBase: boolean;
   allImages = [];
@@ -36,10 +38,10 @@ export class UploadComponent implements OnInit {
   form: FormGroup;
 
   constructor(private imageService: ImagesService, private formBuild: FormBuilder) {
-   this.form = this.formBuild.group({
-      name: [null],
-      frames: [null],
-      category: [null]
+    this.form = this.formBuild.group({
+      name: [this.name],
+      frames: [this.frames],
+      category: [this.category]
     });
   }
 
@@ -52,39 +54,8 @@ export class UploadComponent implements OnInit {
     });
   }
 
-  addPicutre(event) {
-    this.fileToUpload = [];
-    const newFile = event.target.files[0];
-    this.imgName = event.target.files[0].name;
-    this.checkEnviou = true;
-    this.fileToUpload = [newFile];
-  }
-
-  log() {
+  changeBase() {
     this.checkBase = this.baseSelect === 'base';
-  }
-
-  uploadPhoto() {
-
-    this.checkEnviou = false;
-    this.imgName = 'Escolha uma foto';
-    this.buttomState = 'Enviando';
-    for (let i = 0; i < this.fileToUpload.length; i++) {
-      this.formData.append('docs', this.fileToUpload[i]);
-    }
-    this.imageService.uploadPhoto(this.formData).subscribe((data: any) => {
-
-      this.path = data.info_files[0].path;
-      this.width = data.info_files[0].metadata.width;
-      this.height = data.info_files[0].metadata.height;
-      this.formData = new FormData();
-      this.uploaded = true;
-
-      this.colors = data.info_files[0].metadata.colors;
-
-      console.log(data);
-
-    });
   }
 
   insercaoMetadados(name, framesQuantity) {
@@ -117,20 +88,20 @@ export class UploadComponent implements OnInit {
   }
 
   adicionarAnimation( name, frames ) {
-   if (!this.frameWidth) {
-     this.frameWidth =  this.width / this.form.value.frames ;
-     this.animationSelect = 0;
-   }
-   if (name === '' || frames === '') {
-     return;
-   } else {
-     this.animationArray.push({name, frames});
-   }
+    if (!this.frameWidth) {
+      this.frameWidth =  this.width / this.form.value.frames ;
+      this.animationSelect = 0;
+    }
+    if (name === '' || frames === '') {
+      return;
+    } else {
+      this.animationArray.push({name, frames});
+    }
   }
 
   alteraCoresData(value, index) {
-   this.colors[index]['name'] = value;
-   console.log(this.colors[index]);
+    this.colors[index]['name'] = value;
+    console.log(this.colors[index]);
   }
 
   removeFile(nome) {
