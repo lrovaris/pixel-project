@@ -35,6 +35,43 @@ router.post ('/new', async(req,res) => {
 
 })
 
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './uploads/images');
+     },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+
+        cb(null , uniqueSuffix+file.originalname);
+    }
+})
+
+const upload = multer({ storage: storage })
+
+router.post ('/upload', upload.array('docs'), async(req,res) =>{
+  if(!req.files){
+    res.stats(400).json({ message: "Arquivos inválidos" })
+  }
+
+  let this_files = []
+
+  let file_obj = req.files[0];
+
+  await controller.get_metadata_from_image(file_obj.filename, (metadata) =>{
+
+    let to_send = {
+      nome: file_obj.originalname,
+      path: file_obj.filename,
+      metadata: metadata
+    }
+
+    res.status(200).json({
+      message: "Upload concluído!",
+      info_files: [ to_send ]
+    })
+  })
+})
+
 router.get("/:id", async(req,res) =>{
   const metadata_id = req.params.id
 
@@ -82,41 +119,6 @@ router.delete("/:id", async(req,res) =>{
   }
 })
 
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        cb(null, './uploads/images');
-     },
-    filename: function (req, file, cb) {
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
 
-        cb(null , uniqueSuffix+file.originalname);
-    }
-})
-
-const upload = multer({ storage: storage })
-
-router.post ('/upload', upload.array('docs'), async(req,res) =>{
-  if(!req.files){
-    res.stats(400).json({ message: "Arquivos inválidos" })
-  }
-
-  let this_files = []
-
-  let file_obj = req.files[0];
-
-  await controller.get_metadata_from_image(file_obj.filename, (metadata) =>{
-
-    let to_send = {
-      nome: file_obj.originalname,
-      path: file_obj.filename,
-      metadata: metadata
-    }
-
-    res.status(200).json({
-      message: "Upload concluído!",
-      info_files: [ to_send ]
-    })
-  })
-})
 
 module.exports = router;
