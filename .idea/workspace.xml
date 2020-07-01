@@ -4,6 +4,7 @@
     <list default="true" id="90258cf2-ebcb-44d1-a8b6-659a1216df15" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
-              <caret line="6" column="193" selection-start-line="6" selection-start-column="193" selection-end-line="6" selection-end-column="193" />
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -38,10 +39,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/color-list/color-list.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="22" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+            <state relative-caret-position="253">
+              <caret line="11" column="12" selection-start-line="11" selection-end-line="11" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -78,7 +88,6 @@
         <option value="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.scss" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.scss" />
         <option value="$PROJECT_DIR$/front-end/src/app/services/image.service.ts" />
         <option value="$PROJECT_DIR$/webApp/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/components/color-card/color-card.component.ts" />
@@ -113,6 +122,7 @@
         <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.html" />
         <option value="$PROJECT_DIR$/webApp/src/app/design-system/metadata/metadata.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html" />
+        <option value="$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.scss" />
       </list>
     </option>
   </component>
@@ -150,6 +160,14 @@
               <item name="front-end" type="462c0819:PsiDirectoryNode" />
               <item name="design-system" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="design-system" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="color-list" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
@@ -245,12 +263,12 @@
       <workItem from="1592917064241" duration="21038000" />
       <workItem from="1593173874322" duration="16312000" />
       <workItem from="1593534520080" duration="3315000" />
-      <workItem from="1593606498902" duration="5879000" />
+      <workItem from="1593606498902" duration="6546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115903000" />
+    <option name="totallyTimeSpent" value="116570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -611,13 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/color-list/color-list.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
@@ -731,17 +742,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.scss">
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/color-list/color-list.component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state>
+          <caret selection-end-line="22" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="6" column="193" selection-start-line="6" selection-start-column="193" selection-end-line="6" selection-end-column="193" />
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -751,6 +762,13 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#pixel-image-in-list#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/left-image-list/left-image-list.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="12" selection-start-line="11" selection-end-line="11" selection-end-column="12" />
         </state>
       </provider>
     </entry>
