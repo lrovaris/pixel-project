@@ -30,6 +30,7 @@
     "@types/electron": "^1.6.10",
     "bootstrap": "^4.5.0",
     "got": "^11.3.0",
+    "ngx-bootstrap": "^4.1.1",
     "png-js": "^1.0.0",
     "pngjs": "^5.0.0",
     "rxjs": "~6.4.0",
