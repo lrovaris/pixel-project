@@ -12,9 +12,11 @@ import { ColorListComponent } from './components/color-list/color-list.component
 import { ColorCardComponent } from './components/color-card/color-card.component';
 import { CardAnimationComponent } from './components/card-animation/card-animation.component';
 import { AnimatorComponent } from './components/animator/animator.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ExportModalComponent } from './components/export-modal/export-modal.component';
 
 @NgModule({
-  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent, HeaderComponent, ColorListComponent, ColorCardComponent, CardAnimationComponent, AnimatorComponent],
+  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent, HeaderComponent, ColorListComponent, ColorCardComponent, CardAnimationComponent, AnimatorComponent, ModalComponent, ExportModalComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -26,7 +28,9 @@ import { AnimatorComponent } from './components/animator/animator.component';
     ImageDisplayComponent,
     RightMenuComponent,
     ColorListComponent,
-    AnimatorComponent
+    AnimatorComponent,
+    ModalComponent,
+    ExportModalComponent
   ]
 })
 export class DesignSystemModule { }

@@ -34,3 +34,9 @@
   <pixel-botton-left-menu (index)="receivIndex($event)" [colorsArray]="colors"></pixel-botton-left-menu>
 
 </div>
+
+<pixel-modal *ngIf="showExportModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
+
+  <pixel-export-modal (modalOutput)="modalOutput($event)"></pixel-export-modal>
+
+</pixel-modal>

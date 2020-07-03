@@ -1,0 +1,26 @@
+<div class="mmodal">
+
+  <div class="mmodal-body">
+
+    <div style="padding:5px;">
+
+      <button type="button" name="button" (click)="close()"  style="float: right;"> X </button>
+
+      <h4 style="float: left;">{{_title}}</h4>
+
+    </div>
+
+
+    <div style="padding:20px;">
+
+      <br>
+      <ng-content></ng-content>
+    </div>
+
+
+
+  </div>
+
+</div>
+
+<div class="mmodal-background"></div>

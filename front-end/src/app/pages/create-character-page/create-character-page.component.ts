@@ -27,6 +27,9 @@ export class CreateCharacterPageComponent implements OnInit {
 
   colors = [];
 
+  showExportModal = false
+  modalTitle = "Export"
+
   constructor(
     private metadataService: MetadataService,
     private imageService: ImageService,
@@ -169,6 +172,12 @@ export class CreateCharacterPageComponent implements OnInit {
 
   receivAnimation(index) {
     this.selectAnimation = index;
+  }
+
+  modalOutput(e){
+    if(e === 'close'){
+      this.showExportModal = false;
+    }
   }
 
 }
