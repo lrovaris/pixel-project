@@ -23,6 +23,8 @@ export class LeftImageListComponent implements OnInit {
         }
       }
 
+      this.setBase.emit(this.arrayBases[0])
+
     }
   }
 
@@ -33,6 +35,8 @@ export class LeftImageListComponent implements OnInit {
   toggleImages: boolean;
 
   @Output() image = new EventEmitter();
+  @Output() setBase = new EventEmitter();
+  @Output() removeAcessory = new EventEmitter();
 
   constructor() { }
 
@@ -63,6 +67,11 @@ export class LeftImageListComponent implements OnInit {
 
     });
 
+    this.setBase.emit(this.arrayBases[index])
+  }
+
+  functionRemoveAcessory(acessory){
+    this.removeAcessory.emit(acessory)
   }
 
 

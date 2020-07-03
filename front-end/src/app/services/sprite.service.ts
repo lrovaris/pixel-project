@@ -22,4 +22,12 @@ export class SpriteService {
   public push(image) {
     this.Sprite.push(image)
   }
+
+  public remove(image) {
+
+    this.Sprite = this.Sprite.filter((img) => {
+      return img._id.toString() !== image._id.toString()
+    });
+
+  }
 }

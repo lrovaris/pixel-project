@@ -66,13 +66,6 @@ export class CreateCharacterPageComponent implements OnInit {
             metadataObj.defaultDisplay = base64;
             metadataObj.display = base64;
             iterator++;
-
-            if(iterator === this.metadataArray.length) {
-              const defaultImage = this.metadataArray[6];
-
-              this.setBase(defaultImage);
-
-            }
           })
 
         })
@@ -83,15 +76,30 @@ export class CreateCharacterPageComponent implements OnInit {
     this.selectAnimation = 0;
   }
 
+  pushBase(img){
+
+    if(img === undefined){
+      return
+    }
+
+    this.setBase(img)
+  }
+
 
   pushImage(image) {
-
     let currentImage = this.imagesArray().find(img => img._id.toString() === image._id.toString())
 
     if(currentImage !== undefined){
       this.lastSelection = currentImage
       this.colors = currentImage.metadata.colors;
       return;
+    }
+
+    let image_in_same_category = this.imagesArray().find(img => img.metadata.category === image.metadata.category)
+
+    if(image_in_same_category !== undefined){
+
+      this.spriteService.remove(image_in_same_category)
     }
 
     image.originalColors = image.metadata.colors;
@@ -102,6 +110,18 @@ export class CreateCharacterPageComponent implements OnInit {
 
     this.lastSelection = this.imagesArray()[this.imagesArray().length-1]
     this.colors = this.lastSelection.metadata.colors;
+  }
+
+  removeAcessory(image){
+
+    let currentImage = this.imagesArray().find(img => img._id.toString() === image._id.toString())
+
+    if(currentImage !== undefined){
+      this.spriteService.remove(currentImage)
+      return;
+    }
+
+
   }
 
   setBase(image) {
@@ -233,7 +253,6 @@ export class CreateCharacterPageComponent implements OnInit {
             this.fileExtension = new_array[1]
             this.fileName = this.fileName.replace(`.${new_array[1]}`, '')
           }
-
         }
 
           this.cdRef.detectChanges();

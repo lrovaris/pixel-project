@@ -8,7 +8,7 @@
      <pixel-botton-left-menu ></pixel-botton-left-menu>
    </div>
    <div class="row">
-     <pixel-left-image-list (image)="pushImage($event)" [metadata]="metadataArray"></pixel-left-image-list>
+     <pixel-left-image-list (removeAcessory)="removeAcessory($event)" (setBase)="pushBase($event)" (image)="pushImage($event)" [metadata]="metadataArray"></pixel-left-image-list>
    </div>
   </div>
 
