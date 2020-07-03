@@ -7,8 +7,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let image of imagesList">
-      <td>{{image.metadata.name}}</td>
+    <tr *ngFor="let image of imagesList" >
+      <td (click)="navigateEdit(image)">{{image.metadata.name}}</td>
       <td><i (click)="deleteImage(image._id)" class="icon-waste"></i></td>
     </tr>
     </tbody>

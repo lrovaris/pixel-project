@@ -11,8 +11,8 @@ import { ListComponent } from './pages/list/list.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ImageDisplayComponent} from './pages/upload/components/image-display/image-display.component';
-import { ColorCardComponent } from './pages/upload/components/color-card/color-card.component';
+import { ImageDisplayComponent} from './design-system/image-display/image-display.component';
+import { ColorCardComponent } from './design-system/color-card/color-card.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { MetadataComponent } from './design-system/metadata/metadata.component';
 

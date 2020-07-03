@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ImagesService} from "../../services/images.service";
+import {isArray} from "util";
 
 @Component({
   selector: 'app-metadata',
@@ -12,28 +13,31 @@ export class MetadataComponent implements OnInit {
 
   imgPath = '';
   uploaded: boolean;
-  path: any;
-  height: any;
-  width: any;
+
+
   animationSelect: any;
   frameWidth: any;
   id: any;
-  colors = [];
+  @Input() colors = [];
   baseSelect: any;
 
+
   // INPUTS
+  @Input() path;
   @Input() name;
   @Input() frames;
   @Input() category;
   @Input() imgBase;
   @Input() baseId;
   @Input() animationArray: Array<any>;
+  @Input() height: any;
+  @Input() width: any;
 
   @Output() saveMetadata = new EventEmitter();
 
   checkBase: boolean;
   allImages = [];
-  categoryArray = [];
+  @Input() categoryArray = [];
 
   form: FormGroup;
 
@@ -46,10 +50,37 @@ export class MetadataComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.baseSelect = true;
+
+    console.log(this.baseId);
+
+    setTimeout( () => {
+      if (this.category !== undefined) {
+        if (isArray(this.category)) {
+          this.categoryArray = this.category;
+          this.category = undefined;
+          this.baseSelect = 'base';
+          this.checkBase = true;
+        } else {
+          console.log(this.category);
+          this.baseSelect = 'acessorio';
+          this.checkBase = false;
+          this.categoryArray = [];
+          this.imgBase = this.allImages.find(img => img._id === this.imgBase);
+          this.allImages = [];
+          this.allImages.push(this.imgBase);
+          this.categoryArray = this.imgBase.metadata.category;
+          console.log(this.category);
+          console.log(this.allImages);
+        }
+      }
+    }, 1000);
+
+    this.animationSelect = 0;
     this.imageService.getAllImages().subscribe((data: any) => {
       this.allImages = data;
     });
+    console.log(this.baseSelect);
+
   }
 
   changeBase() {
@@ -57,6 +88,7 @@ export class MetadataComponent implements OnInit {
   }
 
   insercaoMetadados(name, framesQuantity) {
+
 
     if (!this.checkBase) {
       this.baseSelect = this.baseId;
@@ -77,12 +109,8 @@ export class MetadataComponent implements OnInit {
       category: this.category
     };
 
-    return this.saveMetadata.emit(metadata)
+    return this.saveMetadata.emit(metadata);
 
-    this.imageService.createImage(metadata, this.path).subscribe((data2: any) => {
-      alert(data2.message);
-      this.uploaded = false;
-    });
   }
 
   adicionarAnimation( name, frames ) {
@@ -123,10 +151,13 @@ export class MetadataComponent implements OnInit {
     this.baseId = id;
     this.imgBase = this.allImages.find(img => img._id === id);
     this.categoryArray = this.imgBase.metadata.category;
+    this.category = this.categoryArray[0];
   }
 
   selectCategory(category) {
     this.category = category;
+    console.log(this.category);
+    console.log(category);
   }
 
 }

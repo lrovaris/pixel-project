@@ -1,185 +1,183 @@
 <form [formGroup]="form">
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card" style="padding: 1rem; border: 1px solid black;">
+      <div class="card-content">
 
-        <div class="col-sm-6">
+        <div class="row">
+          <div class="col-sm-10" style="margin: auto">
+            <button style="border: 1px solid black; font-weight: 600" (click)="insercaoMetadados(spriteName.value, spriteFrames.value)" class="btn btn-warning">
+              Salvar
+            </button>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 1rem">
+          <div class="col-sm-12">
+            <h4>Inserção de Metadados:</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <fieldset class="form-group">
+              <label style="color: #000" for="">Nome</label>
+              <input #spriteName formControlName="name" name="name" style="" type="text" class="form-control input-text" [value]="name">
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <fieldset class="form-group">
+              <label style="color: #000" for="">Quantidade de frames</label>
+              <input #spriteFrames formControlName="frames" name="quantity" style="" type="number" class="form-control input-text" [value]="frames">
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <label for="seguradora" style="font-size: 28px">Selecione base ou acessório</label>
+          </div>
+          <div class="col-sm-6">
+            <fieldset class="form-group">
+              <select (change)="changeBase()" [(ngModel)]="baseSelect"  class="form-control input-text" id="selectbase" [ngModelOptions]="{standalone: true}">
+                <option value="base">Base</option>
+                <option value="acessorio">Acessório</option>
+              </select>
+            </fieldset>
+          </div>
 
-          <div class="card" style="padding: 1rem; border: 1px solid black;">
-            <div class="card-content">
+        </div>
+        <div class="row" *ngIf="checkBase === false">
+          <div  class="col-sm-6">
+            <label >Selecione a base</label>
+            <fieldset class="form-group">
+              <select  (change)="selectBase(selectBaseInput.value)" #selectBaseInput class="form-control input-text" id="selectbase" >
+                <option *ngFor="let base of allImages" [value]="base._id">{{base.metadata.name}}</option>
+              </select>
+            </fieldset>
+          </div>
+          <div class="col-sm-6">
+            <label >Selecione a categoria</label>
+            <fieldset class="form-group">
+              <select  [(ngModel)]="category" (change)="selectCategory(selectCategoryInput.value)" #selectCategoryInput class="form-control input-text" id="selectbase" [ngModelOptions]="{standalone: true}">
+                <option *ngFor="let category of categoryArray" [value]="category">{{category}}</option>
+              </select>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row" *ngIf="checkBase === true">
+          <div  class="col-sm-6">
+            <label >Adicione categorias a base</label>
+            <input formControlName="category" #categoryInput name="quantity" style="" type="text" class="form-control input-text">
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
 
-
-              <div class="row" style="margin-top: 1rem">
-                <div class="col-sm-12">
-                  <h4>Inserção de Metadados:</h4>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12">
-                  <fieldset class="form-group">
-                    <label style="color: #000" for="">Nome</label>
-                    <input #spriteName formControlName="name" name="name" style="" type="text" class="form-control input-text">
-                  </fieldset>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12">
-                  <fieldset class="form-group">
-                    <label style="color: #000" for="">Quantidade de frames</label>
-                    <input #spriteFrames formControlName="frames" name="quantity" style="" type="number" class="form-control input-text">
-                  </fieldset>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12">
-                  <label for="seguradora" style="font-size: 28px">Selecione base ou acessório</label>
-                </div>
-                <div class="col-sm-6">
-                  <fieldset class="form-group">
-                    <select (change)="changeBase()" [(ngModel)]="baseSelect"  class="form-control input-text" id="selectbase" [ngModelOptions]="{standalone: true}">
-                      <option value="base">Base</option>
-                      <option value="acessorio">Acessório</option>
-                    </select>
-                  </fieldset>
-                </div>
-
-              </div>
-              <div class="row" *ngIf="checkBase === false">
-                <div  class="col-sm-6">
-                  <label >Selecione a base</label>
-                  <fieldset class="form-group">
-                    <select (change)="selectBase(selectBaseInput.value)" #selectBaseInput class="form-control input-text" id="selectbase" >
-                      <option *ngFor="let base of allImages" [value]="base._id">{{base.metadata.name}}</option>
-                    </select>
-                  </fieldset>
-                </div>
-                <div class="col-sm-6">
-                  <label >Selecione a categoria</label>
-                  <fieldset class="form-group">
-                    <select  (change)="selectCategory(selectCategoryInput.value)" #selectCategoryInput class="form-control input-text" id="selectbase">
-                      <option *ngFor="let category of categoryArray" [value]="category">{{category}}</option>
-                    </select>
-                  </fieldset>
-                </div>
-              </div>
-              <div class="row" *ngIf="checkBase === true">
-                <div  class="col-sm-6">
-                  <label >Adicione categorias a base</label>
-                  <input formControlName="category" #categoryInput name="quantity" style="" type="text" class="form-control input-text">
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-
-                    <button (click)="adicionarCategoria(categoryInput.value); categoryInput.value = ''" class="btn btn-warning" id="asd" style="border: 1px solid black; margin-top: 2rem; font-weight: 600">Adicionar</button>
-                  </div>
-                </div>
-              </div>
-              <div class="row" *ngIf="categoryArray.length > 0">
-                <div class="col-sm-12">
-                  <table class="table" style="margin-top: 2rem">
-                    <thead>
-                    <tr>
-                      <th scope="col">Categoria</th>
-                      <th scope="col">Delete</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr *ngFor="let categoria of categoryArray">
-                      <td>{{categoria}}</td>
-                      <td><i (click)="removeCategoria(categoria);" style="cursor: pointer" class="icon-waste"></i></td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12">
-                  <fieldset class="form-group">
-                    <label style="color: #000; font-size: 24px; font-weight: 400" for="">Cores:</label>
-                  </fieldset>
-                  <div *ngFor="let color of colors; let i = index" class="row" style="margin-top: 4px">
-                    <div class="col-sm-2">
-                      <app-color-card [color]="color"></app-color-card>
-                    </div>
-                    <div class="col-sm-4">
-                      <input type="text" class="form-control input-text" (change)="alteraCoresData($event.target.value, i)" >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row" style="margin-top: 1rem">
-                <div class="col-sm-12">
-                  <fieldset class="form-group">
-                    <label style="color: #000; font-size: 24px; font-weight: 400" for="">Animations:</label>
-                  </fieldset>
-                  <fieldset class="form-group" style="margin-top: -1rem">
-                    <label style="color: #000" for="">Nome</label>
-                    <input #animationName name="animationName" style="" type="text" class="form-control input-text">
-                  </fieldset>
-                  <fieldset class="form-group">
-                    <label style="color: #000" for="">Quantidade de frames</label>
-                    <input #animationFrames name="animationQuantity" style="" type="number" class="form-control input-text">
-                  </fieldset>
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <button (click)="adicionarAnimation(animationName.value, animationFrames.value); animationFrames.value = ''; animationName.value = '';" style="border: 1px solid black; font-weight: 600" class="btn btn-warning">
-                        Adicionar
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row" *ngIf="animationArray?.length > 0">
-
-                <div class="col-sm-10" style="margin: auto">
-                  <table class="table" style="margin-top: 2rem">
-                    <thead>
-                    <tr>
-                      <th scope="col">Name</th>
-                      <th>Frames</th>
-                      <th scope="col">Delete</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr *ngFor="let animation of animationArray">
-                      <td>{{animation.name}}</td>
-                      <td>{{animation.frames}}</td>
-                      <td><i (click)="removeFile(animation)" style="cursor: pointer" class="icon-waste"></i></td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <hr>
-
-
-              <div *ngIf="ed || true" class="row">
-                <div class="col-sm-10">
-                  <button (click)="insercaoMetadados(form.value.name, form.value.frames)" style="border: 1px solid black; font-weight: 600" class="btn btn-warning">
-                    Salvar
-                  </button>
-                </div>
-              </div>
-
+              <button (click)="adicionarCategoria(categoryInput.value); categoryInput.value = ''" class="btn btn-warning" id="asd" style="border: 1px solid black; margin-top: 2rem; font-weight: 600">Adicionar</button>
             </div>
           </div>
         </div>
-
-        <div class="col-sm-6">
-          <div class="row" *ngIf="animationArray.length > 0">
-            <div class="col-sm-6">
-              <fieldset class="form-group">
-                <label for="seguradora" style="font-size: 28px">Animation Select</label>
-                <select [(ngModel)]="animationSelect"  class="form-control input-text" id="seguradora" [ngModelOptions]="{standalone: true}">
-                  <option [value]="i" *ngFor="let animation of animationArray; let i = index">{{animation.name}}</option>
-                </select>
-              </fieldset>
-            </div>
+        <div class="row" *ngIf="categoryArray.length > 0">
+          <div class="col-sm-12">
+            <table class="table" style="margin-top: 2rem">
+              <thead>
+              <tr>
+                <th scope="col">Categoria</th>
+                <th scope="col">Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let categoria of categoryArray">
+                <td>{{categoria}}</td>
+                <td><i (click)="removeCategoria(categoria);" style="cursor: pointer" class="icon-waste"></i></td>
+              </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="row" *ngIf="animationArray.length > 0">
-            <div class="col-sm-12" style="display: flex; justify-content: center; margin: 25% auto;">
-              <app-image-display  [imgPath]="'http://161.35.10.72:3000/files/'+path" style="transform: scale(10)" [height]="height" [width]="frameWidth" [animation]="animationArray" [selectedAnimation]="animationSelect" [id]="'aaa'" [name]="spriteName" [spriteWidth]="width" [frames]="form.value.frames"></app-image-display>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <fieldset class="form-group">
+              <label style="color: #000; font-size: 24px; font-weight: 400" for="">Cores:</label>
+            </fieldset>
+            <div *ngFor="let color of colors; let i = index" class="row" style="margin-top: 4px">
+              <div class="col-sm-2">
+                <app-color-card [color]="color"></app-color-card>
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="form-control input-text" [value]="color.name" (change)="alteraCoresData($event.target.value, i)" >
+              </div>
             </div>
           </div>
         </div>
+        <div class="row" style="margin-top: 1rem">
+          <div class="col-sm-12">
+            <fieldset class="form-group">
+              <label style="color: #000; font-size: 24px; font-weight: 400" for="">Animations:</label>
+            </fieldset>
+            <fieldset class="form-group" style="margin-top: -1rem">
+              <label style="color: #000" for="">Nome</label>
+              <input #animationName name="animationName" style="" type="text" class="form-control input-text">
+            </fieldset>
+            <fieldset class="form-group">
+              <label style="color: #000" for="">Quantidade de frames</label>
+              <input #animationFrames name="animationQuantity" style="" type="number" class="form-control input-text">
+            </fieldset>
+            <div class="row">
+              <div class="col-sm-12">
+                <button (click)="adicionarAnimation(animationName.value, animationFrames.value); animationFrames.value = ''; animationName.value = '';" style="border: 1px solid black; font-weight: 600" class="btn btn-warning">
+                  Adicionar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="animationArray?.length > 0">
 
+          <div class="col-sm-10" style="margin: auto">
+            <table class="table" style="margin-top: 2rem">
+              <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th>Frames</th>
+                <th scope="col">Delete</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let animation of animationArray">
+                <td>{{animation.name}}</td>
+                <td>{{animation.frames}}</td>
+                <td><i (click)="removeFile(animation)" style="cursor: pointer" class="icon-waste"></i></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <hr>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-5">
+    <div class="row" *ngIf="animationArray.length > 0">
+      <div class="col-sm-6">
+        <fieldset class="form-group">
+          <label for="seguradora" style="font-size: 28px">Animation Select</label>
+          <select [(ngModel)]="animationSelect"  class="form-control input-text" id="seguradora" [ngModelOptions]="{standalone: true}">
+            <option [value]="i" *ngFor="let animation of animationArray; let i = index">{{animation.name}}</option>
+          </select>
+        </fieldset>
+      </div>
+    </div>
+    <div class="row" *ngIf="animationArray.length > 0">
+      <div class="col-sm-12" style="display: flex; justify-content: center; margin: 25% auto;">
+        <app-image-display  [imgPath]="'http://161.35.10.72:3000/files/'+path" style="transform: scale(10)" [height]="height" [width]="width" [animation]="animationArray" [selectedAnimation]="animationSelect" [id]="'aaa'" [name]="spriteName" [spriteWidth]="width" [frames]="frames"></app-image-display>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 </form>

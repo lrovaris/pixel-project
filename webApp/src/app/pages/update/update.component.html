@@ -1,1 +1,5 @@
-<p>update works!</p>
+<div class="row">
+  <div class="col-sm-12">
+    <app-metadata  [colors]="image?.metadata.colors"  [width]="image?.metadata.width" [height]="image?.metadata.height" [path]="image?.path" [animationArray]="image?.metadata.animations" [name]="image?.metadata.name" [frames]="image?.metadata.framesQuantity" [category]="image?.metadata?.category" [baseId]="image.metadata.imgBase" [imgBase]="image.metadata.imgBase" (saveMetadata)="saveMetadata($event)"></app-metadata>
+  </div>
+</div>

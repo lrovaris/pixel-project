@@ -14,7 +14,6 @@ export class ColorCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.color);
     this.oldColor = this.color;
     this.color = `rgba(${this.color.r},${this.color.g},${this.color.b},${this.color.a})`;
   }
