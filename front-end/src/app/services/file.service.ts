@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service'
 import { SpriteService } from './sprite.service'
 
+import { Subject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -27,11 +29,17 @@ export class FileService {
 
     this.ipc.on('export-sprite-command', (e, a) => {
 
-      this.ExportSprite();
+      // this.ExportSprite();
+      this.exportCallSource.next();
 
     })
 
   }
+
+  private exportCallSource = new Subject<any>();
+
+  exportCalled$ = this.exportCallSource.asObservable();
+
 
   public SaveSprite(fileName: string, imagesArray: any, callback: any) {
 
@@ -57,7 +65,7 @@ export class FileService {
 
   }
 
-  ExportSprite() {
+  public ExportSprite(params) {
 
     const sprite = this.spriteService.GetSprite()
 
@@ -70,8 +78,21 @@ export class FileService {
     });
 
     this.ipc.send('export-sprite', {
-      sprite: sprite
+      sprite: sprite,
+      params: params
     });
+  }
+
+  public PathDialog(callback: any) {
+
+    this.ipc.once('save-dialog-reply', (e: any, a: any) => {
+
+      callback(a)
+
+    });
+
+    this.ipc.send('save-dialog');
+
   }
 
 

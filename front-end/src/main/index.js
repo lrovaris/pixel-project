@@ -163,17 +163,7 @@ ipcMain.on("save-sprite", async(event, arg) =>{
 
 ipcMain.on("export-sprite", async(event, arg) =>{
 
-  const this_dialog = await dialog.showSaveDialog({
-    defaultPath: "./projects/"
-  });
-
-  if(this_dialog.canceled){
-    return event.sender.send('export-sprite-reply', {
-      message: "Ocorreu um erro ao salvar"
-    })
-  }
-
-  const path = this_dialog.filePath;
+  const path = arg.params.path + arg.params.fileName;
 
   const sprite = arg.sprite
 
@@ -209,6 +199,28 @@ ipcMain.on("change-color", async(event, arg) => {
 
   change_image_color(arg.path, arg.changes, (image) => {
     event.sender.send('change-color-reply', image)
+  })
+
+})
+
+
+ipcMain.on("save-dialog", async(event, arg) =>{
+
+  const this_dialog = await dialog.showSaveDialog({
+    defaultPath: "./projects/"
+  });
+
+  if(this_dialog.canceled){
+    return event.sender.send('save-dialog-reply', {
+      valid: false
+    })
+  }
+
+  const path = this_dialog.filePath;
+
+  event.sender.send('save-dialog-reply', {
+    valid: true,
+    path: path
   })
 
 })

@@ -1,13 +1,8 @@
 const fs = require("fs");
 const PNG = require("pngjs").PNG;
 
-// const { get_local_image } = require("./get-image")
 
 function export_sprite(path, sprite_data, callback) {
-
-  // console.log(path);
-
-  // console.log(JSON.stringify(sprite_data[0], null, 1));
 
   paint_image(sprite_data, [], 0, callback)
 

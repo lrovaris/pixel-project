@@ -2,6 +2,8 @@
 
 
   <div class="col-sm-2">
+
+
    <div class="row">
      <pixel-botton-left-menu ></pixel-botton-left-menu>
    </div>
@@ -37,6 +39,6 @@
 
 <pixel-modal *ngIf="showExportModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
 
-  <pixel-export-modal (modalOutput)="modalOutput($event)"></pixel-export-modal>
+  <pixel-export-modal (modalOutput)="modalOutput($event)" [filePath]="filePath" [fileName]="fileName" [fileExtension]="fileExtension"></pixel-export-modal>
 
 </pixel-modal>

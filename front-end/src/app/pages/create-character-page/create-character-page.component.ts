@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 import {MetadataService} from '../../services/metadata.service';
 import {ImageService} from '../../services/image.service';
@@ -30,13 +30,25 @@ export class CreateCharacterPageComponent implements OnInit {
   showExportModal = false
   modalTitle = "Export"
 
+  filePath = "";
+  fileName = "";
+  fileExtension = "png"
+
   constructor(
     private metadataService: MetadataService,
     private imageService: ImageService,
     public palletService: PaletteService,
     private fileService: FileService,
-    private spriteService: SpriteService
-  ) { }
+    private spriteService: SpriteService,
+    private cdRef:ChangeDetectorRef
+  ) {
+
+    this.fileService.exportCalled$.subscribe(() => {
+
+      this.toggleModal(true);
+
+    });
+  }
 
   ngOnInit() {
     this.selectedColorIndex = 0;
@@ -161,7 +173,6 @@ export class CreateCharacterPageComponent implements OnInit {
         }
       }
 
-
     });
 
   }
@@ -174,9 +185,60 @@ export class CreateCharacterPageComponent implements OnInit {
     this.selectAnimation = index;
   }
 
-  modalOutput(e){
-    if(e === 'close'){
-      this.showExportModal = false;
+  toggleModal(new_state){
+
+    if(new_state === undefined){
+
+      this.showExportModal = !this.showExportModal;
+
+    }else{
+
+      this.showExportModal = new_state;
+
+    }
+
+    this.cdRef.detectChanges();
+  }
+
+  modalOutput(event){
+
+    if(event.message === 'close'){
+      this.toggleModal(false)
+    }
+
+    if(event.message === 'export'){
+      this.fileService.ExportSprite(event.exportParams)
+    }
+
+    if(event.message === 'path_dialog'){
+
+      this.fileService.PathDialog((response) =>{
+
+        if(response.valid){
+
+          let string_array = response.path.split('\\')
+
+          this.fileName = string_array[string_array.length-1]
+
+          this.filePath = response.path.replace(this.fileName, '')
+
+          let new_array = this.fileName.split('.')
+
+          if(new_array.length > 1){
+            if(new_array[1] === 'png'
+            || new_array[1] === 'bmp'
+            || new_array[1] === 'gif'
+            || new_array[1] === 'jpg'
+          ){
+            this.fileExtension = new_array[1]
+            this.fileName = this.fileName.replace(`.${new_array[1]}`, '')
+          }
+
+        }
+
+          this.cdRef.detectChanges();
+        }
+      })
     }
   }
 

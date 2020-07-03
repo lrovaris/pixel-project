@@ -29,7 +29,7 @@ export class ModalComponent implements OnInit {
   };
 
   close() {
-    this.modalOutput.emit('close')
+    this.modalOutput.emit({ message: 'close'})
   }
 
 }
