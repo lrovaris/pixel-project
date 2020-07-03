@@ -14,6 +14,7 @@ import { CardAnimationComponent } from './components/card-animation/card-animati
 import { AnimatorComponent } from './components/animator/animator.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ExportModalComponent } from './components/export-modal/export-modal.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CarouselModule
   ],
   exports: [
     SimpleButtonComponent,
@@ -34,7 +36,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     ColorListComponent,
     AnimatorComponent,
     ModalComponent,
-    ExportModalComponent
+    ExportModalComponent,
   ]
 })
 export class DesignSystemModule { }

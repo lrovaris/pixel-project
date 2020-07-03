@@ -78,15 +78,17 @@ export class UploadComponent implements OnInit {
       this.uploaded = true;
 
       this.colors = data.info_files[0].metadata.colors;
+
     });
   }
 
-  saveMetadata(metadata){
+  saveMetadata(metadata) {
 
     console.log(metadata);
     console.log(this.path);
-
-
+    this.imageService.createImage(metadata, this.path).subscribe((data: any) => {
+      console.log(data);
+    });
   }
 
 }

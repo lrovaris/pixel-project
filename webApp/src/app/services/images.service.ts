@@ -26,4 +26,8 @@ export class ImagesService {
     return this.http.delete(`${this.url.getUrl()}/images/${id}`);
   }
 
+  updateImage(id, metadata) {
+    return this.http.post(`${this.url.getUrl()}/images/${id}`, metadata);
+  }
+
 }
