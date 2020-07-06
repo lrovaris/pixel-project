@@ -167,7 +167,9 @@ ipcMain.on("export-sprite", async(event, arg) =>{
 
   const sprite = arg.sprite
 
-  const export_action = await export_sprite(path, sprite, (response) => {
+  const params = arg.params
+
+  const export_action = await export_sprite(path, params, sprite, (response) => {
 
     event.sender.send('export-sprite-reply', {
       message: response.message

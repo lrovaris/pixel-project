@@ -2,11 +2,29 @@ const fs = require("fs");
 const PNG = require("pngjs").PNG;
 
 
-function export_sprite(path, sprite_data, callback) {
+function export_sprite(path, params, sprite_data, callback) {
 
-  paint_image(sprite_data, [], 0, callback)
+  layer_image(sprite_data, [], 0, (data) => {
 
-  function paint_image(sprite_array, pixels, iterator, callback) {
+    path = path.replace('.png', '')
+    path = path.replace('.pxl', '')
+
+    data
+    .pack()
+    .pipe(fs.createWriteStream(`${path}.png`))
+    .on("finish", () => {
+
+      callback({ message: "Finalizado" })
+
+    })
+
+  })
+
+
+
+}
+
+function layer_image(sprite_array, pixels, iterator, callback) {
 
     let base_img = `./metadata/${sprite_array[iterator].path}`;
 
@@ -79,29 +97,17 @@ function export_sprite(path, sprite_data, callback) {
         iterator++
         if(iterator < sprite_array.length){
 
-          paint_image(sprite_array, pixels, iterator, callback);
+          layer_image(sprite_array, pixels, iterator, callback);
 
         }else {
-
           this.data = pixels
 
-          path = path.replace('.png', '')
-          path = path.replace('.pxl', '')
+          return callback(this)
 
-          this
-          .pack()
-          .pipe(fs.createWriteStream(`${path}.png`))
-          .on("finish", () => {
 
-            callback({ message: "Finalizado" })
-
-          })
         }
 
     })
   }
-
-
-}
 
 module.exports = { export_sprite };
