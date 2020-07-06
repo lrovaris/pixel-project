@@ -1,10 +1,10 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
-import {MetadataService} from '../../services/metadata.service';
-import {ImageService} from '../../services/image.service';
-import {PaletteService} from '../../services/palette.service';
-import {FileService} from '../../services/file.service';
-import {SpriteService} from '../../services/sprite.service';
+import { MetadataService} from '../../services/metadata.service';
+import { ImageService} from '../../services/image.service';
+import { PaletteService} from '../../services/palette.service';
+import { FileService} from '../../services/file.service';
+import { SpriteService} from '../../services/sprite.service';
 
 @Component({
   selector: 'pixel-create-character-page',

@@ -1,23 +1,27 @@
 
-  <div class="" style="left: 1% ;position: fixed; top: 1%; width: 20%; background-color: #847e87; border: 4px solid black; height: 10%" >
-    <div class="form-group" style="width: 66%; margin-left: 30%; margin-top: 1rem; margin-right: 1rem; height: 1.2rem">
-      <input type="text" class="form-control form-list" >
+  <div class="top-list-input"  >
+    <div class="form-group input-field">
+      <input type="text" class="form-control form-list">
     </div>
   </div>
-  <div class="img-list" *ngIf="toggleImages" style="" >
-    <div class="col-sm-12" >
 
+  <div class="img-list" *ngIf="toggleImages">
+    <div class="col-sm-12">
       <carousel [noWrap]="true" (activeSlideChange)="changeCategoryArray($event)" [showIndicators]="false" [interval]="0">
         <slide *ngFor="let base of arrayBases; let i = index">
-          <div class="card"  style="background-color: rgba(0,0,0,0); max-width: 110%; min-height: 20%; border: none; margin-left: 2px; margin-top: 1rem">
-            <div class="card-content" (click)="emitImage(base)" style="background-color: #9badb7; height: 80px; border: 4px solid black">
-              <div class="div" style="border: 4px solid #c1d0f0; height: 100%">
-                <div class="row" style="display: flex; justify-content: center; align-content: center; margin-top: 1.5rem" ><pixel-image-in-list
+          <div class="card">
+            <div class="card-content" (click)="emitImage(base)">
+              <div class="div card-content-div">
+                <div class="row card-content-row">
+
+                  <pixel-image-in-list
                   style="transform: scale(4);"
                   [width]="base.metadata.width"
                   [height]="base.metadata.height"
-                  [imgPath]="base.defaultDisplay"
-                ></pixel-image-in-list></div>
+                  [imgPath]="base.defaultDisplay">
+                  </pixel-image-in-list>
+
+                </div>
               </div>
             </div>
           </div>
@@ -28,22 +32,25 @@
       <div *ngIf="arrayCategorias.length > 0">
         <carousel *ngFor="let category of arrayCategorias; let i = index" [noWrap]="true"  [showIndicators]="false" [interval]="0">
           <slide *ngFor="let base of category.objsOfCategory; let y = index">
-            <div class="card"  style="background-color: rgba(0,0,0,0); max-width: 110%; min-height: 20%; border: none; margin-left: 2px; margin-top: 1rem">
-              <button (click)="functionRemoveAcessory(base)"> X </button>
-              <div class="card-content" (click)="emitImage(base)" style="background-color: #9badb7; height: 80px; border: 4px solid black">
-                <div class="div" style="border: 4px solid #c1d0f0; height: 100%">
-                  <div class="row" style="display: flex; justify-content: center; align-content: center; margin-top: 1.5rem" ><pixel-image-in-list
+            <div class="card">
+              <button class="x-buttom-card" style=""  (click)="functionRemoveAcessory(base)"> X </button>
+              <div class="card-content" (click)="emitImage(base)">
+                <div class="div card-content-div">
+                  <div class="row card-content-row">
+
+                    <pixel-image-in-list
                     style="transform: scale(4);"
                     [width]="base.metadata.width"
                     [height]="base.metadata.height"
-                    [imgPath]="base.defaultDisplay"
-                  ></pixel-image-in-list></div>
+                    [imgPath]="base.defaultDisplay">
+                    </pixel-image-in-list>
+
+                  </div>
                 </div>
               </div>
             </div>
           </slide>
         </carousel>
       </div>
-
     </div>
   </div>

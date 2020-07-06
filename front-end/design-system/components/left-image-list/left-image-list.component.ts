@@ -71,7 +71,7 @@ export class LeftImageListComponent implements OnInit {
   }
 
   functionRemoveAcessory(acessory){
-    this.removeAcessory.emit(acessory)
+    this.removeAcessory.emit(acessory);
   }
 
 
