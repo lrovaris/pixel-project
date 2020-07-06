@@ -1,25 +1,12 @@
-::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
-}
-::-webkit-scrollbar-track {
-  background: #000000;
-  width: 12px;
-}
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #323c39;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 
 .card {
   margin: 0;
   padding: 0 !important;
+}
+
+.card-block:hover {
+
 }
 
 .card-block {
@@ -63,3 +50,6 @@
   bottom: 0;
   right: 29%;
 }
+
+
+

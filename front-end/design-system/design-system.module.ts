@@ -16,10 +16,25 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ExportModalComponent } from './components/export-modal/export-modal.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
+
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [SimpleButtonComponent, BottonLeftMenuComponent, LeftImageListComponent, ImageDisplayComponent, ImageInListComponent, RightMenuComponent, HeaderComponent, ColorListComponent, ColorCardComponent, CardAnimationComponent, AnimatorComponent, ModalComponent, ExportModalComponent],
+  declarations: [
+    SimpleButtonComponent,
+    BottonLeftMenuComponent,
+    LeftImageListComponent,
+    ImageDisplayComponent,
+    ImageInListComponent,
+    RightMenuComponent,
+    HeaderComponent,
+    ColorListComponent,
+    ColorCardComponent,
+    CardAnimationComponent,
+    AnimatorComponent,
+    ModalComponent,
+    ExportModalComponent
+  ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
