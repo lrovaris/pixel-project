@@ -18,6 +18,10 @@ export class CardAnimationComponent implements OnInit {
    @Input() imgPath;
    @Input() Animation;
    @Input() imagesArray;
+   @Input() marginTop;
+   @Input() transformScale;
+   @Input() marginLeft;
+   @Input() opacity;
 
    scale: any;
 
