@@ -51,24 +51,27 @@
   </div>
 
 
-  <hr>
+  <div *ngIf="exportAs() !== 'gif'">    
+    <hr>
 
 
-  <div class="row">
+    <div class="row">
 
-    <div class="col-7">
+      <div class="col-7">
 
-      <p>Layers as separate files</p>
+        <p>Layers as separate files</p>
+
+      </div>
+
+      <div class="col-3">
+
+        <input type="checkbox" formControlName="layersAsSeparateFiles">
+
+      </div>
 
     </div>
-
-    <div class="col-3">
-
-      <input type="checkbox" formControlName="layersAsSeparateFiles">
-
-    </div>
-
   </div>
+
 
 
 
