@@ -9,10 +9,12 @@ const { split_by_frame } = require('./export_sprite/split_by_frame')
 const { split_by_animation } = require('./export_sprite/split_by_animation')
 const { anim_in_new_row } = require('./export_sprite/anim_in_new_row')
 
+const { export_as_gif } = require('./export_sprite/export_as_gif')
 
 
 
-async function export_sprite(path, params, sprite_data, callback) {
+
+async function export_sprite(params, sprite_data, callback) {
 
   const image_data_array =  sprite_data.map( sprite => {
     const this_sprite_data = get_image_data(sprite)
@@ -46,7 +48,7 @@ async function export_sprite(path, params, sprite_data, callback) {
   let post_split_images = []
 
 
-  if(params.exportAs === 'frames'){
+  if(params.exportAs === 'frames' || params.exportAs === 'gif'){
 
     const frame_split_imgs = post_layer_images.map(img => {
       const split_img = split_by_frame(img)
@@ -106,9 +108,25 @@ async function export_sprite(path, params, sprite_data, callback) {
     return this_scaled_image
   })
 
+  let path = params.path;
 
-  path = path.replace('.png', '')
-  path = path.replace('.pxl', '')
+  let fileName = params.fileName;
+
+  fileName = fileName.replace('.png', '')
+  fileName = fileName.replace('.pxl', '')
+  fileName = fileName.replace('.gif', '')
+  fileName = fileName.replace('.png', '')
+  fileName = fileName.replace('.jpg', '')
+
+
+
+  let write_path = path.toString()
+
+  if(params.exportAs === 'gif'){
+    write_path += 'temp/'
+  }
+
+  write_path = write_path + fileName
 
   for (var i = 0; i < scaled_image_array.length; i++) {
 
@@ -118,13 +136,13 @@ async function export_sprite(path, params, sprite_data, callback) {
 
     if(scaled_image_array.length === 1){
 
-      fs.writeFileSync(`${path}.png`, buffer);
+      fs.writeFileSync(`${write_path}.png`, buffer);
 
     }else {
 
-      let this_path = path;
+      let this_path = write_path.toString();
 
-      if(params.exportAs === 'spritesheet' && params.animationAsSeparateFile){
+      if(params.exportAs === 'spritesheet' && params.animationAsSeparateFile || params.exportAs === 'gif'){
 
         scaled_image_array[i].metadata.name = scaled_image_array[i].metadata.name.replace('//', '')
         scaled_image_array[i].metadata.name = scaled_image_array[i].metadata.name.replace('\\', '')
@@ -132,7 +150,7 @@ async function export_sprite(path, params, sprite_data, callback) {
 
         this_path = `${this_path}_${scaled_image_array[i].metadata.name}`
 
-        if(params.layersAsSeparateFiles){
+        if(params.layersAsSeparateFiles || params.exportAs === 'gif'){
           this_path = `${this_path}_${i+1}`
         }
 
@@ -143,6 +161,14 @@ async function export_sprite(path, params, sprite_data, callback) {
       fs.writeFileSync(`${this_path}.png`, buffer);
 
     }
+
+  }
+
+  if(params.exportAs === 'gif'){
+
+    export_as_gif(scaled_image_array, write_path, path, fileName, (response) => {
+      console.log(response);
+    });
 
   }
 
