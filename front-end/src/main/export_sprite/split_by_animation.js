@@ -51,10 +51,6 @@ function split_by_animation(sprite) {
       }
     }
 
-
-    console.log(anim_data.name, anim_data.frames);
-
-
     animations.push(this_animation)
 
   }

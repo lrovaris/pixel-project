@@ -42,12 +42,6 @@ function anim_in_new_row(sprite) {
 
     let initial_y = i * height
 
-    console.log("initial_x", initial_x);
-
-    console.log("final_x", final_x);
-
-    console.log("initial_y", initial_y);
-
     for (let y = 0; y < height; y++) {
       for (let x = initial_x; x < (new_width + initial_x); x++) {
 
@@ -85,34 +79,6 @@ function anim_in_new_row(sprite) {
     }
 
   }
-
-  // for (let y = 0; y < new_height; y++) {
-  //   for (let x = 0; x < new_width; x++) {
-  //     let idx = (new_width * y + x) << 2;
-  //
-  //     const current_animation_index = Math.floor(y/height);
-  //
-  //     if(x <= animations[current_animation_index].frames * frameSize){
-  //
-  //       newData[idx] = png_data.data[idx - rel_idx]
-  //       newData[idx + 1] = png_data.data[idx - rel_idx + 1]
-  //       newData[idx + 2] = png_data.data[idx - rel_idx + 2]
-  //       newData[idx + 3] = png_data.data[idx  - rel_idx + 3]
-  //
-  //     }else {
-  //
-  //       newData[idx] = 0
-  //       newData[idx + 1] = 0
-  //       newData[idx + 2] = 0
-  //       newData[idx + 3] = 0
-  //
-  //       rel_idx+= 4
-  //
-  //     }
-  //
-  //
-  //   }
-  // }
 
 
   png_data.data = newData
