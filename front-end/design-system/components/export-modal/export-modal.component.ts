@@ -19,7 +19,7 @@ export class ExportModalComponent implements OnInit {
       animationAsSeparateFile: [false],
       path: [''],
       fileName: [''],
-      fileFormat: ['']
+      fileFormat: ['png']
     })
 
   }
@@ -44,7 +44,19 @@ export class ExportModalComponent implements OnInit {
   @Output() modalOutput = new EventEmitter();
 
   exportButton(){
+    if(this.exportParamsForm.value.path === ''){
+      return
+    }
+
+    if(this.exportParamsForm.value.fileName === ''){
+      return
+    }
+
     this.modalOutput.emit({ message: 'export', exportParams: this.getFormValues()})
+
+    this.resetForm();
+
+    this.modalOutput.emit({ message: 'close'})
   }
 
   cancelButton(){
@@ -57,6 +69,24 @@ export class ExportModalComponent implements OnInit {
 
   exportAs(){
     return this.exportParamsForm.value.exportAs;
+  }
+
+  exportAsChanged(newValue){
+
+    this.resetForm();
+
+  }
+
+  resetForm(){
+
+    this.exportParamsForm.controls['scale'].setValue('x1');
+    this.exportParamsForm.controls['layersAsSeparateFiles'].setValue(false);
+    this.exportParamsForm.controls['animationAsNewRow'].setValue(false);
+    this.exportParamsForm.controls['animationAsSeparateFile'].setValue(false);
+    this.exportParamsForm.controls['path'].setValue('');
+    this.exportParamsForm.controls['fileName'].setValue('');
+    this.exportParamsForm.controls['fileFormat'].setValue('png');
+
   }
 
   getFormValues(){

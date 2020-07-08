@@ -10,7 +10,7 @@
 
     <div class="col-3">
 
-      <select formControlName="exportAs">
+      <select (change)="exportAsChanged($event.target.value)" formControlName="exportAs">
 
         <option value="spritesheet">sprite sheet</option>
         <option value="frames">separate frames</option>

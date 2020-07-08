@@ -50,7 +50,7 @@ function split_by_animation(sprite) {
 
       }
     }
-
+    
     animations.push(this_animation)
 
   }
