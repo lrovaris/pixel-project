@@ -238,9 +238,20 @@ export class CreateCharacterPageComponent implements OnInit {
 
           let string_array = response.path.split('\\')
 
+
+          let start_index = 0;
+
+          for (let index = 0; index < (string_array.length -1); index++) {
+
+            start_index += string_array[index].length
+            start_index ++;
+          }
+
+          let path = response.path.substring(0, start_index)
+
           this.fileName = string_array[string_array.length-1]
 
-          this.filePath = response.path.replace(this.fileName, '')
+          this.filePath = path
 
           let new_array = this.fileName.split('.')
 
@@ -249,6 +260,7 @@ export class CreateCharacterPageComponent implements OnInit {
             || new_array[1] === 'bmp'
             || new_array[1] === 'gif'
             || new_array[1] === 'jpg'
+            || new_array[1] === 'pxl'
           ){
             this.fileExtension = new_array[1]
             this.fileName = this.fileName.replace(`.${new_array[1]}`, '')
