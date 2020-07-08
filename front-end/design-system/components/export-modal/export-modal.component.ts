@@ -12,10 +12,11 @@ export class ExportModalComponent implements OnInit {
   constructor(private formBuild: FormBuilder) {
 
     this.exportParamsForm = this.formBuild.group({
-      scale: ['normal'],
-      framesAsSeparateFiles: [false],
+      exportAs: ['spritesheet'],
+      scale: ['x1'],
       layersAsSeparateFiles: [false],
       animationAsNewRow: [false],
+      animationAsSeparateFile: [false],
       path: [''],
       fileName: [''],
       fileFormat: ['']
@@ -54,12 +55,17 @@ export class ExportModalComponent implements OnInit {
     this.modalOutput.emit({ message: 'path_dialog'})
   }
 
+  exportAs(){
+    return this.exportParamsForm.value.exportAs;
+  }
+
   getFormValues(){
     return{
+      exportAs: this.exportParamsForm.value.exportAs,
       scale: this.exportParamsForm.value.scale,
-      framesAsSeparateFiles: this.exportParamsForm.value.framesAsSeparateFiles,
       layersAsSeparateFiles: this.exportParamsForm.value.layersAsSeparateFiles,
       animationAsNewRow: this.exportParamsForm.value.animationAsNewRow,
+      animationAsSeparateFile: this.exportParamsForm.value.animationAsSeparateFile,
       path: this.exportParamsForm.value.path,
       fileName: this.exportParamsForm.value.fileName,
       fileFormat: this.exportParamsForm.value.fileFormat

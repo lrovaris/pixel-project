@@ -4,6 +4,32 @@
 
     <div class="col-7">
 
+      <label for="">Export as...</label>
+
+    </div>
+
+    <div class="col-3">
+
+      <select formControlName="exportAs">
+
+        <option value="spritesheet">sprite sheet</option>
+        <option value="frames">separate frames</option>
+        <option value="gif">gif</option>
+
+      </select>
+
+    </div>
+
+
+  </div>
+
+
+  <hr>
+
+  <div class="row">
+
+    <div class="col-7">
+
       <label for="">Pixel scale</label>
 
     </div>
@@ -12,10 +38,10 @@
 
       <select formControlName="scale">
 
-          <option value="normal">normal</option>
-          <option value="x2">x2</option>
-          <option value="x3">x3</option>
-          <option value="x4">x4</option>
+        <option value="x1">x1</option>
+        <option value="x2">x2</option>
+        <option value="x3">x3</option>
+        <option value="x4">x4</option>
 
       </select>
 
@@ -44,82 +70,89 @@
 
   </div>
 
-  <hr>
 
 
-  <div class="row">
+  <div *ngIf="exportAs() === 'spritesheet'">
 
-    <div class="col-7">
+    <hr>
+    <div class="row">
 
-      <p>Frames as separate files</p>
+      <div class="col-7">
+
+        <p>Each animation in a new row</p>
+
+      </div>
+
+      <div class="col-3">
+
+        <input type="checkbox" formControlName="animationAsNewRow">
+
+      </div>
 
     </div>
 
-    <div class="col-3">
+    <div class="row">
 
-      <input type="checkbox" formControlName="framesAsSeparateFiles">
+      <div class="col-7">
+
+        <p>Each animation in a separate file</p>
+
+      </div>
+
+      <div class="col-3">
+
+        <input type="checkbox" formControlName="animationAsSeparateFile">
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <hr>
+
+  <div class="row">
+
+    <div class="col-3">
+      <label for="">Path</label>
+
+    </div>
+
+    <div class="col-7">
+
+      <input type="text" formControlName="path">
+
+    </div>
+
+    <div class="col-2">
+
+      <button type="button" name="button" (click)="pathDialog()"> ...</button>
 
     </div>
 
   </div>
 
-
   <div class="row">
+
+    <div class="col-3">
+      <label for="">File name</label>
+
+    </div>
 
     <div class="col-7">
 
-      <p>Each animation in a new row</p>
+      <input type="text" formControlName="fileName">
 
     </div>
 
-    <div class="col-3">
-
-      <input type="checkbox" formControlName="animationAsNewRow">
-
-    </div>
 
   </div>
 
-  <hr>
 
-    <div class="row">
+  <div *ngIf="exportAs() !== 'gif'">
 
-      <div class="col-3">
-        <label for="">Path</label>
-
-      </div>
-
-      <div class="col-7">
-
-        <input type="text" formControlName="path">
-
-      </div>
-
-      <div class="col-2">
-
-        <button type="button" name="button" (click)="pathDialog()"> ...</button>
-
-      </div>
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-3">
-        <label for="">File name</label>
-
-      </div>
-
-      <div class="col-7">
-
-        <input type="text" formControlName="fileName">
-
-      </div>
-
-
-    </div>
-
-    <div class="row">
+    <hr>
+    <div  class="row">
 
       <div class="col-3">
 
@@ -131,10 +164,9 @@
 
         <select formControlName="fileFormat">
 
-            <option value="png">png</option>
-            <option value="bmp">bmp</option>
-            <option value="gif">gif</option>
-            <option value="jpg">jpg</option>
+          <option value="png">png</option>
+          <option value="bmp">bmp</option>
+          <option value="jpg">jpg</option>
 
         </select>
 
@@ -142,24 +174,26 @@
 
 
     </div>
+  </div>
 
-    <hr>
+
+  <hr>
 
 
-    <div class="row">
+  <div class="row">
 
-      <div class="col-6">
+    <div class="col-6">
 
-        <button type="button" name="button" (click)="exportButton()"> Export </button>
-
-      </div>
-
-      <div class="col-6">
-
-        <button type="button" name="button" (click)="cancelButton()"> Cancel </button>
-
-      </div>
+      <button type="button" name="button" (click)="exportButton()"> Export </button>
 
     </div>
+
+    <div class="col-6">
+
+      <button type="button" name="button" (click)="cancelButton()"> Cancel </button>
+
+    </div>
+
+  </div>
 
 </form>

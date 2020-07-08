@@ -1,6 +1,10 @@
 function scale_image(data, scale){
 
-  if(scale === 'normal'){
+  const png_data = data.data;
+  const metadata = data.metadata
+
+
+  if(scale === 'x1'){
     return data
   }
 
@@ -19,9 +23,9 @@ function scale_image(data, scale){
 
   let new_data = []
 
-  for (let y = 0; y < data.height; y++) {
-    for (let x = 0; x < data.width; x++) {
-      let base_idx = ((data.width * y  + x) << 2);
+  for (let y = 0; y < png_data.height; y++) {
+    for (let x = 0; x < png_data.width; x++) {
+      let base_idx = ((png_data.width * y  + x) << 2);
 
       let all_idx = []
 
@@ -29,7 +33,7 @@ function scale_image(data, scale){
 
         for (var j = 0; j < scale; j++) {
 
-          let new_idx = ((( (data.width * scale) * ((y * scale) + j) + ((x * scale) + i)) << 2))
+          let new_idx = ((( (png_data.width * scale) * ((y * scale) + j) + ((x * scale) + i)) << 2))
           all_idx.push(new_idx);
 
         }
@@ -37,22 +41,25 @@ function scale_image(data, scale){
 
 
       for (var i = 0; i < all_idx.length; i++) {
-        new_data[all_idx[i]] = data.data[base_idx]
-        new_data[all_idx[i] +1] = data.data[base_idx +1]
-        new_data[all_idx[i] +2] = data.data[base_idx +2]
-        new_data[all_idx[i] +3] = data.data[base_idx +3]
+        new_data[all_idx[i]] = png_data.data[base_idx]
+        new_data[all_idx[i] +1] = png_data.data[base_idx +1]
+        new_data[all_idx[i] +2] = png_data.data[base_idx +2]
+        new_data[all_idx[i] +3] = png_data.data[base_idx +3]
       }
 
 
     }
   }
 
-  data.height *= scale
-  data.width *= scale
+  png_data.height *= scale
+  png_data.width *= scale
 
-  data.data = new_data
+  png_data.data = new_data
 
-  return data
+  return {
+    metadata: metadata,
+    data: png_data
+  }
 }
 
 module.exports = { scale_image };

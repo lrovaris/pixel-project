@@ -1,31 +1,17 @@
 const fs = require("fs");
 const PNG = require("pngjs").PNG;
 
-async function get_image_data(sprite) {
+function get_image_data(sprite) {
 
   let base_img = `./metadata/${sprite.path}`;
 
-  return new Promise((resolve, reject) => {
+  const data = fs.readFileSync(base_img);
+  const png = PNG.sync.read(data);
 
-    fs.createReadStream(base_img)
-    .pipe(
-      new PNG({
-        filterType: 4,
-      })
-    )
-    .on("parsed", (data) => {
-
-
-
-      resolve(data)
-
-    })
-    .on("error", (err) => {
-      reject(err)
-    })
-
-  })
-
+  return{
+    data:png,
+    metadata: sprite
+  }
 
 }
 
