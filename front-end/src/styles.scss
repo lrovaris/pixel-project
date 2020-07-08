@@ -60,3 +60,31 @@ body {
 .carousel-control-prev , .carousel-control-next {
   margin: 3.5rem 1rem 1rem 1rem !important;
 }
+
+
+
+.animation-carousel .carousel-control-prev {
+ margin-left: -10rem !important;
+  margin-top: 4rem !important;
+  z-index: 100 !important;
+  height: 50px !important;
+  width: 25px !important;
+}
+
+.animation-carousel .carousel-control-next {
+  margin-right: -10rem !important;
+  margin-top: 4rem !important;
+  z-index: 100 !important;
+  height: 50px !important;
+  width: 25px !important;
+}
+
+.animation-carousel .carousel-control-prev-icon {
+  height: 50px !important;
+  width: 25px !important;
+}
+
+.animation-carousel .carousel-control-next-icon {
+  height: 50px !important;
+  width: 25px !important;
+}
