@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, AfterViewChecked} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, AfterViewInit} from '@angular/core';
 
 @Component({
   selector: 'pixel-left-image-list',
@@ -23,7 +23,7 @@ export class LeftImageListComponent implements OnInit {
         }
       }
 
-      this.setBase.emit(this.arrayBases[0])
+      this.setBase.emit(this.arrayBases[0]);
 
     }
   }
@@ -38,15 +38,21 @@ export class LeftImageListComponent implements OnInit {
   @Output() setBase = new EventEmitter();
   @Output() removeAcessory = new EventEmitter();
 
+  @Input() activeBase;
+
   constructor() { }
 
   ngOnInit() {
     this.toggleImages = false;
+  //  setTimeout(() => { this.activeBase = 1; console.log('mudou'); }, 3000);
   }
+
 
   emitImage(image) {
     this.image.emit(image);
   }
+
+
 
   changeCategoryArray(index) {
     this.arrayCategorias = this.arrayBases[index].metadata.category;
@@ -59,15 +65,12 @@ export class LeftImageListComponent implements OnInit {
         }
         return image.metadata.category.toString() === category.toString();
       });
-
       return {
         category,
         objsOfCategory
       };
-
     });
-
-    this.setBase.emit(this.arrayBases[index])
+    this.setBase.emit(this.arrayBases[index]);
   }
 
   functionRemoveAcessory(acessory){

@@ -1,10 +1,11 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import {Component, OnInit, ChangeDetectorRef, ViewChild} from '@angular/core';
 
 import { MetadataService} from '../../services/metadata.service';
 import { ImageService} from '../../services/image.service';
 import { PaletteService} from '../../services/palette.service';
 import { FileService} from '../../services/file.service';
 import { SpriteService} from '../../services/sprite.service';
+import {LeftImageListComponent} from "../../../../design-system/components/left-image-list/left-image-list.component";
 
 @Component({
   selector: 'pixel-create-character-page',
@@ -13,9 +14,7 @@ import { SpriteService} from '../../services/sprite.service';
 })
 export class CreateCharacterPageComponent implements OnInit {
 
-  imagesArray(){
-    return this.spriteService.GetSprite();
-  };
+@ViewChild(LeftImageListComponent, {static: false}) child: LeftImageListComponent;
 
   lastSelection;
 
@@ -27,12 +26,15 @@ export class CreateCharacterPageComponent implements OnInit {
 
   colors = [];
 
-  showExportModal = false
-  modalTitle = "Export"
+  showExportModal = false;
+  modalTitle = 'Export';
 
-  filePath = "";
-  fileName = "";
-  fileExtension = "png"
+  filePath = '';
+  fileName = '';
+  fileExtension = 'png';
+
+  arrayBases = [];
+  activeBase;
 
   constructor(
     private metadataService: MetadataService,
@@ -40,7 +42,7 @@ export class CreateCharacterPageComponent implements OnInit {
     public palletService: PaletteService,
     private fileService: FileService,
     private spriteService: SpriteService,
-    private cdRef:ChangeDetectorRef
+    private cdRef: ChangeDetectorRef
   ) {
 
     this.fileService.exportCalled$.subscribe(() => {
@@ -49,6 +51,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
     });
   }
+
 
   ngOnInit() {
     this.selectedColorIndex = 0;
@@ -66,9 +69,16 @@ export class CreateCharacterPageComponent implements OnInit {
             metadataObj.defaultDisplay = base64;
             metadataObj.display = base64;
             iterator++;
-          })
+          });
 
-        })
+        });
+
+        for (let i = 0; i < this.metadataArray.length; i++) {
+          if (this.metadataArray[i].metadata.imgBase === true) {
+            this.arrayBases.push(this.metadataArray[i]);
+
+          }
+        }
 
       }, 1000);
     }, 1000);
@@ -76,30 +86,51 @@ export class CreateCharacterPageComponent implements OnInit {
     this.selectAnimation = 0;
   }
 
-  pushBase(img){
-
-    if(img === undefined){
-      return
+  baseOfSprite() {
+    const base = this.spriteService.GetBaseOfSprite();
+    for (let i = 0; i < this.arrayBases.length; i++) {
+      if (base !== undefined) {
+        if (base.metadata.name === this.arrayBases[i].metadata.name) {
+          return i;
+        }
+      }
     }
 
-    this.setBase(img)
+  }
+
+  imagesArray() {
+    return this.spriteService.GetSprite();
+  }
+
+  pushBase(img) {
+
+    if (img === undefined) {
+      return;
+    }
+
+    this.setBase(img);
+
   }
 
 
-  pushImage(image) {
-    let currentImage = this.imagesArray().find(img => img._id.toString() === image._id.toString())
+  changeBase(index) {
+    this.baseOfSprite();
+  }
 
-    if(currentImage !== undefined){
-      this.lastSelection = currentImage
+  pushImage(image) {
+    const currentImage = this.imagesArray().find(img => img._id.toString() === image._id.toString());
+
+    if (currentImage !== undefined) {
+      this.lastSelection = currentImage;
       this.colors = currentImage.metadata.colors;
       return;
     }
 
-    let image_in_same_category = this.imagesArray().find(img => img.metadata.category === image.metadata.category)
+    const imageInSameCategory = this.imagesArray().find(img => img.metadata.category === image.metadata.category);
 
-    if(image_in_same_category !== undefined){
+    if (imageInSameCategory !== undefined) {
 
-      this.spriteService.remove(image_in_same_category)
+      this.spriteService.remove(imageInSameCategory);
     }
 
     image.originalColors = image.metadata.colors;
@@ -114,10 +145,10 @@ export class CreateCharacterPageComponent implements OnInit {
 
   removeAcessory(image){
 
-    let currentImage = this.imagesArray().find(img => img._id.toString() === image._id.toString())
+    const currentImage = this.imagesArray().find(img => img._id.toString() === image._id.toString())
 
-    if(currentImage !== undefined){
-      this.spriteService.remove(currentImage)
+    if (currentImage !== undefined){
+      this.spriteService.remove(currentImage);
       return;
     }
 
@@ -132,27 +163,27 @@ export class CreateCharacterPageComponent implements OnInit {
       this.spriteService.SetSprite([ image ]);
 
       this.colors = this.imagesArray()[0].metadata.colors;
-      this.lastSelection = this.imagesArray()[0]
+      this.lastSelection = this.imagesArray()[0];
+
+
   }
 
   receivColor(color, index) {
 
-    const image = this.lastSelection
+    const image = this.lastSelection;
 
-    color.a = image.originalColors[index].a
+    color.a = image.originalColors[index].a;
 
-    let thisColor = image.currentColors.find(color => color.index === index);
+    const thisColor = image.currentColors.find(color => color.index === index);
 
     if(thisColor !== undefined){
       thisColor.color = color
       thisColor.index = index
-    }
-
-    else{
+    } else {
       image.currentColors.push({
-        color: color,
-        index: index
-      })
+       color,
+        index
+      });
     }
 
     let changes = [];
@@ -176,20 +207,20 @@ export class CreateCharacterPageComponent implements OnInit {
 
       for (let i = 0; i < image.originalColors.length; i++) {
 
-        let currentColorForIndex = image.currentColors.find(currCol => {
-          return currCol.index === i
-        })
+        const currentColorForIndex = image.currentColors.find(currCol => {
+          return currCol.index === i;
+        });
 
         if (currentColorForIndex === undefined){
           this.colors.push(image.originalColors[i])
-        }else{
+        } else {
           this.colors.push({
             r: currentColorForIndex.color.r,
             g: currentColorForIndex.color.g,
             b: currentColorForIndex.color.b,
             a: currentColorForIndex.color.a,
             name: image.originalColors[i].name
-          })
+          });
         }
       }
 
@@ -205,25 +236,25 @@ export class CreateCharacterPageComponent implements OnInit {
     this.selectAnimation = index;
   }
 
-  toggleModal(new_state){
+  toggleModal(newState) {
 
-    if(new_state === undefined){
+    if(newState === undefined) {
 
       this.showExportModal = !this.showExportModal;
 
-    }else{
+    } else {
 
-      this.showExportModal = new_state;
+      this.showExportModal = newState;
 
     }
 
     this.cdRef.detectChanges();
   }
 
-  modalOutput(event){
+  modalOutput(event) {
 
-    if(event.message === 'close'){
-      this.toggleModal(false)
+    if (event.message === 'close'){
+      this.toggleModal(false);
     }
 
     if(event.message === 'export'){
@@ -232,11 +263,11 @@ export class CreateCharacterPageComponent implements OnInit {
 
     if(event.message === 'path_dialog'){
 
-      this.fileService.PathDialog((response) =>{
+      this.fileService.PathDialog((response) => {
 
-        if(response.valid){
+        if (response.valid) {
 
-          let string_array = response.path.split('\\')
+          let string_array = response.path.split('\\');
 
 
           let start_index = 0;
@@ -247,23 +278,23 @@ export class CreateCharacterPageComponent implements OnInit {
             start_index ++;
           }
 
-          let path = response.path.substring(0, start_index)
+          let path = response.path.substring(0, start_index);
 
-          this.fileName = string_array[string_array.length-1]
+          this.fileName = string_array[string_array.length - 1];
 
           this.filePath = path
 
-          let new_array = this.fileName.split('.')
+          let newArray = this.fileName.split('.');
 
-          if(new_array.length > 1){
-            if(new_array[1] === 'png'
-            || new_array[1] === 'bmp'
-            || new_array[1] === 'gif'
-            || new_array[1] === 'jpg'
-            || new_array[1] === 'pxl'
+          if(newArray.length > 1){
+            if(newArray[1] === 'png'
+            || newArray[1] === 'bmp'
+            || newArray[1] === 'gif'
+            || newArray[1] === 'jpg'
+            || newArray[1] === 'pxl'
           ){
-            this.fileExtension = new_array[1]
-            this.fileName = this.fileName.replace(`.${new_array[1]}`, '')
+            this.fileExtension = newArray[1];
+            this.fileName = this.fileName.replace(`.${newArray[1]}`, '');
           }
         }
 

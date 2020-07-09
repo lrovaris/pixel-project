@@ -31,6 +31,10 @@ export class CardAnimationComponent implements OnInit {
     this.id = this.id + 'kkk';
     this.scale = 5;
 
+    if (Animation === undefined) {
+      this.Animation = [];
+    }
+
   }
 
 }

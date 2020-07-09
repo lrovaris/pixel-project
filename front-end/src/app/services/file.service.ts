@@ -23,7 +23,7 @@ export class FileService {
 
     this.ipc.on('load-sprite-command', (e, a) => {
 
-      this.spriteService.SetSprite(a)
+      this.spriteService.SetSprite(a);
 
     })
 

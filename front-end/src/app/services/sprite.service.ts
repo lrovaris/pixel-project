@@ -9,13 +9,22 @@ export class SpriteService {
 
   Sprite = [];
 
+  BaseOfSprite;
+
   public GetSprite() {
     return this.Sprite;
   }
 
+  public GetBaseOfSprite() {
+    return this.BaseOfSprite;
+  }
+
   public SetSprite(newSprite) {
 
-    this.Sprite = newSprite
+    this.Sprite = newSprite;
+
+    this.BaseOfSprite = this.Sprite.find(theBase => theBase.metadata.imgBase === true );
+
 
   }
 

@@ -6,7 +6,6 @@
 
   <pixel-card-animation (click)="emitSelectedAnimation(leftSlide)"  style="margin: 1rem 3rem 1rem 1rem"
                         [id]="leftSlide + stringkkk"
-                        [style.z-index]="leftSlide + 5"
                         [selectedAnimation]="leftSlide"
                         [animation]="AnimationArray"
                         [Animation]="AnimationArray[leftSlide]"
@@ -30,7 +29,7 @@
                             [Animation]="AnimationArray[i]"
                             [imagesArray]="ImageArray"
                             [transformScale]="'scale(5)'"
-                            [marginLeft]="'0'"
+                            [marginLeft]="'-4px'"
       ></pixel-card-animation>
     </slide>
   </carousel>
@@ -41,7 +40,6 @@
 
   <pixel-card-animation (click)="emitSelectedAnimation(rightSlide)"  style="margin: 1rem 3rem 1rem 1rem"
                         [id]="rightSlide + stringkkk"
-                        [style.z-index]="rightSlide + 5"
                         [selectedAnimation]="rightSlide"
                         [animation]="AnimationArray"
                         [Animation]="AnimationArray[rightSlide]"
