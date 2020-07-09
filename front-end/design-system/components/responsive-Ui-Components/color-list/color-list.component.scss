@@ -1,26 +1,27 @@
+@import "~design-system/variables.scss";
+
 ::-webkit-scrollbar {
   width: 2px;
   height: 20px;
 }
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: black;
+  border-bottom: 4px solid black;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #323c39;
-  border: 4px solid black;
+  background: #847f86;
+
+  border: $border-pixel solid black;
+  border-radius: 4px 0 0 4px;
 
 }
 
 ::-webkit-scrollbar-track-piece {
-  height: 4px;
+  height: $border-pixel;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 
 
 .col-1 {
@@ -32,11 +33,13 @@
 
 .color-list {
   position: fixed;
-  background-color: #000;
-  height: 9%;
-  width: 73%;
+  background-color: #6e7780;
+  border: $border-pixel solid black;
+  height: 58px;
+  width: 75%;
   top: 62%;
-  right: 3%;
+  right: 2%;
   overflow-x: scroll;
-  overflow-y: hidden
+  overflow-y: hidden;
+  border-bottom: none;
 }

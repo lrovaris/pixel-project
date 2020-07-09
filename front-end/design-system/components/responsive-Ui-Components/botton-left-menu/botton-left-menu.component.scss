@@ -1,3 +1,5 @@
+@import "~design-system/variables.scss";
+
 .bottom-left-menu {
   top: 72%;
   position: fixed;
@@ -5,7 +7,7 @@
   height: 25%;
   background-color: #6e7780;
   right: 42%;
-  border: 4px solid black
+  border: $border-pixel solid black
 }
 .row  {
   margin-top: 1rem;

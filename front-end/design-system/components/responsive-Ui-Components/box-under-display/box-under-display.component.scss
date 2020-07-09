@@ -1,33 +1,35 @@
+@import "~design-system/variables.scss";
+
 .box-height-98-width-77 {
   position: fixed;
-  width: 77%;
-  top: 1%;
-  right: 1%;
+  width: calc(77% + (2 *  #{$border-pixel}));
+  top: calc(1%);
+  right: calc(1% - #{$border-pixel});
   height: 98%;
   background-color: #847f86;
-  border: 4px solid black;
+  border: $border-pixel solid black;
 }
 
 .line-under {
   width: 100%;
-  height: 4px;
+  height: $border-pixel;
   background-color: #8d9ba2
 }
 
 .right-dot {
-  width: 4px;
-  height: 4px;
+  width: $border-pixel;
+  height: $border-pixel;
   position: absolute;
-  top: 4px;
+  top: $border-pixel;
   right: 0;
   background-color: black
 }
 
 .left-dot {
-  width: 4px;
-  height: 4px;
+  width: $border-pixel;
+  height: $border-pixel;
   position: absolute;
-  top: 4px;
+  top: $border-pixel;
   left: 0;
   background-color: black
 }

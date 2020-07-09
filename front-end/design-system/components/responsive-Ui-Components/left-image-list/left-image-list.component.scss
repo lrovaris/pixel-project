@@ -1,3 +1,5 @@
+@import "~design-system/variables.scss";
+
 ::-webkit-scrollbar {
   width: 22px;
   height: 2px;
@@ -12,7 +14,7 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #323c39;
-  border: 4px solid black;
+  border: $border-pixel solid black;
 }
 
 ::-webkit-scrollbar-corner {
@@ -20,7 +22,7 @@
 }
 
 ::-webkit-scrollbar-track-piece {
-  height: 4px;
+  height: $border-pixel;
 }
 
 /* Handle on hover */
@@ -29,7 +31,7 @@
 }
 
 .left-list {
-  border: 4px solid black;
+  border: $border-pixel solid black;
 }
 
 .form-list {
@@ -52,7 +54,7 @@
   top: 12%;
   width: 20%;
   background-color: #6e7780;
-  border: 4px solid black;
+  border: $border-pixel solid black;
   height: 87%;
   padding-bottom: 2rem
 }
@@ -76,7 +78,7 @@
   top: 1%;
   width: 20%;
   background-color: #6e7780;
-  border: 4px solid black;
+  border: $border-pixel solid black;
   height: 10%
 }
 
@@ -92,7 +94,7 @@
 .card-content {
   background-color: #9badb7;
   height: 80px;
-  border: 4px solid black
+  border: $border-pixel solid black
 }
 .card-content-row {
   display: flex;
@@ -101,15 +103,15 @@
   margin-top: 1.5rem
 }
 .card-content-div {
-  border: 4px solid #c1d0f0;
+  border: $border-pixel solid #c1d0f0;
   height: 100%
 }
 
 .x-buttom-card {
   position: absolute;
-  right: 4px;
+  right: $border-pixel;
   border: none;
-  background-color: transparent;top: 4px;
+  background-color: transparent;top: $border-pixel;
   outline: none !important;
 }
 .x-buttom-card:active {
@@ -117,142 +119,6 @@
 }
 
 
-@mixin btn-border-slide($color, $hoverColor, $borderWidth, $time) {
-  $easing: cubic-bezier(0.4, 0, 0.2, 1);
 
-  position: relative;
-
-  cursor: pointer;
-  overflow: hidden;
-
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-
-    height: $borderWidth;
-    width: 100%;
-
-    background-color: $color;
-  }
-
-  &:before {
-    top: 0;
-  }
-
-  &:after {
-    bottom: 0;
-  }
-
-  &:hover {
-
-    & > * {
-
-      & > * {
-
-        &:before,
-        &:after {
-          transform: translate3d(0, 0, 0);
-        }
-
-        & > * {
-          &:before,
-          &:after {
-            transform: translate3d(0, 0, 0);
-          }
-        }
-      }
-    }
-  }
-
-  & > * {
-
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-
-      height: 100%;
-      width: $borderWidth;
-
-      background-color: $color;
-    }
-
-    &:before {
-      left: 0;
-    }
-
-    &:after {
-      right: 0;
-    }
-
-    & > * {
-
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        z-index: 9;
-
-        height: $borderWidth;
-        width: 100%;
-
-        background-color: $hoverColor;
-      }
-
-      &:before {
-        top: 0;
-
-        transform: translate3d(-105%, 0, 0);
-        transition: transform $time $easing;
-      }
-
-      &:after {
-        bottom: 0;
-
-        transform: translate3d(105%, 0, 0);
-        transition: transform $time $easing;
-      }
-
-      & > * {
-
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          z-index: 9;
-
-          height: 100%;
-          width: $borderWidth;
-
-          background-color: $hoverColor;
-        }
-
-        &:before {
-          left: 0;
-
-          transform: translate3d(0, 105%, 0);
-          transition: transform $time $easing;
-        }
-
-        &:after {
-          right: 0;
-
-          transform: translate3d(0, -105%, 0);
-          transition: transform $time $easing;
-        }
-      }
-    }
-  }
-}
-
-
-.btn {
-  @include btn-border-slide(#252525, #9badb7, 2px, 0.8s);
-}
 
 

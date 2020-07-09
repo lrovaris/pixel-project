@@ -1,22 +1,26 @@
+@import "~design-system/variables.scss";
+
+$asd: - #{$border-pixel} !default;
+
 .display-box {
   position: fixed;
-  width: calc(75% + 4px);
-  top: calc(2% + 4px);
-  right: calc(2% - 2px);
-  height: calc(58% - 4px);
+  width: calc(76%);
+  top: calc(2% + (1 *  #{$border-pixel}));
+  right: calc(2% - (1 *  #{$border-pixel}));
+  height: calc(58% -  #{$border-pixel});
   background-color: #6e7780;
-  border: 4px solid #d6e4db
+  border: $border-pixel solid #d6e4db
 }
 
 .top-black-line {
   width: 100%;
-  height: 4px;
+  height: $border-pixel;
   background-color: black
 }
 
 .right-black-line {
-  height: calc(100% - 4px);
-  width: 4px;
+  height: calc(100% -  #{$border-pixel});
+  width: $border-pixel;
   position: absolute;
   right: 0;
   background-color: black
@@ -24,15 +28,15 @@
 
 .botton-black-line {
   width: 100%;
-  height: 4px;
+  height: $border-pixel;
   background-color: black;
   position: absolute;
   bottom: 0
 }
 
 .left-black-line {
-  height: calc(100% - 4px);
-  width: 4px;
+  height: calc(100% -  #{$border-pixel});
+  width: $border-pixel;
   position: absolute;
   left: 0;
   background-color: black
