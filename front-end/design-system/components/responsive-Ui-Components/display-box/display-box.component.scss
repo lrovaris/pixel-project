@@ -6,7 +6,7 @@ $asd: - #{$border-pixel} !default;
   position: fixed;
   width: calc(76%);
   top: calc(2% + (1 *  #{$border-pixel}));
-  right: calc(2% - (1 *  #{$border-pixel}));
+  right: calc(2% - (1 *  #{$border-pixel}) - (#{$border-pixel} / 2));
   height: calc(58% -  #{$border-pixel});
   background-color: #6e7780;
   border: $border-pixel solid #d6e4db
