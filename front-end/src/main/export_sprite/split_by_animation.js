@@ -19,7 +19,7 @@ function split_by_animation(sprite) {
     let this_animation = {}
 
     this_animation['data'] = Object.fromEntries(Object.entries(png_data));
-    this_animation['metadata'] =  Object.fromEntries(Object.entries(metadata)); ;
+    this_animation['metadata'] =  Object.fromEntries(Object.entries(metadata)); 
 
 
     this_animation.metadata.name = anim_data.name
@@ -50,7 +50,7 @@ function split_by_animation(sprite) {
 
       }
     }
-    
+
     animations.push(this_animation)
 
   }

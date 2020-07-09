@@ -17,7 +17,23 @@ function split_by_frame(sprite) {
     let this_frame = {}
 
     this_frame['data'] = Object.fromEntries(Object.entries(png_data));
-    this_frame['metadata'] = metadata;
+    this_frame['metadata'] = Object.fromEntries(Object.entries(metadata));
+
+
+
+    frame_iterator = 0;
+    for (var j = 0; j < this_frame.metadata.metadata.animations.length; j++) {
+
+      this_frame.metadata.metadata.animations[j].frames = Number(this_frame.metadata.metadata.animations[j].frames)
+
+      this_frame.metadata.name = this_frame.metadata.metadata.animations[j].name
+
+      if(i < frame_iterator + this_frame.metadata.metadata.animations[j].frames){
+        break;
+      }
+
+      frame_iterator += this_frame.metadata.metadata.animations[j].frames
+    }
 
     this_frame.data.data = []
     this_frame.data.width = frameSize
