@@ -5,7 +5,7 @@ import { ImageService} from '../../services/image.service';
 import { PaletteService} from '../../services/palette.service';
 import { FileService} from '../../services/file.service';
 import { SpriteService} from '../../services/sprite.service';
-import {LeftImageListComponent} from "../../../../design-system/components/left-image-list/left-image-list.component";
+import {LeftImageListComponent} from "../../../../design-system/components/responsive-Ui-Components/left-image-list/left-image-list.component";
 
 @Component({
   selector: 'pixel-create-character-page',

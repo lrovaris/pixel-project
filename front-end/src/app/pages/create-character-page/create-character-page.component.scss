@@ -34,3 +34,11 @@ input[type=number] {
 ::-webkit-scrollbar {
   width: 0;
 }
+
+.display-box {
+  position: fixed;
+  width: calc(75% + 4px);
+  top: calc(2% + 4px);
+  right: calc(2% - 2px);
+  height: calc(58% - 4px);
+}

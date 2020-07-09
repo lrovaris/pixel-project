@@ -1,0 +1,39 @@
+.display-box {
+  position: fixed;
+  width: calc(75% + 4px);
+  top: calc(2% + 4px);
+  right: calc(2% - 2px);
+  height: calc(58% - 4px);
+  background-color: #6e7780;
+  border: 4px solid #d6e4db
+}
+
+.top-black-line {
+  width: 100%;
+  height: 4px;
+  background-color: black
+}
+
+.right-black-line {
+  height: calc(100% - 4px);
+  width: 4px;
+  position: absolute;
+  right: 0;
+  background-color: black
+}
+
+.botton-black-line {
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  position: absolute;
+  bottom: 0
+}
+
+.left-black-line {
+  height: calc(100% - 4px);
+  width: 4px;
+  position: absolute;
+  left: 0;
+  background-color: black
+}

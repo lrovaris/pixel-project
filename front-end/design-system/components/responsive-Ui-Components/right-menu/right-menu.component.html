@@ -2,26 +2,25 @@
 
 <div class="col-sm-3">
   <!-- CAROUSEL LEFT -->
-
-
-  <pixel-card-animation (click)="emitSelectedAnimation(leftSlide)"  style="margin: 1rem 3rem 1rem 1rem"
-                        [id]="leftSlide + stringkkk"
-                        [selectedAnimation]="leftSlide"
-                        [animation]="AnimationArray"
-                        [Animation]="AnimationArray[leftSlide]"
-                        [imagesArray]="ImageArray"
-                        [marginTop]="'-4px'"
-                        [transformScale]="'scale(4)'"
-                        [marginLeft]="'0'"
-                        [opacity]="'50%'"
-  ></pixel-card-animation>
+    <pixel-card-animation (click)="emitSelectedAnimation(leftSlide)"  style="margin: 1rem 10rem 1rem 1rem;"
+                          [id]="leftSlide + stringkkk"
+                          [selectedAnimation]="leftSlide"
+                          [animation]="AnimationArray"
+                          [Animation]="AnimationArray[leftSlide]"
+                          [imagesArray]="ImageArray"
+                          [marginTop]="'15%'"
+                          [transformScale]="'scale(4)'"
+                          [marginLeft]="'0'"
+                          [opacity]="'50%'"
+    ></pixel-card-animation>
 </div>
 
 <div class="col-sm-3">
   <!-- CAROUSEL MIDDLE -->
+
   <carousel class="animation-carousel" [activeSlide]="activeSlide" (activeSlideChange)="changeActiveSlide($event)" [interval]="0">
     <slide *ngFor="let animation of AnimationArray; let i = index" style="height: 250px; width: 200px">
-      <pixel-card-animation (click)="emitSelectedAnimation(i)"  style="margin: 1rem 3rem 1rem 1rem"
+      <pixel-card-animation (click)="emitSelectedAnimation(i)"  style="margin: 1rem 10rem 1rem 1rem"
                             [id]="i + stringkkk"
                             [style.z-index]="i + 5"
                             [selectedAnimation]="i"
@@ -29,7 +28,8 @@
                             [Animation]="AnimationArray[i]"
                             [imagesArray]="ImageArray"
                             [transformScale]="'scale(5)'"
-                            [marginLeft]="'-4px'"
+                            [marginLeft]="'0px'"
+                            [marginTop]="'14%'"
       ></pixel-card-animation>
     </slide>
   </carousel>
@@ -38,13 +38,13 @@
 <div class="col-sm-3">
   <!-- CAROUSEL MIDDLE -->
 
-  <pixel-card-animation (click)="emitSelectedAnimation(rightSlide)"  style="margin: 1rem 3rem 1rem 1rem"
+  <pixel-card-animation (click)="emitSelectedAnimation(rightSlide)"  style="margin: 1rem 10rem 1rem 1rem"
                         [id]="rightSlide + stringkkk"
                         [selectedAnimation]="rightSlide"
                         [animation]="AnimationArray"
                         [Animation]="AnimationArray[rightSlide]"
                         [imagesArray]="ImageArray"
-                        [marginTop]="'-4px'"
+                        [marginTop]="'15%'"
                         [transformScale]="'scale(4)'"
                         [marginLeft]="'0'"
                         [opacity]="'50%'"

@@ -64,7 +64,7 @@ body {
 
 
 .animation-carousel .carousel-control-prev {
- margin-left: -10rem !important;
+ margin-left: calc(-70% + (-4rem)) !important;
   margin-top: 4rem !important;
   z-index: 100 !important;
   height: 50px !important;
@@ -72,7 +72,7 @@ body {
 }
 
 .animation-carousel .carousel-control-next {
-  margin-right: -10rem !important;
+  margin-right: calc(-70% + (-4rem)) !important;
   margin-top: 4rem !important;
   z-index: 100 !important;
   height: 50px !important;
