@@ -1,12 +1,13 @@
 <div class="bottom-left-menu">
+  <div class="line-under"></div>
   <div class="row" style="margin-top: -1rem">
     <div class="col-sm-12">
-      <div (click)="emitIndex(i)" *ngFor="let color of colorsArray; let i = index" class="row">
+      <div   (click)="listClick($event, color.name, i)" *ngFor="let color of colorsArray; let i = index" class="row">
         <div class="col-sm-2" >
           <pixel-color-card  [color]="color" [secondColor]="'#6e7780'"></pixel-color-card>
         </div>
-        <div class="col-sm-8">
-          <p>{{color.name}}</p>
+        <div class="col-sm-8 color-selected">
+          <p [ngClass]="{'active': selectedItem == color.name}">{{color.name}}</p>
         </div>
       </div>
     </div>

@@ -29,3 +29,14 @@ p {
 .col-sm-12 {
   margin: 1rem;
 }
+
+.active {
+  color: black;
+}
+
+.line-under {
+  width: 100%;
+  height: $border-pixel;
+  background-color: #8d9ba2;
+  position: absolute;
+}

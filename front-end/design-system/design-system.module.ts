@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SimpleButtonComponent } from './components/still-not-categorized/simple-button/simple-button.component';
-import { BottonLeftMenuComponent } from './components/responsive-Ui-Components/botton-left-menu/botton-left-menu.component';
+import { BottonLeftMenuComponent } from './components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component';
 import { LeftImageListComponent } from './components/responsive-Ui-Components/left-image-list/left-image-list.component';
 import { ImageDisplayComponent } from './components/display-animation-related/image-display/image-display.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ImageInListComponent } from './components/responsive-Ui-Components/left-image-list/image-in-list/image-in-list.component';
-import { RightMenuComponent } from './components/responsive-Ui-Components/right-menu/right-menu.component';
+import { RightMenuComponent } from './components/responsive-Ui-Components/animation-menu/right-menu.component';
 import { HeaderComponent } from './components/still-not-categorized/header/header.component';
 import { ColorListComponent } from './components/responsive-Ui-Components/color-list/color-list.component';
 import { ColorCardComponent } from './components/cards/color-card/color-card.component';
