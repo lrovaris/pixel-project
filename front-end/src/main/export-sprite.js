@@ -10,6 +10,8 @@ const { split_by_animation } = require('./export_sprite/split_by_animation')
 const { anim_in_new_row } = require('./export_sprite/anim_in_new_row')
 
 const { export_as_gif } = require('./export_sprite/export_as_gif')
+const { export_as_bmp } = require('./export_sprite/export_as_bmp')
+const { export_as_jpg } = require('./export_sprite/export_as_jpg')
 
 
 
@@ -122,11 +124,15 @@ async function export_sprite(params, sprite_data, callback) {
 
   let write_path = path.toString()
 
-  if(params.exportAs === 'gif'){
+  if(params.exportAs === 'gif'
+  || params.fileFormat === 'bmp'
+  || params.fileFormat === 'jpg'){
     write_path += 'temp/'
   }
 
-  write_path = write_path + fileName
+  write_path = write_path + fileName.toString()
+
+  let fileNames = []
 
   for (var i = 0; i < scaled_image_array.length; i++) {
 
@@ -136,11 +142,14 @@ async function export_sprite(params, sprite_data, callback) {
 
     if(scaled_image_array.length === 1){
 
+      fileNames.push([`${write_path}.png`, `${path.toString()}${fileName.toString()}`])
+
       fs.writeFileSync(`${write_path}.png`, buffer);
 
     }else {
 
       let this_path = write_path.toString();
+      let final_path = `${path.toString()}${fileName.toString()}`
 
       if(params.exportAs === 'spritesheet' && params.animationAsSeparateFile || params.exportAs === 'gif'){
 
@@ -149,14 +158,19 @@ async function export_sprite(params, sprite_data, callback) {
         scaled_image_array[i].metadata.name = scaled_image_array[i].metadata.name.replace('/', '')
 
         this_path = `${this_path}_${scaled_image_array[i].metadata.name}`
+        final_path = `${final_path}_${scaled_image_array[i].metadata.name}`
 
         if(params.layersAsSeparateFiles || params.exportAs === 'gif'){
           this_path = `${this_path}_${i+1}`
+          final_path = `${final_path}_${i+1}`
         }
 
       }else {
         this_path = `${this_path}_${i+1}`
+        final_path = `${final_path}_${i+1}`
       }
+
+      fileNames.push([`${this_path}.png`, final_path])
 
       fs.writeFileSync(`${this_path}.png`, buffer);
 
@@ -167,6 +181,22 @@ async function export_sprite(params, sprite_data, callback) {
   if(params.exportAs === 'gif'){
 
     export_as_gif(scaled_image_array, write_path, path, fileName, (response) => {
+      console.log(response);
+    });
+
+  }
+
+  if(params.fileFormat === 'bmp'){
+
+    export_as_bmp(fileNames, path, fileName, (response) => {
+      console.log(response);
+    });
+
+  }
+
+  if(params.fileFormat === 'jpg'){
+
+    export_as_jpg(fileNames, path, fileName, (response) => {
       console.log(response);
     });
 
