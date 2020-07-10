@@ -59,7 +59,6 @@ export class LeftImageListComponent implements OnInit {
   _activeBase;
   @Input() set activeBase(baseId){
 
-
     if(baseId === undefined){
       return;
     }
@@ -67,7 +66,6 @@ export class LeftImageListComponent implements OnInit {
     this._activeBase = baseId;
 
     this.cdRef.detectChanges();
-
   };
 
 
@@ -82,7 +80,6 @@ export class LeftImageListComponent implements OnInit {
   }
 
 
-
   changeCategoryArray(index) {
 
     this.arrayCategorias = this.arrayBases[index].metadata.category;
@@ -90,16 +87,21 @@ export class LeftImageListComponent implements OnInit {
     this.arrayCategorias = this.arrayCategorias.map((category) => {
 
       const objsOfCategory = this.arrayMetadata.filter( (image) => {
+
         if (image.metadata.category === undefined) {
           return false;
         }
+
         return image.metadata.category.toString() === category.toString();
       });
+
       return {
         category,
         objsOfCategory
       };
+
     });
+
     this.setBase.emit(this.arrayBases[index]);
   }
 

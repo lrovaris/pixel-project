@@ -35,6 +35,8 @@ export class CreateCharacterPageComponent implements OnInit {
 
   _activeBase;
 
+  loadingBase = false;
+
   constructor(
     private metadataService: MetadataService,
     private imageService: ImageService,
@@ -49,17 +51,21 @@ export class CreateCharacterPageComponent implements OnInit {
       this.toggleModal(true);
 
     });
+
+    this.spriteService.loadSpriteCalled$.subscribe(() => {
+
+      this.spriteLoaded()
+
+    });
   }
 
 
   ngOnInit() {
     this.selectedColorIndex = 0;
+
     setTimeout( () => {
       setTimeout( () => {
         this.metadataArray = this.metadataService.getMetadata();
-
-        // Setup displays ou algo assim
-        let iterator = 0;
 
         this.metadataArray.forEach(metadataObj => {
 
@@ -67,7 +73,6 @@ export class CreateCharacterPageComponent implements OnInit {
 
             metadataObj.defaultDisplay = base64;
             metadataObj.display = base64;
-            iterator++;
           });
 
         });
@@ -83,6 +88,7 @@ export class CreateCharacterPageComponent implements OnInit {
         }
 
         this.metadataService.setBaseArray(_baseArray)
+        this.setActiveBase(0);
 
       }, 1000);
     }, 1000);
@@ -90,9 +96,21 @@ export class CreateCharacterPageComponent implements OnInit {
     this.selectAnimation = 0;
   }
 
+  spriteLoaded(){
+    this.loadingBase = true;
+    this.renderBaseChange()
+  }
+
 
   pushBase(img) {
 
+    if(this.loadingBase){
+      this.loadingBase = false;
+
+      if(img._id.toString() === this.spriteService.GetBaseOfSprite()._id.toString()){
+        return
+      }
+    }
 
     if (img === undefined) {
       return;
@@ -103,32 +121,41 @@ export class CreateCharacterPageComponent implements OnInit {
 
   setBase(image) {
 
-
-
       image.originalColors = image.metadata.colors;
       image.currentColors = [];
 
       this.spriteService.SetSprite([ image ]);
 
-      this.colors = this.imagesArray()[0].metadata.colors;
-      this.lastSelection = this.imagesArray()[0];
+      this.renderBaseChange()
+  }
 
-      const bases = this.metadataService.getBaseArray()
+  renderBaseChange(){
+    this.selectAnimation = 0;
 
-      if (bases === undefined) {
-        return
+    let this_base = this.spriteService.GetBaseOfSprite()
+
+    this.colors = this.imagesArray()[0].metadata.colors;
+    this.lastSelection = this.imagesArray()[0];
+
+    const bases = this.metadataService.getBaseArray()
+
+    if (bases === undefined) {
+      return
+    }
+
+    for (let index = 0; index < bases.length; index++) {
+      if (this_base._id.toString() === bases[index]._id.toString()) {
+        return this.setActiveBase(index);
       }
+    }
+  }
+
+  setActiveBase(newActiveBase){
+
+    this._activeBase = newActiveBase;
 
 
-      for (let index = 0; index < bases.length; index++) {
-
-        if (image.metadata.name === bases[index].metadata.name) {
-          this._activeBase = index;
-        }
-
-      }
-
-      this.cdRef.detectChanges();
+    this.cdRef.detectChanges();
   }
 
   imagesArray() {

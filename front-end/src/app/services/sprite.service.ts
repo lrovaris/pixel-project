@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 
+import { Subject } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class SpriteService {
 
   constructor() { }
+
+  private loadSpriteCallSource = new Subject<any>();
+
+  loadSpriteCalled$ = this.loadSpriteCallSource.asObservable();
 
   Sprite = [];
 
@@ -19,13 +25,20 @@ export class SpriteService {
     return this.BaseOfSprite;
   }
 
+  public LoadSprite(newSprite) {
+
+    this.SetSprite(newSprite)
+
+    this.loadSpriteCallSource.next();
+
+  }
+
   public SetSprite(newSprite) {
 
     this.Sprite = newSprite;
 
     this.BaseOfSprite = this.Sprite.find(theBase => theBase.metadata.imgBase === true );
-
-
+    
   }
 
   public push(image) {

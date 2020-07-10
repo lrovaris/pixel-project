@@ -23,6 +23,7 @@ export class RightMenuComponent implements OnInit, AfterViewInit {
   AnimationArray;
   _ImageArray;
   @Input() set ImageArray(imgArray){
+
     if(imgArray === undefined){
       return
     }
