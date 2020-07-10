@@ -11,10 +11,19 @@ export class BottonLeftMenuComponent implements OnInit {
 
   @Output() index = new EventEmitter();
 
+  selectedItem;
+
   constructor() { }
 
   ngOnInit() {
 
+  }
+
+  listClick(event, newValue, index) {
+    console.log(newValue);
+    this.selectedItem = newValue;  // don't forget to update the model here
+    // ... do other stuff here ...
+    this.emitIndex(index);
   }
 
   emitIndex(index) {

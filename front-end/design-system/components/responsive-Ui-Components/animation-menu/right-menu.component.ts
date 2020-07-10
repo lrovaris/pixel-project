@@ -34,6 +34,7 @@ export class RightMenuComponent implements OnInit, AfterViewInit {
       this.leftSlide = this.activeSlide - 1;
     }
 
+    this.emitSelectedAnimation(this.activeSlide);
 
   }
 
