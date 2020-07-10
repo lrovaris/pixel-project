@@ -11,7 +11,7 @@
   <div class="img-list" *ngIf="toggleImages">
     <div style="width: 100%; height: 4px; background-color: #8d9ba2"></div>
     <div class="col-sm-12">
-      <carousel [(activeSlide)]="activeBase" [noWrap]="true" (activeSlideChange)="changeCategoryArray($event)"  [showIndicators]="false" [interval]="0">
+      <carousel [(activeSlide)]="_activeBase" [noWrap]="true" (activeSlideChange)="changeCategoryArray($event)"  [showIndicators]="false" [interval]="0">
         <slide *ngFor="let base of arrayBases; let i = index">
           <div class="card">
             <div class="card-content" (click)="emitImage(base)">

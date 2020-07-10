@@ -33,8 +33,7 @@ export class CreateCharacterPageComponent implements OnInit {
   fileName = '';
   fileExtension = 'png';
 
-  arrayBases = [];
-  activeBase;
+  _activeBase;
 
   constructor(
     private metadataService: MetadataService,
@@ -73,12 +72,17 @@ export class CreateCharacterPageComponent implements OnInit {
 
         });
 
+        let _baseArray = []
+
+
         for (let i = 0; i < this.metadataArray.length; i++) {
           if (this.metadataArray[i].metadata.imgBase === true) {
-            this.arrayBases.push(this.metadataArray[i]);
+            _baseArray.push(this.metadataArray[i]);
 
           }
         }
+
+        this.metadataService.setBaseArray(_baseArray)
 
       }, 1000);
     }, 1000);
@@ -86,35 +90,49 @@ export class CreateCharacterPageComponent implements OnInit {
     this.selectAnimation = 0;
   }
 
-  baseOfSprite() {
-    const base = this.spriteService.GetBaseOfSprite();
-    for (let i = 0; i < this.arrayBases.length; i++) {
-      if (base !== undefined) {
-        if (base.metadata.name === this.arrayBases[i].metadata.name) {
-          return i;
-        }
-      }
-    }
-
-  }
-
-  imagesArray() {
-    return this.spriteService.GetSprite();
-  }
 
   pushBase(img) {
+
 
     if (img === undefined) {
       return;
     }
 
     this.setBase(img);
-
   }
 
+  setBase(image) {
 
-  changeBase(index) {
-    this.baseOfSprite();
+
+
+      image.originalColors = image.metadata.colors;
+      image.currentColors = [];
+
+      this.spriteService.SetSprite([ image ]);
+
+      this.colors = this.imagesArray()[0].metadata.colors;
+      this.lastSelection = this.imagesArray()[0];
+
+      const bases = this.metadataService.getBaseArray()
+
+      if (bases === undefined) {
+        return
+      }
+
+
+      for (let index = 0; index < bases.length; index++) {
+
+        if (image.metadata.name === bases[index].metadata.name) {
+          this._activeBase = index;
+        }
+
+      }
+
+      this.cdRef.detectChanges();
+  }
+
+  imagesArray() {
+    return this.spriteService.GetSprite();
   }
 
   pushImage(image) {
@@ -151,19 +169,6 @@ export class CreateCharacterPageComponent implements OnInit {
       this.spriteService.remove(currentImage);
       return;
     }
-
-
-  }
-
-  setBase(image) {
-
-      image.originalColors = image.metadata.colors;
-      image.currentColors = [];
-
-      this.spriteService.SetSprite([ image ]);
-
-      this.colors = this.imagesArray()[0].metadata.colors;
-      this.lastSelection = this.imagesArray()[0];
 
 
   }

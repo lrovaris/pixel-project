@@ -7,6 +7,8 @@ export class MetadataService {
 
   metadata: any;
 
+  baseArray: any;
+
   constructor() { }
 
   setMetadata(metadata) {
@@ -15,6 +17,16 @@ export class MetadataService {
 
   getMetadata() {
     return this.metadata;
+  }
+
+  setBaseArray (_baseArray){
+
+    this.baseArray = _baseArray;
+
+  }
+
+  getBaseArray(){
+    return this.baseArray;
   }
 
 }

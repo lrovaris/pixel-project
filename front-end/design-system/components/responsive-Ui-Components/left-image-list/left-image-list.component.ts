@@ -1,4 +1,12 @@
-import {Component, EventEmitter, Input, OnInit, Output, AfterViewInit} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  AfterViewInit,
+  ChangeDetectorRef
+} from '@angular/core';
 
 @Component({
   selector: 'pixel-left-image-list',
@@ -7,11 +15,20 @@ import {Component, EventEmitter, Input, OnInit, Output, AfterViewInit} from '@an
 })
 export class LeftImageListComponent implements OnInit {
 
+  constructor(private cdRef: ChangeDetectorRef) { }
+
   @Input() set metadata(_metadata){
+
+
 
     if(_metadata === undefined){
       return
     }
+
+    if(this.arrayMetadata === _metadata){
+      return
+    }
+
 
     if(_metadata.length > 0){
       this.arrayMetadata = _metadata;
@@ -38,13 +55,25 @@ export class LeftImageListComponent implements OnInit {
   @Output() setBase = new EventEmitter();
   @Output() removeAcessory = new EventEmitter();
 
-  @Input() activeBase;
 
-  constructor() { }
+  _activeBase;
+  @Input() set activeBase(baseId){
+
+
+    if(baseId === undefined){
+      return;
+    }
+
+    this._activeBase = baseId;
+
+    this.cdRef.detectChanges();
+
+  };
+
+
 
   ngOnInit() {
     this.toggleImages = false;
-  //  setTimeout(() => { this.activeBase = 1; console.log('mudou'); }, 3000);
   }
 
 
@@ -55,6 +84,7 @@ export class LeftImageListComponent implements OnInit {
 
 
   changeCategoryArray(index) {
+
     this.arrayCategorias = this.arrayBases[index].metadata.category;
 
     this.arrayCategorias = this.arrayCategorias.map((category) => {

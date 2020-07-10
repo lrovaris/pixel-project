@@ -7,7 +7,7 @@
                           [selectedAnimation]="leftSlide"
                           [animation]="AnimationArray"
                           [Animation]="AnimationArray[leftSlide]"
-                          [imagesArray]="ImageArray"
+                          [imagesArray]="_ImageArray"
                           [marginTop]="'15%'"
                           [transformScale]="'scale(4)'"
                           [marginLeft]="'0'"
@@ -26,7 +26,7 @@
                             [selectedAnimation]="i"
                             [animation]="AnimationArray"
                             [Animation]="AnimationArray[i]"
-                            [imagesArray]="ImageArray"
+                            [imagesArray]="_ImageArray"
                             [transformScale]="'scale(5)'"
                             [marginLeft]="'0px'"
                             [marginTop]="'14%'"
@@ -43,7 +43,7 @@
                         [selectedAnimation]="rightSlide"
                         [animation]="AnimationArray"
                         [Animation]="AnimationArray[rightSlide]"
-                        [imagesArray]="ImageArray"
+                        [imagesArray]="_ImageArray"
                         [marginTop]="'15%'"
                         [transformScale]="'scale(4)'"
                         [marginLeft]="'0'"
@@ -53,5 +53,3 @@
 </div>
 
 </div>
-
-

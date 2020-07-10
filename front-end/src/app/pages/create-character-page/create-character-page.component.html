@@ -2,9 +2,7 @@
 
  </pixel-botton-left-menu>
 
-     <pixel-left-image-list [activeBase]="baseOfSprite()" (removeAcessory)="removeAcessory($event)" (setBase)="pushBase($event)" (image)="pushImage($event)" [metadata]="metadataArray">
-
-     </pixel-left-image-list>
+     <pixel-left-image-list [activeBase]="activeBase" (removeAcessory)="removeAcessory($event)" (setBase)="pushBase($event)" (image)="pushImage($event)" [metadata]="metadataArray"></pixel-left-image-list>
 
     <pixel-box-under-display>
 
@@ -27,7 +25,7 @@
 
   </pixel-botton-left-menu>
 
-  <pixel-right-menu *ngIf="imagesArray().length > 0" (selectedAnimation)="receivAnimation($event)" [AnimationArray]="imagesArray()[0].metadata.animations" [ImageArray]="imagesArray()">
+  <pixel-right-menu *ngIf="imagesArray().length > 0" (selectedAnimation)="receivAnimation($event)" [ImageArray]="imagesArray()">
 
   </pixel-right-menu>
 
