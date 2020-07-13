@@ -3,11 +3,11 @@
   <div class="row" style="margin-top: -1rem">
     <div class="col-sm-12">
       <div   (click)="listClick($event, color.name, i)" *ngFor="let color of colorsArray; let i = index" class="row">
-        <div class="col-sm-2" >
+        <div class="col-sm-2" style="padding-right: 0 !important; margin-right: 0 !important;">
           <pixel-color-card  [color]="color" [secondColor]="'#6e7780'"></pixel-color-card>
         </div>
-        <div class="col-sm-8 color-selected">
-          <p [ngClass]="{'active': selectedItem == color.name}">{{color.name}}</p>
+        <div style="padding-left: 0 !important;" class="col-sm-4 color-selected">
+          <p class="test this_text" [ngClass]="{'active': selectedItem == color.name}">{{color.name}}</p>
         </div>
       </div>
     </div>

@@ -6,16 +6,13 @@
 }
 ::-webkit-scrollbar-track {
   background: black;
-  border-bottom: 4px solid black;
+//  border-bottom: 4px solid black;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #847f86;
-
   border: $border-pixel solid black;
-  border-radius: 4px 0 0 4px;
-
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -36,9 +33,9 @@
   background-color: #6e7780;
   border: $border-pixel solid black;
   height: 58px;
-  width: 75%;
+  width: 76%;
+  right: calc(2% - (1 *  #{$border-pixel}) - (#{$border-pixel} / 2));
   top: 62%;
-  right: 2%;
   overflow-x: scroll;
   overflow-y: hidden;
   border-bottom: none;

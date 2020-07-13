@@ -40,3 +40,36 @@ p {
   background-color: #8d9ba2;
   position: absolute;
 }
+
+
+.this_text {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  padding: 0 0 5px 0;
+}
+
+.this_text:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 4px;
+  visibility: hidden;
+  background-color: black;
+  -webkit-transition: all .1s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+}
+
+.this_text:hover:after {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+

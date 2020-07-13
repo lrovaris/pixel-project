@@ -25,6 +25,7 @@ export class ColorListComponent implements OnInit {
 
   emitColor(color) {
     this.color.emit(color);
+    console.log('emitiu');
   }
 
 }
