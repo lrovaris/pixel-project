@@ -27,7 +27,7 @@
 .right-menu {
   top: 72%;
   position: fixed;
-  width: calc(39% + #{$border-pixel});
+  width: calc(36%);
   height: 25%;
   background-color: #6e7780;
   right: calc(2% + (2.4 *#{$border-pixel}));

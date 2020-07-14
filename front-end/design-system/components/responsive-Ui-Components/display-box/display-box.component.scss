@@ -4,13 +4,52 @@ $asd: - #{$border-pixel} !default;
 
 .display-box {
   position: fixed;
-  width: calc(76%);
+  width: calc(97% - (212px + (1.5 * #{$border-pixel}) ) );
   top: calc(2% + (1 *  #{$border-pixel}));
-  right: calc(2% - (1 *  #{$border-pixel}) - (#{$border-pixel} / 2));
+  right: calc(1% + (1* #{$border-pixel}));
   height: calc(58% -  #{$border-pixel});
   background-color: #6e7780;
   border: $border-pixel solid #d6e4db
 }
+
+
+@media screen and (max-width: 579px)  {
+  .display-box {
+    width: calc(97% - (212px + (5 * #{$border-pixel}) ) );
+  }
+}
+
+@media screen and (min-width: 580px) and (max-width: 679px) {
+  .display-box {
+    width: calc(97% - (212px + (4 * #{$border-pixel}) ) );
+  }
+}
+
+@media screen and (max-width: 780px) and (min-width: 680px) {
+  .display-box {
+    width: calc(97% - (212px + (3.5 * #{$border-pixel}) ) );
+  }
+}
+
+@media screen and (max-width: 1074px) and (min-width: 779px) {
+  .display-box {
+    width: calc(97% - (212px + (3 * #{$border-pixel}) ) );
+  }
+}
+
+@media screen and (min-width: 1075px) and (max-width: 1374px) {
+  .display-box {
+    width: calc(97% - (212px + (2.5 * #{$border-pixel}) ) );
+  }
+}
+
+
+
+
+
+
+/* For Tablets */
+
 
 .top-black-line {
   width: 100%;

@@ -2,7 +2,7 @@
 
 .box-height-98-width-77 {
   position: fixed;
-  width: calc(77% + (2 *  #{$border-pixel}));
+  width: calc(98% - (212px + ( #{$border-pixel})));
   top: calc(1%);
   right: calc(1% - #{$border-pixel});
   height: 98%;

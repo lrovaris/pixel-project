@@ -8,10 +8,12 @@ import { CreateEnemyPageComponent } from './pages/create-enemy-page/create-enemy
 import { CreateFXPageComponent } from './pages/create-fx-page/create-fx-page.component';
 import { ProjectManagementPageComponent } from './pages/project-management-page/project-management-page.component';
 import { CreateCharacterPageComponent } from './pages/create-character-page/create-character-page.component';
+import {LoadingPageComponent} from './pages/loading-page/loading-page.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: '', component: LoadingPageComponent },
+  { path: 'home', component: HomePageComponent },
   { path: 'contact', component: ContactPageComponent },
   { path: 'scenario', component: CreateScenarioPageComponent },
   { path: 'character', component: CreateCharacterPageComponent },

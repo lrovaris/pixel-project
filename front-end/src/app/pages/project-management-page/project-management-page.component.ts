@@ -17,6 +17,10 @@ export class ProjectManagementPageComponent implements OnInit {
   navigateCreateScenarioPage() { this.router.navigate(['scenario']); }
   navigateBack() { this.router.navigate(['']); }
 
+  navigate(route) {
+    this.router.navigate([route]);
+  }
+
   ngOnInit() {
   }
 

@@ -20,6 +20,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BoxUnderDisplayComponent } from './components/responsive-Ui-Components/box-under-display/box-under-display.component';
 import { DisplayBoxComponent } from './components/responsive-Ui-Components/display-box/display-box.component';
+import { ProjectManagementListComponent } from './components/responsive-Ui-Components/project-management-list/project-management-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DisplayBoxComponent } from './components/responsive-Ui-Components/displ
     ModalComponent,
     ExportModalComponent,
     BoxUnderDisplayComponent,
-    DisplayBoxComponent
+    DisplayBoxComponent,
+    ProjectManagementListComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +59,8 @@ import { DisplayBoxComponent } from './components/responsive-Ui-Components/displ
     ModalComponent,
     ExportModalComponent,
     BoxUnderDisplayComponent,
-    DisplayBoxComponent
+    DisplayBoxComponent,
+    ProjectManagementListComponent
   ]
 })
 export class DesignSystemModule { }

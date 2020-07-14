@@ -3,10 +3,10 @@
 .bottom-left-menu {
   top: 72%;
   position: fixed;
-  width: calc(35% + #{$border-pixel});
+  width: calc(59% - (218px + (1.5 * #{$border-pixel})));
   height: 25%;
   background-color: #6e7780;
-  right: calc(43% - (3 *#{$border-pixel}));
+  right: calc((38% + (4 * #{$border-pixel})));
   border: $border-pixel solid black
 }
 .row  {
@@ -73,3 +73,33 @@ p {
   transform: scaleX(1);
 }
 
+
+@media screen and (max-width: 579px)  {
+  .bottom-left-menu {
+    width: calc(59% - (218px + (5 * #{$border-pixel}) ) );
+  }
+}
+
+@media screen and (min-width: 580px) and (max-width: 679px) {
+  .bottom-left-menu {
+    width: calc(59% - (218px + (4 * #{$border-pixel}) ) );
+  }
+}
+
+@media screen and (max-width: 780px) and (min-width: 680px) {
+  .bottom-left-menu {
+    width: calc(59% - (218px + (3.5 * #{$border-pixel}) ) );
+  }
+}
+
+@media screen and (max-width: 1074px) and (min-width: 779px) {
+  .bottom-left-menu {
+    width: calc(59% - (218px + (3 * #{$border-pixel}) ) );
+  }
+}
+
+@media screen and (min-width: 1075px) and (max-width: 1374px) {
+  .bottom-left-menu {
+    width: calc(59% - (218px + (2.5 * #{$border-pixel}) ) );
+  }
+}

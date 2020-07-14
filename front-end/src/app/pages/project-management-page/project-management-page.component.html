@@ -1,11 +1,6 @@
-<div class="col">
-  <div class="row"><button (click)="navigateCreateCharacterPage()">char</button></div>
- <div class="row"><button (click)="navigateCreateEnemyPage()">enemy</button></div>
-  <div class="row"><button (click)="navigateCreateFxPage()">fx</button></div>
-  <div class="row"><button (click)="navigateCreateScenarioPage()">scenario</button></div>
-  <div class="row"><button (click)="navigateCreateUiPage()">ui</button></div>
-  <div class="row"><button (click)="navigateBack()">back</button></div>
-</div>
+<pixel-project-management-list (routeDestination)="navigate($event)">
+
+</pixel-project-management-list>
 
 
 <pixel-box-under-display>
