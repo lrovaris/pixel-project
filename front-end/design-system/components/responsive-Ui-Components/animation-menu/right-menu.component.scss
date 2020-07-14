@@ -27,10 +27,10 @@
 .right-menu {
   top: 72%;
   position: fixed;
-  width: 38%;
+  width: calc(39% + #{$border-pixel});
   height: 25%;
   background-color: #6e7780;
-  right: 4%;
+  right: calc(2% + (2.4 *#{$border-pixel}));
   border: $border-pixel solid black;
   overflow: hidden;
 }

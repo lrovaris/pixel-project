@@ -3,10 +3,10 @@
 .bottom-left-menu {
   top: 72%;
   position: fixed;
-  width: 34%;
+  width: calc(35% + #{$border-pixel});
   height: 25%;
   background-color: #6e7780;
-  right: 42%;
+  right: calc(43% - (3 *#{$border-pixel}));
   border: $border-pixel solid black
 }
 .row  {
