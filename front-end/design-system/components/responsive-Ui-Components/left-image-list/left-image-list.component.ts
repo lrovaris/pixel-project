@@ -7,15 +7,41 @@ import {
   AfterViewInit,
   ChangeDetectorRef
 } from '@angular/core';
+import { Router } from '@angular/router';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'pixel-left-image-list',
   templateUrl: './left-image-list.component.html',
-  styleUrls: ['./left-image-list.component.scss']
+  styleUrls: ['./left-image-list.component.scss'],
+  animations: [
+    trigger('changeSize', [
+      state('initial', style({
+        height: 0,
+        width: 0
+      })),
+      state('final', style({
+        height: 500,
+        width: '100%'
+      })),
+      transition('initial=>final', animate('300ms')),
+      transition('final=>initial', animate('500ms'))
+    ]),
+    trigger('opacity', [
+      state('initial', style({
+        opacity: 0,
+      })),
+      state('final', style({
+        opacity: 100
+      })),
+      transition('initial=>final', animate('600ms')),
+      transition('final=>initial', animate('500ms'))
+    ])
+  ]
 })
 export class LeftImageListComponent implements OnInit {
 
-  constructor(private cdRef: ChangeDetectorRef) { }
+  constructor(private cdRef: ChangeDetectorRef, private router: Router) { }
 
   @Input() set metadata(_metadata){
 
@@ -109,5 +135,8 @@ export class LeftImageListComponent implements OnInit {
     this.removeAcessory.emit(acessory);
   }
 
+  navigateBack() {
+    this.router.navigate(['management']);
+  }
 
 }

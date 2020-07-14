@@ -6,6 +6,7 @@ import { PaletteService} from '../../services/palette.service';
 import { FileService} from '../../services/file.service';
 import { SpriteService} from '../../services/sprite.service';
 import {LeftImageListComponent} from "../../../../design-system/components/responsive-Ui-Components/left-image-list/left-image-list.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'pixel-create-character-page',
@@ -43,7 +44,7 @@ export class CreateCharacterPageComponent implements OnInit {
     public palletService: PaletteService,
     private fileService: FileService,
     private spriteService: SpriteService,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
   ) {
 
     this.fileService.exportCalled$.subscribe(() => {
@@ -335,5 +336,7 @@ export class CreateCharacterPageComponent implements OnInit {
       })
     }
   }
+
+
 
 }
