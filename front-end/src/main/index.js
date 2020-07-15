@@ -19,6 +19,10 @@ const { export_sprite } = require('./export-sprite')
 
 let appWindow
 
+function isDev() {
+  return process.argv[2] == '--dev';
+}
+
 function initApp() {
   appWindow = new BrowserWindow({
     width: 1000,
@@ -30,7 +34,7 @@ function initApp() {
 
   // Electron Build Path
   appWindow.loadURL(
-    'http://localhost:4200'
+    isDev() ? "http://localhost:4200" : `file://${__dirname}/../../dist/index.html`
   );
 
 appWindow.on('closed', function () {

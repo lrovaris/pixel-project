@@ -2,6 +2,13 @@
   "name": "front-end",
   "version": "0.0.0",
   "main": "./src/main/index.js",
+  "description":"pixel art editor",
+  "homepage":"https://github.com/ciochetta",
+  "license":"UNLICENSED",
+  "author":{
+    "name":"Luis Felipe Ciochetta",
+    "email": "luisfelipeciochetta@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "clean": "rimraf dist",
@@ -10,7 +17,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:electron": "ng build --base-href ./ && electron .",
-    "electron": "wait-on http://localhost:4200 && electron .",
+    "electron": "wait-on http://localhost:4200 && electron . --dev",
     "prestart": "npm run clean",
     "start": "concurrently -k \"ng serve\" \"npm run electron\"",
     "prerelease": "ng build --prod --base-href ./",
@@ -29,6 +36,7 @@
     "@angular/router": "~8.2.14",
     "@types/electron": "^1.6.10",
     "bootstrap": "^4.5.0",
+    "canvas": "^2.6.1",
     "gifencoder": "^2.0.1",
     "got": "^11.3.0",
     "jimp": "^0.14.0",
@@ -41,6 +49,7 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
+    "node-pre-gyp": "0.12.0",
     "@angular-devkit/build-angular": "^0.803.28",
     "@angular/cli": "^8.3.28",
     "@angular/compiler-cli": "~8.2.14",
@@ -70,8 +79,22 @@
     "appId": "com.electron.pixel-project",
     "productName": "pixel-project",
     "files": [
-      "./scr/main/*",
-      "./dist"
-    ]
+      "dist/**/*",
+      "src/main/**/*"
+    ],
+    "directories": {
+      "output": "release",
+      "buildResources": "dist"
+    },
+    "asar":false,
+    "win": {
+
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "runAfterFinish": true
+    }
   }
 }
