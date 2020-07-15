@@ -42,6 +42,8 @@ export class LeftImageListComponent implements OnInit {
   currentState = 'initial';
   inputState = 'initial';
   isSearching = false;
+  isFirstFilter = true;
+  oldMetadataArray = [];
 
   onSwitch() {
     this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
@@ -77,12 +79,7 @@ export class LeftImageListComponent implements OnInit {
     if(_metadata.length > 0){
       this.arrayMetadata = _metadata;
       this.toggleImages = true;
-      for (let i = 0; i < this.arrayMetadata.length; i++) {
-        if (this.arrayMetadata[i].metadata.imgBase === true) {
-          this.arrayBases.push(this.arrayMetadata[i]);
-
-        }
-      }
+      this.setBaseArray();
 
       this.setBase.emit(this.arrayBases[0]);
 
@@ -113,6 +110,36 @@ export class LeftImageListComponent implements OnInit {
   };
 
 
+  setBaseArray() {
+    for (let i = 0; i < this.arrayMetadata.length; i++) {
+      if (this.arrayMetadata[i].metadata.imgBase === true) {
+        this.arrayBases.push(this.arrayMetadata[i]);
+      }
+    }
+  }
+
+  filterByTheme(theme, index) {
+
+    if (this.isFirstFilter) {
+      this.oldMetadataArray = this.arrayMetadata;
+      this.isFirstFilter = false;
+    } else if (theme === '') {
+      console.log('');
+      this.arrayMetadata = this.oldMetadataArray;
+      this.changeCategoryArray(index);
+      return;
+    }
+
+    this.arrayMetadata = this.oldMetadataArray.filter((image) => {
+      console.log(image.metadata.theme.toString());
+      return image.metadata.theme.toString() === theme.toString();
+    });
+    setTimeout(() => {
+      this.setBaseArray();
+      console.log(this.arrayMetadata);
+      this.changeCategoryArray(index);
+    }, 0);
+  }
 
   ngOnInit() {
     this.toggleImages = false;

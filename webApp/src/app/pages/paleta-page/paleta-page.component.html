@@ -1,0 +1,17 @@
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Deletar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let palete of PaleteList" >
+      <td>{{palete.name}}</td>
+      <td><i (click)="deletePalete(palete._id)" class="icon-waste"></i></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

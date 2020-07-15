@@ -15,6 +15,7 @@ import { ImageDisplayComponent} from './design-system/image-display/image-displa
 import { ColorCardComponent } from './design-system/color-card/color-card.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { MetadataComponent } from './design-system/metadata/metadata.component';
+import { PaletaPageComponent } from './pages/paleta-page/paleta-page.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MetadataComponent } from './design-system/metadata/metadata.component';
     ImageDisplayComponent,
     ColorCardComponent,
     UpdateComponent,
-    MetadataComponent
+    MetadataComponent,
+    PaletaPageComponent
   ],
   imports: [
     HttpClientModule,

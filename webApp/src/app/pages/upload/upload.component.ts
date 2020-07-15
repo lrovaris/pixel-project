@@ -57,6 +57,7 @@ export class UploadComponent implements OnInit {
     this.imgName = event.target.files[0].name;
     this.checkEnviou = true;
     this.fileToUpload = [newFile];
+    console.log(newFile);
   }
 
   uploadPhoto() {
@@ -84,11 +85,10 @@ export class UploadComponent implements OnInit {
 
   saveMetadata(metadata) {
 
-    console.log(metadata);
-    console.log(this.path);
     this.imageService.createImage(metadata, this.path).subscribe((data: any) => {
       console.log(data);
     });
+
   }
 
 }

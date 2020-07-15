@@ -22,4 +22,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['upload']);
   }
 
+  navigatePaleta() {
+    this.router.navigate(['paleta']);
+  }
+
 }

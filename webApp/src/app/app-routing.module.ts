@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListComponent } from './pages/list/list.component';
 import { UploadComponent } from './pages/upload/upload.component';
 import { UpdateComponent } from './pages/update/update.component';
+import { PaletaPageComponent } from './pages/paleta-page/paleta-page.component';
 
 
 const routes: Routes = [
-  {path: '', component: ListComponent},
-  {path: 'upload', component: UploadComponent},
-  {path: 'edit', component: UpdateComponent}
+  { path: '', component: ListComponent },
+  { path: 'upload', component: UploadComponent },
+  { path: 'edit', component: UpdateComponent },
+  { path: 'paleta', component: PaletaPageComponent }
 ];
 
 @NgModule({

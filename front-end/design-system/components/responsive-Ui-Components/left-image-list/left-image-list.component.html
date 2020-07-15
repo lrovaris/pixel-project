@@ -4,11 +4,11 @@
     <button [@opacity]="inputState" class="x-buttom-card" (click)="onClickSearch()" > X </button>
     <div class="row" style="margin-top: 2px">
       <div [@opacity]="inputState" class="col-sm-3">
-        <div class="search-icon"></div>
+        <div class="search-icon" (click)="filterByTheme(inputSearch.value, _activeBase)"></div>
       </div>
       <div [@opacity]="inputState" class="col-sm-9">
         <div class="form-group input-field">
-          <input  type="text" class="form-control form-list">
+          <input (keydown.enter)="filterByTheme(inputSearch.value, _activeBase)" #inputSearch type="text" class="form-control form-list">
         </div>
       </div>
     </div>
