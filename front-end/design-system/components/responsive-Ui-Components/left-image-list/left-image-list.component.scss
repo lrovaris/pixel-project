@@ -37,10 +37,11 @@
 .form-list {
   background-color: #9badb7;
   width: 100%;
-  font-size: 18px;
+  font-size: 14px;
   color: white;
   font-weight: 500;
-  border: 2px solid #c1d0f0;
+  border: 2px solid black;
+  height: 36px ;
 }
 
 .form-list {
@@ -51,11 +52,11 @@
   overflow: hidden;
   left: 1%;
   position: fixed;
-  top: 12%;
+  top: calc(2% + 90px);
   width: 208px;
   background-color: #6e7780;
   border: $border-pixel solid black;
-  height: 87%;
+  height: calc(97% - 90px);
   padding-bottom: 2rem
 
 
@@ -82,14 +83,14 @@
   width: 208px;
   background-color: #6e7780;
   border: $border-pixel solid black;
-  height: 10%
+  height: 90px
 }
 
 
 .input-field {
   margin-top: 24px;
   margin-right: 8px;
-  height: 1.2rem
+  height: 36px !important;
 }
 
 .card-content {
@@ -114,6 +115,7 @@
   border: none;
   background-color: transparent;top: $border-pixel;
   outline: none !important;
+  z-index: 99;
 }
 .x-buttom-card:active {
   color: #af0000;
@@ -121,5 +123,23 @@
 
 
 
+.search-icon {
+  height: 36px;
+  width: 33px;
+  background-image: url('../../../../src/assets/imgs/lupa.png');
+  background-size: 33px;
+  image-rendering: pixelated;
+  margin-top: 24px;
+  margin-left: 8px
+}
 
+.back-icon {
+  height: 36px;
+  width: 33px;
+  background-image: url('../../../../src/assets/imgs/back.png');
+  background-size: 33px;
+  image-rendering: pixelated;
+  margin-top: 24px;
+  margin-left: 8px
+}
 
