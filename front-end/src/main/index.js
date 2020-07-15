@@ -128,15 +128,19 @@ app.on('window-all-closed', function () {
 
 ipcMain.on("load-metadata", async(event, arg) =>{
 
+  console.log('loading metadata');
+
   let metadata = await download_metadata.fetch_metadata_info().catch(e =>{ console.log(e);});
 
   metadata = JSON.parse(metadata)
 
-  event.sender.send('load-metadata-reply', metadata)
-
   let save_action = await download_metadata.save_metadata_json(metadata)
 
   let download_action = await download_metadata.download_images(metadata)
+
+  console.log('send response');
+
+  event.sender.send('load-metadata-reply', metadata)
 
 })
 
@@ -163,7 +167,6 @@ ipcMain.on("save-sprite", async(event, arg) =>{
   })
 
 })
-
 
 ipcMain.on("export-sprite", async(event, arg) =>{
 
@@ -206,7 +209,6 @@ ipcMain.on("change-color", async(event, arg) => {
   })
 
 })
-
 
 ipcMain.on("save-dialog", async(event, arg) =>{
 

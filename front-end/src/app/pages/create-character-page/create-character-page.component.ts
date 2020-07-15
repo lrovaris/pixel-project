@@ -1,12 +1,13 @@
-import {Component, OnInit, ChangeDetectorRef, ViewChild} from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
+import { Router } from "@angular/router";
 
 import { MetadataService} from '../../services/metadata.service';
 import { ImageService} from '../../services/image.service';
 import { PaletteService} from '../../services/palette.service';
 import { FileService} from '../../services/file.service';
 import { SpriteService} from '../../services/sprite.service';
-import {LeftImageListComponent} from "../../../../design-system/components/responsive-Ui-Components/left-image-list/left-image-list.component";
-import {Router} from "@angular/router";
+import { LeftImageListComponent } from "../../../../design-system/components/responsive-Ui-Components/left-image-list/left-image-list.component";
+
 
 @Component({
   selector: 'pixel-create-character-page',
