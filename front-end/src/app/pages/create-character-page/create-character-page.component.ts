@@ -65,37 +65,27 @@ export class CreateCharacterPageComponent implements OnInit {
   ngOnInit() {
     this.selectedColorIndex = 0;
 
-    setTimeout( () => {
-      setTimeout( () => {
-        this.metadataArray = this.metadataService.getMetadata();
-
-        this.metadataArray.forEach(metadataObj => {
-
-          this.imageService.GetImage(metadataObj.path, (base64) => {
-
-            metadataObj.defaultDisplay = base64;
-            metadataObj.display = base64;
-          });
-
-        });
-
-        let _baseArray = []
-
-
-        for (let i = 0; i < this.metadataArray.length; i++) {
-          if (this.metadataArray[i].metadata.imgBase === true) {
-            _baseArray.push(this.metadataArray[i]);
-
-          }
-        }
-
-        this.metadataService.setBaseArray(_baseArray)
-        this.setActiveBase(0);
-
-      }, 1000);
-    }, 1000);
 
     this.selectAnimation = 0;
+
+    setTimeout( () => {
+      this.metadataArray = this.metadataService.getMetadata();
+
+
+      let _baseArray = []
+
+
+      for (let i = 0; i < this.metadataArray.length; i++) {
+        if (this.metadataArray[i].metadata.imgBase === true) {
+          _baseArray.push(this.metadataArray[i]);
+
+        }
+      }
+
+      this.metadataService.setBaseArray(_baseArray)
+      this.setActiveBase(0);
+
+    }, 0);
   }
 
   spriteLoaded(){

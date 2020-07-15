@@ -9,11 +9,6 @@ export class RouteService {
   constructor(private router: Router) { }
 
   navigateHome() {
-
     this.router.navigate(['home'])
-
-    console.log(this.router);
-
-
   }
 }

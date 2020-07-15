@@ -136,11 +136,10 @@ ipcMain.on("load-metadata", async(event, arg) =>{
 
   let save_action = await download_metadata.save_metadata_json(metadata)
 
-  let download_action = await download_metadata.download_images(metadata)
+  let download_action = await download_metadata.download_images(metadata, ()=>{
+    event.sender.send('load-metadata-reply', metadata)
+  })
 
-  console.log('send response');
-
-  event.sender.send('load-metadata-reply', metadata)
 
 })
 

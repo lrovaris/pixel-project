@@ -16,16 +16,11 @@ export class ColorListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // console.log(this.pallete);
-    setTimeout(() => {
-      this.colorsArray = this.pallete[1].colors;
-      // console.log(this.colorsArray);
-    }, 3000);
+    this.colorsArray = this.pallete[1].colors;
   }
 
   emitColor(color) {
     this.color.emit(color);
-    console.log('emitiu');
   }
 
 }

@@ -56,7 +56,6 @@ export class LeftImageListComponent implements OnInit {
     this.isSearching = !this.isSearching;
     setTimeout(() => {
       this.onSwitch();
-      console.log('a');
     });
   }
 

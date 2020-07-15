@@ -13,7 +13,6 @@ async function save_metadata_json(metadata_json) {
   try {
     fs.writeFileSync('metadata.json', JSON.stringify(metadata_json), 'utf-8');
 
-
     return true
   }
   catch(e)
@@ -23,15 +22,26 @@ async function save_metadata_json(metadata_json) {
   }
 }
 
-async function download_images(metadata) {
+async function download_images(metadata, callback) {
+
+  let iterator = 0;
 
   for (var i = 0; i < metadata.length; i++) {
     let file = fs.createWriteStream(`./metadata/${metadata[i].path}`);
 
+    file.on('finish', () =>{
+        iterator++
+
+        if(iterator === metadata.length){
+          callback()
+        }
+      })
+
     let request = http.get(`http://161.35.10.72:3000/files/${metadata[i].path}`, function(response) {
-      response.pipe(file);
+      response.pipe(file)
     });
   }
+
 }
 
 

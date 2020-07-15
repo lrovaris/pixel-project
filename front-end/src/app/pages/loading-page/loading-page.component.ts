@@ -18,7 +18,6 @@ export class LoadingPageComponent implements OnInit {
   check1 = false;
   check2 = false;
   check3 = false;
-  isLoading = true
 
   constructor(
     private ipc: IpcService,
@@ -47,9 +46,6 @@ export class LoadingPageComponent implements OnInit {
 
     this.ipc.once('load-metadata-reply', (e: any, a: any)  => {
       this.metadataService.setMetadata(a);
-
-      console.log(a);
-
 
       this.metadataArray = this.metadataService.getMetadata();
 
@@ -99,20 +95,7 @@ export class LoadingPageComponent implements OnInit {
   }
 
   navigateHome(){
-
-    this.isLoading = false
-
     this.cdRef.detectChanges();
-
-    setTimeout(() => {
-
-      this.router.navigateHome();
-
-    }, 0);
+    this.router.navigateHome();
   }
-
-  log(x) {
-    console.log(x);
-  }
-
 }
