@@ -98,7 +98,7 @@
           <div class="col-sm-12">
             <label for="selectSpriteType" >Selecione o tipo de sprite</label>
             <fieldset class="form-group">
-              <select  formControlName="spriteType" class="form-control input-text" id="selectSpriteType" >
+              <select  formControlName="spriteType" class="form-control input-text" id="selectSpriteType" [(ngModel)]="spriteType"  >
                 <option selected value="Character">Character</option>
                 <option value="ui">Ui</option>
                 <option value="fx">FX</option>
@@ -112,7 +112,7 @@
           <div class="col-sm-12">
             <fieldset class="form-group">
               <label style="color: #000" for="">Tema</label>
-              <input #theme formControlName="theme" name="theme"  type="text" class="form-control input-text" [value]="theme.value">
+              <input  formControlName="theme" name="theme"  type="text" class="form-control input-text" [value]="theme">
             </fieldset>
           </div>
         </div>
@@ -120,7 +120,7 @@
           <div class="col-sm-12">
             <fieldset class="form-group">
               <label style="color: #000" for="">Visão da sprite</label>
-              <input #spriteView formControlName="spriteView" name="spriteView"  type="text" class="form-control input-text" [value]="spriteView.value">
+              <input  formControlName="spriteView" name="spriteView"  type="text" class="form-control input-text" [value]="spriteView">
             </fieldset>
           </div>
         </div>

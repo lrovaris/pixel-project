@@ -32,6 +32,9 @@ export class MetadataComponent implements OnInit {
   @Input() animationArray: Array<any>;
   @Input() height: any;
   @Input() width: any;
+  @Input() spriteType;
+  @Input() spriteView;
+  @Input() theme;
 
   @Output() saveMetadata = new EventEmitter();
 
@@ -45,7 +48,10 @@ export class MetadataComponent implements OnInit {
     this.form = this.formBuild.group({
       name: [this.name],
       frames: [this.frames],
-      category: [this.category]
+      category: [this.category],
+      theme: [this.theme],
+      spriteType: [this.spriteType],
+      spriteView: [this.spriteView]
     });
   }
 

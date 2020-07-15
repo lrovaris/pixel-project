@@ -1,5 +1,5 @@
 <div class="row">
   <div class="col-sm-12">
-    <app-metadata  [colors]="image?.metadata.colors"  [width]="image?.metadata.width" [height]="image?.metadata.height" [path]="image?.path" [animationArray]="image?.metadata.animations" [name]="image?.metadata.name" [frames]="image?.metadata.framesQuantity" [category]="image?.metadata?.category" [baseId]="image.metadata.imgBase" [imgBase]="image.metadata.imgBase" (saveMetadata)="saveMetadata($event)"></app-metadata>
+    <app-metadata [spriteView]="image?.metadata.spriteView" [theme]="image?.metadata.theme" [spriteType]="image?.metadata.spriteType"  [colors]="image?.metadata.colors"  [width]="image?.metadata.width" [height]="image?.metadata.height" [path]="image?.path" [animationArray]="image?.metadata.animations" [name]="image?.metadata.name" [frames]="image?.metadata.framesQuantity" [category]="image?.metadata?.category" [baseId]="image.metadata.imgBase" [imgBase]="image.metadata.imgBase" (saveMetadata)="saveMetadata($event)"></app-metadata>
   </div>
 </div>
