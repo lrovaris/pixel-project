@@ -96,6 +96,36 @@
         </div>
         <div class="row">
           <div class="col-sm-12">
+            <label for="selectSpriteType" >Selecione o tipo de sprite</label>
+            <fieldset class="form-group">
+              <select  formControlName="spriteType" class="form-control input-text" id="selectSpriteType" >
+                <option selected value="Character">Character</option>
+                <option value="ui">Ui</option>
+                <option value="fx">FX</option>
+                <option value="enemy">Enemy</option>
+                <option value="scenario">Scenario</option>
+              </select>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <fieldset class="form-group">
+              <label style="color: #000" for="">Tema</label>
+              <input #theme formControlName="theme" name="theme"  type="text" class="form-control input-text" [value]="theme.value">
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <fieldset class="form-group">
+              <label style="color: #000" for="">Visão da sprite</label>
+              <input #spriteView formControlName="spriteView" name="spriteView"  type="text" class="form-control input-text" [value]="spriteView.value">
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
             <fieldset class="form-group">
               <label style="color: #000; font-size: 24px; font-weight: 400" for="">Cores:</label>
             </fieldset>

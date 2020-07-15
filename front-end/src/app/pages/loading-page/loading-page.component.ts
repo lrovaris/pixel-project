@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import {Component, OnInit, ChangeDetectorRef, NgZone} from '@angular/core';
 
 
 import { IpcService } from '../../services/ipc.service'
@@ -26,7 +26,8 @@ export class LoadingPageComponent implements OnInit {
     private paletteService: PaletteService,
     private router: RouteService,
     private imageService: ImageService,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
+    private ngZone: NgZone
   ) { }
 
   metadataArray;
@@ -44,7 +45,7 @@ export class LoadingPageComponent implements OnInit {
 
     let iterator = 0;
 
-    this.ipc.once('load-metadata-reply', (e: any, a: any) => {
+    this.ipc.once('load-metadata-reply', (e: any, a: any)  => {
       this.metadataService.setMetadata(a);
 
       console.log(a);
@@ -69,7 +70,7 @@ export class LoadingPageComponent implements OnInit {
 
             if(iterator === 2){
 
-              this.navigateHome()
+              this.ngZone.run(() => this.navigateHome());
 
             }
 
@@ -88,7 +89,7 @@ export class LoadingPageComponent implements OnInit {
 
       if(iterator === 2){
 
-        this.navigateHome()
+        this.ngZone.run(() => this.navigateHome());
 
       }
     });

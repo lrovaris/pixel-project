@@ -106,7 +106,10 @@ export class MetadataComponent implements OnInit {
       framesQuantity,
       animations: this.animationArray,
       imgBase: this.baseSelect,
-      category: this.category
+      category: this.category,
+      theme: '', // TODO
+      spriteType: '', // TODO
+      viewType: '' // TODO
     };
 
     return this.saveMetadata.emit(metadata);

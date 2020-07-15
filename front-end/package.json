@@ -2,11 +2,11 @@
   "name": "front-end",
   "version": "0.0.0",
   "main": "./src/main/index.js",
-  "description":"pixel art editor",
-  "homepage":"https://github.com/ciochetta",
-  "license":"UNLICENSED",
-  "author":{
-    "name":"Luis Felipe Ciochetta",
+  "description": "pixel art editor",
+  "homepage": "https://github.com/ciochetta",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Luis Felipe Ciochetta",
     "email": "luisfelipeciochetta@gmail.com"
   },
   "scripts": {
@@ -86,9 +86,8 @@
       "output": "release",
       "buildResources": "dist"
     },
-    "asar":false,
+    "asar": false,
     "win": {
-
       "target": [
         "nsis"
       ]
