@@ -65,6 +65,8 @@ export class CreateCharacterPageComponent implements OnInit {
   ngOnInit() {
     this.selectedColorIndex = 0;
 
+    console.log('teste');
+
 
     this.selectAnimation = 0;
 
