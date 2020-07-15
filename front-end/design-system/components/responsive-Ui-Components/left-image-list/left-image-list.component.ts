@@ -17,14 +17,12 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   animations: [
     trigger('changeSize', [
       state('initial', style({
-        height: 0,
-        width: 0
+        transform: 'scale(0.1)'
       })),
       state('final', style({
-        height: 500,
-        width: '100%'
+        transform: 'scale(1)'
       })),
-      transition('initial=>final', animate('300ms')),
+      transition('initial=>final', animate('150ms')),
       transition('final=>initial', animate('500ms'))
     ]),
     trigger('opacity', [
@@ -40,6 +38,27 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class LeftImageListComponent implements OnInit {
+
+  currentState = 'initial';
+  inputState = 'initial';
+  isSearching = false;
+
+  onSwitch() {
+    this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
+    setTimeout(() => this.secondSwitch(), 150);
+  }
+
+  secondSwitch() {
+    this.inputState = this.inputState === 'initial' ? 'final' : 'initial';
+  }
+
+  onClickSearch() {
+    this.isSearching = !this.isSearching;
+    setTimeout(() => {
+      this.onSwitch();
+      console.log('a');
+    });
+  }
 
   constructor(private cdRef: ChangeDetectorRef, private router: Router) { }
 

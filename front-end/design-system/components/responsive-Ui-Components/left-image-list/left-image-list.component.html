@@ -1,14 +1,27 @@
 
-  <div class="top-list-input"  >
+  <div class="top-list-input" [@changeSize]="currentState" *ngIf="isSearching" >
+    <div style="width: 100%; height: 4px; background-color: #8d9ba2"></div>
+    <button [@opacity]="inputState" class="x-buttom-card" (click)="onClickSearch()" > X </button>
+    <div class="row">
+      <div [@opacity]="inputState" class="col-sm-3">
+        <div class="search-icon"></div>
+      </div>
+      <div [@opacity]="inputState" class="col-sm-9">
+        <div class="form-group input-field">
+          <input  type="text" class="form-control form-list">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-list-input"  *ngIf="!isSearching" >
     <div style="width: 100%; height: 4px; background-color: #8d9ba2"></div>
     <div class="row">
       <div class="col-sm-3">
-        <div style="height: 40px; width: 40px; background-color: black; margin-top: 24px; margin-left: 1rem" (click)="navigateBack()"></div>
+        <div class="back-icon" (click)="navigateBack()"></div>
       </div>
-      <div class="col-sm-9">
-        <div class="form-group input-field">
-          <input type="text" class="form-control form-list">
-        </div>
+      <div  class="col-sm-3">
+        <div class="search-icon" (click)="onClickSearch()"></div>
       </div>
     </div>
   </div>
