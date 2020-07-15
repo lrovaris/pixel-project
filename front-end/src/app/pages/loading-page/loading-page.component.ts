@@ -52,26 +52,34 @@ export class LoadingPageComponent implements OnInit {
 
       this.metadataArray = this.metadataService.getMetadata();
 
+      let i = 0;
       this.metadataArray.forEach(metadataObj => {
+
 
         this.imageService.GetImage(metadataObj.path, (base64) => {
 
           metadataObj.defaultDisplay = base64;
           metadataObj.display = base64;
+          i++;
 
-          console.log(this.metadataService.getMetadata());
+
+          if(i === this.metadataArray.length){
+
+            iterator++;
+
+            if(iterator === 2){
+
+              this.navigateHome()
+
+            }
+
+          }
 
         });
 
       });
 
-      iterator++;
 
-      if(iterator === 2){
-
-        this.navigateHome()
-
-      }
     });
 
     this.ipc.once('load-palettes-reply', (e: any, a: any) => {
@@ -93,9 +101,7 @@ export class LoadingPageComponent implements OnInit {
 
     this.isLoading = false
 
-    console.log(this.isLoading);
-
-
+    this.cdRef.detectChanges();
 
     setTimeout(() => {
 
