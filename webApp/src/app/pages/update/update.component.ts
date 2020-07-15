@@ -19,7 +19,8 @@ export class UpdateComponent implements OnInit {
 
   saveMetadata(metadata) {
     this.imageService.updateImage(this.image._id, metadata).subscribe((data: any) => {
-      console.log(data);
+      alert(data.message);
+      this.router.navigate(['']);
     });
   }
 
