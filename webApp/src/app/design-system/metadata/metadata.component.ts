@@ -14,6 +14,7 @@ export class MetadataComponent implements OnInit {
   imgPath = '';
   uploaded: boolean;
 
+  @Input() image;
 
   animationSelect: any;
   frameWidth: any;
@@ -85,7 +86,8 @@ export class MetadataComponent implements OnInit {
     this.imageService.getAllImages().subscribe((data: any) => {
       this.allImages = data;
     });
-    console.log(this.baseSelect);
+    console.log(this.spriteType, this.spriteView, this.theme, this.image);
+
 
   }
 
@@ -95,6 +97,8 @@ export class MetadataComponent implements OnInit {
 
   insercaoMetadados(name, framesQuantity) {
 
+    console.log(this.form.value.theme, this.form.value.spriteType);
+    console.log(this.theme, this.spriteView);
 
     if (!this.checkBase) {
       this.baseSelect = this.baseId;
@@ -113,9 +117,9 @@ export class MetadataComponent implements OnInit {
       animations: this.animationArray,
       imgBase: this.baseSelect,
       category: this.category,
-      theme: '', // TODO
-      spriteType: '', // TODO
-      viewType: '' // TODO
+      theme: this.form.value.theme,
+      spriteType: this.form.value.spriteType,
+      spriteView: this.form.value.spriteView
     };
 
     return this.saveMetadata.emit(metadata);
