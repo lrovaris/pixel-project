@@ -22,6 +22,7 @@ import { BoxUnderDisplayComponent } from './components/responsive-Ui-Components/
 import { DisplayBoxComponent } from './components/responsive-Ui-Components/display-box/display-box.component';
 import { ProjectManagementListComponent } from './components/responsive-Ui-Components/project-management-list/project-management-list.component';
 import { NewProjectModalComponent } from './components/still-not-categorized/new-project-modal/new-project-modal.component';
+import { SpriteTypeSelectListComponent } from './components/responsive-Ui-Components/sprite-type-select-list/sprite-type-select-list.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { NewProjectModalComponent } from './components/still-not-categorized/new
     BoxUnderDisplayComponent,
     DisplayBoxComponent,
     ProjectManagementListComponent,
-    NewProjectModalComponent
+    NewProjectModalComponent,
+    SpriteTypeSelectListComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +65,8 @@ import { NewProjectModalComponent } from './components/still-not-categorized/new
     BoxUnderDisplayComponent,
     DisplayBoxComponent,
     ProjectManagementListComponent,
-    NewProjectModalComponent
+    NewProjectModalComponent,
+    SpriteTypeSelectListComponent
   ]
 })
 export class DesignSystemModule { }

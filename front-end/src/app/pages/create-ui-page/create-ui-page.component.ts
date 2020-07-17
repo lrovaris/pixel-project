@@ -75,11 +75,9 @@ export class CreateUIPageComponent implements OnInit {
 
       const baseArray_ = [];
 
-
       for (let i = 0; i < this.filteredmetadataArray.length; i++) {
         if (this.filteredmetadataArray[i].metadata.imgBase === true) {
           baseArray_.push(this.filteredmetadataArray[i]);
-
         }
       }
 
@@ -103,6 +101,7 @@ export class CreateUIPageComponent implements OnInit {
       if (img._id.toString() === this.spriteService.GetBaseOfSprite()._id.toString()) {
         return;
       }
+
     }
 
     if (img === undefined) {

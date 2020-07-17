@@ -15,6 +15,7 @@ import { CreateScenarioPageComponent } from './pages/create-scenario-page/create
 import { CreateUIPageComponent } from './pages/create-ui-page/create-ui-page.component';
 import { CreateFXPageComponent } from './pages/create-fx-page/create-fx-page.component';
 import { CreateEnemyPageComponent } from './pages/create-enemy-page/create-enemy-page.component';
+import { SpriteTypeSelectPageComponent } from './pages/sprite-type-select-page/sprite-type-select-page.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CreateEnemyPageComponent } from './pages/create-enemy-page/create-enemy
     CreateUIPageComponent,
     CreateFXPageComponent,
     CreateEnemyPageComponent,
+    SpriteTypeSelectPageComponent,
   ],
   imports: [
     BrowserModule,

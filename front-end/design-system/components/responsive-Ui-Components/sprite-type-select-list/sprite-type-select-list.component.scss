@@ -1,0 +1,68 @@
+
+
+@import "~design-system/variables.scss";
+
+.project-management-list {
+  position: fixed;
+  left: 1%;
+  height: 98%;
+  top: 1%;
+  bottom: 1%;
+  width: 208px;
+  overflow: hidden;
+  background-color: #6e7780;
+  border: $border-pixel solid black;
+  padding-bottom: 2rem
+}
+
+.card-char {
+  background-image: url('https://cdn.discordapp.com/attachments/718515203607887952/732595692023054456/unknown.png');
+  image-rendering: pixelated;
+  width: 198px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 190px;
+  margin-top: 4px;
+}
+.card-enemy {
+  background-image: url('https://cdn.discordapp.com/attachments/718515203607887952/732595644182823033/unknown.png');
+  image-rendering: pixelated;
+  width: 198px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 190px;
+  margin-top: 4px;
+}
+.card-fx {
+  background-image: url('https://cdn.discordapp.com/attachments/718515203607887952/732595716463001600/unknown.png');
+  image-rendering: pixelated;
+  width: 198px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 190px;
+  margin-top: 4px;
+}
+.card-ui {
+  background-image: url('https://cdn.discordapp.com/attachments/718515203607887952/732595666911625316/unknown.png');
+  image-rendering: pixelated;
+  width: 198px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 190px;
+  margin-top: 4px;
+}
+.card-scenario {
+  background-image: url('https://cdn.discordapp.com/attachments/718515203607887952/732595716463001600/unknown.png');
+  image-rendering: pixelated;
+  width: 198px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 190px;
+  margin-top: 4px;
+}
+

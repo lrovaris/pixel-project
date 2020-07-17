@@ -8,7 +8,8 @@ import { CreateEnemyPageComponent } from './pages/create-enemy-page/create-enemy
 import { CreateFXPageComponent } from './pages/create-fx-page/create-fx-page.component';
 import { ProjectManagementPageComponent } from './pages/project-management-page/project-management-page.component';
 import { CreateCharacterPageComponent } from './pages/create-character-page/create-character-page.component';
-import {LoadingPageComponent} from './pages/loading-page/loading-page.component';
+import { LoadingPageComponent} from './pages/loading-page/loading-page.component';
+import { SpriteTypeSelectPageComponent} from './pages/sprite-type-select-page/sprite-type-select-page.component';
 
 const routes: Routes = [
   { path: '', component: LoadingPageComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'ui', component: CreateUIPageComponent },
   { path: 'enemy', component: CreateEnemyPageComponent },
   { path: 'fx', component: CreateFXPageComponent },
-  { path: 'management', component: ProjectManagementPageComponent}
+  { path: 'management', component: ProjectManagementPageComponent},
+  { path: 'spriteSelect', component: SpriteTypeSelectPageComponent}
 ];
 
 @NgModule({

@@ -13,7 +13,7 @@ export class RouteService {
   ) { }
 
   navigateTo(page){
-    this.router.navigate([page])
-    this.ipc.send('navigate', page)
+    this.router.navigate([page]);
+    this.ipc.send('navigate', page);
   }
 }
