@@ -1,12 +1,10 @@
 import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
-import { Router } from "@angular/router";
-
 import { MetadataService} from '../../services/metadata.service';
 import { ImageService} from '../../services/image.service';
 import { PaletteService} from '../../services/palette.service';
 import { FileService} from '../../services/file.service';
 import { SpriteService} from '../../services/sprite.service';
-import { LeftImageListComponent } from "../../../../design-system/components/responsive-Ui-Components/left-image-list/left-image-list.component";
+import { LeftImageListComponent } from '../../../../design-system/components/responsive-Ui-Components/left-image-list/left-image-list.component';
 
 
 @Component({
@@ -22,6 +20,8 @@ export class CreateCharacterPageComponent implements OnInit {
 
   metadataArray = [];
 
+  filteredmetadataArray = [];
+
   selectAnimation = 1;
 
   selectedColorIndex: any;
@@ -35,7 +35,7 @@ export class CreateCharacterPageComponent implements OnInit {
   fileName = '';
   fileExtension = 'png';
 
-  _activeBase;
+  activeBase_;
 
   loadingBase = false;
 
@@ -56,7 +56,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
     this.spriteService.loadSpriteCalled$.subscribe(() => {
 
-      this.spriteLoaded()
+      this.spriteLoaded();
 
     });
   }
@@ -65,44 +65,44 @@ export class CreateCharacterPageComponent implements OnInit {
   ngOnInit() {
     this.selectedColorIndex = 0;
 
-    console.log('teste');
-
-
     this.selectAnimation = 0;
 
     setTimeout( () => {
       this.metadataArray = this.metadataService.getMetadata();
 
+      this.filteredmetadataArray = this.metadataArray.filter( (image) => {
+        return image.metadata.spriteType.toLowerCase() === 'character';
+      });
 
-      let _baseArray = []
+      let baseArray_ = [];
 
 
-      for (let i = 0; i < this.metadataArray.length; i++) {
-        if (this.metadataArray[i].metadata.imgBase === true) {
-          _baseArray.push(this.metadataArray[i]);
+      for (let i = 0; i < this.filteredmetadataArray.length; i++) {
+        if (this.filteredmetadataArray[i].metadata.imgBase === true) {
+          baseArray_.push(this.filteredmetadataArray[i]);
 
         }
       }
 
-      this.metadataService.setBaseArray(_baseArray)
+      this.metadataService.setBaseArray(baseArray_);
       this.setActiveBase(0);
 
     }, 0);
   }
 
-  spriteLoaded(){
+  spriteLoaded() {
     this.loadingBase = true;
-    this.renderBaseChange()
+    this.renderBaseChange();
   }
 
 
   pushBase(img) {
 
-    if(this.loadingBase){
+    if (this.loadingBase) {
       this.loadingBase = false;
 
-      if(img._id.toString() === this.spriteService.GetBaseOfSprite()._id.toString()){
-        return
+      if (img._id.toString() === this.spriteService.GetBaseOfSprite()._id.toString()) {
+        return;
       }
     }
 
@@ -120,33 +120,33 @@ export class CreateCharacterPageComponent implements OnInit {
 
       this.spriteService.SetSprite([ image ]);
 
-      this.renderBaseChange()
+      this.renderBaseChange();
   }
 
-  renderBaseChange(){
+  renderBaseChange() {
     this.selectAnimation = 0;
 
-    let this_base = this.spriteService.GetBaseOfSprite()
+    const thisBase = this.spriteService.GetBaseOfSprite();
 
     this.colors = this.imagesArray()[0].metadata.colors;
     this.lastSelection = this.imagesArray()[0];
 
-    const bases = this.metadataService.getBaseArray()
+    const bases = this.metadataService.getBaseArray();
 
     if (bases === undefined) {
-      return
+      return;
     }
 
     for (let index = 0; index < bases.length; index++) {
-      if (this_base._id.toString() === bases[index]._id.toString()) {
+      if (thisBase._id.toString() === bases[index]._id.toString()) {
         return this.setActiveBase(index);
       }
     }
   }
 
-  setActiveBase(newActiveBase){
+  setActiveBase(newActiveBase) {
 
-    this._activeBase = newActiveBase;
+    this.activeBase_ = newActiveBase;
 
 
     this.cdRef.detectChanges();
@@ -178,15 +178,15 @@ export class CreateCharacterPageComponent implements OnInit {
     this.spriteService.push(image);
 
 
-    this.lastSelection = this.imagesArray()[this.imagesArray().length-1]
+    this.lastSelection = this.imagesArray()[this.imagesArray().length - 1];
     this.colors = this.lastSelection.metadata.colors;
   }
 
-  removeAcessory(image){
+  removeAcessory(image) {
 
-    const currentImage = this.imagesArray().find(img => img._id.toString() === image._id.toString())
+    const currentImage = this.imagesArray().find(img => img._id.toString() === image._id.toString());
 
-    if (currentImage !== undefined){
+    if (currentImage !== undefined) {
       this.spriteService.remove(currentImage);
       return;
     }
@@ -202,9 +202,9 @@ export class CreateCharacterPageComponent implements OnInit {
 
     const thisColor = image.currentColors.find(color => color.index === index);
 
-    if(thisColor !== undefined){
-      thisColor.color = color
-      thisColor.index = index
+    if (thisColor !== undefined) {
+      thisColor.color = color;
+      thisColor.index = index;
     } else {
       image.currentColors.push({
        color,
@@ -212,14 +212,14 @@ export class CreateCharacterPageComponent implements OnInit {
       });
     }
 
-    let changes = [];
+    const changes = [];
 
     for (let i = 0; i < image.currentColors.length; i++) {
 
       changes.push({
         old_color: image.originalColors[image.currentColors[i].index],
         new_color: image.currentColors[i].color
-      })
+      });
 
     }
 
@@ -227,9 +227,9 @@ export class CreateCharacterPageComponent implements OnInit {
 
       image.display = base64;
 
-      this.pushImage(image)
+      this.pushImage(image);
 
-      this.colors = []
+      this.colors = [];
 
       for (let i = 0; i < image.originalColors.length; i++) {
 
@@ -237,8 +237,8 @@ export class CreateCharacterPageComponent implements OnInit {
           return currCol.index === i;
         });
 
-        if (currentColorForIndex === undefined){
-          this.colors.push(image.originalColors[i])
+        if (currentColorForIndex === undefined) {
+          this.colors.push(image.originalColors[i]);
         } else {
           this.colors.push({
             r: currentColorForIndex.color.r,
@@ -262,6 +262,12 @@ export class CreateCharacterPageComponent implements OnInit {
     this.selectAnimation = index;
   }
 
+
+
+
+  // MODAL RELATED
+
+
   toggleModal(newState) {
 
     if(newState === undefined) {
@@ -279,46 +285,46 @@ export class CreateCharacterPageComponent implements OnInit {
 
   modalOutput(event) {
 
-    if (event.message === 'close'){
+    if (event.message === 'close') {
       this.toggleModal(false);
     }
 
-    if(event.message === 'export'){
-      this.fileService.ExportSprite(event.exportParams)
+    if (event.message === 'export') {
+      this.fileService.ExportSprite(event.exportParams);
     }
 
-    if(event.message === 'path_dialog'){
+    if (event.message === 'path_dialog') {
 
       this.fileService.PathDialog((response) => {
 
         if (response.valid) {
 
-          let string_array = response.path.split('\\');
+          const stringArray = response.path.split('\\');
 
 
-          let start_index = 0;
+          let startIndex = 0;
 
-          for (let index = 0; index < (string_array.length -1); index++) {
+          for (let index = 0; index < (stringArray.length -1); index++) {
 
-            start_index += string_array[index].length
-            start_index ++;
+            startIndex += stringArray[index].length;
+            startIndex ++;
           }
 
-          let path = response.path.substring(0, start_index);
+          const path = response.path.substring(0, startIndex);
 
-          this.fileName = string_array[string_array.length - 1];
+          this.fileName = stringArray[stringArray.length - 1];
 
-          this.filePath = path
+          this.filePath = path;
 
-          let newArray = this.fileName.split('.');
+          const newArray = this.fileName.split('.');
 
-          if(newArray.length > 1){
-            if(newArray[1] === 'png'
+          if (newArray.length > 1) {
+            if (newArray[1] === 'png'
             || newArray[1] === 'bmp'
             || newArray[1] === 'gif'
             || newArray[1] === 'jpg'
             || newArray[1] === 'pxl'
-          ){
+          ) {
             this.fileExtension = newArray[1];
             this.fileName = this.fileName.replace(`.${newArray[1]}`, '');
           }
@@ -326,7 +332,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
           this.cdRef.detectChanges();
         }
-      })
+      });
     }
   }
 

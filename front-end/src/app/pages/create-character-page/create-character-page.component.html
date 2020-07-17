@@ -1,6 +1,6 @@
 <pixel-botton-left-menu ></pixel-botton-left-menu>
 
-<pixel-left-image-list [activeBase]="_activeBase" (removeAcessory)="removeAcessory($event)" (setBase)="pushBase($event)" (image)="pushImage($event)" [metadata]="metadataArray"></pixel-left-image-list>
+<pixel-left-image-list [activeBase]="activeBase_" (removeAcessory)="removeAcessory($event)" (setBase)="pushBase($event)" (image)="pushImage($event)" [metadata]="filteredmetadataArray"></pixel-left-image-list>
 
 <pixel-box-under-display></pixel-box-under-display>
 

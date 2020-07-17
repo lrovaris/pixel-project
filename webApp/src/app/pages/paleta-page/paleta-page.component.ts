@@ -68,8 +68,6 @@ export class PaletaPageComponent implements OnInit {
           const imgHeight = rs.currentTarget['height'];
           const imgWidth = rs.currentTarget['width'];
 
-
-
           const image = new Image();
           image.src = rs.currentTarget['src'];
           image.onload = () => {

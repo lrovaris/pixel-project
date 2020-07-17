@@ -1,40 +1,27 @@
-<pixel-botton-left-menu >
+<pixel-botton-left-menu ></pixel-botton-left-menu>
 
-</pixel-botton-left-menu>
+<pixel-left-image-list [activeBase]="activeBase_" (removeAcessory)="removeAcessory($event)" (setBase)="pushBase($event)" (image)="pushImage($event)" [metadata]="filteredmetadataArray"></pixel-left-image-list>
 
-<pixel-left-image-list ></pixel-left-image-list>
+<pixel-box-under-display></pixel-box-under-display>
 
-<pixel-box-under-display>
+<pixel-display-box></pixel-display-box>
 
-</pixel-box-under-display>
-
-<pixel-display-box>
-
-</pixel-display-box>
 <div class="display-box" style="justify-content: center; align-content: center; display: flex;">
   <div style="width: 50px; transform: scale(10); top: 20%; position: absolute">
-    <pixel-animator ></pixel-animator>
+    <pixel-animator [imagesArray]="imagesArray()" [selectedAnimation]="selectAnimation"></pixel-animator>
   </div>
 </div>
 
-<pixel-color-list >
+<pixel-color-list (color)="receivColor($event, selectedColorIndex)" [pallete]="palletService.getPalettes()"></pixel-color-list>
 
-</pixel-color-list>
+<pixel-botton-left-menu></pixel-botton-left-menu>
 
-<pixel-botton-left-menu>
+<pixel-right-menu *ngIf="imagesArray().length > 0" (selectedAnimation)="receivAnimation($event)" [ImageArray]="imagesArray()"></pixel-right-menu>
 
-</pixel-botton-left-menu>
+<pixel-botton-left-menu (index)="receivIndex($event)" [colorsArray]="colors"></pixel-botton-left-menu>
 
-<pixel-right-menu >
-
-</pixel-right-menu>
-
-<pixel-botton-left-menu >
-
-</pixel-botton-left-menu>
-
-<!--<pixel-modal >
+<pixel-modal *ngIf="showExportModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
 
   <pixel-export-modal (modalOutput)="modalOutput($event)" [filePath]="filePath" [fileName]="fileName" [fileExtension]="fileExtension"></pixel-export-modal>
 
-</pixel-modal>-->
+</pixel-modal>
