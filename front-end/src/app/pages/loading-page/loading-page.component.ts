@@ -96,6 +96,6 @@ export class LoadingPageComponent implements OnInit {
 
   navigateHome(){
     this.cdRef.detectChanges();
-    this.router.navigateHome();
+    this.router.navigateTo('home');
   }
 }

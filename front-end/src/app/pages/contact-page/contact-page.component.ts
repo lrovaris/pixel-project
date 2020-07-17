@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { RouteService } from '../../services/route.service'
 
 @Component({
   selector: 'pixel-contact-page',
@@ -8,9 +8,9 @@ import {Router} from "@angular/router";
 })
 export class ContactPageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: RouteService) { }
 
-  navigateBack() { this.router.navigate(['']); }
+  navigateBack() { this.router.navigateTo('home'); }
 
   ngOnInit() {
   }

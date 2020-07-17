@@ -1,18 +1,11 @@
-<pixel-project-management-list (routeDestination)="navigate($event)">
+<pixel-project-management-list (routeDestination)="navigate($event)"> </pixel-project-management-list>
 
-</pixel-project-management-list>
+<pixel-box-under-display> </pixel-box-under-display>
 
+<pixel-display-box> </pixel-display-box>
 
-<pixel-box-under-display>
+<pixel-modal *ngIf="false">
 
-</pixel-box-under-display>
-<pixel-display-box>
+  <pixel-new-project-modal (modalOutput)="modalOutput($event)"></pixel-new-project-modal>
 
-</pixel-display-box>
-
-
-<!--<pixel-modal >
-
-  <pixel-export-modal (modalOutput)="modalOutput($event)" [filePath]="filePath" [fileName]="fileName" [fileExtension]="fileExtension"></pixel-export-modal>
-
-</pixel-modal>-->
+</pixel-modal>

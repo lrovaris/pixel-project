@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { RouteService } from '../../services/route.service'
 
 @Component({
   selector: 'pixel-project-management-page',
@@ -8,17 +8,17 @@ import {Router} from "@angular/router";
 })
 export class ProjectManagementPageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: RouteService) { }
 
-  navigateCreateCharacterPage() { this.router.navigate(['character']); }
-  navigateCreateUiPage() { this.router.navigate(['ui']); }
-  navigateCreateFxPage() { this.router.navigate(['fx']); }
-  navigateCreateEnemyPage() { this.router.navigate(['enemy']); }
-  navigateCreateScenarioPage() { this.router.navigate(['scenario']); }
-  navigateBack() { this.router.navigate(['']); }
+  navigateCreateCharacterPage() { this.navigate('character'); }
+  navigateCreateUiPage() { this.navigate('ui'); }
+  navigateCreateFxPage() { this.navigate('fx'); }
+  navigateCreateEnemyPage() { this.navigate('enemy'); }
+  navigateCreateScenarioPage() { this.navigate('scenario'); }
+  navigateBack() { this.navigate('home'); }
 
   navigate(route) {
-    this.router.navigate([route]);
+    this.router.navigateTo(route);
   }
 
   ngOnInit() {

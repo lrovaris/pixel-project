@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+
+import { RouteService } from '../../services/route.service'
 
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
@@ -10,11 +11,10 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 })
 export class HomePageComponent implements OnInit {
 
+  constructor(private router: RouteService) { }
 
-  constructor(private router: Router) { }
-
-  navigateAdmProjeto() { this.router.navigate(['management']); }
-  navigateContact() { this.router.navigate(['contact']); }
+  navigateAdmProjeto() { this.router.navigateTo('management'); }
+  navigateContact() { this.router.navigateTo('contact'); }
 
   ngOnInit() {
   }

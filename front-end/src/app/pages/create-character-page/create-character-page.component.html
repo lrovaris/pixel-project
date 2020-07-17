@@ -1,37 +1,24 @@
- <pixel-botton-left-menu >
+<pixel-botton-left-menu ></pixel-botton-left-menu>
 
- </pixel-botton-left-menu>
+<pixel-left-image-list [activeBase]="_activeBase" (removeAcessory)="removeAcessory($event)" (setBase)="pushBase($event)" (image)="pushImage($event)" [metadata]="metadataArray"></pixel-left-image-list>
 
-     <pixel-left-image-list [activeBase]="_activeBase" (removeAcessory)="removeAcessory($event)" (setBase)="pushBase($event)" (image)="pushImage($event)" [metadata]="metadataArray"></pixel-left-image-list>
+<pixel-box-under-display></pixel-box-under-display>
 
-    <pixel-box-under-display>
+<pixel-display-box></pixel-display-box>
 
-    </pixel-box-under-display>
+<div class="display-box" style="justify-content: center; align-content: center; display: flex;">
+  <div style="width: 50px; transform: scale(10); top: 20%; position: absolute">
+    <pixel-animator [imagesArray]="imagesArray()" [selectedAnimation]="selectAnimation"></pixel-animator>
+  </div>
+</div>
 
-    <pixel-display-box>
+<pixel-color-list (color)="receivColor($event, selectedColorIndex)" [pallete]="palletService.getPalettes()"></pixel-color-list>
 
-    </pixel-display-box>
-     <div class="display-box" style="justify-content: center; align-content: center; display: flex;">
-       <div style="width: 50px; transform: scale(10); top: 20%; position: absolute">
-         <pixel-animator [imagesArray]="imagesArray()" [selectedAnimation]="selectAnimation"></pixel-animator>
-       </div>
-     </div>
+<pixel-botton-left-menu></pixel-botton-left-menu>
 
-  <pixel-color-list (color)="receivColor($event, selectedColorIndex)" [pallete]="palletService.getPalettes()">
+<pixel-right-menu *ngIf="imagesArray().length > 0" (selectedAnimation)="receivAnimation($event)" [ImageArray]="imagesArray()"></pixel-right-menu>
 
-  </pixel-color-list>
-
-  <pixel-botton-left-menu>
-
-  </pixel-botton-left-menu>
-
-  <pixel-right-menu *ngIf="imagesArray().length > 0" (selectedAnimation)="receivAnimation($event)" [ImageArray]="imagesArray()">
-
-  </pixel-right-menu>
-
- <pixel-botton-left-menu (index)="receivIndex($event)" [colorsArray]="colors">
-
- </pixel-botton-left-menu>
+<pixel-botton-left-menu (index)="receivIndex($event)" [colorsArray]="colors"></pixel-botton-left-menu>
 
 <pixel-modal *ngIf="showExportModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
 

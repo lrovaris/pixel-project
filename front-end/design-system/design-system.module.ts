@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BoxUnderDisplayComponent } from './components/responsive-Ui-Components/box-under-display/box-under-display.component';
 import { DisplayBoxComponent } from './components/responsive-Ui-Components/display-box/display-box.component';
 import { ProjectManagementListComponent } from './components/responsive-Ui-Components/project-management-list/project-management-list.component';
+import { NewProjectModalComponent } from './components/still-not-categorized/new-project-modal/new-project-modal.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProjectManagementListComponent } from './components/responsive-Ui-Compo
     ExportModalComponent,
     BoxUnderDisplayComponent,
     DisplayBoxComponent,
-    ProjectManagementListComponent
+    ProjectManagementListComponent,
+    NewProjectModalComponent
   ],
   imports: [
     CommonModule,
@@ -60,7 +62,8 @@ import { ProjectManagementListComponent } from './components/responsive-Ui-Compo
     ExportModalComponent,
     BoxUnderDisplayComponent,
     DisplayBoxComponent,
-    ProjectManagementListComponent
+    ProjectManagementListComponent,
+    NewProjectModalComponent
   ]
 })
 export class DesignSystemModule { }

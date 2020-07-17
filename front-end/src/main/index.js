@@ -42,70 +42,98 @@ appWindow.on('closed', function () {
   })
 }
 
-const template = [
-   {
-      label: 'File',
-      submenu: [
-        {
-          label: 'Load',
-          click() {
 
-            load_sprite( dialog, (response) => {
-              if(response.valid){
-                appWindow.webContents.send('load-sprite-command', response.sprite);
-              }
-            })
 
+let view_menu = {
+  label: "View",
+  submenu: [
+    {
+      label: "Reload",
+      accelerator: "F5",
+      click: (item, focusedWindow) => {
+        if (focusedWindow) {
+          // on reload, start fresh and close any old
+          // open secondary windows
+          if (focusedWindow.id === 1) {
+            BrowserWindow.getAllWindows().forEach(win => {
+              if (appWindow.id > 1) appWindow.close();
+            });
           }
-        },
-         {
-            label: 'Save',
-            click() {
-                    appWindow.webContents.send('save-sprite-command');
-                }
-         },
-         {
-            label: 'Export',
-            click() {
-                    appWindow.webContents.send('export-sprite-command');
-                }
-         }
-      ]
-   },
-
-   {
-      label: "View",
-      submenu: [
-        {
-          label: "Reload",
-          accelerator: "F5",
-          click: (item, focusedWindow) => {
-            if (focusedWindow) {
-              // on reload, start fresh and close any old
-              // open secondary windows
-              if (focusedWindow.id === 1) {
-                BrowserWindow.getAllWindows().forEach(win => {
-                  if (appWindow.id > 1) appWindow.close();
-                });
-              }
-              focusedWindow.reload();
-            }
-          }
-        },
-        {
-          label: "Toggle Dev Tools",
-          accelerator: "F12",
-          click: () => {
-            appWindow.webContents.toggleDevTools();
-          }
+          focusedWindow.reload();
         }
-      ]
+      }
+    },
+    {
+      label: "Toggle Dev Tools",
+      accelerator: "F12",
+      click: () => {
+        appWindow.webContents.toggleDevTools();
+      }
     }
+  ]
+}
 
-]
+let file_menu = { label: 'File', submenu: [ ] }
 
-const menu = Menu.buildFromTemplate(template)
-Menu.setApplicationMenu(menu)
+let new_project_menu = { label: 'New Project', click() { appWindow.webContents.send('new-project-command'); } }
+
+let load_sprite_menu = {
+  label: 'Load',
+  click() {
+
+    load_sprite( dialog, (response) => {
+      if(response.valid){
+        appWindow.webContents.send('load-sprite-command', response.sprite);
+      }
+    })
+
+  }
+}
+
+let save_sprite_menu = { label: 'Save', click() { appWindow.webContents.send('save-sprite-command'); } }
+
+let export_sprite_menu = { label: 'Export', click() { appWindow.webContents.send('export-sprite-command'); } }
+
+
+
+Menu.setApplicationMenu(getMenu('load'))
+
+function getMenu(current_page) {
+
+  let menu = [];
+
+  file_menu.submenu = []
+
+
+  if(
+    current_page === 'management'
+    || current_page === 'home'
+  ){
+    file_menu.submenu.push(new_project_menu)
+
+  }
+
+  if(current_page === 'character'
+  || current_page === 'scenario'
+  || current_page === 'ui'
+  || current_page === 'enemy'
+  || current_page === 'fx'
+  || current_page === 'management'
+){
+
+  file_menu.submenu.push(load_sprite_menu)
+  file_menu.submenu.push(save_sprite_menu)
+  file_menu.submenu.push(export_sprite_menu)
+
+}
+
+menu.push(file_menu)
+
+menu.push(view_menu)
+
+
+return Menu.buildFromTemplate(menu)
+}
 
 app.on('ready', initApp)
 
@@ -127,8 +155,6 @@ app.on('window-all-closed', function () {
 // ipcMain things
 
 ipcMain.on("load-metadata", async(event, arg) =>{
-
-  console.log('loading metadata');
 
   let metadata = await download_metadata.fetch_metadata_info().catch(e =>{ console.log(e);});
 
@@ -228,4 +254,9 @@ ipcMain.on("save-dialog", async(event, arg) =>{
     path: path
   })
 
+})
+
+ipcMain.on("navigate", async(event, arg) =>{
+
+  Menu.setApplicationMenu(getMenu(arg))
 })
