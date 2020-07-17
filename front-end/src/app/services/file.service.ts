@@ -23,8 +23,6 @@ export class FileService {
 
       this.SaveSprite('teste', this.spriteService.GetSprite(), (response) =>{
 
-        console.log(response.message);
-
       })
     })
 
@@ -47,15 +45,10 @@ export class FileService {
 
       this.SaveProject(this.projectService.GetProject(), (response) =>{
 
-        console.log(response.message);
-
       })
     })
 
     this.ipc.on('load-project-command', (e,a) => {
-
-      console.log(a);
-
 
       this.projectService.LoadProject(a);
 
@@ -120,7 +113,7 @@ export class FileService {
     }
 
     this.ipc.once('export-sprite-reply', (e: any, a: any) => {
-      console.log(a);
+
     });
 
     this.ipc.send('export-sprite', {

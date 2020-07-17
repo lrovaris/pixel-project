@@ -26,6 +26,14 @@ export class ProjectManagementPageComponent implements OnInit {
       this.toggleModal(true);
 
     });
+
+    this.projectService.setProjectCalled$.subscribe(() => {
+
+      this._project = this.projectService.GetProject();
+
+      this.cdRef.detectChanges();
+
+    })
   }
 
   navigate(route) {
@@ -33,6 +41,8 @@ export class ProjectManagementPageComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this._project = this.projectService.GetProject();
 
   }
 
