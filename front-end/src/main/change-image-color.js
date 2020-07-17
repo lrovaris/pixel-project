@@ -24,20 +24,20 @@ function change_image_color(path, changes, callback) {
           g: this.data[idx + 1],
           b: this.data[idx + 2],
           a: this.data[idx + 3]
-        }
+        };
 
         for (var i = 0; i < changes.length; i++) {
           let old_color = changes[i].old_color;
-          let new_color = changes[i].new_color
+          let new_color = changes[i].new_color;
 
           if(old_color.r === this_rgba.r
             && old_color.g === this_rgba.g
             && old_color.b === this_rgba.b
             && old_color.a === this_rgba.a){
 
-              this.data[idx] = new_color.r
-              this.data[idx + 1] = new_color.g
-              this.data[idx + 2] = new_color.b
+              this.data[idx] = new_color.r;
+              this.data[idx + 1] = new_color.g;
+              this.data[idx + 2] = new_color.b;
               this.data[idx + 3] = new_color.a
 
             }

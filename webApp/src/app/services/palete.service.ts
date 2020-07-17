@@ -10,15 +10,15 @@ export class PaleteService {
   constructor(private http: HttpClient, private url: UrlService) { }
 
   getAllPaletes() {
-    return this.http.get('');
+    return this.http.get(`${this.url.getUrl()}/colors/all`);
   }
 
   deletePalete(id) {
     return this.http.get('');
   }
 
-  uploadPhoto(photo) {
-    return this.http.post(`${this.url.getUrl()}/images/upload`, photo);
+  uploadPalete(palete) {
+    return this.http.post(`${this.url.getUrl()}/colors/new`, palete);
   }
 
 }

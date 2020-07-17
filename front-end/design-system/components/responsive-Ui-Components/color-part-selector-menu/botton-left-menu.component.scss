@@ -1,5 +1,6 @@
 @import "~design-system/variables.scss";
 
+
 .bottom-left-menu {
   top: 72%;
   position: fixed;
@@ -58,7 +59,7 @@ p {
   left: 0;
   bottom: 4px;
   visibility: hidden;
-  background-color: black;
+  background-color: var(--color);
   -webkit-transition: all .1s ease;
   transition: all 0.3s ease;
   -webkit-transform: scaleX(0);

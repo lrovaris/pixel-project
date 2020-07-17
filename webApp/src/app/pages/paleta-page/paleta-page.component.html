@@ -1,4 +1,37 @@
-<div class="container">
+<div class="row" style="margin: 2rem">
+  <button (click)="onUpload()" class="btn btn-warning" style="color: black; border: 2px solid black">{{buttomState}}</button>
+</div>
+
+<div class="row" *ngIf="isUploading">
+  <div class="col-sm-10" style="margin: 2rem">
+    <fieldset class="form-group">
+      <label style="color: #000; font-size: 28px" for="upload" >Enviar nova foto</label>
+      <div style="cursor: pointer" class="custom-file  mx-auto d-block ">
+        <input (change)="addPicutre($event)" style="cursor: pointer" type="file" class="custom-file-input" id="upload">
+        <label class="custom-file-label" style="color: #000" for="upload">{{imgName}}</label>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<div class="row"  *ngIf="isUploading">
+  <div style="margin: 2rem" class="col-sm-10">
+    <fieldset class="form-group">
+      <label style="color: #000; font-size: 28px" for="upload" >Nome da Paleta</label>
+      <input [(ngModel)]="palletName" style="cursor: pointer" type="text" class="form-control input-text" id="" [ngModelOptions]="{standAlone: true}">
+    </fieldset>
+  </div>
+</div>
+
+<div *ngIf="isUploading" class="row">
+  <div class="col-sm-10" style="margin: 2rem">
+    <button style="border: 1px solid black; font-weight: 600" (click)="uploadPalete(palletName)" class="btn btn-warning">
+     Upload
+    </button>
+  </div>
+</div>
+
+<div class="container" *ngIf="!isUploading">
   <table class="table">
     <thead>
     <tr>
