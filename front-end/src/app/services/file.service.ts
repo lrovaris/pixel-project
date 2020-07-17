@@ -44,6 +44,7 @@ export class FileService {
 
     this.ipc.on('save-project-command', (e, a) => {
 
+
       this.SaveProject(this.projectService.GetProject(), (response) =>{
 
         console.log(response.message);
@@ -52,6 +53,9 @@ export class FileService {
     })
 
     this.ipc.on('load-project-command', (e,a) => {
+
+      console.log(a);
+
 
       this.projectService.LoadProject(a);
 

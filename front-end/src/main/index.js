@@ -230,6 +230,30 @@ ipcMain.on("export-sprite", async(event, arg) =>{
   })
 })
 
+ipcMain.on("save-project", async(event, arg) =>{
+
+  console.log('save project??????');
+
+  let this_dialog = await dialog.showSaveDialog({
+    defaultPath: "./projects/"
+  });
+
+  if(this_dialog.canceled){
+    return event.sender.send('save-project-reply', {
+      message: "Ocorreu um erro ao salvar"
+    })
+  }
+
+  let path = this_dialog.filePath;
+
+  let save_action = await save_project(path, arg)
+
+  event.sender.send('save-project-reply', {
+    message: save_action.message
+  })
+
+})
+
 ipcMain.on("load-palettes", async(event, arg) => {
 
   let palettes = await download_palette.fetch_palette_info()

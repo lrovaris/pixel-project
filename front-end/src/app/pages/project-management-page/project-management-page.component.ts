@@ -4,6 +4,7 @@ import { RouteService } from '../../services/route.service'
 import { ModalService} from '../../services/modal.service';
 import { PaletteService} from '../../services/palette.service';
 import { ProjectService } from '../../services/project.service';
+import { FileService } from '../../services/file.service';
 
 @Component({
   selector: 'pixel-project-management-page',
@@ -16,6 +17,7 @@ export class ProjectManagementPageComponent implements OnInit {
     private router: RouteService,
     private modalService: ModalService,
     private projectService: ProjectService,
+    private fileService: FileService,
     private cdRef: ChangeDetectorRef,
     public palletService: PaletteService
   ) {
