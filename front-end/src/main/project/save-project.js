@@ -1,11 +1,11 @@
 const fs = require('fs');
 
-async function save_sprite(name, data) {
+async function save_project(name, data) {
 
-  name = name.replace('.pxl','');
+  name = name.replace('.pxlproject','');
 
   try {
-    fs.writeFileSync(`${name}.pxl`, JSON.stringify(data), 'utf-8');
+    fs.writeFileSync(`${name}.pxlproject`, JSON.stringify(data), 'utf-8');
 
     return {
       message: "Arquivo salvo com sucesso!"
@@ -20,4 +20,4 @@ async function save_sprite(name, data) {
   }
 }
 
-module.exports = { save_sprite };
+module.exports = { save_project };

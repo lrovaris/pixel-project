@@ -13,9 +13,13 @@ const download_metadata = require('./download-metadata');
 const download_palette = require('./download-palettes')
 const get_image = require('./get-image');
 const { change_image_color } = require('./change-image-color')
-const { save_file } = require('./save-sprite')
+const { save_sprite } = require('./save-sprite')
 const { load_sprite } = require('./load-sprite')
 const { export_sprite } = require('./export-sprite')
+
+
+const { load_project } = require ('./project/load-project')
+const { save_project } = require ('./project/save-project')
 
 let appWindow
 
@@ -77,8 +81,23 @@ let file_menu = { label: 'File', submenu: [ ] }
 
 let new_project_menu = { label: 'New Project', click() { appWindow.webContents.send('new-project-command'); } }
 
+let save_project_menu = { label: 'Save Project', click() { appWindow.webContents.send('save-project-command'); } }
+
+let load_project_menu = {
+  label: 'Load Project',
+  click(){
+
+    load_project( dialog, (response) => {
+      if(response.valid){
+        appWindow.webContents.send('load-project-command', response.project);
+      }
+    })
+
+  }
+}
+
 let load_sprite_menu = {
-  label: 'Load',
+  label: 'Load Sprite',
   click() {
 
     load_sprite( dialog, (response) => {
@@ -90,10 +109,9 @@ let load_sprite_menu = {
   }
 }
 
-let save_sprite_menu = { label: 'Save', click() { appWindow.webContents.send('save-sprite-command'); } }
+let save_sprite_menu = { label: 'Save Sprite', click() { appWindow.webContents.send('save-sprite-command'); } }
 
-let export_sprite_menu = { label: 'Export', click() { appWindow.webContents.send('export-sprite-command'); } }
-
+let export_sprite_menu = { label: 'Export Sprite', click() { appWindow.webContents.send('export-sprite-command'); } }
 
 
 Menu.setApplicationMenu(getMenu('load'))
@@ -110,7 +128,8 @@ function getMenu(current_page) {
     || current_page === 'home'
   ){
     file_menu.submenu.push(new_project_menu)
-
+    file_menu.submenu.push(load_project_menu)
+    file_menu.submenu.push(save_project_menu)
   }
 
   if(current_page === 'character'
@@ -122,8 +141,11 @@ function getMenu(current_page) {
 ){
 
   file_menu.submenu.push(load_sprite_menu)
-  file_menu.submenu.push(save_sprite_menu)
-  file_menu.submenu.push(export_sprite_menu)
+  if(current_page !== 'management'){
+
+    file_menu.submenu.push(save_sprite_menu)
+    file_menu.submenu.push(export_sprite_menu)
+  }
 
 }
 
@@ -184,7 +206,7 @@ ipcMain.on("save-sprite", async(event, arg) =>{
 
   let path = this_dialog.filePath;
 
-  let save_action = await save_file(path, arg.data)
+  let save_action = await save_sprite(path, arg.data)
 
   event.sender.send('save-sprite-reply', {
     message: save_action.message,

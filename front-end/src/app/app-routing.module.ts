@@ -10,7 +10,6 @@ import { ProjectManagementPageComponent } from './pages/project-management-page/
 import { CreateCharacterPageComponent } from './pages/create-character-page/create-character-page.component';
 import {LoadingPageComponent} from './pages/loading-page/loading-page.component';
 
-
 const routes: Routes = [
   { path: '', component: LoadingPageComponent },
   { path: 'home', component: HomePageComponent },

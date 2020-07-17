@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouteService } from '../../services/route.service'
+
+import { ModalService} from '../../services/modal.service';
+import { PaletteService} from '../../services/palette.service';
+import { ProjectService } from '../../services/project.service';
 
 @Component({
   selector: 'pixel-project-management-page',
@@ -8,7 +12,27 @@ import { RouteService } from '../../services/route.service'
 })
 export class ProjectManagementPageComponent implements OnInit {
 
-  constructor(private router: RouteService) { }
+  constructor(
+    private router: RouteService,
+    private modalService: ModalService,
+    private projectService: ProjectService,
+    private cdRef: ChangeDetectorRef,
+    public palletService: PaletteService
+  ) {
+    this.modalService.newProjectCalled$.subscribe(() => {
+
+      this.toggleModal(true);
+
+    });
+  }
+
+  ngOnInit() {
+
+  }
+
+  _project = this.projectService.GetProject()
+  showModal = false;
+  modalTitle = 'New Project';
 
   navigateCreateCharacterPage() { this.navigate('character'); }
   navigateCreateUiPage() { this.navigate('ui'); }
@@ -21,7 +45,28 @@ export class ProjectManagementPageComponent implements OnInit {
     this.router.navigateTo(route);
   }
 
-  ngOnInit() {
+  toggleModal(bool){
+
+    if(bool === undefined){
+      bool = !this.showModal
+    }
+
+
+    this.showModal = bool
+
+    this.cdRef.detectChanges();
+  }
+
+
+
+
+
+  modalOutput(event) {
+
+    if (event.message === 'close'){
+      this.toggleModal(false);
+    }
+
   }
 
 }

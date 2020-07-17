@@ -1,5 +1,30 @@
-<div  >
-  <button  (click)="navigateAdmProjeto()">project management</button>
-  <button  (click)="navigateContact()">contact</button>
+<div>
 
+  <div class="row">
+    <div class="col-12">
+
+      <button  (click)="newProject()">New project</button>
+
+    </div>
+
+    <div class="col-12">
+
+      <button  (click)="loadProject()">Load project</button>
+
+    </div>
+
+    <div class="col-12">
+
+      <button  (click)="navigateContact()">contact</button>
+
+    </div>
+
+  </div>
+  
 </div>
+
+<pixel-modal *ngIf="showModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
+
+  <pixel-new-project-modal (modalOutput)="modalOutput($event)" [colorPalettes]="palletService.getPalettes()"></pixel-new-project-modal>
+
+</pixel-modal>

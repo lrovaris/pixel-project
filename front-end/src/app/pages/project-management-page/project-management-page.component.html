@@ -2,10 +2,12 @@
 
 <pixel-box-under-display> </pixel-box-under-display>
 
-<pixel-display-box> </pixel-display-box>
+<pixel-display-box>
+  <h2>{{_project.name}}</h2>
+</pixel-display-box>
 
-<pixel-modal *ngIf="false">
+<pixel-modal *ngIf="showModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
 
-  <pixel-new-project-modal (modalOutput)="modalOutput($event)"></pixel-new-project-modal>
+  <pixel-new-project-modal (modalOutput)="modalOutput($event)" [colorPalettes]="palletService.getPalettes()"></pixel-new-project-modal>
 
 </pixel-modal>

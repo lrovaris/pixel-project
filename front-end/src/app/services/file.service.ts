@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { IpcService } from './ipc.service'
-import { SpriteService } from './sprite.service'
-
 import { Subject } from 'rxjs';
+
+import { IpcService } from './ipc.service'
+
+import { SpriteService } from './sprite.service'
+import { ProjectService } from './project.service'
+
 
 
 @Injectable({
@@ -10,7 +13,11 @@ import { Subject } from 'rxjs';
 })
 export class FileService {
 
-  constructor(private ipc: IpcService, private spriteService: SpriteService) {
+  constructor(
+    private ipc: IpcService,
+    private spriteService: SpriteService,
+    private projectService: ProjectService
+  ) {
 
     this.ipc.on('save-sprite-command', (e, a) => {
 
@@ -20,6 +27,7 @@ export class FileService {
 
       })
     })
+
 
     this.ipc.on('load-sprite-command', (e, a) => {
 
@@ -33,6 +41,25 @@ export class FileService {
       this.exportCallSource.next();
 
     })
+
+    this.ipc.on('save-project-command', (e, a) => {
+
+      this.SaveProject(this.projectService.GetProject(), (response) =>{
+
+        console.log(response.message);
+
+      })
+    })
+
+    this.ipc.on('load-project-command', (e,a) => {
+
+      this.projectService.LoadProject(a);
+
+    })
+
+
+
+
 
   }
 
@@ -63,6 +90,21 @@ export class FileService {
       data: imagesArray
     });
 
+  }
+
+  public SaveProject(projectInfo: any, callback: any) {
+
+    if(projectInfo === undefined){
+      return
+    }
+
+    this.ipc.once('save-project-reply', (e: any, a: any) => {
+
+      callback(a);
+
+    });
+
+    this.ipc.send('save-project', projectInfo);
   }
 
   public ExportSprite(params) {

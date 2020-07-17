@@ -28,7 +28,7 @@ import { CreateEnemyPageComponent } from './pages/create-enemy-page/create-enemy
     CreateScenarioPageComponent,
     CreateUIPageComponent,
     CreateFXPageComponent,
-    CreateEnemyPageComponent
+    CreateEnemyPageComponent,
   ],
   imports: [
     BrowserModule,
