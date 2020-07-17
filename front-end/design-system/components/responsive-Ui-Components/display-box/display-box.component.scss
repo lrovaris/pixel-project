@@ -4,7 +4,7 @@ $asd: - #{$border-pixel} !default;
 
 .display-box {
   position: fixed;
-  width: calc(97% - (212px + (1.5 * #{$border-pixel}) ) );
+  width: calc(97% - (212px + (1.5 * #{$border-pixel})));
   top: calc(2% + (1 *  #{$border-pixel}));
   right: calc(1% + (1* #{$border-pixel}));
   height: calc(58% -  #{$border-pixel});

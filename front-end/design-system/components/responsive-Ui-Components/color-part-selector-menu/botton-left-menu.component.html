@@ -7,7 +7,7 @@
           <pixel-color-card  [color]="color" [secondColor]="'#6e7780'"></pixel-color-card>
         </div>
         <div style="padding-left: 0 !important;" class="col-sm-4 color-selected">
-          <p class="test this_text" [ngClass]="{'active': selectedItem == color.name}">{{color.name}}</p>
+          <p (mouseover)="changeTheme(color)" class="test this_text" [ngClass]="{'active': selectedItem == color.name}">{{color.name}}</p>
         </div>
       </div>
     </div>

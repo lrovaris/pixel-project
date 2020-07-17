@@ -13,10 +13,17 @@ export class BottonLeftMenuComponent implements OnInit {
 
   selectedItem;
 
+
   constructor() { }
 
   ngOnInit() {
 
+
+  }
+
+  changeTheme(primary) {
+    console.log(primary);
+    document.documentElement.style.setProperty('--color', `rgba(${primary.r},${primary.g},${primary.b},${primary.a})`);
   }
 
   listClick(event, newValue, index) {
@@ -29,5 +36,6 @@ export class BottonLeftMenuComponent implements OnInit {
   emitIndex(index) {
     this.index.emit(index);
   }
+
 
 }
