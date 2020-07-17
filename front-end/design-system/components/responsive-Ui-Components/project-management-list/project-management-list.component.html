@@ -2,19 +2,10 @@
   <div style="width: 100%; height: 4px; background-color: #8d9ba2"></div>
   <div class="col">
     <div class="row">
-      <div (click)="emitRouteDestination('character')" class="card-char"></div>
+      <div (click)="emitRouteDestination('spriteSelect')" class="card-plus"></div>
     </div>
-    <div class="row">
-      <div (click)="emitRouteDestination('enemy')" class="card-enemy"></div>
-    </div>
-    <div class="row">
-      <div (click)="emitRouteDestination('ui')" class="card-ui"></div>
-    </div>
-    <div class="row">
-      <div (click)="emitRouteDestination('fx')" class="card-fx"></div>
-    </div>
-    <div class="row">
-      <div (click)="emitRouteDestination('scenario')" class="card-scenario"></div>
+    <div class="row" *ngFor="let sprite of spriteList">
+      <div (click)="emitRouteDestination(sprite.type)" class="card-sprite" [ngStyle]="{'background-image': 'src('+ sprite.src +')'}" ></div>
     </div>
   </div>
 </div>

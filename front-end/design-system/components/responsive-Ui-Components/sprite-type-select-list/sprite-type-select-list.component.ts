@@ -1,11 +1,11 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
-  selector: 'pixel-project-management-list',
-  templateUrl: './project-management-list.component.html',
-  styleUrls: ['./project-management-list.component.scss']
+  selector: 'pixel-sprite-type-select-list',
+  templateUrl: './sprite-type-select-list.component.html',
+  styleUrls: ['./sprite-type-select-list.component.scss']
 })
-export class ProjectManagementListComponent implements OnInit {
+export class SpriteTypeSelectListComponent implements OnInit {
 
   @Output() routeDestination = new EventEmitter();
 
@@ -20,5 +20,4 @@ export class ProjectManagementListComponent implements OnInit {
   emitRouteDestination(route) {
     this.routeDestination.emit(route);
   }
-
 }

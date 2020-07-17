@@ -26,33 +26,27 @@ export class ProjectManagementPageComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-
-  }
-
-  _project = this.projectService.GetProject()
-  showModal = false;
-  modalTitle = 'New Project';
-
-  navigateCreateCharacterPage() { this.navigate('character'); }
-  navigateCreateUiPage() { this.navigate('ui'); }
-  navigateCreateFxPage() { this.navigate('fx'); }
-  navigateCreateEnemyPage() { this.navigate('enemy'); }
-  navigateCreateScenarioPage() { this.navigate('scenario'); }
-  navigateBack() { this.navigate('home'); }
-
   navigate(route) {
     this.router.navigateTo(route);
   }
 
+  ngOnInit() {
+
+  }
+
+  _project = this.projectService.GetProject();
+  showModal = false;
+  modalTitle = 'New Project';
+
+
   toggleModal(bool){
 
-    if(bool === undefined){
-      bool = !this.showModal
+    if (bool === undefined) {
+      bool = !this.showModal;
     }
 
 
-    this.showModal = bool
+    this.showModal = bool;
 
     this.cdRef.detectChanges();
   }
@@ -63,7 +57,7 @@ export class ProjectManagementPageComponent implements OnInit {
 
   modalOutput(event) {
 
-    if (event.message === 'close'){
+    if (event.message === 'close') {
       this.toggleModal(false);
     }
 
