@@ -19,12 +19,14 @@ async function load_project(dialog, callback) {
 
       let sprites = []
 
-      for (var i = 0; i < project.sprites.length; i++) {
+      if(project.sprites !== undefined){
+        for (var i = 0; i < project.sprites.length; i++) {
 
-        let sprite_data = get_sprite_data(project.sprites[i])
+          let sprite_data = get_sprite_data(project.sprites[i])
 
-        sprites.push(sprite_data)
+          sprites.push(sprite_data)
 
+        }
       }
 
       callback({valid: true, project: project, sprites: sprites})
