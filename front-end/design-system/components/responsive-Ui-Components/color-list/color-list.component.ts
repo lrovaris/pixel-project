@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ProjectService} from "../../../../src/app/services/project.service";
 
 @Component({
   selector: 'pixel-color-list',
@@ -13,10 +14,13 @@ export class ColorListComponent implements OnInit {
 
   colorsArray = [];
 
-  constructor() { }
+  projectData: any;
+
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
-    this.colorsArray = this.pallete[1].colors;
+    this.projectData = this.projectService.GetProject();
+    this.colorsArray = this.projectData.palette.colors;
   }
 
   emitColor(color) {
