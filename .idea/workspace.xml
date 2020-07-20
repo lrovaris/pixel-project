@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="90258cf2-ebcb-44d1-a8b6-659a1216df15" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/project-management-list/project-management-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/project-management-list/project-management-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/project-management-list/project-management-list.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/project-management-list/project-management-list.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/project-management-list/project-management-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/project-management-list/project-management-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/design-system.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/design-system.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/pages/create-ui-page/create-ui-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/pages/create-ui-page/create-ui-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/pages/project-management-page/project-management-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/pages/project-management-page/project-management-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/services/route.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/services/route.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,46 +21,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/app-routing.module.ts">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+            <state relative-caret-position="-3686">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#80#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/project-management-page/project-management-page.component.html">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="26" selection-start-column="26" selection-end-column="26" />
+            <state relative-caret-position="322">
+              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/project-management-list/project-management-list.component.ts">
+        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" selection-start-line="9" selection-end-line="21" selection-end-column="3" />
+            <state relative-caret-position="386">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#0#77#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/project-management-list/project-management-list.component.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/sprite-type-select-list/sprite-type-select-list.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="69">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -76,43 +66,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/sprite-type-select-list/sprite-type-select-list.component.ts">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/services/project.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/sprite-type-select-page/sprite-type-select-page.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="52" lean-forward="true" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/design-system.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/project-management-page/project-management-page.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#69#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-684">
+              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -136,9 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/box-under-display/box-under-display.component.scss" />
-        <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/animation-menu/right-menu.component.scss" />
-        <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.scss" />
         <option value="$PROJECT_DIR$/webApp/src/app/design-system/metadata/metadata.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/left-image-list/left-image-list.component.scss" />
         <option value="$PROJECT_DIR$/webApp/src/app/pages/update/update.component.ts" />
@@ -156,7 +110,6 @@
         <option value="$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts" />
         <option value="$PROJECT_DIR$/webApp/src/app/services/palete.service.ts" />
         <option value="$PROJECT_DIR$/webApp/src/app/pages/paleta-page/paleta-page.component.html" />
-        <option value="$PROJECT_DIR$/front-end/src/app/pages/loading-page/loading-page.component.ts" />
         <option value="$PROJECT_DIR$/front-end/design-system/variables.scss" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/display-box/display-box.component.scss" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.html" />
@@ -187,6 +140,10 @@
         <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/project-management-list/project-management-list.component.scss" />
         <option value="$PROJECT_DIR$/front-end/src/app/pages/sprite-type-select-page/sprite-type-select-page.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/design-system.module.ts" />
+        <option value="$PROJECT_DIR$/front-end/src/app/pages/loading-page/loading-page.component.ts" />
+        <option value="$PROJECT_DIR$/front-end/src/app/services/project.service.ts" />
+        <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.ts" />
+        <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.html" />
       </list>
     </option>
   </component>
@@ -240,7 +197,7 @@
               <item name="design-system" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="responsive-Ui-Components" type="462c0819:PsiDirectoryNode" />
-              <item name="sprite-type-select-list" type="462c0819:PsiDirectoryNode" />
+              <item name="color-list" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
@@ -261,16 +218,7 @@
               <item name="front-end" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="sprite-type-select-page" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -345,12 +293,12 @@
       <workItem from="1593606498902" duration="6641000" />
       <workItem from="1546301266852" duration="11000" />
       <workItem from="1593793391293" duration="14303000" />
-      <workItem from="1594816043877" duration="23641000" />
+      <workItem from="1594816043877" duration="25832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208200000" />
+    <option name="totallyTimeSpent" value="210391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -400,20 +348,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/paleta-page/paleta-page.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="20" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webApp/src/app/pages/upload/upload.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -476,23 +410,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/loading-page/loading-page.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="68" column="30" lean-forward="true" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/services/ipc.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/main/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4697" />
@@ -547,9 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/cards/color-card/color-card.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -558,13 +472,6 @@
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -647,23 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="182" selection-start-line="2" selection-start-column="182" selection-end-line="2" selection-end-column="182" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-fx-page/create-fx-page.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -721,16 +611,6 @@
           <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="40" selection-end-column="3" />
           <folding>
             <element signature="e#0#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/project-management-page/project-management-page.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -803,6 +683,87 @@
           <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/project-management-page/project-management-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3686">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/services/ipc.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/loading-page/loading-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1776">
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/services/palette.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/services/project.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-684">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
