@@ -129,7 +129,9 @@ function getMenu(current_page) {
   ){
     file_menu.submenu.push(new_project_menu)
     file_menu.submenu.push(load_project_menu)
-    file_menu.submenu.push(save_project_menu)
+    if(current_page !== 'home'){
+      file_menu.submenu.push(save_project_menu)
+    }
   }
 
   if(current_page === 'character'
@@ -193,24 +195,23 @@ ipcMain.on("load-metadata", async(event, arg) =>{
 
 ipcMain.on("save-sprite", async(event, arg) =>{
 
+
   let this_dialog = await dialog.showSaveDialog({
-    defaultPath: "./projects/"
+    defaultPath: path.join(__dirname, `../../projects/${arg.projectName}`)
   });
 
   if(this_dialog.canceled){
     return event.sender.send('save-sprite-reply', {
-      message: "Ocorreu um erro ao salvar",
-      name: arg.name
+      valid: false
     })
   }
 
-  let path = this_dialog.filePath;
 
-  let save_action = await save_sprite(path, arg.data)
+  let save_action = await save_sprite(this_dialog.filePath, arg.data)
 
   event.sender.send('save-sprite-reply', {
-    message: save_action.message,
-    name: arg.name
+    valid: save_action.valid,
+    path: save_action.path
   })
 
 })
@@ -230,23 +231,33 @@ ipcMain.on("export-sprite", async(event, arg) =>{
   })
 })
 
+
+ipcMain.on("load-project", async(e,a) =>{
+
+  load_project( dialog, (response) => {
+    if(response.valid){
+      appWindow.webContents.send('load-project-command', response.project);
+    }
+  })
+
+})
+
+
 ipcMain.on("save-project", async(event, arg) =>{
 
-  console.log('save project??????');
+  // let this_dialog = await dialog.showSaveDialog({
+  //   defaultPath: "./projects/"
+  // });
+  //
+  // if(this_dialog.canceled){
+  //   return event.sender.send('save-project-reply', {
+  //     message: "Ocorreu um erro ao salvar"
+  //   })
+  // }
+  //
+  // let path = this_dialog.filePath;
 
-  let this_dialog = await dialog.showSaveDialog({
-    defaultPath: "./projects/"
-  });
-
-  if(this_dialog.canceled){
-    return event.sender.send('save-project-reply', {
-      message: "Ocorreu um erro ao salvar"
-    })
-  }
-
-  let path = this_dialog.filePath;
-
-  let save_action = await save_project(path, arg)
+  let save_action = await save_project(`./projects/${arg.name}`, arg)
 
   event.sender.send('save-project-reply', {
     message: save_action.message

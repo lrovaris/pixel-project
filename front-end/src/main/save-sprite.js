@@ -8,14 +8,15 @@ async function save_sprite(name, data) {
     fs.writeFileSync(`${name}.pxl`, JSON.stringify(data), 'utf-8');
 
     return {
-      message: "Arquivo salvo com sucesso!"
+      valid: true,
+      path: `${name}.pxl`
     }
   }
   catch(e)
   {
     console.log(e);
     return {
-      message: "Falha ao salvar arquivo"
+      valid: false
     }
   }
 }

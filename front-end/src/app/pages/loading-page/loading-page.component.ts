@@ -66,7 +66,7 @@ export class LoadingPageComponent implements OnInit {
 
             if(iterator === 2){
 
-              this.ngZone.run(() => this.navigateHome());
+              this.navigateHome()
 
             }
 
@@ -85,7 +85,7 @@ export class LoadingPageComponent implements OnInit {
 
       if(iterator === 2){
 
-        this.ngZone.run(() => this.navigateHome());
+        this.navigateHome()
 
       }
     });

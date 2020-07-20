@@ -5,6 +5,9 @@ import { RouteService } from '../../services/route.service'
 import { ModalService} from '../../services/modal.service';
 import { PaletteService} from '../../services/palette.service';
 import { ProjectService} from '../../services/project.service';
+import { FileService} from '../../services/file.service';
+
+
 
 
 @Component({
@@ -19,7 +22,8 @@ export class HomePageComponent implements OnInit {
     private modalService: ModalService,
     private cdRef: ChangeDetectorRef,
     public palletService: PaletteService,
-    private projectService: ProjectService) {
+    private projectService: ProjectService,
+    private fileService: FileService) {
       this.modalService.newProjectCalled$.subscribe(() => {
 
         this.toggleModal(true);
@@ -46,9 +50,9 @@ export class HomePageComponent implements OnInit {
 
       if (event.message === 'new-project'){
 
-        this.projectService.NewProject(event.projectInfo)
-
-        this.router.navigateTo('management');
+        this.fileService.SaveProject(event.projectInfo, (response) => {
+          this.projectService.NewProject(event.projectInfo)
+        })
 
       }
 
@@ -63,6 +67,8 @@ export class HomePageComponent implements OnInit {
     }
 
     loadProject(){
+
+      this.fileService.LoadProject()
 
     }
 

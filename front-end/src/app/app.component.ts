@@ -2,6 +2,8 @@ import { Component, OnInit} from '@angular/core';
 
 import {Router} from "@angular/router";
 
+import { FileService} from './services/file.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +12,7 @@ import {Router} from "@angular/router";
 export class AppComponent implements OnInit{
   title = 'front-end';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private fileService: FileService) {
 
   }
 

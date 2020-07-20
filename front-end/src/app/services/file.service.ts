@@ -21,7 +21,15 @@ export class FileService {
 
     this.ipc.on('save-sprite-command', (e, a) => {
 
-      this.SaveSprite('teste', this.spriteService.GetSprite(), (response) =>{
+      this.SaveSprite(this.projectService.GetProjectName(), this.spriteService.GetSprite(), (response) =>{
+
+        if (response.valid) {
+          this.projectService.AddSprite(response.path)
+
+          this.SaveProject(this.projectService.GetProject(), (response) =>{
+
+          })
+        }
 
       })
     })
@@ -29,19 +37,20 @@ export class FileService {
 
     this.ipc.on('load-sprite-command', (e, a) => {
 
+      console.log(a);
+
+
       this.spriteService.LoadSprite(a);
 
     })
 
     this.ipc.on('export-sprite-command', (e, a) => {
 
-      // this.ExportSprite();
       this.exportCallSource.next();
 
     })
 
     this.ipc.on('save-project-command', (e, a) => {
-
 
       this.SaveProject(this.projectService.GetProject(), (response) =>{
 
@@ -55,9 +64,6 @@ export class FileService {
     })
 
 
-
-
-
   }
 
   private exportCallSource = new Subject<any>();
@@ -65,9 +71,9 @@ export class FileService {
   exportCalled$ = this.exportCallSource.asObservable();
 
 
-  public SaveSprite(fileName: string, imagesArray: any, callback: any) {
+  public SaveSprite(projectName: string, imagesArray: any, callback: any) {
 
-    if(fileName === undefined){
+    if(projectName === undefined){
       return
     }
 
@@ -76,20 +82,24 @@ export class FileService {
     }
 
     this.ipc.once('save-sprite-reply', (e: any, a: any) => {
-      if(a.name === fileName){
-        callback(a);
-      }
+
+      callback(a);
 
     });
 
     this.ipc.send('save-sprite', {
-      name: fileName,
+      projectName: projectName,
       data: imagesArray
     });
 
   }
 
+  public LoadProject(){
+    this.ipc.send('load-project', {});
+  }
+
   public SaveProject(projectInfo: any, callback: any) {
+
 
     if(projectInfo === undefined){
       return
