@@ -89,7 +89,10 @@ let load_project_menu = {
 
     load_project( dialog, (response) => {
       if(response.valid){
-        appWindow.webContents.send('load-project-command', response.project);
+        appWindow.webContents.send('load-project-command', {
+          project: response.project,
+          sprites: response.sprites
+        });
       }
     })
 
@@ -236,7 +239,10 @@ ipcMain.on("load-project", async(e,a) =>{
 
   load_project( dialog, (response) => {
     if(response.valid){
-      appWindow.webContents.send('load-project-command', response.project);
+      appWindow.webContents.send('load-project-command', {
+        project: response.project,
+        sprites: response.sprites
+      });
     }
   })
 

@@ -24,7 +24,7 @@ export class FileService {
       this.SaveSprite(this.projectService.GetProjectName(), this.spriteService.GetSprite(), (response) =>{
 
         if (response.valid) {
-          this.projectService.AddSprite(response.path)
+          this.projectService.AddSprite(response.path, this.spriteService.GetSprite())
 
           this.SaveProject(this.projectService.GetProject(), (response) =>{
 
@@ -36,9 +36,6 @@ export class FileService {
 
 
     this.ipc.on('load-sprite-command', (e, a) => {
-
-      console.log(a);
-
 
       this.spriteService.LoadSprite(a);
 
@@ -59,7 +56,7 @@ export class FileService {
 
     this.ipc.on('load-project-command', (e,a) => {
 
-      this.projectService.LoadProject(a);
+      this.projectService.LoadProject(a.project, a.sprites);
 
     })
 

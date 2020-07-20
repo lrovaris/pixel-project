@@ -18,12 +18,13 @@ export class ProjectService {
 
   setProjectCalled$ = this.setProjectCallSource.asObservable();
 
-  public LoadProject(newProject) {
+  public LoadProject(newProject, sprites) {
 
     this.SetProject(newProject)
 
-    console.log(this.Project);
+    this.Sprites = sprites
 
+    console.log(this.Sprites);
 
     this.router.navigateTo('management')
 
@@ -45,7 +46,7 @@ export class ProjectService {
 
   }
 
-  public AddSprite(path){
+  public AddSprite(path, data){
 
     if (this.Project.sprites === undefined){
 
@@ -64,13 +65,19 @@ export class ProjectService {
       }
     }
 
-    console.log(this.Project.sprites);
+    this.Sprites.push(data)
+  }
+
+  public GetSprites() {
+
+    return this.Sprites;
 
   }
 
   public GetProject() {
 
     return this.Project;
+
   }
 
   public GetProjectName() {

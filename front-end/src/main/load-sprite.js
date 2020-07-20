@@ -11,9 +11,7 @@ async function load_sprite(dialog, callback) {
 
     if (fs.existsSync(filePath)) {
 
-      let sprite = fs.readFileSync(filePath)
-
-      sprite = JSON.parse(sprite)
+      let sprite = get_sprite_data(filePath)
 
       callback({valid: true, sprite: sprite})
 
@@ -27,4 +25,12 @@ async function load_sprite(dialog, callback) {
 
 }
 
-module.exports = { load_sprite };
+function get_sprite_data(path) {
+  let sprite = fs.readFileSync(path)
+
+  sprite = JSON.parse(sprite)
+
+  return sprite;
+}
+
+module.exports = { load_sprite, get_sprite_data };
