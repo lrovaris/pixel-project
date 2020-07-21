@@ -56,9 +56,11 @@ export class FileService {
 
     this.ipc.on('load-project-command', (e,a) => {
 
+      console.log(a);
+
       this.projectService.LoadProject(a.project, a.sprites);
 
-    })
+    });
 
 
   }

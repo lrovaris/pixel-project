@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'enemy', component: CreateEnemyPageComponent },
   { path: 'fx', component: CreateFXPageComponent },
   { path: 'management', component: ProjectManagementPageComponent},
-  { path: 'spriteSelect', component: SpriteTypeSelectPageComponent}
+  { path: 'spriteselect', component: SpriteTypeSelectPageComponent}
 ];
 
 @NgModule({

@@ -1,11 +1,24 @@
 <div class="project-management-list">
   <div style="width: 100%; height: 4px; background-color: #8d9ba2"></div>
-  <div class="col" style="margin-left: 1px">
+  <div class="col" style="margin-left: 5px">
     <div class="row">
-      <div (click)="emitRouteDestination('spriteSelect')" class="card-plus"></div>
+      <div (click)="emitRouteDestination('spriteSelect')" class="card-plus" ></div>
     </div>
     <div class="row" *ngFor="let sprite of spriteList">
-      <div (click)="emitRouteDestination(sprite.type)" class="card-sprite" [ngStyle]="{'background-image': 'src('+ sprite.src +')'}" ></div>
+
+
+      <div (click)="emitRouteDestination(sprite[0].metadata.spriteType)" class="card-sprite" style="">
+      <div style="justify-content: center; display: flex; align-content: center ">
+        <div style="transform: scale(4); margin-right: 35%">
+          <pixel-animator [imagesArray]="sprite"></pixel-animator>
+        </div>
+      </div>
+      </div>
+
+
+
     </div>
   </div>
 </div>
+
+

@@ -6,8 +6,8 @@
   top: calc(1%);
   right: calc(1% - #{$border-pixel});
   height: 98%;
-  background-color: #847f86;
-  border: $border-pixel solid black;
+  background-color: $box-background-color;
+  border: $border-pixel solid $border-color;
 }
 
 .line-under {
@@ -22,7 +22,7 @@
   position: absolute;
   top: $border-pixel;
   right: 0;
-  background-color: black
+  background-color: $border-color
 }
 
 .left-dot {
@@ -31,5 +31,5 @@
   position: absolute;
   top: $border-pixel;
   left: 0;
-  background-color: black
+  background-color: $border-color
 }

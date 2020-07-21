@@ -1,10 +1,13 @@
 <div class="mmodal">
 
   <div class="mmodal-body">
-
+    <div class="line-under" ></div>
     <div style="padding:5px;">
 
-      <button type="button" name="button" (click)="close()"  style="float: right;"> X </button>
+      <!--<button type="button" name="button" (click)="close()"  style="float: right;"> X </button>-->
+
+      <pixel-simple-button [text]="'X'" (click)="close()" style="float: right; padding: 0 !important;"></pixel-simple-button>
+
 
       <h4 style="float: left;">{{_title}}</h4>
 

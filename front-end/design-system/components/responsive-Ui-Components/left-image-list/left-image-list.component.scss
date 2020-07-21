@@ -1,5 +1,6 @@
 @import "~design-system/variables.scss";
 
+
 ::-webkit-scrollbar {
   width: 22px;
   height: 2px;
@@ -34,7 +35,8 @@
   border: $border-pixel solid black;
 }
 
-.form-list {
+.input {
+  box-shadow: $box-shadow;
   background-color: #9badb7;
   width: 100%;
   font-size: 14px;
@@ -45,9 +47,7 @@
   border-radius: 0 !important;
 }
 
-.form-list {
-  box-shadow: none !important;
-}
+
 
 .img-list {
   overflow: hidden;
@@ -56,7 +56,7 @@
   top: calc(2% + 90px);
   width: 208px;
   background-color: $display-background-color;
-  border: $border-pixel solid black;
+  border: $border-pixel solid $border-color;
   height: calc(97% - 90px);
   padding-bottom: 2rem
 
@@ -75,7 +75,8 @@
   min-height: 20%;
   border: none;
   margin-left: 2px;
-  margin-top: 1rem
+  margin-top: 1rem;
+  box-shadow: $box-shadow !important;
 }
 
 .top-list-input {
@@ -98,7 +99,8 @@
 .card-content {
   background-color: #9badb7;
   height: 80px;
-  border: $border-pixel solid black
+  border: $border-pixel solid black;
+
 }
 .card-content-row {
   display: flex;
@@ -126,6 +128,7 @@
 
 
 .search-icon {
+  box-shadow: $box-shadow;
   height: 36px;
   width: 33px;
   background-image: url('../../../../src/assets/imgs/lupa.png');
@@ -136,6 +139,7 @@
 }
 
 .back-icon {
+  box-shadow: $box-shadow;
   height: 36px;
   width: 33px;
   background-image: url('../../../../src/assets/imgs/back.png');

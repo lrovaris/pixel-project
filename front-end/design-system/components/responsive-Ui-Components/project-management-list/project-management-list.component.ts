@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ProjectService} from '../../../../src/app/services/project.service';
 
 @Component({
   selector: 'pixel-project-management-list',
@@ -11,14 +12,15 @@ export class ProjectManagementListComponent implements OnInit {
 
   spriteList = [];
 
-  constructor() { }
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
-
+    this.spriteList = this.projectService.GetSprites();
   }
 
   emitRouteDestination(route) {
-    this.routeDestination.emit(route);
+
+    this.routeDestination.emit(route.toLowerCase());
   }
 
 }

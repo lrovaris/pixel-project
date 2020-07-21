@@ -16,18 +16,21 @@
 .card-plus {
   background-image: url('~src/assets/imgs/plus.png');
   image-rendering: pixelated;
-  width: 198px;
-  height: 100px;
+  width: 190px;
+  height: 99px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 190px;
   margin-top: 4px;
+  box-shadow: $box-shadow;
 }
 
 .card-sprite {
+  background-image: url('~src/assets/imgs/blank.png');
+  box-shadow: $box-shadow;
   image-rendering: pixelated;
-  width: 198px;
-  height: 100px;
+  width: 190px;
+  height: 99px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 190px;

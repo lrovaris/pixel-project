@@ -8,7 +8,7 @@
       </div>
       <div [@opacity]="inputState" class="col-sm-9">
         <div class="form-group input-field">
-          <input (keydown.enter)="filterByTheme(inputSearch.value, _activeBase)" #inputSearch type="text" class="form-control form-list">
+          <input (keydown.enter)="filterByTheme(inputSearch.value, _activeBase)" #inputSearch type="text" class="form-control input">
         </div>
       </div>
     </div>
@@ -30,10 +30,10 @@
 
   <div class="img-list" *ngIf="toggleImages">
     <div style="width: 100%; height: 4px; background-color: #8d9ba2"></div>
-    <div class="col-sm-12">
-      <carousel [(activeSlide)]="_activeBase" [noWrap]="true" (activeSlideChange)="changeCategoryArray($event)"  [showIndicators]="false" [interval]="0">
+    <div class="col-sm-12" style="margin-left: 4px" >
+      <carousel  [(activeSlide)]="_activeBase" [noWrap]="true" (activeSlideChange)="changeCategoryArray($event)"  [showIndicators]="false" [interval]="0">
         <slide *ngFor="let base of arrayBases; let i = index">
-          <div class="card">
+          <div class="card" style="margin-bottom: 8px; margin-right: 8px" >
             <div class="card-content" (click)="emitImage(base)">
               <div class="div card-content-div">
                 <div class="row card-content-row">
@@ -56,7 +56,7 @@
       <div *ngIf="arrayCategorias.length > 0">
         <carousel *ngFor="let category of arrayCategorias; let i = index" [noWrap]="true"  [showIndicators]="false" [interval]="0">
           <slide *ngFor="let base of category.objsOfCategory; let y = index">
-            <div class="card">
+            <div class="card" style="margin-bottom: 8px; margin-right: 8px">
               <button class="x-buttom-card" style=""  (click)="functionRemoveAcessory(base)"> X </button>
               <div class="card-content" (click)="emitImage(base)">
                 <div class="div card-content-div">

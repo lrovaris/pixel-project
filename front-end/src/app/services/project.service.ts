@@ -24,8 +24,6 @@ export class ProjectService {
 
     this.Sprites = sprites
 
-    console.log(this.Sprites);
-
     this.router.navigateTo('management')
 
   }
@@ -39,6 +37,7 @@ export class ProjectService {
   }
 
   public SetProject(newProject) {
+
 
     this.Project = newProject;
 

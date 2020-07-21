@@ -11,8 +11,10 @@
 }
 
 .mmodal-body {
-    background: #fff;
+    background: $box-background-color;
     margin: 40px;
+    border: $border-pixel solid $border-color;
+    padding: 4px;
 }
 
 // backdrop color
@@ -27,4 +29,25 @@
     background-color: #000;
     // makes the below elements visible to a degree.
     opacity: 0.65;
+}
+
+.input {
+  background-color: #9badb7;
+  width: 100%;
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+  border: 2px solid black;
+  height: 36px ;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.line-under {
+  width: calc(100% + 8px);
+  top: -4px;
+  height: 4px;
+  background-color: #8d9ba2;
+  left: -4px;
+  position: relative;
 }

@@ -9,7 +9,7 @@
   height: 25%;
   background-color: #6e7780;
   right: calc((38% + (4 * #{$border-pixel})));
-  border: $border-pixel solid black
+  border: $border-pixel solid $border-color
 }
 .row  {
   margin-top: 1rem;
@@ -22,8 +22,7 @@ max-width: 65px
 }
 
 p {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.2rem;
   color: white;
   text-transform: uppercase
 }

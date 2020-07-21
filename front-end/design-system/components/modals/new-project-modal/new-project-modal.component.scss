@@ -1,0 +1,13 @@
+@import "../../../variables";
+
+.input {
+  background-color: #9badb7;
+  width: 100%;
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+  border: 2px solid black;
+  height: 36px ;
+  border-radius: 0 !important;
+  box-shadow: $box-shadow;
+}

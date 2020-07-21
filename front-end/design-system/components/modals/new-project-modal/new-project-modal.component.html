@@ -1,114 +1,60 @@
 <form [formGroup]="newProjectForm">
 
   <div class="row">
-
-    <div class="col-3">
-      <label for="">Name</label>
-
-    </div>
-
     <div class="col-7">
-
-      <input type="text" formControlName="name">
+      <label for="">Name</label>
+      <input type="text" formControlName="name" class="form-control input">
+    </div>
+    <div class="col-3">
 
     </div>
-
-
   </div>
 
   <br>
 
   <div class="row">
-
-    <div class="col-5">
-
-      <label for="">View</label>
-
-    </div>
-
     <div class="col-7">
-
-      <select  formControlName="projectView">
-
+      <label for="">View</label>
+      <select class="form-control input" formControlName="projectView">
         <option value="platformer">platformer</option>
         <option value="topdown">top-down</option>
-
       </select>
-
+    </div>
+    <div class="col-5">
 
     </div>
-
-
   </div>
 
 
   <div *ngIf="_colorPalettes.length >0">
-
     <br>
-
-    <div class="row">
-
-      <div class="col-12">
-
-        <label for="">Palette {{currentPalette.name}}</label>
-
-      </div>
-
-
-
-
-    </div>
-
-    <div (click)='pickPalette(palette,i)' class="row" *ngFor="let palette of _colorPalettes; let i = index">
-
-      <div *ngFor="let color of palette.colors" class="row flex-nowrap">
+    <label for="">Palette {{currentPalette.name}}</label>
+    <div style="margin-left: 2px" (click)='pickPalette(palette,i)' class="row" *ngFor="let palette of _colorPalettes; let i = index">
+      <div *ngFor="let color of palette.colors" class="row flex-nowrap" >
         <div class="col-sm-2" style="padding-right: 0 !important; margin-right: 0 !important;">
-
-
           <div class="card card-block"  style="border-radius: 0 0 0 0;" [style.background-color]="getColor(color)" >
             <div class="col-sm-12" style="padding-right: 100% !important;">
-
             </div>
-
           </div>
-
         </div>
-
       </div>
 
       <br>
 
-
     </div>
-
-
-
-
-
-
   </div>
-
-
-
-
 
   <hr>
 
-
   <div class="row">
-
     <div class="col-6">
-
-      <button type="button" name="button" (click)="confirm()"> Confirm </button>
-
+      <!--<button type="button" name="button" (click)="confirm()"> Confirm </button>-->
+      <pixel-simple-button (click)="confirm()" [text]="'Confirm'"></pixel-simple-button>
     </div>
-
     <div class="col-6">
-
-      <button type="button" name="button" (click)="cancelButton()"> Cancel </button>
-
+      <pixel-simple-button (click)="cancelButton()" [text]="'Cancel'"></pixel-simple-button>
+      <!--<button type="button" name="button" (click)="cancelButton()"> Cancel </button>-->
     </div>
-
   </div>
 
 </form>
