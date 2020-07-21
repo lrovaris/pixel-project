@@ -12,8 +12,8 @@ import { ColorListComponent } from './components/responsive-Ui-Components/color-
 import { ColorCardComponent } from './components/cards/color-card/color-card.component';
 import { CardAnimationComponent } from './components/cards/card-animation/card-animation.component';
 import { AnimatorComponent } from './components/display-animation-related/animator/animator.component';
-import { ModalComponent } from './components/still-not-categorized/modal/modal.component';
-import { ExportModalComponent } from './components/still-not-categorized/export-modal/export-modal.component';
+import { ModalComponent } from './components/modals/modal/modal.component';
+import { ExportModalComponent } from './components/modals/export-modal/export-modal.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
@@ -21,7 +21,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BoxUnderDisplayComponent } from './components/responsive-Ui-Components/box-under-display/box-under-display.component';
 import { DisplayBoxComponent } from './components/responsive-Ui-Components/display-box/display-box.component';
 import { ProjectManagementListComponent } from './components/responsive-Ui-Components/project-management-list/project-management-list.component';
-import { NewProjectModalComponent } from './components/still-not-categorized/new-project-modal/new-project-modal.component';
+import { NewProjectModalComponent } from './components/modals/new-project-modal/new-project-modal.component';
 import { SpriteTypeSelectListComponent } from './components/responsive-Ui-Components/sprite-type-select-list/sprite-type-select-list.component';
 
 @NgModule({

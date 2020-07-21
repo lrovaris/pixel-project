@@ -8,13 +8,13 @@
   bottom: 1%;
   width: 208px;
   overflow: hidden;
-  background-color: #6e7780;
+  background-color: $display-background-color;
   border: $border-pixel solid black;
   padding-bottom: 2rem
 }
 
 .card-plus {
-  background-image: url('https://cdn.discordapp.com/attachments/596729344668336150/733777423182856222/unknown.png');
+  background-image: url('~src/assets/imgs/plus.png');
   image-rendering: pixelated;
   width: 198px;
   height: 100px;

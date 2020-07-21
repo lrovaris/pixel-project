@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import {RouteService} from "../../../../src/app/services/route.service";
 
 @Component({
   selector: 'pixel-left-image-list',
@@ -61,7 +62,7 @@ export class LeftImageListComponent implements OnInit {
     });
   }
 
-  constructor(private cdRef: ChangeDetectorRef, private router: Router) { }
+  constructor(private cdRef: ChangeDetectorRef, private route: RouteService) { }
 
   @Input() set metadata(_metadata){
 
@@ -181,7 +182,7 @@ export class LeftImageListComponent implements OnInit {
   }
 
   navigateBack() {
-    this.router.navigate(['management']);
+    this.route.navigateTo('management');
   }
 
 }
