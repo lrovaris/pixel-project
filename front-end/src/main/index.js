@@ -21,6 +21,8 @@ const { export_sprite } = require('./sprite/export-sprite')
 const { load_project } = require ('./project/load-project')
 const { save_project } = require ('./project/save-project')
 
+const { add_recent_file, get_recent_files } = require ('./utils/recent-files')
+
 let appWindow
 
 function isDev() {
@@ -56,8 +58,6 @@ let view_menu = {
       accelerator: "F5",
       click: (item, focusedWindow) => {
         if (focusedWindow) {
-          // on reload, start fresh and close any old
-          // open secondary windows
           if (focusedWindow.id === 1) {
             BrowserWindow.getAllWindows().forEach(win => {
               if (appWindow.id > 1) appWindow.close();
@@ -89,7 +89,7 @@ let load_project_menu = {
 
     load_project( dialog, (response) => {
       if(response.valid){
-        app.addRecentDocument(response.path)
+        add_recent_file(response.path, "project")
 
         appWindow.webContents.send('load-project-command', {
           project: response.project,
@@ -107,7 +107,7 @@ let load_sprite_menu = {
 
     load_sprite( dialog, (response) => {
       if(response.valid){
-        app.addRecentDocument(response.path)
+        add_recent_file(response.path, "sprite")
 
         appWindow.webContents.send('load-sprite-command', response.sprite);
       }
@@ -119,18 +119,6 @@ let load_sprite_menu = {
 let save_sprite_menu = { label: 'Save Sprite', click() { appWindow.webContents.send('save-sprite-command'); } }
 
 let export_sprite_menu = { label: 'Export Sprite', click() { appWindow.webContents.send('export-sprite-command'); } }
-
-let open_recent = {
-  label: 'Open Recent',
-  role: 'recentdocuments',
-  submenu: [
-    {
-      label: 'Clear Recent',
-      role: 'clearrecentdocuments'
-    }
-  ]
-}
-
 
 Menu.setApplicationMenu(getMenu('load'))
 
@@ -145,7 +133,6 @@ function getMenu(current_page) {
     current_page === 'management'
     || current_page === 'home'
   ){
-    file_menu.submenu.push(open_recent)
     file_menu.submenu.push(new_project_menu)
     file_menu.submenu.push(load_project_menu)
     if(current_page !== 'home'){
@@ -251,7 +238,7 @@ ipcMain.on("load-project", async(e,a) =>{
 
   load_project( dialog, (response) => {
     if(response.valid){
-      app.addRecentDocument(response.path)
+      add_recent_file(response.path, "project")
 
       appWindow.webContents.send('load-project-command', {
         project: response.project,
@@ -336,4 +323,16 @@ ipcMain.on("save-project", async(event, arg) =>{
       ipcMain.on("navigate", async(event, arg) =>{
 
         Menu.setApplicationMenu(getMenu(arg))
+      })
+
+
+
+      ipcMain.on("get-recent-files", async(e,a) =>{
+
+        let recent_files = get_recent_files()
+
+        appWindow.webContents.send('get-recent-files-command', {
+          files: recent_files
+        });
+
       })

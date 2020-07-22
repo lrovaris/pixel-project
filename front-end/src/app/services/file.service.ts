@@ -62,8 +62,16 @@ export class FileService {
 
     });
 
+    this.ipc.on('get-recent-files-command', (e,a) => {
+
+      this.recentFiles = a.files
+
+    });
+
 
   }
+
+  recentFiles = [];
 
   private exportCallSource = new Subject<any>();
 
@@ -141,6 +149,14 @@ export class FileService {
 
     this.ipc.send('save-dialog');
 
+  }
+
+  public loadRecentFiles() {
+    this.ipc.send('get-recent-files');
+  }
+
+  public getRecentFiles() {
+    return this.recentFiles;
   }
 
 

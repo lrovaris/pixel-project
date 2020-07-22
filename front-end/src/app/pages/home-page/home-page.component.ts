@@ -33,6 +33,7 @@ export class HomePageComponent implements OnInit {
 
     showModal = false;
     modalTitle = 'New Project';
+    recentFiles = []
 
     toggleModal(bool){
 
@@ -76,6 +77,10 @@ export class HomePageComponent implements OnInit {
     navigateContact() { this.router.navigateTo('contact'); }
 
     ngOnInit() {
+      this.recentFiles = this.fileService.getRecentFiles()
+      console.log(this.recentFiles);
+
+
     }
 
   }
