@@ -7,7 +7,7 @@
     <div class="row" *ngFor="let sprite of spriteList">
 
 
-      <div (click)="emitRouteDestination(sprite[0].metadata.spriteType)" class="card-sprite" style="">
+      <div (click)="emitRouteDestination(sprite)" class="card-sprite" style="">
       <div style="justify-content: center; display: flex; align-content: center ">
         <div style="transform: scale(4); margin-right: 35%">
           <pixel-animator [imagesArray]="sprite"></pixel-animator>
@@ -20,5 +20,3 @@
     </div>
   </div>
 </div>
-
-

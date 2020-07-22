@@ -89,6 +89,10 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   renderSprite(){
+    if(this.spriteSheet === null){
+      return;
+    }
+
     this.spriteSheet.style.backgroundPosition = `${-this.position}px 0px`;
   }
 }

@@ -18,9 +18,10 @@ export class ProjectManagementListComponent implements OnInit {
     this.spriteList = this.projectService.GetSprites();
   }
 
-  emitRouteDestination(route) {
+  emitRouteDestination(sprite) {
 
-    this.routeDestination.emit(route.toLowerCase());
+    this.routeDestination.emit(sprite);
+
   }
 
 }

@@ -11,7 +11,6 @@ export class ImageService {
 
   public GetImage(imagePath: string, callback: any) {
 
-
     this.ipc.on('get-image-reply', (e: any, a: any) => {
       if(a.name === imagePath){
         callback(a.newImg);
