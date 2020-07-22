@@ -18,9 +18,18 @@ export class BottonLeftMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    for (let i = 0; i < this.colorsArray.length; i++) {
-      this.currentStateArray.push('initial');
+    if (this.colorsArray !== undefined) {
+      for (let i = 0; i < this.colorsArray.length; i++) {
+        this.currentStateArray.push('final');
+      }
     }
+  }
+
+  clickCard(index) {
+    this.currentStateArray[index] = 'initial';
+    setTimeout(() => {
+      this.currentStateArray[index] = 'final';
+    }, 300);
   }
 
   changeTheme(primary) {
