@@ -58,6 +58,9 @@ export class FileService {
 
     this.ipc.on('load-project-command', (e,a) => {
 
+      console.log('resposta do main process recebida ');
+
+
       this.projectService.LoadProject(a.project, a.sprites);
 
     });

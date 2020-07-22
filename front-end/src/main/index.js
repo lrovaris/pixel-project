@@ -249,7 +249,7 @@ ipcMain.on("load-project", async(e,a) =>{
 
 ipcMain.on("load-recent-project", async(e,a) =>{
 
-  load_project_by_path(path, (response) => {
+  load_project_by_path(a, (response) => {
 
     if(response.valid){
       add_recent_file(response.path, "project", response.project.name)
