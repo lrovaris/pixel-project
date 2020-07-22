@@ -6,6 +6,10 @@ const { get_local_image } = require("./get-image")
 
 function change_image_color(path, changes, callback) {
 
+  if(!fs.existsSync(`./metadata/temp/`)){
+    fs.mkdirSync(`./metadata/temp/`)
+  }
+
   const base_img = `./metadata/${path}`;
 
   fs.createReadStream(base_img)

@@ -21,7 +21,7 @@ export class NewProjectModalComponent implements OnInit {
   }
 
   _colorPalettes = [];
-  currentPalette = 0;
+  currentPalette: any;
 
   @Input() set colorPalettes(palettes){
 

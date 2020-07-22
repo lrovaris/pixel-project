@@ -51,12 +51,12 @@ export class FileService {
 
       this.SaveProject(this.projectService.GetProject(), (response) =>{
 
+        alert(response.message)
+
       })
     })
 
     this.ipc.on('load-project-command', (e,a) => {
-
-      console.log(a);
 
       this.projectService.LoadProject(a.project, a.sprites);
 

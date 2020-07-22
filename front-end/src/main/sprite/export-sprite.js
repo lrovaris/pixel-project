@@ -127,7 +127,13 @@ async function export_sprite(params, sprite_data, callback) {
   if(params.exportAs === 'gif'
   || params.fileFormat === 'bmp'
   || params.fileFormat === 'jpg'){
+
     write_path += 'temp/'
+
+    if(!fs.existsSync(`${write_path}`)){
+      fs.mkdirSync(`${write_path}`)
+    }
+
   }
 
   write_path = write_path + fileName.toString()

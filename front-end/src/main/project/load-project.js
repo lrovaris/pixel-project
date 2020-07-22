@@ -1,7 +1,6 @@
 const fs = require('fs');
 
-
-const { get_sprite_data } = require('../load-sprite')
+const { get_sprite_data } = require('../sprite/load-sprite')
 
 async function load_project(dialog, callback) {
 
@@ -29,7 +28,12 @@ async function load_project(dialog, callback) {
         }
       }
 
-      callback({valid: true, project: project, sprites: sprites})
+      callback({
+        valid: true,
+        project: project,
+        sprites: sprites,
+        path: filePath
+      })
 
     }
 

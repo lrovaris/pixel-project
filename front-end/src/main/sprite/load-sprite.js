@@ -13,7 +13,11 @@ async function load_sprite(dialog, callback) {
 
       let sprite = get_sprite_data(filePath)
 
-      callback({valid: true, sprite: sprite})
+      callback({
+        valid: true,
+        sprite: sprite,
+        path: filePath
+      })
 
     }
 
