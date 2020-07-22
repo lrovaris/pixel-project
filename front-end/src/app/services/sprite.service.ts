@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 
 import { Subject } from 'rxjs';
 
+import { RouteService } from './route.service'
+
 @Injectable({
   providedIn: 'root'
 })
 export class SpriteService {
 
-  constructor() { }
+  constructor(private router: RouteService) { }
 
   private loadSpriteCallSource = new Subject<any>();
 
@@ -27,9 +29,13 @@ export class SpriteService {
 
   public LoadSprite(newSprite) {
 
+    console.log('load sprite called');
+
     this.SetSprite(newSprite)
 
     this.loadSpriteCallSource.next();
+
+    this.router.navigateTo(newSprite[0].metadata.spriteType.toLowerCase())
 
   }
 
@@ -38,7 +44,7 @@ export class SpriteService {
     this.Sprite = newSprite;
 
     this.BaseOfSprite = this.Sprite.find(theBase => theBase.metadata.imgBase === true );
-    
+
   }
 
   public push(image) {

@@ -35,7 +35,7 @@ export class CreateCharacterPageComponent implements OnInit {
   fileName = '';
   fileExtension = 'png';
 
-  activeBase_;
+  _activeBase;
 
   loadingBase = false;
 
@@ -56,7 +56,7 @@ export class CreateCharacterPageComponent implements OnInit {
 
     this.spriteService.loadSpriteCalled$.subscribe(() => {
 
-      this.spriteLoaded();
+      this.renderBaseChange();
 
     });
   }
@@ -74,46 +74,27 @@ export class CreateCharacterPageComponent implements OnInit {
         return image.metadata.spriteType.toLowerCase() === 'character';
       });
 
-      let baseArray_ = [];
 
+      if(this.spriteService.GetBaseOfSprite() === undefined){
 
-      for (let i = 0; i < this.filteredmetadataArray.length; i++) {
-        if (this.filteredmetadataArray[i].metadata.imgBase === true) {
-          baseArray_.push(this.filteredmetadataArray[i]);
+        this.setBase(this.metadataService.getBaseArray()[0])
 
-        }
+        this.setActiveBase(0);
+
+      }else{
+        this.renderBaseChange()
       }
-
-      this.metadataService.setBaseArray(baseArray_);
-      this.setActiveBase(0);
-
     }, 0);
   }
 
-  spriteLoaded() {
-    this.loadingBase = true;
-    this.renderBaseChange();
-  }
-
-
   pushBase(img) {
-
-    if (this.loadingBase) {
-      this.loadingBase = false;
-
-      if (img._id.toString() === this.spriteService.GetBaseOfSprite()._id.toString()) {
-        return;
-      }
-    }
-
-    if (img === undefined) {
-      return;
-    }
-
-    this.setBase(img);
+    return
   }
 
   setBase(image) {
+
+      console.log('set base called');
+
 
       image.originalColors = image.metadata.colors;
       image.currentColors = [];
@@ -124,6 +105,8 @@ export class CreateCharacterPageComponent implements OnInit {
   }
 
   renderBaseChange() {
+    console.log("renderBaseChange chamado");
+
     this.selectAnimation = 0;
 
     const thisBase = this.spriteService.GetBaseOfSprite();
@@ -132,6 +115,9 @@ export class CreateCharacterPageComponent implements OnInit {
     this.lastSelection = this.imagesArray()[0];
 
     const bases = this.metadataService.getBaseArray();
+
+
+
 
     if (bases === undefined) {
       return;
@@ -146,7 +132,10 @@ export class CreateCharacterPageComponent implements OnInit {
 
   setActiveBase(newActiveBase) {
 
-    this.activeBase_ = newActiveBase;
+    console.log('set active base chamado (input)');
+
+
+    this._activeBase = newActiveBase;
 
 
     this.cdRef.detectChanges();
@@ -157,12 +146,30 @@ export class CreateCharacterPageComponent implements OnInit {
   }
 
   pushImage(image) {
+
     const currentImage = this.imagesArray().find(img => img._id.toString() === image._id.toString());
 
     if (currentImage !== undefined) {
       this.lastSelection = currentImage;
       this.colors = currentImage.metadata.colors;
       return;
+    }
+
+    if (image.metadata.imgBase === true){
+
+      this.setBase(image)
+
+      return;
+    }
+
+    if(this.spriteService.GetBaseOfSprite()._id.toString() !== image.metadata.imgBase.toString()){
+
+      let thisBase = this.metadataArray.find(metadataObj => {
+        return metadataObj._id.toString() === image.metadata.imgBase.toString()
+      })
+
+      this.setBase(thisBase)
+
     }
 
     const imageInSameCategory = this.imagesArray().find(img => img.metadata.category === image.metadata.category);
@@ -266,7 +273,6 @@ export class CreateCharacterPageComponent implements OnInit {
 
 
   // MODAL RELATED
-
 
   toggleModal(newState) {
 

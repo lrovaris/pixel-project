@@ -5,6 +5,7 @@ import { ModalService} from '../../services/modal.service';
 import { PaletteService} from '../../services/palette.service';
 import { ProjectService } from '../../services/project.service';
 import { FileService } from '../../services/file.service';
+import { SpriteService } from '../../services/sprite.service';
 
 @Component({
   selector: 'pixel-project-management-page',
@@ -18,6 +19,7 @@ export class ProjectManagementPageComponent implements OnInit {
     private modalService: ModalService,
     private projectService: ProjectService,
     private fileService: FileService,
+    private spriteService: SpriteService,
     private cdRef: ChangeDetectorRef,
     public palletService: PaletteService
   ) {
@@ -36,8 +38,15 @@ export class ProjectManagementPageComponent implements OnInit {
     })
   }
 
-  navigate(route) {
-    this.router.navigateTo(route);
+  navigate(sprite) {
+
+    if(sprite === 'spriteSelect'){
+
+      return this.router.navigateTo(sprite.toLowerCase())
+
+    }
+
+    this.spriteService.LoadSprite(sprite)
   }
 
   ngOnInit() {
@@ -57,15 +66,10 @@ export class ProjectManagementPageComponent implements OnInit {
       bool = !this.showModal;
     }
 
-
     this.showModal = bool;
 
     this.cdRef.detectChanges();
   }
-
-
-
-
 
   modalOutput(event) {
 

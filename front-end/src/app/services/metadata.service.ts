@@ -13,6 +13,17 @@ export class MetadataService {
 
   setMetadata(metadata) {
     this.metadata = metadata;
+
+    let _baseArray = [];
+
+    for (let i = 0; i < this.metadata.length; i++) {
+      if (this.metadata[i].metadata.imgBase === true) {
+        _baseArray.push(this.metadata[i]);
+
+      }
+    }
+
+    this.setBaseArray(_baseArray);
   }
 
   getMetadata() {

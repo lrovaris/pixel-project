@@ -38,7 +38,6 @@ export class ProjectService {
 
   public SetProject(newProject) {
 
-
     this.Project = newProject;
 
     this.setProjectCallSource.next()
@@ -61,10 +60,10 @@ export class ProjectService {
 
       if(sprite_exists === undefined){
         this.Project.sprites.push(path)
+        this.Sprites.push(data)
       }
     }
 
-    this.Sprites.push(data)
   }
 
   public GetSprites() {

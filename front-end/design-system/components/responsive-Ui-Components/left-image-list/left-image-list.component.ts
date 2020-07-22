@@ -66,8 +66,6 @@ export class LeftImageListComponent implements OnInit {
 
   @Input() set metadata(_metadata){
 
-
-
     if(_metadata === undefined){
       return
     }
@@ -76,14 +74,10 @@ export class LeftImageListComponent implements OnInit {
       return
     }
 
-
     if(_metadata.length > 0){
       this.arrayMetadata = _metadata;
       this.toggleImages = true;
       this.setBaseArray();
-
-      this.setBase.emit(this.arrayBases[0]);
-
     }
   }
 
@@ -105,9 +99,14 @@ export class LeftImageListComponent implements OnInit {
       return;
     }
 
-    this._activeBase = baseId;
+    setTimeout(() => {
 
-    this.cdRef.detectChanges();
+      this._activeBase = baseId;
+
+      this.cdRef.detectChanges();
+
+    }, 0);
+    
   };
 
 
@@ -174,7 +173,6 @@ export class LeftImageListComponent implements OnInit {
 
     });
 
-    this.setBase.emit(this.arrayBases[index]);
   }
 
   functionRemoveAcessory(acessory){
