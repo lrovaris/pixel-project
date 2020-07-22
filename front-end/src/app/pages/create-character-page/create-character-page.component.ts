@@ -18,6 +18,8 @@ export class CreateCharacterPageComponent implements OnInit {
 
   spriteTypeParam;
 
+  showAcessoryModal = false;
+
   lastSelection;
 
   metadataArray = [];

@@ -3,7 +3,7 @@
 <pixel-box-under-display> </pixel-box-under-display>
 
 <pixel-display-box>
-  <h2 >{{_project.name}}</h2>
+  <pixel-title-card [title]="_project.name"> </pixel-title-card>
 </pixel-display-box>
 
 <pixel-modal *ngIf="showModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">

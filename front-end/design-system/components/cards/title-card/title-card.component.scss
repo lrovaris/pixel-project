@@ -1,0 +1,27 @@
+@import "~design-system/variables.scss";
+
+.title-card {
+  border-radius: 0;
+  border: $border-color $border-pixel solid;
+  background-color: $input-background-color;
+  display: inline-block;
+  padding: 4px;
+  font-size: 1.2rem;
+  color: black;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:100% 100%;
+  position: absolute;
+  margin: 0.6rem;
+  z-index: 999;
+  box-shadow: $box-shadow;
+}
+
+.botton-box {
+  position: absolute;
+  bottom: -12px;
+  height: 12px;
+  border: 4px solid black;
+  width: calc(100% + 8px);
+  left: -4px;
+}

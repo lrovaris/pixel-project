@@ -25,3 +25,7 @@
   <pixel-export-modal (modalOutput)="modalOutput($event)" [filePath]="filePath" [fileName]="fileName" [fileExtension]="fileExtension"></pixel-export-modal>
 
 </pixel-modal>
+
+<pixel-modal *ngIf="showAcessoryModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
+  <pixel-acessory-modal (modalOutput)="modalOutput($event)"> </pixel-acessory-modal>
+</pixel-modal>
