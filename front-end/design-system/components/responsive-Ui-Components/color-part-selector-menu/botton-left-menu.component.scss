@@ -1,5 +1,23 @@
 @import "~design-system/variables.scss";
 
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  //  border-bottom: 4px solid black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: transparent solid 0;
+}
+
+::-webkit-scrollbar-track-piece {
+  height: 0;
+}
 
 
 .bottom-left-menu {

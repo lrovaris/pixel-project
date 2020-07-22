@@ -3,21 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="90258cf2-ebcb-44d1-a8b6-659a1216df15" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/cards/title-card/title-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/cards/title-card/title-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/cards/title-card/title-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/cards/title-card/title-card.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/design-system.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/design-system.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/design-system/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/design-system/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/pages/home-page/home-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/pages/home-page/home-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/styles.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,34 +23,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.html">
+        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="138">
+              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="108" selection-start-line="3" selection-start-column="108" selection-end-line="3" selection-end-column="108" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="604">
+              <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -69,29 +43,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" selection-start-line="2" selection-end-line="25" selection-end-column="1" />
+            <state relative-caret-position="506">
+              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="107" column="10" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
+            <state relative-caret-position="161">
+              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.html">
+        <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
-              <caret line="2" column="62" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="62" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+              <caret line="2" selection-start-line="2" selection-end-line="19" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -155,21 +126,21 @@
         <option value="$PROJECT_DIR$/front-end/src/app/pages/create-character-page/create-character-page.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/modals/acessory-modal/acessory-modal.component.ts" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.ts" />
-        <option value="$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/inner-border-and-botton-box/inner-border-and-botton-box.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/cards/title-card/title-card.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/cards/title-card/title-card.component.scss" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/modals/modal/modal.component.scss" />
-        <option value="$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.scss" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.html" />
         <option value="$PROJECT_DIR$/front-end/src/app/pages/home-page/home-page.component.html" />
         <option value="$PROJECT_DIR$/front-end/design-system/variables.scss" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.scss" />
-        <option value="$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.scss" />
         <option value="$PROJECT_DIR$/front-end/src/styles.scss" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.html" />
-        <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.scss" />
         <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.html" />
+        <option value="$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.html" />
+        <option value="$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.scss" />
+        <option value="$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.scss" />
+        <option value="$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.scss" />
       </list>
     </option>
   </component>
@@ -223,24 +194,16 @@
               <item name="design-system" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="responsive-Ui-Components" type="462c0819:PsiDirectoryNode" />
+              <item name="color-list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="design-system" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="responsive-Ui-Components" type="462c0819:PsiDirectoryNode" />
               <item name="color-part-selector-menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="design-system" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="still-not-categorized" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pixel-project" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="design-system" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="still-not-categorized" type="462c0819:PsiDirectoryNode" />
-              <item name="simple-button" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pixel-project" type="b2602c69:ProjectViewProjectNode" />
@@ -326,7 +289,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233615000" />
+    <option name="totallyTimeSpent" value="236476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -376,20 +339,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/front-end/src/main/project/load-project.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/main/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="93" column="35" lean-forward="true" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/services/file.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -635,13 +584,6 @@
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/inner-border-and-botton-box/inner-border-and-botton-box.component.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-800">
-          <caret line="74" column="47" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/modals/modal/modal.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -692,20 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/inner-border-and-botton-box/inner-border-and-botton-box.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/inner-border-and-botton-box/inner-border-and-botton-box.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/variables.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -738,13 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/design-system/components/modals/new-project-modal/new-project-modal.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
@@ -759,17 +680,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.scss">
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" selection-start-line="2" selection-end-line="25" selection-end-column="1" />
+        <state relative-caret-position="138">
+          <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.scss">
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/inner-border-and-botton-box/inner-border-and-botton-box.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="107" column="10" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
+        <state relative-caret-position="92">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/inner-border-and-botton-box/inner-border-and-botton-box.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -783,18 +720,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.html">
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="108" selection-start-line="3" selection-start-column="108" selection-end-line="3" selection-end-column="108" />
+        <state>
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#73#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/modals/export-modal/export-modal.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/still-not-categorized/simple-button/simple-button.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-list/color-list.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/design-system/components/responsive-Ui-Components/color-part-selector-menu/botton-left-menu.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
         </state>
       </provider>
     </entry>

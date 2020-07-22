@@ -4,7 +4,7 @@
   background-color: #9badb7;
   width: 100%;
   font-size: 14px;
-  color: white;
+  color: black;
   font-weight: 500;
   border: $border-pixel solid black;
   height: 36px ;
@@ -12,51 +12,45 @@
   box-shadow: $box-shadow;
 }
 
-.switch {
+/*Checkboxes styles*/
+input[type="checkbox"] { display: none; }
+
+input[type="checkbox"] + label {
+  display: block;
   position: relative;
-  display: inline-block;
-}
-.switch-input {
-  display: none;
-}
-.switch-label {
-  display: block;
-  width: 36px;
-  height: 18px;
-  text-indent: -150%;
-  clip: rect(0 0 0 0);
-  color: transparent;
-  user-select: none;
-}
-.switch-label::before,
-.switch-label::after {
-  content: "";
-  display: block;
-  position: absolute;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px 'silkscreen', Arial, sans-serif;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
-.switch-label::before {
-  width: 100%;
-  height: 100%;
-  background-color: #dedede;
-  border-radius: 9999em;
-  -webkit-transition: background-color 0.25s ease;
-  transition: background-color 0.25s ease;
-}
-.switch-label::after {
-  top: 0;
+
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $border-inside;
+  position: absolute;
   left: 0;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
-  -webkit-transition: left 0.25s ease;
-  transition: left 0.25s ease;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
 }
-.switch-input:checked + .switch-label::before {
-  background-color: $border-inside;
-}
-.switch-input:checked + .switch-label::after {
-  left: 18px;
+
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

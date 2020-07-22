@@ -1,11 +1,11 @@
 <form [formGroup]="exportParamsForm">
 
   <div class="row">
-    <div class="col-7">
+    <div class="col-4">
       <label for="">Export as...</label>
     </div>
 
-    <div class="col-3">
+    <div class="col-6">
       <select class="input" (change)="exportAsChanged($event.target.value)" formControlName="exportAs">
         <option value="spritesheet">sprite sheet</option>
         <option value="frames">separate frames</option>
@@ -37,52 +37,26 @@
 
     <hr>
 
-    <div class="row">
-      <div class="col-7">
-        <p>Layers as separate files</p>
-      </div>
+    <input id="switch-1" type="checkbox" class="switch-input" formControlName="layersAsSeparateFiles" />
+      <label for="switch-1">Layers as separate files</label>
 
-      <div class="col-3">
-        <div class="switch">
-          <input id="switch-1" type="checkbox" class="switch-input" formControlName="layersAsSeparateFiles" />
-          <label for="switch-1" class="switch-label">Switch</label>
-        </div>
-      </div>
 
-    </div>
   </div>
 
   <div *ngIf="exportAs() === 'spritesheet'">
 
     <hr>
 
-    <div class="row">
-      <div class="col-7">
-        <p>Each animation in a new row</p>
-      </div>
+        <input id="switch-2" type="checkbox" class="switch-input" formControlName="animationAsNewRow" />
+        <label for="switch-2">Each animation in a new row</label>
 
-      <div class="col-3">
-        <div class="switch">
-          <input id="switch-2" type="checkbox" class="switch-input" formControlName="animationAsNewRow" />
-          <label for="switch-2" class="switch-label">Switch</label>
-        </div>
-      </div>
 
-    </div>
+    <hr>
 
-    <div class="row">
-      <div class="col-7">
-        <p>Each animation in a separate file</p>
-      </div>
+        <input id="switch-3" type="checkbox" class="switch-input" formControlName="animationAsSeparateFile" />
+          <label for="switch-3">Each animation in a separate file</label>
 
-      <div class="col-3">
-        <div class="switch">
-          <input id="switch-3" type="checkbox" class="switch-input" formControlName="animationAsSeparateFile" />
-          <label for="switch-3" class="switch-label">Switch</label>
-        </div>
-      </div>
 
-    </div>
   </div>
 
   <hr>
@@ -133,11 +107,11 @@
   <hr>
 
   <div class="row">
-    <div class="col-6">
+    <div class="col-3">
       <pixel-simple-button [text]="'Export'" (click)="exportButton()"></pixel-simple-button>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 float-right">
       <pixel-simple-button [text]="'Cancel'" (click)="cancelButton()"></pixel-simple-button>
     </div>
 
