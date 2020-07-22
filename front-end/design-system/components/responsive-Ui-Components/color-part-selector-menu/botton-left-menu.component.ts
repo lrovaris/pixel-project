@@ -11,10 +11,10 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
         marginTop: '0'
       })),
       state('final', style({
-        marginTop: '9px'
+        marginTop: '6px'
       })),
-      transition('initial=>final', animate('100ms')),
-      transition('final=>initial', animate('100ms'))
+      transition('initial=>final', animate('70ms')),
+      transition('final=>initial', animate('70ms'))
     ]),
     trigger('active', [
       state('initial', style({
