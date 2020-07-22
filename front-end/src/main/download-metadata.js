@@ -26,6 +26,10 @@ async function download_images(metadata, callback) {
 
   let iterator = 0;
 
+  if(!fs.existsSync(`./metadata/`)){
+    fs.mkdirSync(`./metadata/`)
+  }
+
   for (var i = 0; i < metadata.length; i++) {
     let file = fs.createWriteStream(`./metadata/${metadata[i].path}`);
 

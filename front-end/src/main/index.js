@@ -13,10 +13,10 @@ const download_metadata = require('./download-metadata');
 const download_palette = require('./download-palettes')
 const get_image = require('./get-image');
 const { change_image_color } = require('./change-image-color')
-const { save_sprite } = require('./save-sprite')
-const { load_sprite } = require('./load-sprite')
-const { export_sprite } = require('./export-sprite')
 
+const { save_sprite } = require('./sprite/save-sprite')
+const { load_sprite } = require('./sprite/load-sprite')
+const { export_sprite } = require('./sprite/export-sprite')
 
 const { load_project } = require ('./project/load-project')
 const { save_project } = require ('./project/save-project')
@@ -41,7 +41,7 @@ function initApp() {
     isDev() ? "http://localhost:4200" : `file://${__dirname}/../../dist/index.html`
   );
 
-appWindow.on('closed', function () {
+  appWindow.on('closed', function () {
     appWindow = null
   })
 }
@@ -89,6 +89,8 @@ let load_project_menu = {
 
     load_project( dialog, (response) => {
       if(response.valid){
+        app.addRecentDocument(response.path)
+
         appWindow.webContents.send('load-project-command', {
           project: response.project,
           sprites: response.sprites
@@ -105,6 +107,8 @@ let load_sprite_menu = {
 
     load_sprite( dialog, (response) => {
       if(response.valid){
+        app.addRecentDocument(response.path)
+
         appWindow.webContents.send('load-sprite-command', response.sprite);
       }
     })
@@ -115,6 +119,17 @@ let load_sprite_menu = {
 let save_sprite_menu = { label: 'Save Sprite', click() { appWindow.webContents.send('save-sprite-command'); } }
 
 let export_sprite_menu = { label: 'Export Sprite', click() { appWindow.webContents.send('export-sprite-command'); } }
+
+let open_recent = {
+  label: 'Open Recent',
+  role: 'recentdocuments',
+  submenu: [
+    {
+      label: 'Clear Recent',
+      role: 'clearrecentdocuments'
+    }
+  ]
+}
 
 
 Menu.setApplicationMenu(getMenu('load'))
@@ -130,6 +145,7 @@ function getMenu(current_page) {
     current_page === 'management'
     || current_page === 'home'
   ){
+    file_menu.submenu.push(open_recent)
     file_menu.submenu.push(new_project_menu)
     file_menu.submenu.push(load_project_menu)
     if(current_page !== 'home'){
@@ -138,10 +154,6 @@ function getMenu(current_page) {
   }
 
   if(current_page === 'character'
-  || current_page === 'scenario'
-  || current_page === 'ui'
-  || current_page === 'enemy'
-  || current_page === 'fx'
   || current_page === 'management'
 ){
 
@@ -239,6 +251,8 @@ ipcMain.on("load-project", async(e,a) =>{
 
   load_project( dialog, (response) => {
     if(response.valid){
+      app.addRecentDocument(response.path)
+
       appWindow.webContents.send('load-project-command', {
         project: response.project,
         sprites: response.sprites
@@ -252,74 +266,74 @@ ipcMain.on("load-project", async(e,a) =>{
 ipcMain.on("save-project", async(event, arg) =>{
 
   // let this_dialog = await dialog.showSaveDialog({
-  //   defaultPath: "./projects/"
-  // });
-  //
-  // if(this_dialog.canceled){
-  //   return event.sender.send('save-project-reply', {
-  //     message: "Ocorreu um erro ao salvar"
-  //   })
-  // }
-  //
-  // let path = this_dialog.filePath;
+    //   defaultPath: "./projects/"
+    // });
+    //
+    // if(this_dialog.canceled){
+      //   return event.sender.send('save-project-reply', {
+        //     message: "Ocorreu um erro ao salvar"
+        //   })
+        // }
+        //
+        // let path = this_dialog.filePath;
 
-  let save_action = await save_project(`./projects/${arg.name}`, arg)
+        let save_action = await save_project(`./projects/${arg.name}`, arg)
 
-  event.sender.send('save-project-reply', {
-    message: save_action.message
-  })
+        event.sender.send('save-project-reply', {
+          message: save_action.message
+        })
 
-})
+      })
 
-ipcMain.on("load-palettes", async(event, arg) => {
+      ipcMain.on("load-palettes", async(event, arg) => {
 
-  let palettes = await download_palette.fetch_palette_info()
+        let palettes = await download_palette.fetch_palette_info()
 
-  palettes = JSON.parse(palettes);
+        palettes = JSON.parse(palettes);
 
-  event.sender.send('load-palettes-reply', palettes)
+        event.sender.send('load-palettes-reply', palettes)
 
-  let save_action = await download_palette.save_palette_json(palettes)
-})
+        let save_action = await download_palette.save_palette_json(palettes)
+      })
 
-ipcMain.on("get-image", async(event, arg) =>{
+      ipcMain.on("get-image", async(event, arg) =>{
 
-  await get_image.get_local_image(arg, (image) => {
-    event.sender.send('get-image-reply', image)
-  });
+        await get_image.get_local_image(arg, (image) => {
+          event.sender.send('get-image-reply', image)
+        });
 
-})
+      })
 
-ipcMain.on("change-color", async(event, arg) => {
+      ipcMain.on("change-color", async(event, arg) => {
 
-  change_image_color(arg.path, arg.changes, (image) => {
-    event.sender.send('change-color-reply', image)
-  })
+        change_image_color(arg.path, arg.changes, (image) => {
+          event.sender.send('change-color-reply', image)
+        })
 
-})
+      })
 
-ipcMain.on("save-dialog", async(event, arg) =>{
+      ipcMain.on("save-dialog", async(event, arg) =>{
 
-  const this_dialog = await dialog.showSaveDialog({
-    defaultPath: "./projects/"
-  });
+        const this_dialog = await dialog.showSaveDialog({
+          defaultPath: "./projects/"
+        });
 
-  if(this_dialog.canceled){
-    return event.sender.send('save-dialog-reply', {
-      valid: false
-    })
-  }
+        if(this_dialog.canceled){
+          return event.sender.send('save-dialog-reply', {
+            valid: false
+          })
+        }
 
-  const path = this_dialog.filePath;
+        const path = this_dialog.filePath;
 
-  event.sender.send('save-dialog-reply', {
-    valid: true,
-    path: path
-  })
+        event.sender.send('save-dialog-reply', {
+          valid: true,
+          path: path
+        })
 
-})
+      })
 
-ipcMain.on("navigate", async(event, arg) =>{
+      ipcMain.on("navigate", async(event, arg) =>{
 
-  Menu.setApplicationMenu(getMenu(arg))
-})
+        Menu.setApplicationMenu(getMenu(arg))
+      })
