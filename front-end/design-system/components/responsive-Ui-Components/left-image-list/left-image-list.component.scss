@@ -69,15 +69,7 @@
  margin: 1rem !important;
 }
 
-.card {
-  background-color: rgba(0,0,0,0);
-  max-width: 110%;
-  min-height: 20%;
-  border: none;
-  margin-left: 2px;
-  margin-top: 1rem;
-  box-shadow: $box-shadow !important;
-}
+
 
 .top-list-input {
   left: 1% ;position: fixed;
@@ -111,6 +103,16 @@
 .card-content-div {
   border: $border-pixel solid #c1d0f0;
   height: 100%
+}
+
+.card {
+  background-color: rgba(0,0,0,0);
+  max-width: 110%;
+  min-height: 20%;
+  border: none;
+  margin-left: 2px;
+  margin-top: 1rem;
+  box-shadow: $box-shadow !important;
 }
 
 .x-buttom-card {

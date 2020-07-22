@@ -27,5 +27,5 @@
 </pixel-modal>
 
 <pixel-modal *ngIf="showAcessoryModal" (modalOutput)="modalAcessory($event)" [title]="'Selecione'">
-  <pixel-acessory-modal [spriteList]="spriteList" (modalOutput)="modalAcessory($event)"> </pixel-acessory-modal>
+  <pixel-acessory-modal (image)="pushImage($event)" [spriteList]="spriteList" (modalOutput)="modalAcessory($event)"> </pixel-acessory-modal>
 </pixel-modal>

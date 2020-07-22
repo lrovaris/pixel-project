@@ -9,6 +9,8 @@ export class AcessoryModalComponent implements OnInit {
 
   @Output() modalOutput = new EventEmitter();
 
+  @Output() image = new EventEmitter();
+
   @Input() spriteList = [];
 
   constructor() { }
@@ -19,6 +21,11 @@ export class AcessoryModalComponent implements OnInit {
 
   cancelButton() {
     this.modalOutput.emit({ message: 'close'});
+  }
+
+  emitImage(image) {
+   this.image.emit(image);
+   this.modalOutput.emit({message: 'close'});
   }
 
 }
