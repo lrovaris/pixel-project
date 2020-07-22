@@ -6,6 +6,7 @@ import { MetadataService} from '../../services/metadata.service';
 import { PaletteService } from '../../services/palette.service'
 import { RouteService } from '../../services/route.service'
 import { ImageService} from '../../services/image.service';
+import { FileService }from '../../services/file.service';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class LoadingPageComponent implements OnInit {
     private paletteService: PaletteService,
     private router: RouteService,
     private imageService: ImageService,
+    private fileService: FileService,
     private cdRef: ChangeDetectorRef,
     private ngZone: NgZone
   ) { }
@@ -44,10 +46,13 @@ export class LoadingPageComponent implements OnInit {
 
     let iterator = 0;
 
+    this.fileService.loadRecentFiles();
+    
     this.ipc.once('load-metadata-reply', (e: any, a: any)  => {
       this.metadataService.setMetadata(a);
 
       this.metadataArray = this.metadataService.getMetadata();
+
 
       let i = 0;
       this.metadataArray.forEach(metadataObj => {

@@ -14,15 +14,18 @@ async function save_project(name, data) {
 
   try {
     fs.writeFileSync(`${name}.pxlproject`, JSON.stringify(data), 'utf-8');
-    
+
     return {
-      message: "Arquivo salvo com sucesso!"
+      valid: true,
+      message: "Arquivo salvo com sucesso!",
+      path: `${name}.pxlproject`
     }
   }
   catch(e)
   {
     console.log(e);
     return {
+      valid: false,
       message: "Falha ao salvar arquivo"
     }
   }
