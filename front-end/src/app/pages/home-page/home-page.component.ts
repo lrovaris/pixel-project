@@ -31,9 +31,20 @@ export class HomePageComponent implements OnInit {
       });
     }
 
+    ngOnInit() {
+      this.recentFiles = this.fileService.getRecentFiles()
+      console.log(this.recentFiles);
+
+
+    }
+
     showModal = false;
     modalTitle = 'New Project';
     recentFiles = []
+
+    recentProjects(){
+      return this.recentFiles.filter(file => file.type === "project")
+    }
 
     toggleModal(bool){
 
@@ -73,14 +84,15 @@ export class HomePageComponent implements OnInit {
 
     }
 
+    loadRecentProject(path){
+
+      this.fileService.LoadRecentProject(path)
+
+    }
+
 
     navigateContact() { this.router.navigateTo('contact'); }
 
-    ngOnInit() {
-      this.recentFiles = this.fileService.getRecentFiles()
-      console.log(this.recentFiles);
 
-
-    }
 
   }

@@ -8,7 +8,18 @@ async function load_project(dialog, callback) {
 
   if(!this_dialog.canceled){
 
-    let filePath = this_dialog.filePaths[0];
+    load_project_by_path(this_dialog.filePaths[0], callback)
+
+  }else {
+
+    callback({ valid: false })
+  }
+
+}
+
+function load_project_by_path(_path, callback){
+
+    let filePath = _path
 
     if (fs.existsSync(filePath)) {
 
@@ -37,11 +48,6 @@ async function load_project(dialog, callback) {
 
     }
 
-  }else {
-
-    callback({ valid: false })
-  }
-
 }
 
-module.exports = { load_project };
+module.exports = { load_project, load_project_by_path };

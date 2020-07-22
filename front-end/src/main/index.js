@@ -18,7 +18,7 @@ const { save_sprite } = require('./sprite/save-sprite')
 const { load_sprite } = require('./sprite/load-sprite')
 const { export_sprite } = require('./sprite/export-sprite')
 
-const { load_project } = require ('./project/load-project')
+const { load_project, load_project_by_path } = require ('./project/load-project')
 const { save_project } = require ('./project/save-project')
 
 const { add_recent_file, get_recent_files } = require ('./utils/recent-files')
@@ -89,7 +89,7 @@ let load_project_menu = {
 
     load_project( dialog, (response) => {
       if(response.valid){
-        add_recent_file(response.path, "project")
+        add_recent_file(response.path, "project", response.project.name)
 
         appWindow.webContents.send('load-project-command', {
           project: response.project,
@@ -107,8 +107,6 @@ let load_sprite_menu = {
 
     load_sprite( dialog, (response) => {
       if(response.valid){
-        add_recent_file(response.path, "sprite")
-
         appWindow.webContents.send('load-sprite-command', response.sprite);
       }
     })
@@ -245,6 +243,23 @@ ipcMain.on("load-project", async(e,a) =>{
         sprites: response.sprites
       });
     }
+  })
+
+})
+
+ipcMain.on("load-recent-project", async(e,a) =>{
+
+  load_project_by_path(path, (response) => {
+
+    if(response.valid){
+      add_recent_file(response.path, "project", response.project.name)
+
+      appWindow.webContents.send('load-project-command', {
+        project: response.project,
+        sprites: response.sprites
+      });
+    }
+
   })
 
 })

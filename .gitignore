@@ -47,3 +47,4 @@ Thumbs.db
 api/build.tar.gz
 front-end/metadata.json
 front-end/recent_files.json
+.idea/workspace.xml
