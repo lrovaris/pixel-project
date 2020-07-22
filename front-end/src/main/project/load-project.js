@@ -46,6 +46,8 @@ function load_project_by_path(_path, callback){
         path: filePath
       })
 
+    }else {
+      callback({valid:false})
     }
 
 }
