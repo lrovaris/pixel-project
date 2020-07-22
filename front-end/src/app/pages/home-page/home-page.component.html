@@ -37,20 +37,15 @@
 
   </div>
 
-
-
 </div>
 
-
   <h2>Recent Projects</h2>
+
   <div *ngFor="let file of recentProjects()">
     <pixel-simple-button [text]="'load'" (click)="loadRecentProject(file.path)"></pixel-simple-button>
-    <h2>{{file.name}}</h2>
     <p>{{file.path}}</p>
     <br>
   </div>
-
-
 
 <pixel-modal *ngIf="showModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
 
