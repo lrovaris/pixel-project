@@ -97,6 +97,7 @@ export class LeftImageListComponent implements OnInit {
   @Output() setBase = new EventEmitter();
   @Output() removeAcessory = new EventEmitter();
 
+  @Output() showModal = new EventEmitter();
 
   _activeBase;
   @Input() set activeBase(baseId){
@@ -183,6 +184,10 @@ export class LeftImageListComponent implements OnInit {
 
   navigateBack() {
     this.route.navigateTo('management');
+  }
+
+  functionShowModal(spriteArray) {
+    this.showModal.emit(spriteArray);
   }
 
 }

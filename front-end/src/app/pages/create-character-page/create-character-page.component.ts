@@ -16,6 +16,8 @@ export class CreateCharacterPageComponent implements OnInit {
 
 @ViewChild(LeftImageListComponent, {static: false}) child: LeftImageListComponent;
 
+  showAcessoryModal = false;
+
   lastSelection;
 
   metadataArray = [];
