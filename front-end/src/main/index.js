@@ -18,7 +18,7 @@ const { save_sprite } = require('./sprite/save-sprite')
 const { load_sprite } = require('./sprite/load-sprite')
 const { export_sprite } = require('./sprite/export-sprite')
 
-const { load_project } = require ('./project/load-project')
+const { load_project, load_project_by_path } = require ('./project/load-project')
 const { save_project } = require ('./project/save-project')
 
 const { add_recent_file, get_recent_files } = require ('./utils/recent-files')
