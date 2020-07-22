@@ -137,9 +137,9 @@ export class CreateCharacterPageComponent implements OnInit {
 
     this._activeBase = newActiveBase;
 
-    console.log('detectar mudanças aqui?');
-
-    this.cdRef.detectChanges();
+    if (!this.cdRef['destroyed']) {
+      this.cdRef.detectChanges();
+    }
   }
 
   imagesArray() {
@@ -351,7 +351,11 @@ export class CreateCharacterPageComponent implements OnInit {
 
       this.showAcessoryModal = true;
 
-      this.cdRef.detectChanges();
+      if (!this.cdRef['destroyed']) {
+        this.cdRef.detectChanges();
+      }
+
+
     }
 
     if (event.message === 'close') {
