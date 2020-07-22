@@ -104,3 +104,15 @@ p {
     width: calc(59% - (218px + (2.5 * #{$border-pixel}) ) );
   }
 }
+
+.btn-app {
+  border-radius: 0;
+  border: $border-color $border-pixel solid;
+  background-color: $input-background-color;
+  display: inline-block;
+  font-size: 1.2rem;
+  color: black;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:100% 100%;
+}

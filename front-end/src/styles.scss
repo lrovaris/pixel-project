@@ -2,6 +2,52 @@
 @import "~design-system/variables.scss";
 
 
+.top-border {
+  width: calc(100% - (2 * #{$border-pixel}));
+  position: absolute;
+  top: 0;
+  background-color: $border-inside;
+  height: $border-pixel;
+}
+
+.bot-border {
+  width: calc(100% - (2 * #{$border-pixel}));
+  position: absolute;
+  bottom: 0;
+  background-color: $border-inside;
+  height: $border-pixel;
+}
+
+.left-border {
+  width: $border-pixel;
+  position: absolute;
+  left: 0;
+  top: $border-pixel;
+  background-color: $border-inside;
+  height:  calc(100% - (2 * #{$border-pixel}));
+}
+
+.right-border {
+  width: $border-pixel;
+  position: absolute;
+  right: 0;
+  top: $border-pixel;
+  background-color: $border-inside;
+  height:  calc(100% - (2 * #{$border-pixel}));
+}
+
+.botton-box {
+  position: absolute;
+  bottom: calc(-3 * #{$border-pixel});
+  height: calc(3 * #{$border-pixel});
+  border: $border-pixel solid black;
+  width: calc(100% + (2 * #{$border-pixel}));
+  left: -$border-pixel;
+  box-shadow: $box-shadow;
+}
+
+
+
 
 body {
   background-color: $app-background-color;
