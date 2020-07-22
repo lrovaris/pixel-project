@@ -3,6 +3,7 @@ import {RouteService} from '../../services/route.service';
 import {ModalService} from '../../services/modal.service';
 import {ProjectService} from '../../services/project.service';
 import {PaletteService} from '../../services/palette.service';
+import {SpriteService} from '../../services/sprite.service';
 
 @Component({
   selector: 'pixel-sprite-type-select-page',
@@ -16,6 +17,7 @@ export class SpriteTypeSelectPageComponent implements OnInit {
     private router: RouteService,
     private modalService: ModalService,
     private projectService: ProjectService,
+    private spriteService: SpriteService,
     private cdRef: ChangeDetectorRef,
     public palletService: PaletteService
   ) {
@@ -37,7 +39,10 @@ export class SpriteTypeSelectPageComponent implements OnInit {
 
 
   navigate(route) {
-    this.router.navigateTo(route);
+
+    this.spriteService.ResetSprite()
+
+    this.router.navigateTo("character", route);
   }
 
   toggleModal(bool) {

@@ -35,7 +35,7 @@ export class SpriteService {
 
     this.loadSpriteCallSource.next();
 
-    this.router.navigateTo(newSprite[0].metadata.spriteType.toLowerCase())
+    this.router.navigateTo("character", newSprite[0].metadata.spriteType.toLowerCase())
 
   }
 
@@ -57,5 +57,10 @@ export class SpriteService {
       return img._id.toString() !== image._id.toString()
     });
 
+  }
+
+  public ResetSprite(){
+    this.Sprite = [];
+    this.BaseOfSprite = undefined
   }
 }

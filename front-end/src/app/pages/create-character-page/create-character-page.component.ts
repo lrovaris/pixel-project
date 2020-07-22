@@ -5,7 +5,7 @@ import { PaletteService} from '../../services/palette.service';
 import { FileService} from '../../services/file.service';
 import { SpriteService} from '../../services/sprite.service';
 import { LeftImageListComponent } from '../../../../design-system/components/responsive-Ui-Components/left-image-list/left-image-list.component';
-
+import {RouteService} from '../../services/route.service';
 
 @Component({
   selector: 'pixel-create-character-page',
@@ -15,6 +15,8 @@ import { LeftImageListComponent } from '../../../../design-system/components/res
 export class CreateCharacterPageComponent implements OnInit {
 
 @ViewChild(LeftImageListComponent, {static: false}) child: LeftImageListComponent;
+
+  spriteTypeParam;
 
   lastSelection;
 
@@ -46,6 +48,7 @@ export class CreateCharacterPageComponent implements OnInit {
     private fileService: FileService,
     private spriteService: SpriteService,
     private cdRef: ChangeDetectorRef,
+    private router: RouteService
   ) {
 
     this.fileService.exportCalled$.subscribe(() => {
@@ -63,6 +66,8 @@ export class CreateCharacterPageComponent implements OnInit {
 
 
   ngOnInit() {
+    this.spriteTypeParam = this.router.getParams();
+
     this.selectedColorIndex = 0;
 
     this.selectAnimation = 0;
@@ -71,7 +76,7 @@ export class CreateCharacterPageComponent implements OnInit {
       this.metadataArray = this.metadataService.getMetadata();
 
       this.filteredmetadataArray = this.metadataArray.filter( (image) => {
-        return image.metadata.spriteType.toLowerCase() === 'character';
+        return image.metadata.spriteType.toLowerCase() === this.spriteTypeParam;
       });
 
 
@@ -92,10 +97,6 @@ export class CreateCharacterPageComponent implements OnInit {
   }
 
   setBase(image) {
-
-      console.log('set base called');
-
-
       image.originalColors = image.metadata.colors;
       image.currentColors = [];
 
@@ -105,8 +106,6 @@ export class CreateCharacterPageComponent implements OnInit {
   }
 
   renderBaseChange() {
-    console.log("renderBaseChange chamado");
-
     this.selectAnimation = 0;
 
     const thisBase = this.spriteService.GetBaseOfSprite();
@@ -132,11 +131,9 @@ export class CreateCharacterPageComponent implements OnInit {
 
   setActiveBase(newActiveBase) {
 
-    console.log('set active base chamado (input)');
-
-
     this._activeBase = newActiveBase;
 
+    console.log('detectar mudanças aqui?');
 
     this.cdRef.detectChanges();
   }

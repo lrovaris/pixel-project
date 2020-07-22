@@ -11,10 +11,6 @@ import { HeaderComponent } from './pages/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProjectManagementPageComponent } from './pages/project-management-page/project-management-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
-import { CreateScenarioPageComponent } from './pages/create-scenario-page/create-scenario-page.component';
-import { CreateUIPageComponent } from './pages/create-ui-page/create-ui-page.component';
-import { CreateFXPageComponent } from './pages/create-fx-page/create-fx-page.component';
-import { CreateEnemyPageComponent } from './pages/create-enemy-page/create-enemy-page.component';
 import { SpriteTypeSelectPageComponent } from './pages/sprite-type-select-page/sprite-type-select-page.component';
 
 @NgModule({
@@ -26,10 +22,6 @@ import { SpriteTypeSelectPageComponent } from './pages/sprite-type-select-page/s
     HomePageComponent,
     ProjectManagementPageComponent,
     ContactPageComponent,
-    CreateScenarioPageComponent,
-    CreateUIPageComponent,
-    CreateFXPageComponent,
-    CreateEnemyPageComponent,
     SpriteTypeSelectPageComponent,
   ],
   imports: [

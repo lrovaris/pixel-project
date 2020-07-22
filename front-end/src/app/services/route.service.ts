@@ -13,7 +13,13 @@ export class RouteService {
     private ngZone: NgZone
   ) { }
 
-  navigateTo(page){
+  aditionalParams;
+
+  public getParams(){
+    return this.aditionalParams;
+  }
+
+  public navigateTo(page, aditionalParams = undefined){
 
     this.ngZone.run(() => {
 
@@ -21,6 +27,7 @@ export class RouteService {
         return
       }
 
+      this.aditionalParams = aditionalParams;
       this.router.navigate([page]);
       this.ipc.send('navigate', page);
     });

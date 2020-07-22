@@ -33,6 +33,9 @@ export class ProjectManagementPageComponent implements OnInit {
 
       this._project = this.projectService.GetProject();
 
+      console.log('set project called');
+
+
       this.cdRef.detectChanges();
 
     })
@@ -67,6 +70,9 @@ export class ProjectManagementPageComponent implements OnInit {
     }
 
     this.showModal = bool;
+
+    console.log('toggleModal called');
+
 
     this.cdRef.detectChanges();
   }
