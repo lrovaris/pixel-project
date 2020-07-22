@@ -18,7 +18,7 @@ export class AcessoryModalComponent implements OnInit {
   }
 
   cancelButton() {
-    this.modalOutput.emit({ message: 'close'})
+    this.modalOutput.emit({ message: 'close'});
   }
 
 }
