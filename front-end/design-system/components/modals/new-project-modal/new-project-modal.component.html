@@ -28,7 +28,7 @@
 
   <div *ngIf="_colorPalettes.length >0" >
     <br>
-    <label for="">Palette {{currentPalette.name}}</label>
+    <label for="">Palette {{currentPalette?.name}}</label>
     <div [style.margin-top]="i === 0 ? '-8px' : '12px'" style="transform: scale(3); margin-left: 15rem;" (click)='pickPalette(palette,i)' class="row" *ngFor="let palette of _colorPalettes; let i = index">
       <div *ngFor="let color of palette.colors" class="row flex-nowrap" style="margin-top: 4px" >
         <div class="col-sm-2" style="padding-right: 0 !important; margin-right: 0 !important;">
@@ -44,13 +44,12 @@
   <hr>
 
   <div class="row">
-    <div class="col-6">
-      <!--<button type="button" name="button" (click)="confirm()"> Confirm </button>-->
-      <pixel-simple-button (click)="confirm()" [text]="'Confirm'"></pixel-simple-button>
+    <div class="col-3">
+      <pixel-simple-button [text]="'Confirm'" (click)="confirm()"></pixel-simple-button>
     </div>
-    <div class="col-6">
-      <pixel-simple-button (click)="cancelButton()" [text]="'Cancel'"></pixel-simple-button>
-      <!--<button type="button" name="button" (click)="cancelButton()"> Cancel </button>-->
+
+    <div class="col-6 float-right">
+      <pixel-simple-button [text]="'Cancel'" (click)="cancelButton()"></pixel-simple-button>
     </div>
   </div>
 

@@ -9,6 +9,7 @@ $asd: - #{$border-pixel} !default;
   right: calc(1% + (1* #{$border-pixel}));
   height: calc(58% -  #{$border-pixel});
   background-color: $display-background-color;
+  border: $border-pixel solid #d6e4db
 }
 
 

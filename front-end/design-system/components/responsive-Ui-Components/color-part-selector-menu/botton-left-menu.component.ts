@@ -13,12 +13,14 @@ export class BottonLeftMenuComponent implements OnInit {
 
   selectedItem;
 
+  currentStateArray = [];
 
   constructor() { }
 
   ngOnInit() {
-
-
+    for (let i = 0; i < this.colorsArray.length; i++) {
+      this.currentStateArray.push('initial');
+    }
   }
 
   changeTheme(primary) {
