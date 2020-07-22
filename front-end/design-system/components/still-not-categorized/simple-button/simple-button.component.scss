@@ -1,6 +1,8 @@
 @import "~design-system/variables.scss";
 
 .btn-app {
+  /*
+  text-align: center;
   background-color: $input-background-color;
   border: 2px solid $border-color;
   color: white;
@@ -8,4 +10,17 @@
   box-shadow: $box-shadow;
   padding-left: 8px !important;
   padding-right: 8px !important;
+
+
+  */
+  text-align: center;
+  border-radius: 0;
+  border: $border-color $border-pixel solid;
+  background-color: $input-background-color;
+  display: inline-block;
+  font-size: 1.2rem;
+  color: black;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:100% 100%;
 }

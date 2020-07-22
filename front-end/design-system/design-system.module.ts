@@ -25,6 +25,7 @@ import { NewProjectModalComponent } from './components/modals/new-project-modal/
 import { SpriteTypeSelectListComponent } from './components/responsive-Ui-Components/sprite-type-select-list/sprite-type-select-list.component';
 import { TitleCardComponent } from './components/cards/title-card/title-card.component';
 import { AcessoryModalComponent } from './components/modals/acessory-modal/acessory-modal.component';
+import { InnerBorderAndBottonBoxComponent } from './components/still-not-categorized/inner-border-and-botton-box/inner-border-and-botton-box.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AcessoryModalComponent } from './components/modals/acessory-modal/acess
     NewProjectModalComponent,
     SpriteTypeSelectListComponent,
     TitleCardComponent,
-    AcessoryModalComponent
+    AcessoryModalComponent,
+    InnerBorderAndBottonBoxComponent
   ],
   imports: [
     CommonModule,

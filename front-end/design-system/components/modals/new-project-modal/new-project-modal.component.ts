@@ -41,6 +41,7 @@ export class NewProjectModalComponent implements OnInit {
   newProjectForm: FormGroup;
 
   ngOnInit() {
+    console.log(this._colorPalettes);
   }
 
   cancelButton(){
@@ -48,6 +49,8 @@ export class NewProjectModalComponent implements OnInit {
   }
 
   confirm(){
+
+    console.log('a');
 
     if(this.newProjectForm.value.name === ''){
       return

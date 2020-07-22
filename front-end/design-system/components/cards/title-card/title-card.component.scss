@@ -12,16 +12,10 @@
   background-position: center center;
   background-size:100% 100%;
   position: absolute;
-  margin: 0.6rem;
+  margin: 4px;
   z-index: 999;
-  box-shadow: $box-shadow;
 }
 
-.botton-box {
-  position: absolute;
-  bottom: -12px;
-  height: 12px;
-  border: 4px solid black;
-  width: calc(100% + 8px);
-  left: -4px;
-}
+
+
+
