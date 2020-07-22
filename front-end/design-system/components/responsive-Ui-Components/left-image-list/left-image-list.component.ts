@@ -176,7 +176,7 @@ export class LeftImageListComponent implements OnInit {
 
   }
 
-  functionRemoveAcessory(acessory){
+  functionRemoveAcessory(acessory) {
     this.removeAcessory.emit(acessory);
   }
 
@@ -185,7 +185,12 @@ export class LeftImageListComponent implements OnInit {
   }
 
   functionShowModal(spriteArray) {
-    this.showModal.emit(spriteArray);
+    this.showModal.emit(
+      {
+          spriteList: spriteArray,
+          message: 'acessory'
+      }
+    );
   }
 
 }

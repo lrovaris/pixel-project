@@ -1,6 +1,6 @@
 <pixel-botton-left-menu ></pixel-botton-left-menu>
 
-<pixel-left-image-list [activeBase]="_activeBase" (removeAcessory)="removeAcessory($event)" (setBase)="pushBase($event)" (image)="pushImage($event)" [metadata]="filteredmetadataArray"></pixel-left-image-list>
+<pixel-left-image-list (showModal)="modalAcessory($event)" [activeBase]="_activeBase" (removeAcessory)="removeAcessory($event)" (setBase)="pushBase($event)" (image)="pushImage($event)" [metadata]="filteredmetadataArray"></pixel-left-image-list>
 
 <pixel-box-under-display></pixel-box-under-display>
 
@@ -26,6 +26,6 @@
 
 </pixel-modal>
 
-<pixel-modal *ngIf="showAcessoryModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
-  <pixel-acessory-modal (modalOutput)="modalOutput($event)"> </pixel-acessory-modal>
+<pixel-modal *ngIf="showAcessoryModal" (modalOutput)="modalAcessory($event)" [title]="'Selecione'">
+  <pixel-acessory-modal [spriteList]="spriteList" (modalOutput)="modalAcessory($event)"> </pixel-acessory-modal>
 </pixel-modal>

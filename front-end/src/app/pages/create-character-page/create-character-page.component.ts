@@ -18,6 +18,8 @@ export class CreateCharacterPageComponent implements OnInit {
 
   showAcessoryModal = false;
 
+  spriteList = [];
+
   lastSelection;
 
   metadataArray = [];
@@ -344,6 +346,22 @@ export class CreateCharacterPageComponent implements OnInit {
     }
   }
 
+  modalAcessory(event) {
+
+    if (event.message === 'acessory') {
+
+      this.spriteList = event.spriteList;
+
+      this.showAcessoryModal = true;
+
+      this.cdRef.detectChanges();
+    }
+
+    if (event.message === 'close') {
+      this.showAcessoryModal = false;
+    }
+
+  }
 
 
 }
