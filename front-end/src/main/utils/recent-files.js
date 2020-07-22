@@ -2,7 +2,7 @@ const fs = require('fs');
 
 let recent_files;
 
-function add_recent_file(path, type){
+function add_recent_file(path, type, name){
 
   recent_files = get_recent_files()
 
@@ -12,7 +12,7 @@ function add_recent_file(path, type){
     return { valid: true }
   }
 
-  recent_files.push({path: path, type: type})
+  recent_files.push({path: path, type: type, name: name})
 
   try {
     fs.writeFileSync('./recent_files.json', JSON.stringify(recent_files), 'utf-8');

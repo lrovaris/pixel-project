@@ -105,6 +105,12 @@ export class FileService {
     this.ipc.send('load-project', {});
   }
 
+  public LoadRecentProject(path){
+
+    this.ipc.send('load-recent-project', path);
+
+  }
+
   public SaveProject(projectInfo: any, callback: any) {
 
 

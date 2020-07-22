@@ -19,7 +19,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         height: '9px',
         boxShadow: '0 4px 4px black',
         bottom: '-9px',
-        height: '9px',
+        // height: '9px',
         border: '3px black solid',
         left: '-3px'
       })),

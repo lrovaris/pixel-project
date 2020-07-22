@@ -41,6 +41,15 @@
 
 </div>
 
+
+  <h2>Recent Projects</h2>
+  <div *ngFor="let file of recentProjects()">
+    <pixel-simple-button [text]="'load'" (click)="loadRecentProject(file.path)"></pixel-simple-button>
+    <p>{{file.path}}</p>
+  </div>
+
+
+
 <pixel-modal *ngIf="showModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
 
   <pixel-new-project-modal (modalOutput)="modalOutput($event)" [colorPalettes]="palletService.getPalettes()"></pixel-new-project-modal>
