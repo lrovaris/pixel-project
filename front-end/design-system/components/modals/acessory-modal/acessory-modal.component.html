@@ -1,5 +1,19 @@
 <div class="row">
-  <div class="col" *ngFor="let sprite of spriteList">
+  <div class="col-9">
+
+    <input class="input" type="text"[(ngModel)]="filterString">
+  </div>
+  <div class="col-3">
+    <pixel-simple-button (click)="filterSprites()"  [text]="'Search'" ></pixel-simple-button>
+  </div>
+
+</div>
+<hr>
+<div class="row">
+
+
+
+  <div class="col-4" *ngFor="let sprite of filteredSpriteList">
     <div class="card-content" (click)="emitImage(sprite)"  > <!--(click)="emitImage(base)"-->
       <div class="div card-content-div">
         <div class="row card-content-row">

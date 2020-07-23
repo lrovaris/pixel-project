@@ -11,7 +11,26 @@ export class AcessoryModalComponent implements OnInit {
 
   @Output() image = new EventEmitter();
 
-  @Input() spriteList = [];
+  @Input() set spriteList(sprites){
+    console.log(sprites);
+
+    this.originalSpriteList = sprites
+
+    this.filterSprites();
+  }
+
+  originalSpriteList = [];
+  filteredSpriteList = [];
+
+  filterString = "";
+
+  filterSprites(){
+
+    this.filteredSpriteList = this.originalSpriteList.filter(sprite => {
+      return sprite.metadata.name.toLowerCase().includes(this.filterString.toLowerCase())
+    })
+
+  }
 
   constructor() { }
 

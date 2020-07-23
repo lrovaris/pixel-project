@@ -38,12 +38,24 @@
 
   </div>
 
-  <h2 style="margin-left: 0.5rem; margin-top: 2rem">Recent Projects</h2>
+  <pixel-display-box>
+    <h2 style="margin-left: 0.5rem; margin-top: 2rem">Recent Projects</h2>
 
-  <div [style.margin-top]="i === 0 ? '1.5rem': '4px'" style="margin-left: 1rem" *ngFor="let file of recentProjects(); let i = index">
-    <pixel-simple-button [currentState]="currentStateLoad[i]" [text]="'load'" (click)="loadRecentProject(file.path, i)"></pixel-simple-button>
-    <p style="margin-top: 1rem">{{file.path}}</p>
-  </div>
+    <div [style.margin-top]="i === 0 ? '1.5rem': '4px'" style="margin-left: 1rem" *ngFor="let file of recentProjects(); let i = index" class="row">
+      <div class="col-1">
+        <pixel-simple-button [currentState]="currentStateLoad[i]" [text]="'load'" (click)="loadRecentProject(file.path, i)"></pixel-simple-button>
+      </div>
+      <div class="col-11">
+        <p>{{file.path}}</p>
+
+      </div>
+
+      <br><br><br>
+
+
+    </div>
+  </pixel-display-box>
+
 
   <pixel-modal *ngIf="showModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
 
@@ -52,5 +64,3 @@
   </pixel-modal>
 
 </div>
-
-

@@ -110,8 +110,6 @@ export class HomePageComponent implements OnInit {
         }, 50);
       }, 250);
 
-      this.fileService.LoadProject();
-
     }
 
     loadRecentProject(path, index) {
