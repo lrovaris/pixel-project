@@ -14,6 +14,8 @@ import {
 })
 export class ModalComponent implements OnInit {
 
+  currentState = 'initial';
+
   constructor(private el: ElementRef) {
     this.title = 'modal'
   }
@@ -29,7 +31,17 @@ export class ModalComponent implements OnInit {
   };
 
   close() {
-    this.modalOutput.emit({ message: 'close'})
+
+    this.currentState = 'final';
+    setTimeout(() => {
+      this.currentState = 'initial';
+      setTimeout(() => {
+        this.modalOutput.emit({ message: 'close'});
+      }, 50);
+    }, 250);
+
+
+
   }
 
 }
