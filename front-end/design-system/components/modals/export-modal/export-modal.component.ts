@@ -9,6 +9,12 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 })
 export class ExportModalComponent implements OnInit {
 
+  currentStateExport = 'initial';
+  currentStateCancel = 'initial';
+  currentStatePath = 'initial';
+  exportParamsForm: FormGroup;
+
+
   constructor(private formBuild: FormBuilder) {
 
     this.exportParamsForm = this.formBuild.group({
@@ -26,7 +32,6 @@ export class ExportModalComponent implements OnInit {
 
   ngOnInit() { }
 
-  exportParamsForm: FormGroup;
 
   @Input() set filePath(_path){
     this.exportParamsForm.controls['path'].setValue(_path)
@@ -43,28 +48,52 @@ export class ExportModalComponent implements OnInit {
 
   @Output() modalOutput = new EventEmitter();
 
-  exportButton(){
-    if(this.exportParamsForm.value.path === ''){
-      return
-    }
+  exportButton() {
 
-    if(this.exportParamsForm.value.fileName === ''){
-      return
-    }
+    this.currentStateExport = 'final';
+    setTimeout(() => {
+      this.currentStateExport = 'initial';
+      setTimeout(() => {
 
-    this.modalOutput.emit({ message: 'export', exportParams: this.getFormValues()})
+        if (this.exportParamsForm.value.path === '') {
+          return
+        }
 
-    this.resetForm();
+        if (this.exportParamsForm.value.fileName === '') {
+          return
+        }
 
-    this.modalOutput.emit({ message: 'close'})
+        this.modalOutput.emit({message: 'export', exportParams: this.getFormValues()})
+
+        this.resetForm();
+
+        this.modalOutput.emit({message: 'close'})
+
+      }, 50);
+    }, 250);
+
   }
 
-  cancelButton(){
-    this.modalOutput.emit({ message: 'close'})
+
+
+  cancelButton() {
+    this.currentStateCancel = 'final';
+    setTimeout(() => {
+      this.currentStateCancel = 'initial';
+      setTimeout(() => {
+        this.modalOutput.emit({message: 'close'});
+      }, 50);
+    }, 250);
   }
 
   pathDialog(){
-    this.modalOutput.emit({ message: 'path_dialog'})
+    this.currentStatePath = 'final';
+    setTimeout(() => {
+      this.currentStatePath = 'initial';
+      setTimeout(() => {
+        this.modalOutput.emit({ message: 'path_dialog'})
+      }, 50);
+    }, 250);
   }
 
   exportAs(){

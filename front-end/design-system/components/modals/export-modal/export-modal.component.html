@@ -71,7 +71,7 @@
     </div>
 
     <div class="col-2">
-      <pixel-simple-button (click)="pathDialog()" [text]="' ...'"> </pixel-simple-button>
+      <pixel-simple-button [currentState]="currentStatePath" (click)="pathDialog()" [text]="' ...'"> </pixel-simple-button>
     </div>
   </div>
 
@@ -108,11 +108,11 @@
 
   <div class="row">
     <div class="col-3">
-      <pixel-simple-button [text]="'Export'" (click)="exportButton()"></pixel-simple-button>
+      <pixel-simple-button [currentState]="currentStateExport" [text]="'Export'" (click)="exportButton()"></pixel-simple-button>
     </div>
 
     <div class="col-6 float-right">
-      <pixel-simple-button [text]="'Cancel'" (click)="cancelButton()"></pixel-simple-button>
+      <pixel-simple-button [currentState]="currentStateCancel" [text]="'Cancel'" (click)="cancelButton()"></pixel-simple-button>
     </div>
 
   </div>

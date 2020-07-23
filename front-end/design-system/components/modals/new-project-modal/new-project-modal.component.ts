@@ -16,12 +16,14 @@ export class NewProjectModalComponent implements OnInit {
       projectView: ['platformer'],
       name: [''],
       palette: ['']
-    })
-
+    });
   }
 
   _colorPalettes = [];
   currentPalette: any;
+
+  currentStateConfirm = 'initial';
+  currentStateCancel = 'initial';
 
   @Input() set colorPalettes(palettes){
 
@@ -44,27 +46,43 @@ export class NewProjectModalComponent implements OnInit {
     console.log(this._colorPalettes);
   }
 
-  cancelButton(){
-    this.modalOutput.emit({ message: 'close'})
+  cancelButton() {
+
+    this.currentStateCancel = 'final';
+    setTimeout(() => {
+      this.currentStateCancel = 'initial';
+      setTimeout(() => {
+        this.modalOutput.emit({message: 'close'});
+      }, 50);
+    }, 250);
   }
 
-  confirm(){
+  confirm() {
 
-    console.log('a');
+    this.currentStateConfirm = 'final';
+    setTimeout(() => {
+      this.currentStateConfirm = 'initial';
+      setTimeout(() => {
 
-    if(this.newProjectForm.value.name === ''){
-      return
-    }
+        if(this.newProjectForm.value.name === ''){
+          return;
+        }
 
-    if(this.newProjectForm.value.palette === ''){
-      return
-    }
+        if(this.newProjectForm.value.palette === ''){
+          return;
+        }
 
-    this.modalOutput.emit({ message: 'new-project', projectInfo: this.getFormValues()})
 
-    this.resetForm();
+        this.modalOutput.emit({ message: 'new-project', projectInfo: this.getFormValues()})
 
-    this.modalOutput.emit({ message: 'close'})
+        this.resetForm();
+
+        this.modalOutput.emit({ message: 'close'});
+
+      }, 50);
+    }, 250);
+
+
   }
 
   pickPalette(palette,index){

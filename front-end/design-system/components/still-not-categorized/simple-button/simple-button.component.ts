@@ -41,9 +41,12 @@ export class SimpleButtonComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
+
   }
 
 }
