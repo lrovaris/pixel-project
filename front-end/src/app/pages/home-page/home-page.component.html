@@ -1,29 +1,26 @@
-<div style="overflow: hidden">
+<div style="overflow: hidden; margin-left: 1rem">
 
   <div class="row" style="margin-top: 15px;">
 
-    <div class="col-4">
 
-    </div>
-
-    <div class="col-4">
+    <div class="col-4" style="margin-left: 1rem">
 
       <div class="row" style="width: 100%; height: 15%">
-        <div class="col-12">
+        <div class="col-sm-12">
 
-          <button class="button" (click)="newProject()">New project</button>
-
-        </div>
-
-        <div class="col-12">
-
-          <button  class="button"(click)="loadProject()">Load project</button>
+          <pixel-simple-button [currentState]="currentState1" [text]="'New Project'" (click)="newProject()"></pixel-simple-button>
 
         </div>
 
-        <div class="col-12">
+        <div class="col-sm-12">
 
-          <button class="button" (click)="navigateContact()">contact</button>
+          <pixel-simple-button [currentState]="currentState2" [text]="'Load project'" (click)="loadProject()"></pixel-simple-button>
+
+        </div>
+
+        <div class="col-sm-12">
+
+          <pixel-simple-button [currentState]="currentState3" [text]="'Contact'" (click)="navigateContact()"></pixel-simple-button>
 
         </div>
 
@@ -35,20 +32,25 @@
 
     </div>
 
+    <div class="col-4">
+
+    </div>
+
   </div>
+
+  <h2 style="margin-left: 0.5rem; margin-top: 2rem">Recent Projects</h2>
+
+  <div [style.margin-top]="i === 0 ? '1.5rem': '4px'" style="margin-left: 1rem" *ngFor="let file of recentProjects(); let i = index">
+    <pixel-simple-button [currentState]="currentStateLoad[i]" [text]="'load'" (click)="loadRecentProject(file.path, i)"></pixel-simple-button>
+    <p style="margin-top: 1rem">{{file.path}}</p>
+  </div>
+
+  <pixel-modal *ngIf="showModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
+
+    <pixel-new-project-modal (modalOutput)="modalOutput($event)" [colorPalettes]="palletService.getPalettes()"></pixel-new-project-modal>
+
+  </pixel-modal>
 
 </div>
 
-  <h2>Recent Projects</h2>
 
-  <div *ngFor="let file of recentProjects()">
-    <pixel-simple-button [text]="'load'" (click)="loadRecentProject(file.path)"></pixel-simple-button>
-    <p>{{file.path}}</p>
-    <br>
-  </div>
-
-<pixel-modal *ngIf="showModal" (modalOutput)="modalOutput($event)" [title]="modalTitle">
-
-  <pixel-new-project-modal (modalOutput)="modalOutput($event)" [colorPalettes]="palletService.getPalettes()"></pixel-new-project-modal>
-
-</pixel-modal>

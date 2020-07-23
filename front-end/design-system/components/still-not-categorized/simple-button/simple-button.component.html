@@ -1,7 +1,11 @@
 
 
-<div  style="padding: 4px; position: relative" class="btn-app">
-  <pixel-inner-border-and-botton-box></pixel-inner-border-and-botton-box>
+<div [@active2]="currentState" style="padding: 4px; position: relative" class="btn-app">
+  <div class="top-border"></div>
+  <div class="bot-border"></div>
+  <div class="left-border"></div>
+  <div class="right-border"></div>
+  <div [@active]="currentState" class="botton-box"></div>
   {{text}}
 </div>
 

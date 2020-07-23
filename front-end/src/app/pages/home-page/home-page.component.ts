@@ -17,6 +17,16 @@ import { FileService} from '../../services/file.service';
 })
 export class HomePageComponent implements OnInit {
 
+
+  showModal = false;
+  modalTitle = 'New Project';
+  recentFiles = [];
+
+  currentState1 = 'initial';
+  currentState2 = 'initial';
+  currentState3 = 'initial';
+  currentStateLoad = [];
+
   constructor(
     private router: RouteService,
     private modalService: ModalService,
@@ -24,6 +34,7 @@ export class HomePageComponent implements OnInit {
     public palletService: PaletteService,
     private projectService: ProjectService,
     private fileService: FileService) {
+
       this.modalService.newProjectCalled$.subscribe(() => {
 
         this.toggleModal(true);
@@ -32,18 +43,22 @@ export class HomePageComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.recentFiles = this.fileService.getRecentFiles()
+      this.recentFiles = this.fileService.getRecentFiles();
       console.log(this.recentFiles);
 
 
     }
 
-    showModal = false;
-    modalTitle = 'New Project';
-    recentFiles = []
+
 
     recentProjects(){
-      return this.recentFiles.filter(file => file.type === "project")
+
+      const recentProjects = this.recentFiles.filter(file => file.type === "project");
+
+      for (let i = 0; i < recentProjects.length; i ++) {
+        this.currentStateLoad.push('initial');
+      }
+      return recentProjects;
     }
 
     toggleModal(bool){
@@ -75,23 +90,58 @@ export class HomePageComponent implements OnInit {
     }
 
     newProject(){
-      this.toggleModal(true);
-    }
-
-    loadProject(){
-
-      this.fileService.LoadProject()
-
-    }
-
-    loadRecentProject(path){
-
-      this.fileService.LoadRecentProject(path)
+      this.currentState1 = 'final';
+      setTimeout(() =>{
+       this.currentState1 = 'initial';
+       setTimeout(()=> {
+         this.toggleModal(true);
+       }, 50);
+      }, 250);
 
     }
 
+    loadProject() {
 
-    navigateContact() { this.router.navigateTo('contact'); }
+      this.currentState2 = 'final';
+      setTimeout(() => {
+        this.currentState2 = 'initial';
+        setTimeout(() => {
+          this.fileService.LoadProject();
+        }, 50);
+      }, 250);
+
+      this.fileService.LoadProject();
+
+    }
+
+    loadRecentProject(path, index) {
+
+      this.currentStateLoad[index] = 'final';
+      setTimeout(() => {
+        this.currentStateLoad[index] = 'initial';
+        setTimeout(() => {
+          this.fileService.LoadRecentProject(path);
+        }, 50);
+      }, 250);
+
+    }
+
+
+    navigateContact() {
+
+      this.currentState3 = 'final';
+      setTimeout(() => {
+        this.currentState3 = 'initial';
+        setTimeout(() => {
+          this.router.navigateTo('contact');
+        }, 50);
+      }, 250);
+
+
+
+  }
+
+
 
 
 
