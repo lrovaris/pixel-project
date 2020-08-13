@@ -178,7 +178,7 @@ export class UploadComponent implements OnInit {
   }
 
   saveMetadata(metadata) {
-    console.log(this.path);
+    console.log(metadata);
 
 
     this.imageService.createImage(metadata, this.path).subscribe((data: any) => {

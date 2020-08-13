@@ -112,7 +112,7 @@ export class MetadataComponent implements OnInit {
       colors: this.colors,
       name: this.form.value.name,
       height: this.height,
-      width: this.frameWidth,
+      width: this.width,
       spriteWidth: this.width,
       framesQuantity: this.form.value.frames,
       animations: this.animationArray,
@@ -173,6 +173,8 @@ export class MetadataComponent implements OnInit {
 
     console.log(this.imgBase);
 
+    this.frameWidth = this.imgBase.metadata.frameWidth;
+    this.width = this.imgBase.metadata.width;
 
     this.form.controls['frames'].setValue(this.imgBase.metadata.framesQuantity);
     this.form.controls['spriteType'].setValue(this.imgBase.metadata.spriteType);

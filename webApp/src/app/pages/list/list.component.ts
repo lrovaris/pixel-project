@@ -20,6 +20,8 @@ export class ListComponent implements OnInit {
   ngOnInit() {
 
     this.images.getAllImages().subscribe((data: any) => {
+      console.log(data);
+
       this.imagesList = data;
     });
 
