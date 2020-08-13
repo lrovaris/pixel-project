@@ -1,22 +1,22 @@
 @import "~design-system/variables.scss";
-
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 12px;
   height: 0px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
-  //  border-bottom: 4px solid black;
+  background: black;
+ // border: 4px solid  #847f86;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: transparent;
-  border: transparent solid 0;
+  background: #847f86;
+  border: $border-pixel solid black;
+ // border-right: 4px solid  $display-background-color;
 }
 
 ::-webkit-scrollbar-track-piece {
-  height: 0;
+  height: $border-pixel;
 }
 
 
@@ -25,7 +25,7 @@
   position: fixed;
   width: calc(59% - (218px + (1.5 * #{$border-pixel})));
   height: 25%;
-  background-color: #6e7780;
+  background-color: $display-background-color;
   right: calc((38% + (4 * #{$border-pixel})));
   border: $border-pixel solid $border-color
 }

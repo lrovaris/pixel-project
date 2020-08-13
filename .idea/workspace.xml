@@ -17,22 +17,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>app</find>
-      <find>got</find>
-      <find>log</find>
-      <find>bases</find>
-      <find>console</find>
-      <find>constr</find>
-      <find>console.</find>
-      <find>project</find>
-      <find>load</find>
-      <find>load-p</find>
-      <find>oad-project-command</find>
-      <find>sele</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -98,7 +82,7 @@
       <workItem from="1546301266852" duration="11000" />
       <workItem from="1593793391293" duration="14303000" />
       <workItem from="1594816043877" duration="37081000" />
-      <workItem from="1597324164538" duration="15637000" />
+      <workItem from="1597324164538" duration="17724000" />
     </task>
     <servers />
   </component>

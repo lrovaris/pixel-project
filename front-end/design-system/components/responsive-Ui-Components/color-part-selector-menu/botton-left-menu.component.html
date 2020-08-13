@@ -1,9 +1,9 @@
 <div class="bottom-left-menu">
   <div class="line-under"></div>
-  <div class="row" style="margin-top: -1rem">
+  <div class="" style="overflow: scroll; height: calc(100% - 8px);margin-top: 4px; margin-right: 4px">
     <div class="col-sm-11" style="padding-bottom: 45px; margin-top: 1rem; margin-left: 0.5rem">
       <div [style.margin-top]="i === 0 ? '8px' : '1.5rem'"   (mousedown)="listClick($event, color.name, i); clickCard(i)" *ngFor="let color of colorsArray; let i = index" class="row" style="z-index: -99; margin-left: -2px">
-        <div [@active2]="currentStateArray[i]" style="padding: 1px; position: relative; height: 45px" class="btn-app col-sm-6">
+        <div [@active2]="currentStateArray[i]" style="padding: 1px; position: relative; height: 45px" class="btn-app col-sm-11">
           <div class="top-border"></div>
           <div class="bot-border"></div>
           <div class="left-border"></div>
@@ -13,7 +13,7 @@
             <div class="col-sm-2" style="padding-right: 0 !important; margin-right: 0 !important;">
               <pixel-color-card  [color]="color" [secondColor]="'#6e7780'"></pixel-color-card>
             </div>
-            <div  style="padding-left: 0 !important; margin-left: 2px" class="col-sm-4 color-selected">
+            <div  style="padding-left: 0 !important; margin-left: 2px" class="col-sm-8 color-selected">
               <p (mouseover)="changeTheme(color)" class="" [ngClass]="{'active': selectedItem == color.name}">{{color.name}}</p>
             </div>
           </div>
