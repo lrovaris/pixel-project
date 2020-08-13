@@ -91,6 +91,10 @@ export class MetadataComponent implements OnInit {
 
   }
 
+  allBases(){
+    return this.allImages.filter(img => img.metadata.imgBase === true);
+  }
+
   changeBase() {
     this.checkBase = this.baseSelect === 'base';
   }
@@ -164,10 +168,19 @@ export class MetadataComponent implements OnInit {
   selectBase(id) {
     this.baseId = id;
     this.imgBase = this.allImages.find(img => img._id === id);
-    this.animationArray = this.imgBase.metadata.animations 
+    this.animationArray = this.imgBase.metadata.animations
     this.categoryArray = this.imgBase.metadata.category;
     this.category = this.categoryArray[0];
+
+    console.log(this.imgBase.metadata);
+
+
+    this.form.controls['frames'].setValue(this.imgBase.metadata.framesQuantity);
+    this.form.controls['spriteType'].setValue(this.imgBase.metadata.spriteType);
+    this.form.controls['theme'].setValue(this.imgBase.metadata.theme);
+    this.form.controls['spriteView'].setValue(this.imgBase.metadata.spriteView);
   }
+
 
   selectCategory(category) {
     this.category = category;

@@ -16,22 +16,7 @@
             <h4>Inserção de Metadados:</h4>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <fieldset class="form-group">
-              <label style="color: #000" for="">Nome</label>
-              <input #spriteName formControlName="name" name="name" style="" type="text" class="form-control input-text" [value]="name">
-            </fieldset>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <fieldset class="form-group">
-              <label style="color: #000" for="">Quantidade de frames</label>
-              <input #spriteFrames formControlName="frames" name="quantity" style="" type="number" class="form-control input-text" [value]="frames">
-            </fieldset>
-          </div>
-        </div>
+
         <div class="row">
           <div class="col-sm-12">
             <label for="seguradora" style="font-size: 28px">Selecione base ou acessório</label>
@@ -46,12 +31,14 @@
           </div>
 
         </div>
+
+
         <div class="row" *ngIf="checkBase === false">
           <div  class="col-sm-6">
             <label >Selecione a base</label>
             <fieldset class="form-group">
               <select  (change)="selectBase(selectBaseInput.value)" #selectBaseInput class="form-control input-text" id="selectbase" >
-                <option *ngFor="let base of allImages" [value]="base._id">{{base.metadata.name}}</option>
+                <option *ngFor="let base of allBases()" [value]="base._id">{{base.metadata.name}}</option>
               </select>
             </fieldset>
           </div>
@@ -64,6 +51,30 @@
             </fieldset>
           </div>
         </div>
+
+
+        <div class="row">
+          <div class="col-sm-12">
+            <fieldset class="form-group">
+              <label style="color: #000" for="">Nome</label>
+              <input #spriteName formControlName="name" name="name" style="" type="text" class="form-control input-text" [value]="name">
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="row" *ngIf="checkBase === true">
+          <div class="col-sm-12">
+            <fieldset class="form-group">
+              <label style="color: #000" for="">Quantidade de frames</label>
+              <input #spriteFrames formControlName="frames" name="quantity" style="" type="number" class="form-control input-text" [value]="frames">
+            </fieldset>
+          </div>
+        </div>
+
+
+
+
+
         <div class="row" *ngIf="checkBase === true">
           <div  class="col-sm-6">
             <label >Adicione categorias a base</label>
@@ -76,6 +87,7 @@
             </div>
           </div>
         </div>
+
         <div class="row" *ngIf="categoryArray.length > 0 && checkBase === true">
           <div class="col-sm-12">
             <table class="table" style="margin-top: 2rem">
@@ -94,7 +106,8 @@
             </table>
           </div>
         </div>
-        <div class="row">
+
+        <div class="row" *ngIf="checkBase === true">
           <div class="col-sm-12">
             <label for="selectSpriteType" >Selecione o tipo de sprite</label>
             <fieldset class="form-group">
@@ -108,7 +121,8 @@
             </fieldset>
           </div>
         </div>
-        <div class="row">
+
+        <div class="row" *ngIf="checkBase === true">
           <div class="col-sm-12">
             <fieldset class="form-group">
               <label style="color: #000" for="">Tema</label>
@@ -116,7 +130,8 @@
             </fieldset>
           </div>
         </div>
-        <div class="row">
+
+        <div class="row" *ngIf="checkBase === true">
           <div class="col-sm-12">
             <fieldset class="form-group">
               <label style="color: #000" for="">Visão da sprite</label>
@@ -124,6 +139,7 @@
             </fieldset>
           </div>
         </div>
+
         <div class="row">
           <div class="col-sm-12">
             <fieldset class="form-group">
@@ -139,7 +155,8 @@
             </div>
           </div>
         </div>
-        <div class="row" style="margin-top: 1rem">
+
+        <div class="row" style="margin-top: 1rem" *ngIf="checkBase === true">
           <div class="col-sm-12">
             <fieldset class="form-group">
               <label style="color: #000; font-size: 24px; font-weight: 400" for="">Animations:</label>
@@ -161,7 +178,7 @@
             </div>
           </div>
         </div>
-        <div class="row" *ngIf="animationArray?.length > 0">
+        <div class="row" *ngIf="animationArray?.length > 0 && checkBase === true">
 
           <div class="col-sm-10" style="margin: auto">
             <table class="table" style="margin-top: 2rem">
@@ -182,8 +199,6 @@
             </table>
           </div>
         </div>
-
-        <hr>
 
 
       </div>
