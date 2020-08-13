@@ -96,18 +96,23 @@ export class LeftImageListComponent implements OnInit {
   _activeBase;
   @Input() set activeBase(baseId){
 
+    console.log(baseId);
+
+
     if(baseId === undefined){
       return;
     }
 
     setTimeout(() => {
 
+      this.changeCategoryArray(baseId);
+
       this._activeBase = baseId;
 
       this.cdRef.detectChanges();
 
     }, 0);
-    
+
   };
 
 
@@ -148,11 +153,17 @@ export class LeftImageListComponent implements OnInit {
 
 
   emitImage(image) {
+    console.log(image);
+
     this.image.emit(image);
   }
 
 
   changeCategoryArray(index) {
+
+    console.log(index);
+    console.log(this.arrayBases);
+
 
     this.arrayCategorias = this.arrayBases[index].metadata.category;
 

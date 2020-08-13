@@ -10,6 +10,7 @@ export class ImageInListComponent implements OnInit {
   @Input() imgPath;
   @Input() height;
   @Input() width;
+  
 
   constructor() { }
 

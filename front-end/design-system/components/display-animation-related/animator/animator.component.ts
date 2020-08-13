@@ -18,8 +18,6 @@ export class AnimatorComponent implements DoCheck {
 
   @Input()
   set selectedAnimation(_selectAnimation){
-    // console.log("selectedAnimation changed");
-
     if(_selectAnimation === undefined){
       return
     }
@@ -32,8 +30,6 @@ export class AnimatorComponent implements DoCheck {
 
   @Input()
   set imagesArray(_imagesArray){
-    // console.log("imagesArray changed");
-
     if(_imagesArray === undefined){
       return;
     }
@@ -44,7 +40,6 @@ export class AnimatorComponent implements DoCheck {
 
       this.stopAnimation();
       this.startAnimation();
-
     }
   }
 
