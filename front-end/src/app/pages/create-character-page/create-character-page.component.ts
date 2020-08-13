@@ -128,7 +128,8 @@ export class CreateCharacterPageComponent implements OnInit {
 
     for (let index = 0; index < bases.length; index++) {
       if (thisBase._id.toString() === bases[index]._id.toString()) {
-        return this.setActiveBase(index);
+
+        return this.setActiveBase(thisBase._id);
       }
     }
   }

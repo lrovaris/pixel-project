@@ -96,18 +96,17 @@ export class LeftImageListComponent implements OnInit {
   _activeBase;
   @Input() set activeBase(baseId){
 
-    console.log(baseId);
-
-
     if(baseId === undefined){
       return;
     }
 
+    let _baseId = this.getBaseId(baseId);
+
     setTimeout(() => {
 
-      this.changeCategoryArray(baseId);
+      this.changeCategoryArray(_baseId);
 
-      this._activeBase = baseId;
+      this._activeBase = _baseId;
 
       this.cdRef.detectChanges();
 
@@ -153,17 +152,18 @@ export class LeftImageListComponent implements OnInit {
 
 
   emitImage(image) {
-    console.log(image);
-
     this.image.emit(image);
   }
 
 
   changeCategoryArray(index) {
 
+    if(index === undefined){
+      return;
+    }
+
     console.log(index);
     console.log(this.arrayBases);
-
 
     this.arrayCategorias = this.arrayBases[index].metadata.category;
 
@@ -202,6 +202,21 @@ export class LeftImageListComponent implements OnInit {
           message: 'acessory'
       }
     );
+  }
+
+  getBaseId(metadataId){
+
+    for (let index = 0; index < this.arrayBases.length; index++) {
+
+      console.log(this.arrayBases[index]._id.toString(), "===", metadataId.toString());
+
+
+      if(this.arrayBases[index]._id.toString() === metadataId.toString()){
+        return index;
+      }
+
+    }
+
   }
 
 }
