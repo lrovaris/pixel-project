@@ -1,11 +1,10 @@
 
 
-<div [style.border-color]="borderColor" [@active2]="currentState" style="padding: 4px; position: relative" class="btn-app">
+<div [style.border-color]="'borderColor'" [@active2]="currentState" style="padding: 4px; position: relative" class="btn-app">
   <div class="top-border"></div>
   <div class="bot-border"></div>
   <div class="left-border"></div>
   <div class="right-border"></div>
-  <div [style.border-color]="borderColor" [@active]="{value: currentState, params: { border: '3px '+ borderColor +' solid'}}" class="botton-box"></div>
+  <div [style.border-color]="'borderColor'" [@active]="{value: currentState, params: { border: '3px '+ 'borderColor' +' solid'}}" class="botton-box"></div>
   {{text}}
 </div>
-

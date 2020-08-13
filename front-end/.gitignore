@@ -56,3 +56,5 @@ metadata/*
 
 projects/**/*.pxl
 projects/**/*.pxlproject
+projects/**/*.png
+projects/**/*.gif

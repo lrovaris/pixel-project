@@ -153,6 +153,7 @@ export class MetadataComponent implements OnInit {
       return;
     }
     this.categoryArray.push(category);
+
   }
 
   removeCategoria(nome) {
@@ -163,6 +164,7 @@ export class MetadataComponent implements OnInit {
   selectBase(id) {
     this.baseId = id;
     this.imgBase = this.allImages.find(img => img._id === id);
+    this.animationArray = this.imgBase.metadata.animations 
     this.categoryArray = this.imgBase.metadata.category;
     this.category = this.categoryArray[0];
   }
