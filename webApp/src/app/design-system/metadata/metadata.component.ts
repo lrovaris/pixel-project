@@ -99,10 +99,7 @@ export class MetadataComponent implements OnInit {
     this.checkBase = this.baseSelect === 'base';
   }
 
-  insercaoMetadados(name, framesQuantity) {
-
-    console.log(this.form.value.theme, this.form.value.spriteType);
-    console.log(this.theme, this.spriteView);
+  insercaoMetadados() {
 
     if (!this.checkBase) {
       this.baseSelect = this.baseId;
@@ -113,11 +110,11 @@ export class MetadataComponent implements OnInit {
 
     const metadata = {
       colors: this.colors,
-      name,
+      name: this.form.value.name,
       height: this.height,
       width: this.frameWidth,
       spriteWidth: this.width,
-      framesQuantity,
+      framesQuantity: this.form.value.frames,
       animations: this.animationArray,
       imgBase: this.baseSelect,
       category: this.category,
@@ -172,7 +169,9 @@ export class MetadataComponent implements OnInit {
     this.categoryArray = this.imgBase.metadata.category;
     this.category = this.categoryArray[0];
 
-    console.log(this.imgBase.metadata);
+    this.path = this.imgBase.path;
+
+    console.log(this.imgBase);
 
 
     this.form.controls['frames'].setValue(this.imgBase.metadata.framesQuantity);
