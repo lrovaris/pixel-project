@@ -1,28 +1,5 @@
 @import "~design-system/variables.scss";
 
-::-webkit-scrollbar {
-  width: 2px;
-  height: 20px;
-}
-::-webkit-scrollbar-track {
-  background: #000;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #323c39;
-  border: $border-pixel solid black;
-
-}
-
-::-webkit-scrollbar-track-piece {
-  height: $border-pixel;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 
 .right-menu {
   top: 72%;

@@ -3,7 +3,7 @@
 
 <div class="col-sm-3">
   <!-- CAROUSEL LEFT -->
-    <pixel-card-animation (click)="emitSelectedAnimation(leftSlide)"  style="margin: 1rem 10rem 1rem 1rem;"
+    <pixel-card-animation (click)="emitSelectedAnimation(leftSlide)"  style="margin: 1rem -1rem 1rem 1rem;"
                           [id]="leftSlide + stringkkk"
                           [selectedAnimation]="leftSlide"
                           [animation]="AnimationArray"
@@ -21,7 +21,7 @@
 
   <carousel class="animation-carousel" [activeSlide]="activeSlide" (activeSlideChange)="changeActiveSlide($event)" [interval]="0">
     <slide *ngFor="let animation of AnimationArray; let i = index" style="height: 250px; width: 200px">
-      <pixel-card-animation (click)="emitSelectedAnimation(i)"  style="margin: 1rem 10rem 1rem 1rem"
+      <pixel-card-animation (click)="emitSelectedAnimation(i)"  style="margin: 1rem -1rem 1rem 1rem"
                             [id]="i + stringkkk"
                             [style.z-index]="i + 5"
                             [selectedAnimation]="i"
@@ -39,7 +39,7 @@
 <div class="col-sm-3">
   <!-- CAROUSEL MIDDLE -->
 
-  <pixel-card-animation (click)="emitSelectedAnimation(rightSlide)"  style="margin: 1rem 10rem 1rem 1rem"
+  <pixel-card-animation (click)="emitSelectedAnimation(rightSlide)"  style="margin: 1rem 1rem 1rem 1rem"
                         [id]="rightSlide + stringkkk"
                         [selectedAnimation]="rightSlide"
                         [animation]="AnimationArray"
