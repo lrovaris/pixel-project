@@ -1,7 +1,10 @@
 <div
      style="
-     image-rendering: pixelated"
+     image-rendering: pixelated;
+     transform: scale(4);"
+     [style.transform]="scale"
      [style.width]="width+ 'px'"
-     [style.height]="height +'px'"
+     [style.height]="_height +'px'"
      [ngStyle]="{'background-image' : 'url('+ imgPath +')'}" class="thisImage">
+
 </div>
