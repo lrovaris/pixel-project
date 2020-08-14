@@ -127,20 +127,7 @@ export class MetadataComponent implements OnInit {
 
   }
 
-  adicionarAnimation( name, frames ) {
-    if (!this.frameWidth) {
-      this.frameWidth =  this.width / this.form.value.frames ;
-      this.animationSelect = 0;
-    }
-    if (name === '' || frames === '') {
-      return;
-    } else {
 
-      this.animationArray.push({name, frames});
-      console.log(this.categoryArray);
-
-    }
-  }
 
   alteraCoresData(value, index) {
     this.colors[index]['name'] = value;
@@ -151,13 +138,47 @@ export class MetadataComponent implements OnInit {
     if (index !== -1) {this.animationArray.splice(index, 1); }
   }
 
+  animationPush(animation) {
+    console.log(animation);
+    this.animationArray.push({name: animation.name, frames: animation.frames});
+  }
+
+  categoryPush(category) {
+    console.log(category);
+    this.categoryArray.push(category);
+  }
+
+
   adicionarCategoria(category) {
+
     if (category === '') {
+
       alert('nao adicione categorias vazias');
       return;
-    }
-    this.categoryArray.push(category);
 
+    }
+
+    this.categoryPush(category);
+
+
+
+  }
+
+  adicionarAnimation( name, frames ) {
+    if (!this.frameWidth) {
+      this.frameWidth =  this.width / this.form.value.frames ;
+      this.animationSelect = 0;
+    }
+    if (name === '' || frames === '') {
+      return;
+    } else {
+
+
+
+      this.animationPush({name, frames});
+      console.log(this.categoryArray);
+
+    }
   }
 
   removeCategoria(nome) {
