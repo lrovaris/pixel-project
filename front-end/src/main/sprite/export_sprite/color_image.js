@@ -1,4 +1,4 @@
-function color_image(sprite) {
+function color_image(sprite, exportAs) {
 
   let changes = [];
 
@@ -37,12 +37,25 @@ function color_image(sprite) {
           && old_color.b === this_rgba.b
           && old_color.a === this_rgba.a){
 
-            png_data.data[idx] = new_color.r
-            png_data.data[idx + 1] = new_color.g
-            png_data.data[idx + 2] = new_color.b
-            png_data.data[idx + 3] = new_color.a
+              png_data.data[idx] = new_color.r
+              png_data.data[idx + 1] = new_color.g
+              png_data.data[idx + 2] = new_color.b
+              png_data.data[idx + 3] = new_color.a
 
           }
+        }
+
+
+        if (exportAs === "gif"
+        && png_data.data[idx] === 0
+        && png_data.data[idx +1] === 0
+        && png_data.data[idx +2] === 0
+        && png_data.data[idx +3] === 255
+      ) {
+          png_data.data[idx] = 10
+          png_data.data[idx + 1] = 10
+          png_data.data[idx + 2] = 10
+          png_data.data[idx + 3] = 255
         }
 
       }
