@@ -91,7 +91,7 @@ export class MetadataComponent implements OnInit {
 
   }
 
-  allBases(){
+  allBases() {
     return this.allImages.filter(img => img.metadata.imgBase === true);
   }
 
@@ -135,7 +135,10 @@ export class MetadataComponent implements OnInit {
     if (name === '' || frames === '') {
       return;
     } else {
+
       this.animationArray.push({name, frames});
+      console.log(this.categoryArray);
+
     }
   }
 
@@ -165,7 +168,13 @@ export class MetadataComponent implements OnInit {
   selectBase(id) {
     this.baseId = id;
     this.imgBase = this.allImages.find(img => img._id === id);
-    this.animationArray = this.imgBase.metadata.animations
+    if (this.spriteType === 'scenario') {
+      return;
+    } else if (this.spriteType === undefined ) {
+      alert('por favor selecione um tipo de sprite');
+      return;
+    }
+    this.animationArray = this.imgBase.metadata.animations;
     this.categoryArray = this.imgBase.metadata.category;
     this.category = this.categoryArray[0];
 

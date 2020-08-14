@@ -26,4 +26,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['paleta']);
   }
 
+  navigateTileSet() {
+    this.router.navigate(['tileset']);
+  }
+
 }

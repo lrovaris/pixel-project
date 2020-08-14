@@ -17,6 +17,21 @@
           </div>
         </div>
 
+        <div class="row" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
+          <div class="col-sm-12">
+            <label for="selectSpriteType" >Selecione o tipo de sprite</label>
+            <fieldset class="form-group">
+              <select  formControlName="spriteType" class="form-control input-text" id="selectSpriteType" [(ngModel)]="spriteType"  >
+                <option selected value="Character">Character</option>
+                <option value="ui">Ui</option>
+                <option value="fx">FX</option>
+                <option value="enemy">Enemy</option>
+                <option value="scenario">Scenario</option>
+              </select>
+            </fieldset>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-sm-12">
             <label for="seguradora" style="font-size: 28px">Selecione base ou acessório</label>
@@ -62,7 +77,7 @@
           </div>
         </div>
 
-        <div class="row" *ngIf="checkBase === true">
+        <div class="row" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
           <div class="col-sm-12">
             <fieldset class="form-group">
               <label style="color: #000" for="">Quantidade de frames</label>
@@ -75,7 +90,7 @@
 
 
 
-        <div class="row" *ngIf="checkBase === true">
+        <div class="row" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
           <div  class="col-sm-6">
             <label >Adicione categorias a base</label>
             <input formControlName="category" #categoryInput name="quantity" style="" type="text" class="form-control input-text">
@@ -83,12 +98,12 @@
           <div class="col-sm-6">
             <div class="form-group">
 
-              <button (click)="adicionarCategoria(categoryInput.value); categoryInput.value = ''" class="btn btn-warning" id="asd" style="border: 1px solid black; margin-top: 2rem; font-weight: 600">Adicionar</button>
+              <button type="button" (click)="adicionarCategoria(categoryInput.value); categoryInput.value = ''" class="btn btn-warning" id="asd" style="border: 1px solid black; margin-top: 2rem; font-weight: 600">Adicionar</button>
             </div>
           </div>
         </div>
 
-        <div class="row" *ngIf="categoryArray.length > 0 && checkBase === true">
+        <div class="row" *ngIf="categoryArray.length > 0 && (checkBase === true) || (spriteType === 'scenario')">
           <div class="col-sm-12">
             <table class="table" style="margin-top: 2rem">
               <thead>
@@ -107,22 +122,8 @@
           </div>
         </div>
 
-        <div class="row" *ngIf="checkBase === true">
-          <div class="col-sm-12">
-            <label for="selectSpriteType" >Selecione o tipo de sprite</label>
-            <fieldset class="form-group">
-              <select  formControlName="spriteType" class="form-control input-text" id="selectSpriteType" [(ngModel)]="spriteType"  >
-                <option selected value="Character">Character</option>
-                <option value="ui">Ui</option>
-                <option value="fx">FX</option>
-                <option value="enemy">Enemy</option>
-                <option value="scenario">Scenario</option>
-              </select>
-            </fieldset>
-          </div>
-        </div>
 
-        <div class="row" *ngIf="checkBase === true">
+        <div class="row" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
           <div class="col-sm-12">
             <fieldset class="form-group">
               <label style="color: #000" for="">Tema</label>
@@ -131,7 +132,7 @@
           </div>
         </div>
 
-        <div class="row" *ngIf="checkBase === true">
+        <div class="row" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
           <div class="col-sm-12">
             <fieldset class="form-group">
               <label style="color: #000" for="">Visão da sprite</label>
@@ -156,7 +157,7 @@
           </div>
         </div>
 
-        <div class="row" style="margin-top: 1rem" *ngIf="checkBase === true">
+        <div class="row" style="margin-top: 1rem" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
           <div class="col-sm-12">
             <fieldset class="form-group">
               <label style="color: #000; font-size: 24px; font-weight: 400" for="">Animations:</label>
@@ -171,14 +172,14 @@
             </fieldset>
             <div class="row">
               <div class="col-sm-12">
-                <button (click)="adicionarAnimation(animationName.value, animationFrames.value); animationFrames.value = ''; animationName.value = '';" style="border: 1px solid black; font-weight: 600" class="btn btn-warning">
+                <button type="button" (click)="adicionarAnimation(animationName.value, animationFrames.value); animationFrames.value = ''; animationName.value = '';" style="border: 1px solid black; font-weight: 600" class="btn btn-warning">
                   Adicionar
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div class="row" *ngIf="animationArray?.length > 0 && checkBase === true">
+        <div class="row" *ngIf="animationArray?.length > 0 && (checkBase === true) || (spriteType === 'scenario')">
 
           <div class="col-sm-10" style="margin: auto">
             <table class="table" style="margin-top: 2rem">
