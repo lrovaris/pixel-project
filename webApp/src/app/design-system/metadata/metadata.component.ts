@@ -30,7 +30,6 @@ export class MetadataComponent implements OnInit {
   @Input() category;
   @Input() imgBase;
   @Input() baseId;
-  @Input() animationArray: Array<any>;
   @Input() height: any;
   @Input() width: any;
   @Input() spriteType;
@@ -39,9 +38,25 @@ export class MetadataComponent implements OnInit {
 
   @Output() saveMetadata = new EventEmitter();
 
+  _animationArray = []
+  @Input() set animationArray(array){
+    console.log(array);
+
+    this._animationArray = array
+
+  }
+
   checkBase: boolean;
   allImages = [];
-  @Input() categoryArray = [];
+
+  _categoryArray:Array<string> = [];
+
+  @Input() set categoryArray(array){
+    console.log(array);
+
+    this._categoryArray = array;
+
+  }
 
   form: FormGroup;
 
@@ -58,26 +73,22 @@ export class MetadataComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log(this.baseId);
-
     setTimeout( () => {
       if (this.category !== undefined) {
         if (isArray(this.category)) {
-          this.categoryArray = this.category;
+          // this._categoryArray = this.category;
           this.category = undefined;
           this.baseSelect = 'base';
           this.checkBase = true;
         } else {
-          console.log(this.category);
+
           this.baseSelect = 'acessorio';
           this.checkBase = false;
-          this.categoryArray = [];
+
           this.imgBase = this.allImages.find(img => img._id === this.imgBase);
           this.allImages = [];
           this.allImages.push(this.imgBase);
-          this.categoryArray = this.imgBase.metadata.category;
-          console.log(this.category);
-          console.log(this.allImages);
+          this._categoryArray = this.imgBase.metadata.category;
         }
       }
     }, 1000);
@@ -86,9 +97,6 @@ export class MetadataComponent implements OnInit {
     this.imageService.getAllImages().subscribe((data: any) => {
       this.allImages = data;
     });
-    console.log(this.spriteType, this.spriteView, this.theme, this.image);
-
-
   }
 
   allBases() {
@@ -105,7 +113,7 @@ export class MetadataComponent implements OnInit {
       this.baseSelect = this.baseId;
     } else {
       this.baseSelect = true;
-      this.category = this.categoryArray;
+      this.category = this._categoryArray;
     }
 
     const metadata = {
@@ -115,7 +123,7 @@ export class MetadataComponent implements OnInit {
       width: this.width,
       spriteWidth: this.width,
       framesQuantity: this.form.value.frames,
-      animations: this.animationArray,
+      animations: this._animationArray,
       imgBase: this.baseSelect,
       category: this.category,
       theme: this.form.value.theme,
@@ -134,18 +142,22 @@ export class MetadataComponent implements OnInit {
   }
 
   removeFile(nome) {
-    const index = this.animationArray.indexOf(nome);
-    if (index !== -1) {this.animationArray.splice(index, 1); }
+    const index = this._animationArray.indexOf(nome);
+    if (index !== -1) {this._animationArray.splice(index, 1); }
   }
 
   animationPush(animation) {
+
     console.log(animation);
-    this.animationArray.push({name: animation.name, frames: animation.frames});
+    this._animationArray.push({name: animation.name, frames: animation.frames});
   }
 
   categoryPush(category) {
+    console.log(this._animationArray);
+
     console.log(category);
-    this.categoryArray.push(category);
+    this._categoryArray.push(category);
+    console.log(this._animationArray);
   }
 
 
@@ -176,17 +188,19 @@ export class MetadataComponent implements OnInit {
 
 
       this.animationPush({name, frames});
-      console.log(this.categoryArray);
+      console.log(this._categoryArray);
 
     }
   }
 
   removeCategoria(nome) {
-    const index = this.categoryArray.indexOf(nome);
-    if (index !== -1) {this.categoryArray.splice(index, 1); }
+    const index = this._categoryArray.indexOf(nome);
+    if (index !== -1) {this._categoryArray.splice(index, 1); }
   }
 
   selectBase(id) {
+    console.log("set base chamado", id);
+
     this.baseId = id;
     this.imgBase = this.allImages.find(img => img._id === id);
     if (this.spriteType === 'scenario') {
@@ -195,9 +209,9 @@ export class MetadataComponent implements OnInit {
       alert('por favor selecione um tipo de sprite');
       return;
     }
-    this.animationArray = this.imgBase.metadata.animations;
-    this.categoryArray = this.imgBase.metadata.category;
-    this.category = this.categoryArray[0];
+    this._animationArray = this.imgBase.metadata.animations;
+    this._categoryArray = this.imgBase.metadata.category;
+    this.category = this._categoryArray[0];
 
     this.path = this.imgBase.path;
 

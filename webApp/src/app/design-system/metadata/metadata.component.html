@@ -34,11 +34,11 @@
 
         <div class="row">
           <div class="col-sm-12">
-            <label for="seguradora" style="font-size: 28px">Selecione base ou acessório</label>
+            <label style="font-size: 28px">Selecione base ou acessório</label>
           </div>
           <div class="col-sm-6">
             <fieldset class="form-group">
-              <select (change)="changeBase()" [(ngModel)]="baseSelect"  class="form-control input-text" id="selectbase" [ngModelOptions]="{standalone: true}">
+              <select (change)="changeBase()" [(ngModel)]="baseSelect"  class="form-control input-text" [ngModelOptions]="{standalone: true}">
                 <option value="base">Base</option>
                 <option value="acessorio">Acessório</option>
               </select>
@@ -52,19 +52,21 @@
           <div  class="col-sm-6">
             <label >Selecione a base</label>
             <fieldset class="form-group">
-              <select  (change)="selectBase(selectBaseInput.value)" #selectBaseInput class="form-control input-text" id="selectbase" >
+              <select  (change)="selectBase(selectBaseInput.value)" #selectBaseInput class="form-control input-text">
                 <option *ngFor="let base of allBases()" [value]="base._id">{{base.metadata.name}}</option>
               </select>
             </fieldset>
           </div>
+
           <div class="col-sm-6">
             <label >Selecione a categoria</label>
             <fieldset class="form-group">
               <select  [(ngModel)]="category" (change)="selectCategory(selectCategoryInput.value)" #selectCategoryInput class="form-control input-text" id="selectbase" [ngModelOptions]="{standalone: true}">
-                <option *ngFor="let category of categoryArray" [value]="category">{{category}}</option>
+                <option *ngFor="let category of _categoryArray" [value]="category">{{category}}</option>
               </select>
             </fieldset>
           </div>
+
         </div>
 
 
@@ -98,12 +100,12 @@
           <div class="col-sm-6">
             <div class="form-group">
 
-              <button type="button" (click)="adicionarCategoria(categoryInput.value); categoryInput.value = ''" class="btn btn-warning" id="asd" style="border: 1px solid black; margin-top: 2rem; font-weight: 600">Adicionar</button>
+              <button type="button" (click)="adicionarCategoria(categoryInput.value); categoryInput.value = ''" class="btn btn-warning" style="border: 1px solid black; margin-top: 2rem; font-weight: 600">Adicionar</button>
             </div>
           </div>
         </div>
 
-        <div class="row" *ngIf="categoryArray.length > 0 && (checkBase === true) || (spriteType === 'scenario')">
+        <div class="row" *ngIf="_categoryArray.length > 0 && (checkBase === true) || (spriteType === 'scenario')">
           <div class="col-sm-12">
             <table class="table" style="margin-top: 2rem">
               <thead>
@@ -113,7 +115,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let categoria of categoryArray">
+              <tr *ngFor="let categoria of _categoryArray">
                 <td>{{categoria}}</td>
                 <td><i (click)="removeCategoria(categoria);" style="cursor: pointer" class="icon-waste"></i></td>
               </tr>
@@ -179,7 +181,7 @@
             </div>
           </div>
         </div>
-        <div class="row" *ngIf="animationArray?.length > 0 && (checkBase === true) && (spriteType !== 'scenario')">
+        <div class="row" *ngIf="_animationArray?.length > 0 && (checkBase === true) && (spriteType !== 'scenario')">
 
           <div class="col-sm-10" style="margin: auto">
             <table class="table" style="margin-top: 2rem">
@@ -191,7 +193,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let animation of animationArray">
+              <tr *ngFor="let animation of _animationArray">
                 <td>{{animation.name}}</td>
                 <td>{{animation.frames}}</td>
                 <td><i (click)="removeFile(animation)" style="cursor: pointer" class="icon-waste"></i></td>
@@ -207,19 +209,19 @@
   </div>
 
   <div class="col-sm-5">
-    <div class="row" *ngIf="animationArray.length > 0">
+    <div class="row" *ngIf="_animationArray.length > 0">
       <div class="col-sm-6">
         <fieldset class="form-group">
-          <label for="seguradora" style="font-size: 28px">Animation Select</label>
-          <select [(ngModel)]="animationSelect"  class="form-control input-text" id="seguradora" [ngModelOptions]="{standalone: true}">
-            <option [value]="i" *ngFor="let animation of animationArray; let i = index">{{animation.name}}</option>
+          <label style="font-size: 28px">Animation Select</label>
+          <select [(ngModel)]="animationSelect"  class="form-control input-text" [ngModelOptions]="{standalone: true}">
+            <option [value]="i" *ngFor="let animation of _animationArray; let i = index">{{animation.name}}</option>
           </select>
         </fieldset>
       </div>
     </div>
-    <div class="row" *ngIf="animationArray.length > 0">
+    <div class="row" *ngIf="_animationArray.length > 0">
       <div class="col-sm-12" style="display: flex; justify-content: center; margin: 25% auto;">
-        <app-image-display  [imgPath]="'http://161.35.10.72:3000/files/'+ path" style="transform: scale(10)" [height]="height" [width]="width" [animation]="animationArray" [selectedAnimation]="animationSelect" [id]="'aaa'" [name]="spriteName" [spriteWidth]="width" [frames]="frames"></app-image-display>
+        <app-image-display  [imgPath]="'http://161.35.10.72:3000/files/'+ path" style="transform: scale(10)" [height]="height" [width]="width" [animation]="_animationArray" [selectedAnimation]="animationSelect" [id]="'aaa'" [name]="spriteName" [spriteWidth]="width" [frames]="frames"></app-image-display>
       </div>
     </div>
   </div>
