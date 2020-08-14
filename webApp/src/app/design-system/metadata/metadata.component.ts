@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {ImagesService} from "../../services/images.service";
-import {isArray} from "util";
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {ImagesService} from '../../services/images.service';
+import {isArray} from 'util';
 
 @Component({
   selector: 'app-metadata',
@@ -27,7 +27,13 @@ export class MetadataComponent implements OnInit {
   @Input() path;
   @Input() name;
   @Input() frames;
-  @Input() category;
+  _category: any;
+  @Input() set category(category) {
+    console.log(category);
+
+    this._category = category;
+
+  }
   @Input() imgBase;
   @Input() baseId;
   @Input() height: any;
@@ -38,20 +44,21 @@ export class MetadataComponent implements OnInit {
 
   @Output() saveMetadata = new EventEmitter();
 
-  _animationArray = []
-  @Input() set animationArray(array){
+  _animationArray = [];
+
+  @Input() set animationArray(array) {
     console.log(array);
 
-    this._animationArray = array
+    this._animationArray = array;
 
   }
 
   checkBase: boolean;
   allImages = [];
 
-  _categoryArray:Array<string> = [];
+  _categoryArray: Array<string> = [];
 
-  @Input() set categoryArray(array){
+  @Input() set categoryArray(array) {
     console.log(array);
 
     this._categoryArray = array;
@@ -64,7 +71,7 @@ export class MetadataComponent implements OnInit {
     this.form = this.formBuild.group({
       name: [this.name],
       frames: [this.frames],
-      category: [this.category],
+      category: [this._category],
       theme: [this.theme],
       spriteType: [this.spriteType],
       spriteView: [this.spriteView]
@@ -74,10 +81,10 @@ export class MetadataComponent implements OnInit {
   ngOnInit() {
 
     setTimeout( () => {
-      if (this.category !== undefined) {
-        if (isArray(this.category)) {
-          // this._categoryArray = this.category;
-          this.category = undefined;
+      if (this._category !== undefined) {
+        if (isArray(this._category)) {
+          this._categoryArray = this._category;
+          this._category = undefined;
           this.baseSelect = 'base';
           this.checkBase = true;
         } else {
@@ -113,7 +120,7 @@ export class MetadataComponent implements OnInit {
       this.baseSelect = this.baseId;
     } else {
       this.baseSelect = true;
-      this.category = this._categoryArray;
+      this._category = this._categoryArray;
     }
 
     const metadata = {
@@ -125,7 +132,7 @@ export class MetadataComponent implements OnInit {
       framesQuantity: this.form.value.frames,
       animations: this._animationArray,
       imgBase: this.baseSelect,
-      category: this.category,
+      category: this._category,
       theme: this.form.value.theme,
       spriteType: this.form.value.spriteType,
       spriteView: this.form.value.spriteView
@@ -185,8 +192,6 @@ export class MetadataComponent implements OnInit {
       return;
     } else {
 
-
-
       this.animationPush({name, frames});
       console.log(this._categoryArray);
 
@@ -199,7 +204,7 @@ export class MetadataComponent implements OnInit {
   }
 
   selectBase(id) {
-    console.log("set base chamado", id);
+    console.log('set base chamado', id);
 
     this.baseId = id;
     this.imgBase = this.allImages.find(img => img._id === id);
@@ -211,7 +216,7 @@ export class MetadataComponent implements OnInit {
     }
     this._animationArray = this.imgBase.metadata.animations;
     this._categoryArray = this.imgBase.metadata.category;
-    this.category = this._categoryArray[0];
+    this._category = this._categoryArray[0];
 
     this.path = this.imgBase.path;
 
@@ -228,9 +233,7 @@ export class MetadataComponent implements OnInit {
 
 
   selectCategory(category) {
-    this.category = category;
-    console.log(this.category);
-    console.log(category);
+    this._category = category;
   }
 
 }

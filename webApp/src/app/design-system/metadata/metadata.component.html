@@ -53,7 +53,7 @@
             <label >Selecione a base</label>
             <fieldset class="form-group">
               <select  (change)="selectBase(selectBaseInput.value)" #selectBaseInput class="form-control input-text">
-                <option *ngFor="let base of allBases()" [value]="base._id">{{base.metadata.name}}</option>
+                <option *ngFor="let base of allBases()" [value]="base?._id">{{base.metadata.name}}</option>
               </select>
             </fieldset>
           </div>
@@ -61,7 +61,7 @@
           <div class="col-sm-6">
             <label >Selecione a categoria</label>
             <fieldset class="form-group">
-              <select  [(ngModel)]="category" (change)="selectCategory(selectCategoryInput.value)" #selectCategoryInput class="form-control input-text" id="selectbase" [ngModelOptions]="{standalone: true}">
+              <select  (change)="selectCategory(selectCategoryInput.value)" #selectCategoryInput class="form-control input-text" id="selectbase">
                 <option *ngFor="let category of _categoryArray" [value]="category">{{category}}</option>
               </select>
             </fieldset>
@@ -73,7 +73,7 @@
         <div class="row">
           <div class="col-sm-12">
             <fieldset class="form-group">
-              <label style="color: #000" for="">Nome</label>
+              <label style="color: #000">Nome</label>
               <input #spriteName formControlName="name" name="name" style="" type="text" class="form-control input-text" [value]="name">
             </fieldset>
           </div>
@@ -82,7 +82,7 @@
         <div class="row" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
           <div class="col-sm-12">
             <fieldset class="form-group">
-              <label style="color: #000" for="">Quantidade de frames</label>
+              <label style="color: #000">Quantidade de frames</label>
               <input #spriteFrames formControlName="frames" name="quantity" style="" type="number" class="form-control input-text" [value]="frames">
             </fieldset>
           </div>
@@ -95,7 +95,7 @@
         <div class="row" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
           <div  class="col-sm-6">
             <label >Adicione categorias a base</label>
-            <input formControlName="category" #categoryInput name="quantity" style="" type="text" class="form-control input-text">
+            <input #categoryInput style="" type="text" class="form-control input-text">
           </div>
           <div class="col-sm-6">
             <div class="form-group">
@@ -128,7 +128,7 @@
         <div class="row" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
           <div class="col-sm-12">
             <fieldset class="form-group">
-              <label style="color: #000" for="">Tema</label>
+              <label style="color: #000">Tema</label>
               <input  formControlName="theme" name="theme"  type="text" class="form-control input-text" [value]="theme">
             </fieldset>
           </div>
@@ -137,7 +137,7 @@
         <div class="row" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
           <div class="col-sm-12">
             <fieldset class="form-group">
-              <label style="color: #000" for="">Visão da sprite</label>
+              <label style="color: #000">Visão da sprite</label>
               <input  formControlName="spriteView" name="spriteView"  type="text" class="form-control input-text" [value]="spriteView">
             </fieldset>
           </div>
@@ -146,14 +146,14 @@
         <div class="row">
           <div class="col-sm-12">
             <fieldset class="form-group">
-              <label style="color: #000; font-size: 24px; font-weight: 400" for="">Cores:</label>
+              <label style="color: #000; font-size: 24px; font-weight: 400">Cores:</label>
             </fieldset>
             <div *ngFor="let color of colors; let i = index" class="row" style="margin-top: 4px">
               <div class="col-sm-2">
                 <app-color-card [color]="color"></app-color-card>
               </div>
               <div class="col-sm-4">
-                <input type="text" class="form-control input-text" [value]="color.name" (change)="alteraCoresData($event.target.value, i)" >
+                <input type="text" class="form-control input-text" [value]="color.name" (change)="alteraCoresData($event?.target?.value, i)" >
               </div>
             </div>
           </div>
@@ -162,14 +162,14 @@
         <div class="row" style="margin-top: 1rem" *ngIf="(checkBase === true) && (spriteType !== 'scenario')">
           <div class="col-sm-12">
             <fieldset class="form-group">
-              <label style="color: #000; font-size: 24px; font-weight: 400" for="">Animations:</label>
+              <label style="color: #000; font-size: 24px; font-weight: 400">Animations:</label>
             </fieldset>
             <fieldset class="form-group" style="margin-top: -1rem">
-              <label style="color: #000" for="">Nome</label>
+              <label style="color: #000">Nome</label>
               <input #animationName name="animationName" style="" type="text" class="form-control input-text">
             </fieldset>
             <fieldset class="form-group">
-              <label style="color: #000" for="">Quantidade de frames</label>
+              <label style="color: #000" >Quantidade de frames</label>
               <input #animationFrames name="animationQuantity" style="" type="number" class="form-control input-text">
             </fieldset>
             <div class="row">
