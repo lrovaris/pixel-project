@@ -25,7 +25,7 @@ async function export_sprite(params, sprite_data, callback) {
   })
 
   const colored_image_array = image_data_array.map( sprite => {
-    const this_sprite_colored_image = color_image(sprite);
+    const this_sprite_colored_image = color_image(sprite, params.exportAs);
 
     return this_sprite_colored_image
   })

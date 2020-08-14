@@ -2,10 +2,6 @@ const GIFEncoder = require('gifencoder');
 const pngFileStream = require('png-file-stream');
 const fs = require('fs');
 
-
-
-
-
 function export_as_gif(png_info, write_path, path, fileName, callback) {
 
   const height = png_info[0].data.height;
@@ -24,13 +20,11 @@ function export_as_gif(png_info, write_path, path, fileName, callback) {
     const glob_str = `${write_path}_${anim.name}_*.png`
 
     const stream = pngFileStream(glob_str)
-    .pipe(encoder.createWriteStream({ repeat: -1, delay: 500, quality: 10 }))
+    .pipe(encoder.createWriteStream({ repeat: 0, delay: 100, quality: 10, transparent: "#C8C8C8" }))
     .pipe(fs.createWriteStream(`${path}/${fileName}_${anim.name}.gif`));
 
       stream.on('finish', function () {
           iterator++;
-
-
       });
 
   })
