@@ -26,6 +26,9 @@ import { SpriteTypeSelectListComponent } from './components/responsive-Ui-Compon
 import { TitleCardComponent } from './components/cards/title-card/title-card.component';
 import { AcessoryModalComponent } from './components/modals/acessory-modal/acessory-modal.component';
 import { InnerBorderAndBottonBoxComponent } from './components/still-not-categorized/inner-border-and-botton-box/inner-border-and-botton-box.component';
+import { TileCarrouselBoxComponent } from './components/responsive-Ui-Components/tile-carrousel-box/tile-carrousel-box.component';
+import { TileCardComponent } from './components/cards/tile-card/tile-card.component';
+import { TileSetPreviewBoxComponent } from './components/responsive-Ui-Components/tile-set-preview-box/tile-set-preview-box.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { InnerBorderAndBottonBoxComponent } from './components/still-not-categor
     SpriteTypeSelectListComponent,
     TitleCardComponent,
     AcessoryModalComponent,
-    InnerBorderAndBottonBoxComponent
+    InnerBorderAndBottonBoxComponent,
+    TileCarrouselBoxComponent,
+    TileCardComponent,
+    TileSetPreviewBoxComponent
   ],
   imports: [
     CommonModule,
@@ -74,7 +80,10 @@ import { InnerBorderAndBottonBoxComponent } from './components/still-not-categor
     NewProjectModalComponent,
     SpriteTypeSelectListComponent,
     TitleCardComponent,
-    AcessoryModalComponent
+    AcessoryModalComponent,
+    TileCarrouselBoxComponent,
+    TileCardComponent,
+    TileSetPreviewBoxComponent
   ]
 })
 export class DesignSystemModule { }

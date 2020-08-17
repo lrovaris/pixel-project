@@ -12,6 +12,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProjectManagementPageComponent } from './pages/project-management-page/project-management-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { SpriteTypeSelectPageComponent } from './pages/sprite-type-select-page/sprite-type-select-page.component';
+import { TileSetPageComponent } from './pages/tile-set-page/tile-set-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SpriteTypeSelectPageComponent } from './pages/sprite-type-select-page/s
     ProjectManagementPageComponent,
     ContactPageComponent,
     SpriteTypeSelectPageComponent,
+    TileSetPageComponent,
   ],
   imports: [
     BrowserModule,
