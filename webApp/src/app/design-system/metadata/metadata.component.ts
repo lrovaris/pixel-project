@@ -80,10 +80,27 @@ export class MetadataComponent implements OnInit {
 
   ngOnInit() {
 
+
+
     setTimeout( () => {
       if (this._category !== undefined) {
         if (isArray(this._category)) {
-          this._categoryArray = this._category;
+
+          // POR FAVOR NAO TOCA NISSO
+
+          let thisMotherFucker = this._category.map( (category) => {
+            console.log(category);
+            return category;
+          });
+
+          this._categoryArray = thisMotherFucker;
+
+
+          // é Sério antes era isso ---------------------> this._categoryArray = this._category <---------------------------
+
+          console.log(this._categoryArray);
+          console.log('em cima disso');
+
           this._category = undefined;
           this.baseSelect = 'base';
           this.checkBase = true;
@@ -209,6 +226,7 @@ export class MetadataComponent implements OnInit {
     this.baseId = id;
     this.imgBase = this.allImages.find(img => img._id === id);
     if (this.spriteType === 'scenario') {
+      this._categoryArray = this.imgBase.metadata.category;
       return;
     } else if (this.spriteType === undefined ) {
       alert('por favor selecione um tipo de sprite');

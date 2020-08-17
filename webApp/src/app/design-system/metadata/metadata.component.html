@@ -4,12 +4,13 @@
     <div class="card" style="padding: 1rem; border: 1px solid black;">
       <div class="card-content">
 
-        <div class="row">
+        <div class="row button-save">
           <div class="col-sm-10" style="margin: auto">
-            <button type="submit" style="border: 1px solid black; font-weight: 600" (click)="insercaoMetadados()" class="btn btn-warning">
+            <button type="submit" style="border: 1px solid black; font-weight: 600" (click)="insercaoMetadados()" class="btn btn-warning btn-warning-save">
               Salvar
             </button>
           </div>
+
         </div>
         <div class="row" style="margin-top: 1rem">
           <div class="col-sm-12">
@@ -92,7 +93,7 @@
 
 
 
-        <div class="row" *ngIf="(checkBase === true) || (spriteType === 'scenario')">
+        <div class="row" *ngIf="(checkBase === true)">
           <div  class="col-sm-6">
             <label >Adicione categorias a base</label>
             <input #categoryInput style="" type="text" class="form-control input-text">
