@@ -140,12 +140,20 @@ export class MetadataComponent implements OnInit {
       this._category = this._categoryArray;
     }
 
+    if (this._category === undefined) {
+      console.log('category undefined');
+      this._category = this._categoryArray[0];
+    }
+
+    console.log(this.width);
+    console.log(this._category);
+
     const metadata = {
       colors: this.colors,
       name: this.form.value.name,
       height: this.height,
-      width: this.width,
-      spriteWidth: this.width,
+      width: this.width / this.form.value.frames,
+      spriteWidth:  this.width,
       framesQuantity: this.form.value.frames,
       animations: this._animationArray,
       imgBase: this.baseSelect,
@@ -195,7 +203,6 @@ export class MetadataComponent implements OnInit {
     }
 
     this.categoryPush(category);
-
 
 
   }
@@ -251,7 +258,10 @@ export class MetadataComponent implements OnInit {
 
 
   selectCategory(category) {
+
     this._category = category;
+
+    console.log(this._category);
   }
 
 }

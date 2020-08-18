@@ -1,0 +1,27 @@
+@import "~design-system/variables.scss";
+
+
+.tile-menu {
+  top: 72%;
+  position: fixed;
+  width: calc(36%);
+  height: 25%;
+  background-color: #6e7780;
+  right: calc(2% + (2.4 *#{$border-pixel}));
+  border: $border-pixel solid black;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/** {
+  outline: 1px solid red;
+}*/
+
+
+
+.line-under {
+  width: 100%;
+  height: $border-pixel;
+  background-color: #8d9ba2;
+  position: absolute;
+}

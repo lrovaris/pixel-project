@@ -4,12 +4,11 @@ import {
   Input,
   OnInit,
   Output,
-  AfterViewInit,
   ChangeDetectorRef
 } from '@angular/core';
-import { Router } from '@angular/router';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import {RouteService} from "../../../../src/app/services/route.service";
+import {RouteService} from '../../../../src/app/services/route.service';
+import {isArray} from "util";
 
 @Component({
   selector: 'pixel-left-image-list',
@@ -175,6 +174,10 @@ export class LeftImageListComponent implements OnInit {
           return false;
         }
 
+        if (isArray(image.metadata.category)) {
+          return false;
+        }
+
         return image.metadata.category.toString() === category.toString();
       });
 
@@ -184,6 +187,8 @@ export class LeftImageListComponent implements OnInit {
       };
 
     });
+
+    console.log(this.arrayCategorias);
 
   }
 

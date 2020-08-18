@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'character', component: CreateCharacterPageComponent },
   { path: 'management', component: ProjectManagementPageComponent},
   { path: 'spriteselect', component: SpriteTypeSelectPageComponent},
-  { path: 'tileset', component: TileSetPageComponent}
+  { path: 'scenario', component: TileSetPageComponent}
 ];
 
 @NgModule({

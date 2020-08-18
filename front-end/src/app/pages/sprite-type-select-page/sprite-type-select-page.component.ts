@@ -42,7 +42,7 @@ export class SpriteTypeSelectPageComponent implements OnInit {
 
     this.spriteService.ResetSprite()
 
-    this.router.navigateTo("character", route);
+    this.router.navigateTo(route);
   }
 
   toggleModal(bool) {

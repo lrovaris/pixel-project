@@ -24,7 +24,7 @@ import { TileSetPageComponent } from './pages/tile-set-page/tile-set-page.compon
     ProjectManagementPageComponent,
     ContactPageComponent,
     SpriteTypeSelectPageComponent,
-    TileSetPageComponent,
+    TileSetPageComponent
   ],
   imports: [
     BrowserModule,

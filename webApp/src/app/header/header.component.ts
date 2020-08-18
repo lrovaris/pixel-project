@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   navigateList() {
-    this.router.navigate(['']);
+    this.router.navigate(['list']);
   }
 
   navigateUpload() {
