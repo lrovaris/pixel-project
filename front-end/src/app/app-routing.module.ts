@@ -6,7 +6,9 @@ import { ProjectManagementPageComponent } from './pages/project-management-page/
 import { CreateCharacterPageComponent } from './pages/create-character-page/create-character-page.component';
 import { LoadingPageComponent} from './pages/loading-page/loading-page.component';
 import { SpriteTypeSelectPageComponent} from './pages/sprite-type-select-page/sprite-type-select-page.component';
-import {TilesetPageComponent} from "../../../webApp/src/app/pages/tileset-page/tileset-page.component";
+import { TileSetPageComponent } from './pages/tile-set-page/tile-set-page.component';
+
+
 
 const routes: Routes = [
   { path: '', component: LoadingPageComponent },
@@ -15,7 +17,7 @@ const routes: Routes = [
   { path: 'character', component: CreateCharacterPageComponent },
   { path: 'management', component: ProjectManagementPageComponent},
   { path: 'spriteselect', component: SpriteTypeSelectPageComponent},
-  { path: 'tileset', component: TilesetPageComponent}
+  { path: 'tileset', component: TileSetPageComponent}
 ];
 
 @NgModule({
