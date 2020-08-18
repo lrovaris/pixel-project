@@ -33,6 +33,7 @@ async function initialize_database() {
 
   await require('./images/db').get_metadata();
   await require('./colors/db').get_color_palletes();
+  await require('./users/db').get_users();
 }
 
 app.listen(3000, async () => {

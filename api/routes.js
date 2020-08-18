@@ -8,6 +8,7 @@ router.get('/', (req,res) => {
 
 router.use('/images', require('./images/routes'));
 router.use('/colors', require('./colors/routes'));
+router.use('/users', require('./users/routes'));
 router.use('/files', express.static(__dirname + '/uploads/images'));
 
 module.exports = router;

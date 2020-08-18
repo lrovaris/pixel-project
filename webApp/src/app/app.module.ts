@@ -17,6 +17,8 @@ import { UpdateComponent } from './pages/update/update.component';
 import { MetadataComponent } from './design-system/metadata/metadata.component';
 import { PaletaPageComponent } from './pages/paleta-page/paleta-page.component';
 import { TilesetPageComponent } from './pages/tileset-page/tileset-page.component';
+import { UserPageComponent } from './pages/user-page/user-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { TilesetPageComponent } from './pages/tileset-page/tileset-page.componen
     UpdateComponent,
     MetadataComponent,
     PaletaPageComponent,
-    TilesetPageComponent
+    TilesetPageComponent,
+    UserPageComponent,
+    LoginPageComponent
   ],
   imports: [
     HttpClientModule,

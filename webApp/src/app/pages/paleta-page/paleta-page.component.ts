@@ -10,9 +10,9 @@ export class PaletaPageComponent implements OnInit {
 
   PaleteList = [];
   private fileToUpload: any[];
-  private imgName: any;
+  public imgName: any;
   private checkEnviou: boolean;
-  private buttomState = 'Upload';
+  public buttomState = 'Upload';
   private formData: FormData = new FormData();
 
   palletName;
