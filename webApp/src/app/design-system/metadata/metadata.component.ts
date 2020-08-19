@@ -148,6 +148,10 @@ export class MetadataComponent implements OnInit {
     console.log(this.width);
     console.log(this._category);
 
+    if (this.spriteType === 'scenario') {
+      this.width = this.width / this.form.value.frames;
+    }
+
     const metadata = {
       colors: this.colors,
       name: this.form.value.name,
