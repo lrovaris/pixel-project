@@ -152,7 +152,7 @@ export class MetadataComponent implements OnInit {
       colors: this.colors,
       name: this.form.value.name,
       height: this.height,
-      width: this.width / this.form.value.frames,
+      width: this.width,
       spriteWidth:  this.width,
       framesQuantity: this.form.value.frames,
       animations: this._animationArray,

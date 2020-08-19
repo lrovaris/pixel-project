@@ -23,7 +23,7 @@
 
   <div *ngIf="uploaded" style="margin-top: 2rem" class="row">
    <div class="col-sm-12">
-     <app-metadata [spriteType]="''" [spriteView]="''" [theme]="''" [colors]="colors" [height]="height" [width]="width" [animationArray]="[]" [name]="''" [frames]="" [category]="[]" [baseId]="''" [imgBase]="" (saveMetadata)="saveMetadata($event)" ></app-metadata>
+     <app-metadata  [path]="path" [spriteType]="''" [spriteView]="''" [theme]="''" [colors]="colors" [height]="height" [width]="width" [animationArray]="[]" [name]="''" [frames]="" [category]="[]" [baseId]="''" [imgBase]="" (saveMetadata)="saveMetadata($event)" ></app-metadata>
    </div>
   </div>
 

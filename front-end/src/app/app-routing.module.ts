@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'contact', component: ContactPageComponent },
   { path: 'character', component: CreateCharacterPageComponent },
+  { path: 'enemy', component: CreateCharacterPageComponent },
   { path: 'management', component: ProjectManagementPageComponent},
   { path: 'spriteselect', component: SpriteTypeSelectPageComponent},
   { path: 'scenario', component: TileSetPageComponent}

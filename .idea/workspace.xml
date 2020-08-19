@@ -35,21 +35,21 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/webApp/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/front-end/src/assets/fonts" />
+      <recent name="$PROJECT_DIR$/front-end/src/assets" />
+      <recent name="$PROJECT_DIR$/webApp/src/app/pages/upload/components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/front-end/design-system/components" />
       <recent name="$PROJECT_DIR$/front-end/design-system/modals" />
       <recent name="$PROJECT_DIR$/front-end/src/assets/imgs" />
       <recent name="$PROJECT_DIR$/front-end/src/assets" />
       <recent name="$PROJECT_DIR$/front-end/src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/front-end/src/assets/fonts" />
-      <recent name="$PROJECT_DIR$/front-end/src/assets" />
-      <recent name="$PROJECT_DIR$/webApp/src/app/pages/upload/components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -89,7 +89,8 @@
       <workItem from="1597668752617" duration="8855000" />
       <workItem from="1597751842113" duration="10400000" />
       <workItem from="1597782370504" duration="152000" />
-      <workItem from="1597782545897" duration="533000" />
+      <workItem from="1597782545897" duration="1588000" />
+      <workItem from="1597785048294" duration="4955000" />
     </task>
     <servers />
   </component>
@@ -97,9 +98,9 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="301" y="75" key="SettingsEditor" timestamp="1597782525213">
+    <state x="301" y="75" key="SettingsEditor" timestamp="1597784135396">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="301" y="75" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1597782525213" />
+    <state x="301" y="75" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1597784135396" />
   </component>
 </project>

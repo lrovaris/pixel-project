@@ -1,9 +1,9 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {RouteService} from '../../services/route.service';
-import {ModalService} from '../../services/modal.service';
-import {ProjectService} from '../../services/project.service';
-import {PaletteService} from '../../services/palette.service';
-import {SpriteService} from '../../services/sprite.service';
+import { ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import { RouteService} from '../../services/route.service';
+import { ModalService} from '../../services/modal.service';
+import { ProjectService} from '../../services/project.service';
+import { PaletteService} from '../../services/palette.service';
+import { SpriteService} from '../../services/sprite.service';
 
 @Component({
   selector: 'pixel-sprite-type-select-page',
@@ -40,14 +40,14 @@ export class SpriteTypeSelectPageComponent implements OnInit {
 
   navigate(route) {
 
-    this.spriteService.ResetSprite()
+    this.spriteService.ResetSprite();
 
-    this.router.navigateTo(route);
+    this.router.navigateTo('character', route);
   }
 
   toggleModal(bool) {
 
-    if (bool === undefined) {
+    if ( bool === undefined ) {
       bool = !this.showModal;
     }
 

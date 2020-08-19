@@ -166,6 +166,8 @@ export class UploadComponent implements OnInit {
 
       this.buttomState = 'Finalizado';
 
+      console.log(data.info_files[0]);
+
       this.path = data.info_files[0].path;
       this.width = data.info_files[0].metadata.width;
       this.height = data.info_files[0].metadata.height;
@@ -180,6 +182,7 @@ export class UploadComponent implements OnInit {
   saveMetadata(metadata) {
     console.log(metadata);
 
+    console.log(this.path);
 
     this.imageService.createImage(metadata, this.path).subscribe((data: any) => {
       console.log(data);
