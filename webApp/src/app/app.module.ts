@@ -16,7 +16,6 @@ import { ColorCardComponent } from './design-system/color-card/color-card.compon
 import { UpdateComponent } from './pages/update/update.component';
 import { MetadataComponent } from './design-system/metadata/metadata.component';
 import { PaletaPageComponent } from './pages/paleta-page/paleta-page.component';
-import { TilesetPageComponent } from './pages/tileset-page/tileset-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 
@@ -32,7 +31,6 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     UpdateComponent,
     MetadataComponent,
     PaletaPageComponent,
-    TilesetPageComponent,
     UserPageComponent,
     LoginPageComponent
   ],

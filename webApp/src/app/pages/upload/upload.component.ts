@@ -185,7 +185,9 @@ export class UploadComponent implements OnInit {
     console.log(this.path);
 
     this.imageService.createImage(metadata, this.path).subscribe((data: any) => {
-      console.log(data);
+      console.log(metadata);
+      alert(metadata.name + ' Foi adicionado a lista!');
+      this.uploaded = false;
     });
 
   }

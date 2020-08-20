@@ -4,7 +4,6 @@ import { ListComponent } from './pages/list/list.component';
 import { UploadComponent } from './pages/upload/upload.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { PaletaPageComponent } from './pages/paleta-page/paleta-page.component';
-import { TilesetPageComponent } from './pages/tileset-page/tileset-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 const routes: Routes = [
@@ -13,7 +12,7 @@ const routes: Routes = [
   { path: 'upload', component: UploadComponent },
   { path: 'edit', component: UpdateComponent },
   { path: 'paleta', component: PaletaPageComponent },
-  { path: 'tileset', component: TilesetPageComponent }
+  { path: 'tileset', component: UploadComponent }
 ];
 
 @NgModule({
